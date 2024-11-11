@@ -1,0 +1,8 @@
+@import "./../_variables";
+@import "./../fonts/fonts";
+
+.light-theme {
+    background-color: $color_light;
+    font-family: $font_typewriter;
+    color: $color_yellow;
+}

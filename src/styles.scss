@@ -1,1 +1,112 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/_variables";
+@import "./assets/fonts/fonts";
+@import "./assets/_index";
+
+
+body {
+    font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+    .w-md-auto {
+        width: auto;
+    }
+
+    
+}
+
+@media (max-width: 991px) {
+    .w-md-100 {
+        width: 100% !important;
+    }
+}
+
+.circule {
+    border-radius: 50%;
+}
+
+
+.underline {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    width: 40px;
+    height: 3px;
+    bottom: 0px;
+    left: calc(50% - 20px);
+    background: $color_yellow;
+}
+
+.card {
+    border: none;
+background-color: transparent;
+}
+
+.card-title {
+    font-family: $font_hight_retro;
+    letter-spacing: 2px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.input {
+    border-radius: 27px;
+    background-color: white;
+    font-family: $font_typewriter;
+    font-size: 18px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    .ligth  {
+        box-shadow: 3px 3px 8px 2px;
+    }
+    .normal {
+        box-shadow: none;
+    }
+
+
+   
+        
+    &__box {
+            border-style: none;
+            height: 100%;
+            margin-left: 10px;
+            font-size: 18px;
+    }
+
+    &__box::placeholder {
+        font-family: $font_typewriter;
+            font-size: inherit;
+        }
+        
+    &__box:focus {
+            border-color: white;
+            box-shadow: none;
+        }
+
+
+    &__icon {
+        width: 50px;
+        height: 45px;
+        background-color:  $color_yellow;
+        color: white;
+        border-style: none;
+    }
+    
+    &__icon:hover {
+       background-color: $color_orange;
+    }
+
+}
+
+.input:focus {
+    border-color: $color_orange;
+}
+
+.hide {
+    display: none !important;
+}

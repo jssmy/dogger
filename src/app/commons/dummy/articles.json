@@ -1,0 +1,1522 @@
+[
+    {
+        "id": "1",
+        "title": "Sketch from A to Z: for app designer",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/08.jpg"
+        ],
+        "summary": "Comprehensive guide to mastering Sketch for app design and user experience.",
+        "keywords": [
+            "sketch",
+            "app",
+            "design",
+            "guide"
+        ]
+    },
+    {
+        "id": "2",
+        "title": "Graphic Design Masterclass",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "Master graphic design techniques and principles for effective visual communication.",
+        "keywords": [
+            "graphic",
+            "design",
+            "masterclass"
+        ]
+    },
+    {
+        "id": "3",
+        "title": "Create a Design System in Figma",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/03.jpg"
+        ],
+        "summary": "Learn how to build a scalable design system using Figma's tools.",
+        "keywords": [
+            "design",
+            "system",
+            "figma"
+        ]
+    },
+    {
+        "id": "4",
+        "title": "Deep Learning with React-Native",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/07.jpg"
+        ],
+        "summary": "Explore deep learning applications in mobile apps using React-Native framework.",
+        "keywords": [
+            "deep",
+            "learning",
+            "react-native"
+        ]
+    },
+    {
+        "id": "5",
+        "title": "Build Responsive Websites with HTML",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/11.jpg"
+        ],
+        "summary": "Learn to create responsive and accessible websites using HTML fundamentals.",
+        "keywords": [
+            "responsive",
+            "websites",
+            "html"
+        ]
+    },
+    {
+        "id": "6",
+        "title": "Build Websites with CSS",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/12.jpg"
+        ],
+        "summary": "Master CSS to design visually appealing and responsive web pages.",
+        "keywords": [
+            "build",
+            "websites",
+            "css"
+        ]
+    },
+    {
+        "id": "7",
+        "title": "Learn Invision",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/04.jpg"
+        ],
+        "summary": "Understand how to use Invision for prototyping and collaboration in design.",
+        "keywords": [
+            "invision",
+            "prototyping",
+            "design"
+        ]
+    },
+    {
+        "id": "8",
+        "title": "JavaScript: Full Understanding",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/09.jpg"
+        ],
+        "summary": "Gain complete knowledge of JavaScript for building dynamic web applications.",
+        "keywords": [
+            "javascript",
+            "web",
+            "applications"
+        ]
+    },
+    {
+        "id": "9",
+        "title": "The Complete Web Development in python",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/05.jpg"
+        ],
+        "summary": "Learn full-stack web development using Python and popular frameworks.",
+        "keywords": [
+            "web",
+            "development",
+            "python"
+        ]
+    },
+    {
+        "id": "10",
+        "title": "Angular – The Complete Guider",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "Master Angular framework for building robust and dynamic web applications.",
+        "keywords": [
+            "angular",
+            "web",
+            "applications"
+        ]
+    },
+    {
+        "id": "102",
+        "title": "Bootstrap 5 From Scratch",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/10.jpg"
+        ],
+        "summary": "Learn to create responsive websites using Bootstrap 5 components and utilities.",
+        "keywords": [
+            "bootstrap",
+            "responsive",
+            "websites"
+        ]
+    },
+    {
+        "id": "12",
+        "title": "PHP with - CMS Project",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/13.jpg"
+        ],
+        "summary": "Develop a content management system using PHP and MySQL.",
+        "keywords": [
+            "php",
+            "cms",
+            "project"
+        ]
+    },
+    {
+        "id": "13",
+        "title": "Digital Marketing Masterclass",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "Explore digital marketing strategies to enhance brand presence online.",
+        "keywords": [
+            "digital",
+            "marketing",
+            "masterclass"
+        ]
+    },
+    {
+        "id": "11",
+        "title": "Advanced UX/UI Design Techniques",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/08.jpg"
+        ],
+        "summary": "Explore advanced techniques in UX/UI design, focusing on user-centered design principles and the latest trends in digital interfaces. Learn how to create engaging experiences that meet user needs and drive engagement. This course covers prototyping, user testing, and design thinking methods.",
+        "keywords": [
+            "ux",
+            "ui",
+            "design",
+            "prototyping",
+            "user"
+        ]
+    },
+    {
+        "id": "101",
+        "title": "Mastering Data Visualization with Python",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "Learn to create stunning visualizations using Python libraries such as Matplotlib and Seaborn. This course emphasizes data storytelling, teaching you how to effectively communicate insights through visual representation. Perfect for analysts and data scientists.",
+        "keywords": [
+            "data",
+            "visualization",
+            "python",
+            "analytics",
+            "matplotlib"
+        ]
+    },
+    {
+        "id": "104",
+        "title": "Full Stack Development with MERN",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "Dive into full stack development using the MERN stack: MongoDB, Express, React, and Node.js. This comprehensive course covers everything from building RESTful APIs to creating dynamic web applications, enabling you to become a proficient full stack developer.",
+        "keywords": [
+            "fullstack",
+            "mern",
+            "react",
+            "node",
+            "development"
+        ]
+    },
+    {
+        "id": "14",
+        "title": "Effective Digital Marketing Strategies",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "Gain insights into effective digital marketing strategies that can enhance brand visibility and drive traffic. This course explores SEO, social media marketing, content marketing, and email campaigns to equip you with essential skills for success in the digital landscape.",
+        "keywords": [
+            "digital",
+            "marketing",
+            "seo",
+            "social",
+            "strategy"
+        ]
+    },
+    {
+        "id": "15",
+        "title": "Introduction to Blockchain Technology",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "This introductory course provides a comprehensive overview of blockchain technology, its architecture, and applications. Learn about cryptocurrencies, smart contracts, and how blockchain is revolutionizing industries. Ideal for anyone looking to understand this transformative technology.",
+        "keywords": [
+            "blockchain",
+            "crypto",
+            "technology",
+            "smart",
+            "contracts"
+        ]
+    },
+    {
+        "id": "16",
+        "title": "Building Mobile Apps with Flutter",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/07.jpg"
+        ],
+        "summary": "Discover how to build high-performance mobile applications using Flutter. This course covers the fundamentals of Dart programming and the Flutter framework, enabling you to create beautiful and responsive apps for both iOS and Android platforms.",
+        "keywords": [
+            "mobile",
+            "flutter",
+            "apps",
+            "development",
+            "dart"
+        ]
+    },
+    {
+        "id": "17",
+        "title": "Data Analysis with Excel",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/10.jpg"
+        ],
+        "summary": "Master data analysis using Excel, one of the most powerful tools for data manipulation. Learn functions, pivot tables, and data visualization techniques to analyze and present data effectively. This course is suitable for beginners and professionals alike.",
+        "keywords": [
+            "data",
+            "excel",
+            "analysis",
+            "visualization",
+            "pivot"
+        ]
+    },
+    {
+        "id": "18",
+        "title": "JavaScript Frameworks Overview",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/09.jpg"
+        ],
+        "summary": "Get an overview of popular JavaScript frameworks including Angular, React, and Vue.js. Understand their core concepts, advantages, and when to use each framework. This course is ideal for developers looking to enhance their frontend development skills.",
+        "keywords": [
+            "javascript",
+            "frameworks",
+            "angular",
+            "react",
+            "vue"
+        ]
+    },
+    {
+        "id": "19",
+        "title": "Introduction to Artificial Intelligence",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/05.jpg"
+        ],
+        "summary": "Explore the fundamentals of artificial intelligence (AI) and its applications in various fields. This course covers key concepts such as machine learning, neural networks, and natural language processing. Perfect for those interested in the future of technology.",
+        "keywords": [
+            "ai",
+            "artificial",
+            "intelligence",
+            "machine",
+            "learning"
+        ]
+    },
+    {
+        "id": "20",
+        "title": "Web Accessibility Fundamentals",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/03.jpg"
+        ],
+        "summary": "Learn about web accessibility and how to create inclusive web experiences for all users. This course covers guidelines and best practices for designing accessible websites, ensuring compliance with standards and enhancing user experience for individuals with disabilities.",
+        "keywords": [
+            "accessibility",
+            "web",
+            "inclusive",
+            "design",
+            "standards"
+        ]
+    },
+    {
+        "id": "21",
+        "title": "User Interface Prototyping with Adobe XD",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/08.jpg"
+        ],
+        "summary": "Learn to create interactive prototypes using Adobe XD. This course focuses on user interface design principles, enabling you to build high-fidelity prototypes that enhance user testing and feedback.",
+        "keywords": [
+            "ui",
+            "prototyping",
+            "adobe",
+            "xd",
+            "design"
+        ]
+    },
+    {
+        "id": "22",
+        "title": "Python for Data Science",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "This course introduces Python programming with a focus on data science applications. Learn to manipulate data using pandas, visualize it with Matplotlib, and perform statistical analysis.",
+        "keywords": [
+            "python",
+            "data",
+            "science",
+            "pandas",
+            "visualization"
+        ]
+    },
+    {
+        "id": "23",
+        "title": "React Native: Building Mobile Apps",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "Discover how to build cross-platform mobile applications using React Native. This course covers the fundamentals of mobile development, allowing you to create native-like apps for iOS and Android.",
+        "keywords": [
+            "react",
+            "native",
+            "mobile",
+            "development",
+            "crossplatform"
+        ]
+    },
+    {
+        "id": "24",
+        "title": "Social Media Marketing Strategies",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "Learn effective social media marketing strategies that increase engagement and brand awareness. This course explores content creation, advertising, and analytics across major platforms.",
+        "keywords": [
+            "social",
+            "media",
+            "marketing",
+            "content",
+            "analytics"
+        ]
+    },
+    {
+        "id": "25",
+        "title": "Fundamentals of Cybersecurity",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "Explore the fundamentals of cybersecurity and learn how to protect digital information. This course covers threats, vulnerabilities, and security measures essential for safeguarding data.",
+        "keywords": [
+            "cybersecurity",
+            "security",
+            "data",
+            "protection",
+            "threats"
+        ]
+    },
+    {
+        "id": "26",
+        "title": "Angular Advanced Features",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "Dive deep into advanced features of Angular, including dependency injection, RxJS, and state management. This course is designed for experienced developers looking to enhance their Angular applications.",
+        "keywords": [
+            "angular",
+            "advanced",
+            "features",
+            "development",
+            "rxjs"
+        ]
+    },
+    {
+        "id": "27",
+        "title": "Introduction to Cloud Computing",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/07.jpg"
+        ],
+        "summary": "Understand the principles of cloud computing and its applications in business. This course covers cloud service models, deployment strategies, and key providers like AWS and Azure.",
+        "keywords": [
+            "cloud",
+            "computing",
+            "aws",
+            "azure",
+            "services"
+        ]
+    },
+    {
+        "id": "28",
+        "title": "Building RESTful APIs with Node.js",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/09.jpg"
+        ],
+        "summary": "Learn how to create RESTful APIs using Node.js and Express. This course covers routing, middleware, and database integration to build scalable applications.",
+        "keywords": [
+            "api",
+            "node",
+            "express",
+            "restful",
+            "development"
+        ]
+    },
+    {
+        "id": "29",
+        "title": "Graphic Design Fundamentals",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "Explore the principles of graphic design including color theory, typography, and layout. This course is perfect for beginners who want to develop their creative skills.",
+        "keywords": [
+            "graphic",
+            "design",
+            "fundamentals",
+            "typography",
+            "color"
+        ]
+    },
+    {
+        "id": "30",
+        "title": "Mobile App Design with Figma",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/03.jpg"
+        ],
+        "summary": "Learn to design mobile applications using Figma. This course covers design principles, wireframing, and user testing, enabling you to create user-friendly mobile interfaces.",
+        "keywords": [
+            "mobile",
+            "app",
+            "design",
+            "figma",
+            "interface"
+        ]
+    },
+    {
+        "id": "31",
+        "title": "Data Science with R",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/05.jpg"
+        ],
+        "summary": "This course introduces R programming for data science applications. Learn data manipulation, statistical analysis, and data visualization techniques to derive insights from data.",
+        "keywords": [
+            "data",
+            "science",
+            "r",
+            "analysis",
+            "visualization"
+        ]
+    },
+    {
+        "id": "32",
+        "title": "Introduction to DevOps Practices",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/04.jpg"
+        ],
+        "summary": "Explore the principles of DevOps and how they improve collaboration between development and operations. This course covers continuous integration, deployment, and monitoring practices.",
+        "keywords": [
+            "devops",
+            "practices",
+            "integration",
+            "deployment",
+            "monitoring"
+        ]
+    },
+    {
+        "id": "33",
+        "title": "Content Marketing Essentials",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "Learn the essentials of content marketing, focusing on creating valuable content that attracts and retains customers. This course covers strategy, SEO, and content promotion techniques.",
+        "keywords": [
+            "content",
+            "marketing",
+            "strategy",
+            "seo",
+            "promotion"
+        ]
+    },
+    {
+        "id": "34",
+        "title": "Introduction to Machine Learning",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "This course provides an introduction to machine learning concepts and algorithms. Learn about supervised and unsupervised learning, as well as practical applications in various industries.",
+        "keywords": [
+            "machine",
+            "learning",
+            "algorithms",
+            "supervised",
+            "unsupervised"
+        ]
+    },
+    {
+        "id": "35",
+        "title": "Web Design with HTML & CSS",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/11.jpg"
+        ],
+        "summary": "Learn how to create visually appealing websites using HTML and CSS. This course covers responsive design, layout techniques, and best practices for modern web design.",
+        "keywords": [
+            "web",
+            "design",
+            "html",
+            "css",
+            "responsive"
+        ]
+    },
+    {
+        "id": "36",
+        "title": "Python for Machine Learning",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/10.jpg"
+        ],
+        "summary": "This course teaches you how to apply Python for machine learning tasks. Learn about libraries like Scikit-Learn and TensorFlow to build predictive models and algorithms.",
+        "keywords": [
+            "python",
+            "machine",
+            "learning",
+            "scikit",
+            "tensorflow"
+        ]
+    },
+    {
+        "id": "37",
+        "title": "Digital Marketing Analytics",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/12.jpg"
+        ],
+        "summary": "Understand how to analyze digital marketing data and derive actionable insights. This course covers tools and techniques for measuring the effectiveness of marketing campaigns.",
+        "keywords": [
+            "digital",
+            "marketing",
+            "analytics",
+            "data",
+            "insights"
+        ]
+    },
+    {
+        "id": "38",
+        "title": "JavaScript Basics",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/09.jpg"
+        ],
+        "summary": "Learn the basics of JavaScript programming, including syntax, data types, and functions. This course is designed for beginners who want to enhance their web development skills.",
+        "keywords": [
+            "javascript",
+            "basics",
+            "programming",
+            "web",
+            "development"
+        ]
+    },
+    {
+        "id": "39",
+        "title": "Cloud Development with AWS",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "Explore cloud development using AWS services. Learn how to deploy and manage applications in the cloud, leveraging tools and resources offered by Amazon Web Services.",
+        "keywords": [
+            "cloud",
+            "aws",
+            "development",
+            "applications",
+            "deployment"
+        ]
+    },
+    {
+        "id": "40",
+        "title": "SEO for Beginners",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "This course introduces the fundamentals of SEO (Search Engine Optimization). Learn strategies to improve website visibility and ranking on search engines through keyword research and content optimization.",
+        "keywords": [
+            "seo",
+            "search",
+            "optimization",
+            "keywords",
+            "content"
+        ]
+    },
+    {
+        "id": "41",
+        "title": "Virtual Reality Development with Unity",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/03.jpg"
+        ],
+        "summary": "Learn to develop virtual reality applications using Unity. This course covers VR principles, 3D modeling, and user interaction techniques to create immersive experiences.",
+        "keywords": [
+            "virtual",
+            "reality",
+            "unity",
+            "development",
+            "3d"
+        ]
+    },
+    {
+        "id": "42",
+        "title": "Building Single Page Applications with React",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/04.jpg"
+        ],
+        "summary": "This course teaches you how to build single-page applications (SPAs) using React. Learn about components, state management, and routing to create dynamic web applications.",
+        "keywords": [
+            "single",
+            "page",
+            "applications",
+            "react",
+            "development"
+        ]
+    },
+    {
+        "id": "43",
+        "title": "Introduction to Graphic Design Software",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/05.jpg"
+        ],
+        "summary": "Get introduced to essential graphic design software like Adobe Illustrator and Photoshop. This course covers tools and techniques for creating stunning graphics and illustrations.",
+        "keywords": [
+            "graphic",
+            "design",
+            "software",
+            "illustrator",
+            "photoshop"
+        ]
+    },
+    {
+        "id": "44",
+        "title": "Web Development with Django",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "Learn web development using Django, a powerful Python framework. This course covers models, views, templates, and REST APIs to build dynamic web applications.",
+        "keywords": [
+            "web",
+            "development",
+            "django",
+            "python",
+            "rest"
+        ]
+    },
+    {
+        "id": "45",
+        "title": "Effective Communication Skills for Leaders",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "Develop effective communication skills essential for leadership. This course covers verbal and non-verbal communication, active listening, and conflict resolution strategies.",
+        "keywords": [
+            "communication",
+            "skills",
+            "leadership",
+            "verbal",
+            "listening"
+        ]
+    },
+    {
+        "id": "46",
+        "title": "Creating Interactive Web Experiences with jQuery",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "Learn to enhance your web projects with jQuery by adding interactivity and dynamic features. This course covers animations, event handling, and AJAX for improved user experiences.",
+        "keywords": [
+            "interactive",
+            "web",
+            "jquery",
+            "dynamic",
+            "ajax"
+        ]
+    },
+    {
+        "id": "47",
+        "title": "Fundamentals of Graphic Design",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/03.jpg"
+        ],
+        "summary": "Explore the foundational elements of graphic design, including composition, color theory, and typography. This course is ideal for aspiring designers looking to build their skills.",
+        "keywords": [
+            "fundamentals",
+            "graphic",
+            "design",
+            "composition",
+            "typography"
+        ]
+    },
+    {
+        "id": "48",
+        "title": "Introduction to Data Analysis with Python",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/04.jpg"
+        ],
+        "summary": "This course introduces data analysis concepts using Python. Learn to manipulate and visualize data with libraries like pandas and Matplotlib to derive insights.",
+        "keywords": [
+            "data",
+            "analysis",
+            "python",
+            "manipulation",
+            "visualization"
+        ]
+    },
+    {
+        "id": "49",
+        "title": "Agile Project Management Techniques",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/05.jpg"
+        ],
+        "summary": "Learn Agile project management techniques to enhance project delivery and team collaboration. This course covers Scrum, Kanban, and best practices for implementing Agile methodologies.",
+        "keywords": [
+            "agile",
+            "project",
+            "management",
+            "scrum",
+            "kanban"
+        ]
+    },
+    {
+        "id": "50",
+        "title": "Building E-commerce Sites with Shopify",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "Learn how to create and manage e-commerce websites using Shopify. This course covers product management, payment processing, and marketing strategies to drive sales.",
+        "keywords": [
+            "ecommerce",
+            "shopify",
+            "website",
+            "management",
+            "sales"
+        ]
+    },
+    {
+        "id": "51",
+        "title": "Digital Illustration Techniques",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/07.jpg"
+        ],
+        "summary": "Explore digital illustration techniques using tools like Adobe Illustrator. This course covers vector graphics, layering, and color management for creating stunning illustrations.",
+        "keywords": [
+            "digital",
+            "illustration",
+            "techniques",
+            "adobe",
+            "vector"
+        ]
+    },
+    {
+        "id": "52",
+        "title": "Introduction to Augmented Reality Development",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/08.jpg"
+        ],
+        "summary": "Learn how to create augmented reality experiences using AR development tools. This course covers concepts, design principles, and practical applications in various fields.",
+        "keywords": [
+            "augmented",
+            "reality",
+            "development",
+            "tools",
+            "applications"
+        ]
+    },
+    {
+        "id": "53",
+        "title": "Building Web Applications with Flask",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/09.jpg"
+        ],
+        "summary": "This course teaches you how to build web applications using Flask, a lightweight Python framework. Learn about routing, templates, and database integration for developing web apps.",
+        "keywords": [
+            "web",
+            "applications",
+            "flask",
+            "python",
+            "development"
+        ]
+    },
+    {
+        "id": "54",
+        "title": "Creative Writing for Beginners",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/10.jpg"
+        ],
+        "summary": "Develop your creative writing skills in this beginner-friendly course. Explore different genres, storytelling techniques, and tips for overcoming writer's block.",
+        "keywords": [
+            "creative",
+            "writing",
+            "beginners",
+            "storytelling",
+            "genres"
+        ]
+    },
+    {
+        "id": "55",
+        "title": "Video Editing Basics with Adobe Premiere Pro",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/11.jpg"
+        ],
+        "summary": "Learn the basics of video editing using Adobe Premiere Pro. This course covers essential editing techniques, transitions, and effects to create engaging videos.",
+        "keywords": [
+            "video",
+            "editing",
+            "adobe",
+            "premiere",
+            "techniques"
+        ]
+    },
+    {
+        "id": "56",
+        "title": "Fundamentals of User Experience Design",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/12.jpg"
+        ],
+        "summary": "This course introduces the fundamentals of user experience (UX) design. Learn about user research, wireframing, and prototyping to create intuitive and effective user interfaces.",
+        "keywords": [
+            "ux",
+            "design",
+            "user",
+            "research",
+            "prototyping"
+        ]
+    },
+    {
+        "id": "57",
+        "title": "Introduction to SQL for Data Analysis",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "Learn SQL fundamentals for data analysis. This course covers querying databases, filtering data, and using functions to extract valuable insights from datasets.",
+        "keywords": [
+            "sql",
+            "data",
+            "analysis",
+            "querying",
+            "databases"
+        ]
+    },
+    {
+        "id": "58",
+        "title": "Social Media Strategies for Businesses",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "Discover effective social media strategies tailored for businesses. This course covers content creation, engagement tactics, and how to leverage analytics for improved performance.",
+        "keywords": [
+            "social",
+            "media",
+            "strategies",
+            "businesses",
+            "analytics"
+        ]
+    },
+    {
+        "id": "59",
+        "title": "Introduction to 3D Modeling with Blender",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/03.jpg"
+        ],
+        "summary": "Learn the basics of 3D modeling using Blender, an open-source software. This course covers modeling techniques, texturing, and rendering to create stunning 3D art.",
+        "keywords": [
+            "3d",
+            "modeling",
+            "blender",
+            "techniques",
+            "rendering"
+        ]
+    },
+    {
+        "id": "60",
+        "title": "Introduction to Digital Marketing",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/04.jpg"
+        ],
+        "summary": "This course introduces the principles of digital marketing. Learn about SEO, content marketing, and social media strategies to enhance online presence.",
+        "keywords": [
+            "digital",
+            "marketing",
+            "seo",
+            "content",
+            "social"
+        ]
+    },
+    {
+        "id": "61",
+        "title": "User Interface Design for Mobile Apps",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/05.jpg"
+        ],
+        "summary": "Learn to design user interfaces for mobile applications. This course covers design principles, user flows, and prototyping for effective mobile UX.",
+        "keywords": [
+            "user",
+            "interface",
+            "design",
+            "mobile",
+            "ux"
+        ]
+    },
+    {
+        "id": "62",
+        "title": "Introduction to Game Development with C#",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "This course teaches the basics of game development using C#. Learn about game mechanics, physics, and scripting to create your own games.",
+        "keywords": [
+            "game",
+            "development",
+            "c#",
+            "mechanics",
+            "scripting"
+        ]
+    },
+    {
+        "id": "63",
+        "title": "Advanced Graphic Design Techniques",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/07.jpg"
+        ],
+        "summary": "Explore advanced graphic design techniques including digital painting, typography, and branding. Ideal for experienced designers looking to elevate their skills.",
+        "keywords": [
+            "advanced",
+            "graphic",
+            "design",
+            "techniques",
+            "branding"
+        ]
+    },
+    {
+        "id": "64",
+        "title": "Data Visualization with Tableau",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/08.jpg"
+        ],
+        "summary": "Learn to visualize data effectively using Tableau. This course covers data connections, visual analytics, and creating interactive dashboards for better insights.",
+        "keywords": [
+            "data",
+            "visualization",
+            "tableau",
+            "analytics",
+            "dashboards"
+        ]
+    },
+    {
+        "id": "65",
+        "title": "Introduction to Web Design Principles",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/09.jpg"
+        ],
+        "summary": "This course covers the fundamental principles of web design. Learn about layout, color theory, and typography to create visually appealing websites.",
+        "keywords": [
+            "web",
+            "design",
+            "principles",
+            "layout",
+            "typography"
+        ]
+    },
+    {
+        "id": "66",
+        "title": "Cloud Computing Basics",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/10.jpg"
+        ],
+        "summary": "Get an overview of cloud computing concepts and services. This course covers types of cloud services, deployment models, and benefits of using cloud technologies.",
+        "keywords": [
+            "cloud",
+            "computing",
+            "basics",
+            "services",
+            "technologies"
+        ]
+    },
+    {
+        "id": "67",
+        "title": "Introduction to Cybersecurity",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/11.jpg"
+        ],
+        "summary": "Learn the fundamentals of cybersecurity. This course covers security threats, risk management, and strategies to protect information systems from cyber attacks.",
+        "keywords": [
+            "cybersecurity",
+            "fundamentals",
+            "threats",
+            "management",
+            "protection"
+        ]
+    },
+    {
+        "id": "68",
+        "title": "Building Responsive Websites with Bootstrap",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/12.jpg"
+        ],
+        "summary": "This course teaches how to build responsive websites using Bootstrap. Learn about grid systems, components, and utilities for mobile-friendly design.",
+        "keywords": [
+            "responsive",
+            "websites",
+            "bootstrap",
+            "design",
+            "components"
+        ]
+    },
+    {
+        "id": "69",
+        "title": "Introduction to Artificial Intelligence",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "Discover the basics of artificial intelligence. This course covers AI concepts, machine learning, and applications in various industries.",
+        "keywords": [
+            "artificial",
+            "intelligence",
+            "basics",
+            "machine",
+            "learning"
+        ]
+    },
+    {
+        "id": "70",
+        "title": "User Experience Research Methods",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "Learn various user experience research methods to understand user behavior. This course covers surveys, interviews, and usability testing.",
+        "keywords": [
+            "user",
+            "experience",
+            "research",
+            "methods",
+            "behavior"
+        ]
+    },
+    {
+        "id": "71",
+        "title": "Introduction to Blockchain Technology",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/03.jpg"
+        ],
+        "summary": "Explore the fundamentals of blockchain technology. This course covers how blockchain works, its applications, and potential impact on various sectors.",
+        "keywords": [
+            "blockchain",
+            "technology",
+            "fundamentals",
+            "applications",
+            "impact"
+        ]
+    },
+    {
+        "id": "72",
+        "title": "Digital Marketing Analytics",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/04.jpg"
+        ],
+        "summary": "Learn to analyze digital marketing performance. This course covers key metrics, tools, and techniques for measuring and improving marketing effectiveness.",
+        "keywords": [
+            "digital",
+            "marketing",
+            "analytics",
+            "performance",
+            "metrics"
+        ]
+    },
+    {
+        "id": "73",
+        "title": "Introduction to Machine Learning",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/05.jpg"
+        ],
+        "summary": "Discover the basics of machine learning. This course covers supervised and unsupervised learning, algorithms, and real-world applications.",
+        "keywords": [
+            "machine",
+            "learning",
+            "basics",
+            "algorithms",
+            "applications"
+        ]
+    },
+    {
+        "id": "74",
+        "title": "Content Marketing Strategies",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "Learn to develop effective content marketing strategies. This course covers planning, creation, and distribution of content to engage target audiences.",
+        "keywords": [
+            "content",
+            "marketing",
+            "strategies",
+            "engagement",
+            "planning"
+        ]
+    },
+    {
+        "id": "75",
+        "title": "Web Security Essentials",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/07.jpg"
+        ],
+        "summary": "Understand the essentials of web security. This course covers common vulnerabilities, security protocols, and best practices for securing web applications.",
+        "keywords": [
+            "web",
+            "security",
+            "essentials",
+            "vulnerabilities",
+            "protocols"
+        ]
+    },
+    {
+        "id": "76",
+        "title": "Developing Mobile Applications with Flutter",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/08.jpg"
+        ],
+        "summary": "Learn to develop cross-platform mobile applications using Flutter. This course covers widgets, layouts, and state management for building responsive apps.",
+        "keywords": [
+            "mobile",
+            "applications",
+            "flutter",
+            "cross-platform",
+            "responsive"
+        ]
+    },
+    {
+        "id": "77",
+        "title": "Graphic Design for Social Media",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/09.jpg"
+        ],
+        "summary": "Create stunning graphics for social media platforms. This course covers design principles, tools, and techniques for effective social media content.",
+        "keywords": [
+            "graphic",
+            "design",
+            "social",
+            "media",
+            "content"
+        ]
+    },
+    {
+        "id": "78",
+        "title": "Data Science Fundamentals",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/10.jpg"
+        ],
+        "summary": "This course introduces the fundamentals of data science. Learn data manipulation, analysis, and visualization techniques using Python and R.",
+        "keywords": [
+            "data",
+            "science",
+            "fundamentals",
+            "manipulation",
+            "visualization"
+        ]
+    },
+    {
+        "id": "79",
+        "title": "Introduction to Internet of Things (IoT)",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/11.jpg"
+        ],
+        "summary": "Explore the world of IoT. This course covers IoT architecture, applications, and security concerns in connecting devices to the internet.",
+        "keywords": [
+            "internet",
+            "things",
+            "architecture",
+            "applications",
+            "security"
+        ]
+    },
+    {
+        "id": "80",
+        "title": "Introduction to Augmented Reality",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/12.jpg"
+        ],
+        "summary": "Learn about augmented reality technology and its applications. This course covers development, tools, and real-world examples of AR projects.",
+        "keywords": [
+            "augmented",
+            "reality",
+            "technology",
+            "applications",
+            "development"
+        ]
+    },
+    {
+        "id": "81",
+        "title": "Basics of Video Editing with Premiere Pro",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "This course covers the basics of video editing using Premiere Pro. Learn editing techniques, effects, and tips for creating professional videos.",
+        "keywords": [
+            "video",
+            "editing",
+            "premiere",
+            "techniques",
+            "professional"
+        ]
+    },
+    {
+        "id": "82",
+        "title": "Introduction to E-commerce Platforms",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "Learn the fundamentals of e-commerce platforms. This course covers platform selection, product management, and online sales strategies.",
+        "keywords": [
+            "e-commerce",
+            "platforms",
+            "fundamentals",
+            "sales",
+            "strategies"
+        ]
+    },
+    {
+        "id": "83",
+        "title": "Introduction to Ethical Hacking",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/03.jpg"
+        ],
+        "summary": "Explore ethical hacking concepts and techniques. This course covers penetration testing, vulnerabilities, and security assessments.",
+        "keywords": [
+            "ethical",
+            "hacking",
+            "penetration",
+            "testing",
+            "vulnerabilities"
+        ]
+    },
+    {
+        "id": "84",
+        "title": "Creative Writing Techniques",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/04.jpg"
+        ],
+        "summary": "This course introduces creative writing techniques. Learn to develop characters, plot, and dialogue to enhance storytelling skills.",
+        "keywords": [
+            "creative",
+            "writing",
+            "techniques",
+            "storytelling",
+            "characters"
+        ]
+    },
+    {
+        "id": "85",
+        "title": "Fundamentals of Video Game Design",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/05.jpg"
+        ],
+        "summary": "Learn the fundamentals of video game design. This course covers concept development, prototyping, and user testing for games.",
+        "keywords": [
+            "video",
+            "game",
+            "design",
+            "fundamentals",
+            "testing"
+        ]
+    },
+    {
+        "id": "86",
+        "title": "Introduction to Public Speaking",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "Develop public speaking skills. This course covers speech preparation, delivery techniques, and audience engagement strategies.",
+        "keywords": [
+            "public",
+            "speaking",
+            "skills",
+            "engagement",
+            "preparation"
+        ]
+    },
+    {
+        "id": "87",
+        "title": "Introduction to Photography",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/07.jpg"
+        ],
+        "summary": "This course teaches the basics of photography. Learn about composition, lighting, and techniques for capturing stunning images.",
+        "keywords": [
+            "photography",
+            "basics",
+            "composition",
+            "lighting",
+            "techniques"
+        ]
+    },
+    {
+        "id": "88",
+        "title": "Essentials of Music Production",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/08.jpg"
+        ],
+        "summary": "Learn the essentials of music production. This course covers recording techniques, mixing, and mastering for creating high-quality music.",
+        "keywords": [
+            "music",
+            "production",
+            "essentials",
+            "recording",
+            "mixing"
+        ]
+    },
+    {
+        "id": "89",
+        "title": "Fundamentals of Data Analytics",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/09.jpg"
+        ],
+        "summary": "Understand the fundamentals of data analytics. This course covers data collection, analysis, and visualization techniques for informed decision-making.",
+        "keywords": [
+            "data",
+            "analytics",
+            "fundamentals",
+            "collection",
+            "visualization"
+        ]
+    },
+    {
+        "id": "90",
+        "title": "Principles of Graphic Design",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/10.jpg"
+        ],
+        "summary": "This course covers the principles of graphic design. Learn about color theory, typography, and layout to create effective designs.",
+        "keywords": [
+            "graphic",
+            "design",
+            "principles",
+            "color",
+            "typography"
+        ]
+    },
+    {
+        "id": "91",
+        "title": "Introduction to Robotics",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/11.jpg"
+        ],
+        "summary": "Explore the basics of robotics. This course covers robot design, programming, and applications in various fields.",
+        "keywords": [
+            "robotics",
+            "basics",
+            "design",
+            "programming",
+            "applications"
+        ]
+    },
+    {
+        "id": "92",
+        "title": "Creating Engaging Online Courses",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/12.jpg"
+        ],
+        "summary": "Learn to create engaging online courses. This course covers course design, content development, and effective teaching strategies.",
+        "keywords": [
+            "online",
+            "courses",
+            "engaging",
+            "design",
+            "teaching"
+        ]
+    },
+    {
+        "id": "93",
+        "title": "Introduction to Animation Techniques",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/01.jpg"
+        ],
+        "summary": "This course introduces animation techniques. Learn about storyboarding, character animation, and timing for creating animated content.",
+        "keywords": [
+            "animation",
+            "techniques",
+            "storyboarding",
+            "character",
+            "timing"
+        ]
+    },
+    {
+        "id": "94",
+        "title": "Effective Social Media Marketing",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/02.jpg"
+        ],
+        "summary": "Learn effective strategies for social media marketing. This course covers content creation, audience targeting, and engagement techniques.",
+        "keywords": [
+            "social",
+            "media",
+            "marketing",
+            "strategies",
+            "engagement"
+        ]
+    },
+    {
+        "id": "95",
+        "title": "Fundamentals of User Interface Testing",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/03.jpg"
+        ],
+        "summary": "Understand the fundamentals of user interface testing. This course covers testing methods, tools, and best practices for UI quality assurance.",
+        "keywords": [
+            "user",
+            "interface",
+            "testing",
+            "fundamentals",
+            "quality"
+        ]
+    },
+    {
+        "id": "96",
+        "title": "Introduction to Business Analysis",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/04.jpg"
+        ],
+        "summary": "Learn the basics of business analysis. This course covers requirements gathering, stakeholder communication, and project management fundamentals.",
+        "keywords": [
+            "business",
+            "analysis",
+            "basics",
+            "communication",
+            "management"
+        ]
+    },
+    {
+        "id": "97",
+        "title": "Introduction to Creative Coding",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/05.jpg"
+        ],
+        "summary": "Explore creative coding concepts and techniques. This course covers programming with an artistic approach for interactive and generative art.",
+        "keywords": [
+            "creative",
+            "coding",
+            "concepts",
+            "interactive",
+            "art"
+        ]
+    },
+    {
+        "id": "98",
+        "title": "Foundations of Artificial Intelligence",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/06.jpg"
+        ],
+        "summary": "This course covers the foundational principles of artificial intelligence. Learn about algorithms, data structures, and machine learning basics.",
+        "keywords": [
+            "foundations",
+            "artificial",
+            "intelligence",
+            "algorithms",
+            "structures"
+        ]
+    },
+    {
+        "id": "99",
+        "title": "Principles of Web Development",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/07.jpg"
+        ],
+        "summary": "Understand the principles of web development. This course covers front-end and back-end technologies for building web applications.",
+        "keywords": [
+            "web",
+            "development",
+            "principles",
+            "technologies",
+            "applications"
+        ]
+    },
+    {
+        "id": "100",
+        "title": "Advanced Techniques in Machine Learning",
+        "images": [
+            "https://eduport.webestica.com/assets/images/courses/4by3/08.jpg"
+        ],
+        "summary": "Explore advanced machine learning techniques. This course covers deep learning, neural networks, and their applications in real-world scenarios.",
+        "keywords": [
+            "advanced",
+            "techniques",
+            "machine",
+            "learning",
+            "applications"
+        ]
+    }
+]

@@ -1,0 +1,9 @@
+<div class="input">
+    <input  [type]="type"
+    class="form-control input__box"    
+    [placeholder]="placeHolder">
+    @if(isPasswordInput) {
+        
+        <button (click)="onShowPassword()" type="button" class="btn"><i class="fa-regular" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i></button>
+    }
+</div>

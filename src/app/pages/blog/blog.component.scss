@@ -1,0 +1,46 @@
+@import "./../../../assets/_variables";
+
+
+.avatar {
+    width: 2.3rem;
+    height: 2.3rem;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.blog {
+    
+    &__tag {
+        font-size: 14px;
+    }
+
+    
+    &__user-creator {
+        font-size: 14px;
+        text-decoration: none;
+        color: white;
+    }
+
+    &__information-item{
+        font-size: 14px;
+        color: $color_gray;
+    }
+
+    &__content {
+        color: $color_gray;
+    }
+
+    &__social-networks {
+        color: $color_gray !important;
+    }
+}
+
+
+.suggested-articles {
+    &__title {
+        color: white;
+    }
+}

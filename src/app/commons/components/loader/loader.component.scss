@@ -1,0 +1,60 @@
+@import "./../../../../assets/_index";
+@import "./../../../../assets/_variables";
+@import "./../../../../assets/fonts/fonts";
+
+.container-loader {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    top: 0;
+    align-items: center;
+    background-color: $color_dark;
+    z-index: $loaderIndex;
+    display: flex;
+    flex-direction: column;
+    
+    &__title {
+        color: $color_yellow;
+        font-family: $font_hight_retro;
+        letter-spacing: 15px;
+        font-size: 2rem;
+    }
+    overflow-y: scroll;
+}
+.loader {
+    margin-left: -1rem;
+    width: 80px;
+    height: 40px;
+    color: $color_yellow;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    padding: 3px;
+    background:
+        repeating-linear-gradient(90deg, currentColor 0 10px, #0000 0 15px) 0/0% no-repeat content-box content-box;
+    position: relative;
+    box-sizing: border-box;
+    animation: l5 2s infinite steps(6);
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: 100%;
+    width: 10px;
+    background:
+        linear-gradient(#0000 calc(50% - 7px), currentColor 0 calc(50% - 5px),
+            #0000 0 calc(50% + 5px), currentColor 0 calc(50% + 7px), #0000 0) left /100% 100%,
+        linear-gradient(currentColor calc(50% - 5px), #0000 0 calc(50% + 5px), currentColor 0) left /2px 100%,
+        linear-gradient(#0000 calc(50% - 5px), currentColor 0 calc(50% + 5px), #0000 0) right/2px 100%;
+    background-repeat: no-repeat;
+}
+
+@keyframes l5 {
+    100% {
+        background-size: 120%
+    }
+}

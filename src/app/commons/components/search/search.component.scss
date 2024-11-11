@@ -1,0 +1,34 @@
+@import "./../../../../assets/_variables";
+@import "./../../../../assets/fonts/fonts";
+
+
+.search-engine {
+    &-active {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    &__result {
+        color: $color_dark;
+    }
+
+    &__result > a {
+        color: $color_dark;
+        background-color: white;
+        text-decoration: unset;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__result > a:last-child {
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding-bottom: 10px !important;
+    }
+
+    &__result a:hover {
+        background-color: $color_gray_3;
+    }
+}
+
+

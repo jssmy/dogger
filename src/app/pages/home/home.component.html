@@ -1,0 +1,29 @@
+@if(isFocusModal) {
+    <div class="search-modal" (click)="onFocus()"></div>
+}
+
+<section class="container d-flex flex-column align-items-center hero">
+    <div class="d-flex w-100 flex-column align-items-center">
+        <app-navbar class="w-md-100 w-auto"></app-navbar>
+    </div>
+    <div  class="w-100 hero__search d-flex flex-column justify-content-center align-items-center" [ngClass]="{'hero__search-active': isFocusModal}">
+        <h1 class="font-hight-retro text-center" [ngClass]="{'index-3': isFocusModal}">WHAT ARE YOU LOOKING FOR?</h1>
+        <div class="col-md-8 col-sm-12 col-lg-6" [ngClass]="{'index-3': isFocusModal}">
+            <app-search #SearchComponent  (onSearch)="onSearch($event)" (onFocus)="onFocus()" (onSelected)="onSelected($event)" [items]="articlesTracked"></app-search>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <h2 class="font-hight-retro text-center d-flex flex-column align-items-center title_section mb-3 mt-3">
+        TOP ARTICLES
+        <span class="underline"></span>
+    </h2>
+    <div class="row w-100 d-flex m-0">
+        @for(article of articlesTop; track article.id) {
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                <app-article [article]="article"></app-article>
+            </div>
+        }
+    </div>
+</section>
+<app-footer></app-footer>

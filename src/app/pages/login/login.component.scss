@@ -1,0 +1,101 @@
+/* Made with love by Mutiullah Samim*/
+@import "./../../../assets/_variables";
+
+.container {
+    height: 100%;
+    align-content: center;
+    background-image: radial-gradient(circle, rgb(0 0 0 / 30%) 5%, rgb(0 0 0 / 98%)), url(./../../../assets/images/hero.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #040404;
+
+}
+
+
+.form {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: $color_gray_2;
+    border-radius: 17px;
+    background-color: #4aa1ad;
+    color: $color_dark;
+    border-style: solid;
+    box-shadow: 0px 0px 20px 0px;
+
+
+    &__social_icon {
+        position: absolute;
+        right: 20px;
+        top: -45px;
+    }
+
+    &__social_icon span {
+        font-size: 60px;
+        margin-left: 10px;
+        color: white;
+    }
+
+    &__social_icon span:hover {
+        color: white;
+        cursor: pointer;
+    }
+
+
+
+
+    .card-header h3 {
+        color: $color_dark;
+    }
+
+
+
+    .input-group-prepend span {
+        width: 50px;
+        background-color: $color_yellow;
+        color: black;
+        border: 0 !important;
+    }
+
+    input:focus {
+        outline: 0 0 0 0 !important;
+        box-shadow: 0 0 0 0 !important;
+
+    }
+
+    .remember {
+        color: $color_dark;
+    }
+
+    .remember input {
+        width: 20px;
+        height: 20px;
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+    .login_btn {
+        color: black;
+        background-color: $color_yellow;
+        width: 100px;
+    }
+
+    .login_btn:hover {
+        color: black;
+        background-color: white;
+    }
+
+    .links {
+        color: white;
+    }
+
+    .links a {
+        margin-left: 4px;
+    }
+
+    .card-footer a {
+        color: white;
+        text-decoration: none;
+    }
+}

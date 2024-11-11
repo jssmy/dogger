@@ -1,0 +1,10 @@
+<article class="card">
+    <figure class="m-0"><a class="px-0" [href]="'/blog/'+article().id"><img alt="Java script"
+                class="card-img-top" src="{{article().images![0]}}"></a></figure>
+    <div class="card-body ps-0 pe-0">
+        <h5 class="card-title">{{article().title}}</h5>
+        <ul class="mb-3 list-inline d-flex flex-column">
+            <li class="list-inline-item"><span class="fs-6 color-gray">{{article().summary }}</span></li>
+        </ul>
+    </div>
+</article>

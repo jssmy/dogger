@@ -1,0 +1,37 @@
+@import "./../../../../assets/_variables";
+
+.container {
+    padding: 0px;
+    margin: 0px;
+    &__button {
+        border-radius: 27px;
+        background-color: white;
+        font-size: 18px;
+        height: 55px;
+        padding: 10px;
+        min-width: 120px;
+        border-style: none;
+        
+        &-primary {
+            background: $color_yellow;
+            
+        }
+
+        &-success {
+            background: $color_yellow;
+        }
+
+        &-danger {
+            background: $color_yellow;
+        }
+
+        &-info {
+            background: $color_yellow;
+        }
+
+        &-warning {
+            background: $color_yellow;
+        }
+
+    }
+}
