@@ -6,3 +6,4 @@ services:
     container_name: node-dogger-front-container
     ports:
       - "4000:4000"
+    restart: always
