@@ -1,9 +1,23 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { LoaderService } from './commons/services/loader.service';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { LoginPresenter } from './pages/login/login.presenter';
+import { loaderInterceptor } from './commons/interceptors/loader.interceptor';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration()]
+  providers: [
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([
+        loaderInterceptor
+      ])
+    ),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes, withComponentInputBinding()),
+    provideClientHydration(),
+  ]
 };

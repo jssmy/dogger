@@ -16,6 +16,8 @@ export class LoaderComponent {
   @ViewChild('container') container!: ElementRef;
 
 
-  constructor() {}
+  constructor(
+    readonly loader: LoaderService
+  ) {}
 
 }

@@ -1,7 +1,13 @@
-<div class="input">
-    <input  [type]="type"
+<div class="input" [ariaDisabled]="isDisabled">
+    <input [disabled]="isDisabled"
+    #inputApp
+    [type]="type()"
+    [value]="value"
+    
+    (input)="writeValue(inputApp.value)"
+    (blur)="onTouched()"
     class="form-control input__box"    
-    [placeholder]="placeHolder">
+    [placeholder]="placeHolder()">
     @if(isPasswordInput) {
         
         <button (click)="onShowPassword()" type="button" class="btn"><i class="fa-regular" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i></button>

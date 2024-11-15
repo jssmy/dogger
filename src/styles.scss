@@ -110,3 +110,12 @@ background-color: transparent;
 .hide {
     display: none !important;
 }
+
+[aria-disabled="true"] {
+    background-color: #e9ecef;
+}
+
+.error {
+    color: $color_yellow;
+    font-size: 15px;
+}

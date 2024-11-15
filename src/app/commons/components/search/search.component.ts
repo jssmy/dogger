@@ -34,12 +34,8 @@ export class SearchComponent implements ControlValueAccessor{
   @Output() onSelected = new EventEmitter<Item>;
 
   onChange = (value: string) => this.value = value;
-  
-
   onTouched = () => {};
-
   touched = false;
-
   disabled = false;
 
   registerOnChange(fn: any): void {

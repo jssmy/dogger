@@ -7,19 +7,25 @@ import { BehaviorSubject, map, Subject, timer } from 'rxjs';
 export class LoaderService {
 
 
-  private $status = signal(false);
+  private $statusSignal = signal(false);
+  private $messageSignal = signal('LOADING');
 
   constructor() {}
 
-  active() {
+  active(message: string = 'LOADING') {
+    this.$messageSignal.set(message);
     this.$state.set(true);
   }
 
   inactive() {
-    this.$state.set(false);
+    timer(1000).subscribe(() => this.$state.set(false));
   }
 
   get $state() {
-    return this.$status;
+    return this.$statusSignal;
+  }
+
+  get $message() {
+    return this.$messageSignal;
   }
 }

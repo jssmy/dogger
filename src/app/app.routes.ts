@@ -13,6 +13,10 @@ export const routes: Routes = [
     {
         path: 'login',
         loadComponent: () => import('./pages/login/login.component')
+    },
+    {
+        path: 'main',
+        loadComponent: () => import('./pages/main/main.component')
     }
 
 ];
