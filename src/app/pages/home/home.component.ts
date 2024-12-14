@@ -10,6 +10,8 @@ import { tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { FooterComponent } from '../../commons/components/footer/footer.component';
 import { LoaderService } from '../../commons/services/loader.service';
+import { NavbarItem } from '../../commons/interfaces/navbar-items';
+import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +33,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
 
   articlesTracked: Item[] = [];
   articlesTop: Article[] = [];
-
+  navbarItems: NavbarItem[] = NAVBAR_HOME_ITEMS;
 
   constructor(
     private readonly articleSearchService: ArticleSearchService,

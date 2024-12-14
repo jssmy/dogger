@@ -1,0 +1,33 @@
+<section class="container d-flex flex-column align-items-center blog">
+    <div class="d-flex w-100 flex-column align-items-center">
+        <app-navbar [items]="navbarItems()" class="w-md-100 w-auto"></app-navbar>
+    </div>
+
+</section>
+
+<main role="main" class="container">
+    <div class="d-flex align-items-center p-3 ps-0 pe-0 my-3 text-white-50 bg-purple rounded box-shadow">
+        <div  class="d-flex">
+            <div  class="position-relative d-flex align-items-center">
+                <div  class="avatar wrem-3 hrem-3"><img 
+                        src="https://avatars.githubusercontent.com/u/12477590?v=4" alt="avatar"
+                        class="avatar-img rounded-circle"></div>
+            </div>
+            <div  class="d-flex flex-column ms-3 blog-information h7"><a
+                     href="#"
+                    class="mb-0 d-block font-plane-cash avatar__name">{{ (auth.user()?.name || 'loading...') + ' ' + (auth.user()?.surnames || 'loading...') }}</a>
+                <ul  class="list-inline list-unstyled d-flex flex-row m-0">
+                    <li  class="list-inline-item d-lg-block blog__information-item">Welcome to Dogger</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+      <router-outlet></router-outlet>
+    </div>
+
+  
+</main>
+
+<app-footer></app-footer>

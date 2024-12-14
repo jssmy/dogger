@@ -26,7 +26,9 @@ export class InputComponent implements  OnInit, ControlValueAccessor {
   onTouched = () => {};
   onChange = (__value: string) => {};
 
-  type = model<'text' | 'password'>('text');
+  type = model<'text' | 'password' | 'email'>('text');
+  styled = model<'outlined' | 'none'>('none');
+
   placeHolder = input<string>();
   
 

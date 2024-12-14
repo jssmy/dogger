@@ -30,7 +30,8 @@ export default class LoginComponent {
   loginService = inject(LoginService);
   route = inject(Router);
 
-  constructor() { }
+  constructor() { 
+  }
 
   login() {
     if (this.presenter.form.valid) {

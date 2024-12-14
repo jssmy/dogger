@@ -18,6 +18,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        min-height: 3.5rem;
     }
 
     &__result > a:last-child {

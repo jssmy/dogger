@@ -1,0 +1,22 @@
+<div class="d-flex flex-column">
+    <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Create new user</h5>
+</div>
+<div class="d-flex justify-content-center h-100">
+    <div class="w-100">
+        <div class="card-body">
+            <form [formGroup]="presenter.form" class="form">
+                <div class="w-100 input-group">
+                    <app-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="name"  placeHolder="name"></app-input>
+                    <app-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="lastname" placeHolder="lastname"></app-input>
+                </div>
+                <div class="w-100 input-group">
+                    <app-input type="email" styled="outlined" class="col-md-6 p-3" formControlName="email" placeHolder="example@mail.com"></app-input>
+                    <app-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="role"  placeHolder="roles"></app-input>
+                </div>
+                <div class="w-100 input-group">
+                    <app-button (click)="onSave()" class="p-3">CREATE</app-button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
