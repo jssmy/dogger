@@ -18,7 +18,10 @@ export class LoaderService {
   }
 
   inactive() {
-    timer(1000).subscribe(() => this.$state.set(false));
+    setTimeout(() => {
+      this.$state.set(false)
+    }, 3000);
+    
   }
 
   get $state() {

@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ArticleSearchService } from '../home/services/article-search.service';
 import { Article } from '../../commons/interfaces/article';
 import { FooterComponent } from '../../commons/components/footer/footer.component';
+import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
+import { NavbarItem } from '../../commons/interfaces/navbar-items';
 
 @Component({
   selector: 'app-blog',
@@ -23,6 +25,7 @@ export default class BlogComponent implements OnInit{
   id!: string;
   articlesSuggest: Article[] = [];
   article!: Article;
+  navbarItems: NavbarItem[] = NAVBAR_HOME_ITEMS;
 
   constructor(
     private readonly route: ActivatedRoute,

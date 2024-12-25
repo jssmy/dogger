@@ -1,4 +1,4 @@
-<div class="input" [ariaDisabled]="isDisabled">
+<div class="input" [ngClass]="{'border-solid': styled() === 'outlined'}" [ariaDisabled]="isDisabled">
     <input [disabled]="isDisabled"
     #inputApp
     [type]="type()"

@@ -1,5 +1,5 @@
 <div class="container">
-    <button type="button" class="container__button w-100 font-plane-cash" [ngClass] = "{'container__button-primary': type === 'primary', 'container__button-danger': type === 'danger', 'container__button-warning': type === 'warning', 'container__button-info': type === 'info', 'container__button-success': type === 'success'}">
+    <button type="button" class="container__button w-100 font-plane-cash" [ngClass] = "{'container__button-primary': type() === 'primary', 'container__button-danger': type() === 'danger', 'container__button-warning': type() === 'warning', 'container__button-info': type() === 'info', 'container__button-success': type() === 'success'}">
         <ng-content></ng-content>
     </button>
 </div>

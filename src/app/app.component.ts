@@ -8,8 +8,8 @@ import { LoaderService } from './commons/services/loader.service';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     LoaderComponent,
+    RouterOutlet,
     CommonModule
   ],
   templateUrl: './app.component.html',

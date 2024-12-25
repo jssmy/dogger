@@ -13,7 +13,7 @@ body {
         width: auto;
     }
 
-    
+
 }
 
 @media (max-width: 991px) {
@@ -40,7 +40,7 @@ body {
 
 .card {
     border: none;
-background-color: transparent;
+    background-color: transparent;
 }
 
 .card-title {
@@ -61,44 +61,46 @@ background-color: transparent;
     display: flex;
     align-items: center;
     padding: 10px 5px;
-    .ligth  {
+
+    .ligth {
         box-shadow: 3px 3px 8px 2px;
     }
+
     .normal {
         box-shadow: none;
     }
 
 
-   
-        
+
+
     &__box {
-            border-style: none;
-            height: 100%;
-            margin-left: 10px;
-            font-size: 18px;
+        border-style: none;
+        height: 100%;
+        margin-left: 10px;
+        font-size: 18px;
     }
 
     &__box::placeholder {
         font-family: $font_typewriter;
-            font-size: inherit;
-        }
-        
+        font-size: inherit;
+    }
+
     &__box:focus {
-            border-color: white;
-            box-shadow: none;
-        }
+        border-color: white;
+        box-shadow: none;
+    }
 
 
     &__icon {
         width: 50px;
         height: 45px;
-        background-color:  $color_yellow;
+        background-color: $color_yellow;
         color: white;
         border-style: none;
     }
-    
+
     &__icon:hover {
-       background-color: $color_orange;
+        background-color: $color_orange;
     }
 
 }
@@ -119,3 +121,89 @@ background-color: transparent;
     color: $color_yellow;
     font-size: 15px;
 }
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+}
+
+
+.avatar {
+    width: 2.3rem;
+    height: 2.3rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__name {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    &__name:hover {
+        color: white;
+    }
+}
+
+.wrem-3 {
+    width: 3rem !important;
+}
+
+.hrem-3 {
+    height: 3rem !important;
+}
+
+
+/**tool tip***/
+
+[data-title] {
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* Texto del tooltip */
+  [data-title]::before {
+    content: attr(data-title); /* Usa el valor de data-title */
+    position: absolute;
+    top: -35px; /* Posición por encima del elemento */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0; /* Invisible inicialmente */
+    visibility: hidden; /* No ocupa espacio */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+  }
+
+  /* Flecha del tooltip */
+  [data-title]::after {
+    content: '';
+    position: absolute;
+    top: -4px; /* Ajustar debajo del tooltip */
+    left: 50%;
+    transform: rotateZ(180deg);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  /* Mostrar tooltip al hacer hover */
+  [data-title]:hover::before,
+  [data-title]:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .border-solid {
+    border-style: solid;
+  }

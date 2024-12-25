@@ -1,0 +1,33 @@
+<div class="d-flex flex-column">
+    <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Control users</h5>
+    <div class="d-flex flex-row">
+        <a routerLink="/mangment/users/create" class="color-gray text-decoration-none"><i class="fa-solid fa-plus me-2"></i>Add new user</a>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">mail</th>
+        <th scope="col">status</th>
+        <th scope="col">role</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        @for (item of users(); track item.name) {
+            <tr>
+                <th scope="row">{{$index + 1}}</th>
+                <td>{{ item.name +' '+item.surnames }}</td>
+                <td>{{item.email}}</td>   
+                <td>{{item.state ? 'active' : 'inactive'}}</td>
+                <td>{{item.role.name}}</td>
+                <td><button class="btn btn-lg p-0" data-title="Edit user information"><i class="fa-solid fa-file-pen"></i></button></td>
+              </tr>
+        }
+    </tbody>
+  </table>

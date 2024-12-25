@@ -1,0 +1,27 @@
+[    
+    {
+        "label": "ARTICLES",
+        "route": "/articles"
+    },
+    {
+        "label": "SERVICES",
+        "route": "/services"
+    },
+    {
+        "label": "MORE",
+        "items": [
+            {
+                "label": "RESOURCES",
+                "route": "/resources"
+            },
+            {
+                "label": "CONTACT US",
+                "route": "/contact"
+            },
+            {
+                "label": "ABOUT US",
+                "route": "/about"
+            }
+        ]
+    }
+]
