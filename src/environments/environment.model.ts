@@ -6,5 +6,6 @@ export interface Environment {
     permissionAuth: string;
     user: string;
     createuser: string;
+    role: string;
 
 }

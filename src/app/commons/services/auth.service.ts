@@ -40,7 +40,7 @@ export class AuthService {
   }
 
   check(): boolean {
-    return Boolean(this.authToken);
+    return Boolean(this.authToken());
   }
 
   user(): AuthUser | null {
@@ -53,6 +53,6 @@ export class AuthService {
 
 
   get token() {
-    return this.authToken;
+    return this.authToken();
   }
 }

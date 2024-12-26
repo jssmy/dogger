@@ -14,5 +14,5 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 const getHeaders = (headers: HttpHeaders) => {
   const authService = inject(AuthService);
   return headers
-    .set('Authorization', `Bearer ${authService.token()?.accessToken || 'xxxx'}`);
+    .set('Authorization', `Bearer ${authService.token?.accessToken || 'xxxx'}`);
 }

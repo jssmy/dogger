@@ -7,5 +7,6 @@ export const environment: Environment = {
     checkAuth: 'http://localhost:3000/control-access',
     permissionAuth: 'http://localhost:3000/control-access/permissions',
     user: 'http://localhost:3000/user',
-    createuser: 'http://localhost:3000/register'
+    createuser: 'http://localhost:3000/register', 
+    role: 'http://localhost:3000/roles',
 };

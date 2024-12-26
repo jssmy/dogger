@@ -9,9 +9,14 @@
                     <app-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="name"  placeHolder="name"></app-input>
                     <app-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="lastname" placeHolder="lastname"></app-input>
                 </div>
-                <div class="w-100 input-group">
+                <div class="w-100 form-group input-group">
                     <app-input type="email" styled="outlined" class="col-md-6 p-3" formControlName="email" placeHolder="example@mail.com"></app-input>
-                    <app-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="role"  placeHolder="roles"></app-input>
+                    <select class="form-control">
+                        <option value="">[Seleccione]</option>
+                        @for (item of roles; track item.id) {
+                            <option value="{{item.id}}">{{item.name}}</option>
+                        }
+                    </select>
                 </div>
                 <div class="w-100 input-group">
                     <app-button (click)="onSave()" class="p-3">CREATE</app-button>

@@ -38,6 +38,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./pages/managment/rol/rol.component')   
             },
             {
+                path: 'roles/create',
+                loadComponent: () => import('./pages/managment/rol/create-role/create-role.component')
+            },
+            {
                 path: 'permissions',
                 loadComponent: () => import('./pages/managment/permission/permission.component')
             }
