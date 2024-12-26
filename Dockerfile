@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Construir la aplicación Angular en modo producción
-RUN npm run build
+RUN npm run build:production
 
 # Etapa 2: Servir la aplicación con NGINX
 FROM node:22 AS production
