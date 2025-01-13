@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import PermissionComponent from './permission.component';
 
-describe('PermissionComponent', () => {
-  let component: PermissionComponent;
-  let fixture: ComponentFixture<PermissionComponent>;
+import { BoxTreeComponent } from './box-tree.component';
+
+describe('BoxTreeComponent', () => {
+  let component: BoxTreeComponent;
+  let fixture: ComponentFixture<BoxTreeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PermissionComponent]
+      imports: [BoxTreeComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PermissionComponent);
+    fixture = TestBed.createComponent(BoxTreeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

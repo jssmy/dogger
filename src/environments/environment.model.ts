@@ -4,6 +4,7 @@ export interface Environment {
     checkAccessPage: string;
     checkAuth: string;
     permissionAuth: string;
+    permissions: string;
     user: string;
     createuser: string;
     role: string;

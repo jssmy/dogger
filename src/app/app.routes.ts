@@ -21,7 +21,7 @@ export const routes: Routes = [
         canActivate: [checkAuthGuard]
     },
     {
-        path: 'mangment',
+        path: 'managment',
         loadComponent: () => import('./pages/managment/managment.component'),
         canActivate: [checkAuthGuard],
         children: [
@@ -40,6 +40,10 @@ export const routes: Routes = [
             {
                 path: 'roles/create',
                 loadComponent: () => import('./pages/managment/rol/create-role/create-role.component')
+            },
+            {
+                path: 'permissions/:parentId',
+                loadComponent: () => import('./pages/managment/permission/permission.component')
             },
             {
                 path: 'permissions',

@@ -30,6 +30,7 @@ export class InputComponent implements  OnInit, ControlValueAccessor {
   styled = model<'outlined' | 'none'>('none');
 
   placeHolder = input<string>();
+  size = input<'input--sm' | 'input--lg'>('input--lg');
   
 
   protected showPassword = false;
@@ -63,6 +64,7 @@ export class InputComponent implements  OnInit, ControlValueAccessor {
   writeValue(obj: any): void {
     this.isTouched = true;
     this.onChange(obj);
+    this.value = obj;
   }
   
 }

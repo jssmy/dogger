@@ -21,7 +21,11 @@
                 <th scope="row">{{$index + 1}}</th>
                 <td>{{ item.name +' '+item.name }}</td>
                 <td>empty</td>
-                <td><button class="btn btn-lg p-0" data-title="Edit user information"><i class="fa-solid fa-file-pen"></i></button></td>
+                <td>
+                  <button class="btn p-0 button--round button--xs bg-color-yellow color-white"
+                          routerLink="/managment/roles/create"
+                            data-title="Edit route"><i class="fa-solid fa-pen"></i></button>
+                </td>
               </tr>
         }
     </tbody>

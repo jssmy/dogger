@@ -20,7 +20,7 @@ export class LoaderService {
   inactive() {
     setTimeout(() => {
       this.$state.set(false)
-    }, 3000);
+    }, 500);
     
   }
 

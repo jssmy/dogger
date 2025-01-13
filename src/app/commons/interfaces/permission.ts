@@ -1,8 +1,13 @@
+import { HttpMethods } from "../enum/http-methods";
+import { PermissionType } from "../enum/permission-type";
+
 export interface Permission {
-    id: string;
+    id?: string;
     name: string;
     route: string;
-    type: 'api' | 'option' | 'menu';
+    type: PermissionType;
+    method: HttpMethods;
     order: number;
-    children: Permission[];
+    children?: Permission[];
+    parentId?: string;
 }

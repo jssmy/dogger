@@ -6,7 +6,8 @@ $color_gray: #acacac;
 $color_gray_2: #4aa1ad;
 $color_orange: #d6b830;
 $color_gray_3: hsl(0deg 7.67% 77.71%);
-
+$color_red_dark: #ba5428;
+$color_pink: #f89da7;
 
 .color-gray {
     color: $color_gray;
@@ -14,4 +15,21 @@ $color_gray_3: hsl(0deg 7.67% 77.71%);
 
 .color-dark {
     color: $color_dark;
+}
+
+.color-white {
+    color: white;
+}
+
+.bg-color-yellow {
+    background-color: $color_orange !important;
+}
+
+
+.bg-color-gray-2 {
+    background-color: $color_gray_2 !important;
+}
+
+.bg-color-red-dark {
+    background-color: $color_red_dark !important;
 }

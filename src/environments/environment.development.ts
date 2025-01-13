@@ -6,6 +6,7 @@ export const environment: Environment = {
     checkAccessPage: 'http://localhost:3000/control-access/page',
     checkAuth: 'http://localhost:3000/control-access',
     permissionAuth: 'http://localhost:3000/control-access/permissions',
+    permissions: 'http://localhost:3000/permissions',
     user: 'http://localhost:3000/user',
     createuser: 'http://localhost:3000/register', 
     role: 'http://localhost:3000/roles',

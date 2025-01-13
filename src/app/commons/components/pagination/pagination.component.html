@@ -1,0 +1,37 @@
+<nav aria-label="Page navigation example">
+    @if (pages().length > 0) {
+        <ul class="pagination">
+
+            @if (pagination()?.currentPage != 1) {
+                <li class="page-item p-1"><button
+                    (click)="onSelected.emit(beforePage())"
+                    class="btn p-0 button--round button--xs button--border-solid d-flex align-items-center justify-content-center border-solid"
+                    href="#"><i class="fa-solid fa-angles-left"></i></button></li>
+            }
+            
+            
+            @for (item of pages(); track $index) {
+                @if (item === pagination()?.currentPage) {
+                    <li class="page-item p-1">
+                        <button [ngClass]="{'button--active': item === pagination()?.currentPage }" class="btn p-0 button--round button--xs button--border-solid d-flex align-items-center justify-content-center">{{item}}</button>
+                    </li>        
+                } @else {
+                    <li class="page-item p-1">
+                        <button (click)="onSelected.emit(item)" class="btn p-0 button--round button--xs button--border-solid d-flex align-items-center justify-content-center">{{item}}</button>
+                    </li>        
+                }
+    
+            
+            }
+        
+    
+            @if (pagination()?.currentPage != pagination()?.totalPages) {
+                <li class="page-item p-1">
+                    <button (click)="onSelected.emit(nextPage())" class="btn p-0 button--round button--xs button--border-solid d-flex align-items-center justify-content-center"><i class="fa-solid fa-angles-right"></i></button>
+                </li>
+            } 
+    
+            
+        </ul>
+    }
+</nav>

@@ -2,6 +2,7 @@
 @import "./assets/_variables";
 @import "./assets/fonts/fonts";
 @import "./assets/_index";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 
 body {
@@ -57,21 +58,26 @@ body {
     background-color: white;
     font-family: $font_typewriter;
     font-size: 18px;
-    height: 55px;
     display: flex;
     align-items: center;
     padding: 10px 5px;
+    border-width: 2px;
 
     .ligth {
         box-shadow: 3px 3px 8px 2px;
     }
 
+    &--sm {
+        height: 45px;
+    }
+
+    &--lg {
+        height: 55px;
+    }
+
     .normal {
         box-shadow: none;
     }
-
-
-
 
     &__box {
         border-style: none;
@@ -207,3 +213,74 @@ body {
   .border-solid {
     border-style: solid;
   }
+
+  .button {
+    &--round {
+        height: 55px;
+        width: 55px;
+        border-radius: 50%;
+    }
+
+    &--sm {
+        height: 45px;
+        width: 45px;
+    }
+
+    &--xs{
+        width: 35px;
+        height: 35px;
+    }
+
+    &--lg {
+        height: 55px;
+        width: 55px;
+    }
+
+    &--border-solid {
+        border-style: solid;
+        border-color: $color_dark;
+        border-width: 2px;
+    }
+
+    &--active {
+        background-color: $color_pink !important;
+
+    }
+  }
+
+  
+
+  
+
+  .scroll-x {
+    overflow-x: scroll;
+  }
+
+
+  .swal2-actions {
+    
+    button {
+        border-radius: 27px;
+        background-color: white;
+        font-size: 18px;
+        height: 55px;
+        padding: 10px 20px;
+        min-width: 120px;
+        border-style: none;
+        
+       
+
+    }
+
+    .swal2-confirm {
+        background: $color_yellow !important;
+    }
+
+    .swal2-cancel {
+        border-color: $color_red_dark !important;
+        border-style: solid;
+        border-width: 3px;
+        background-color: white !important;
+        color: $color_dark;
+    }
+}
