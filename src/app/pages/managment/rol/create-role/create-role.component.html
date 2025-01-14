@@ -9,7 +9,7 @@
                     <app-input type="text" styled="outlined" class="col-md-12 p-3" placeHolder="name"></app-input>
                 </div>
                 <div class="w-100 form-group input-group">
-                    <app-box-tree></app-box-tree>
+                    <app-tree-view [items]="items() || []"></app-tree-view>
                 </div>
                 <div class="w-100 input-group">
                     <app-button class="p-3">CREATE</app-button>

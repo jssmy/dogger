@@ -1,0 +1,5 @@
+<label class="custom-checkbox">
+    <input [checked]="checked()" (change)="toggleChecked()"  [disabled]="disabled()" type="checkbox">
+    <span  class="d-flex justify-content-center align-items-center {{styled()}}"> <ng-content select="[icon]"></ng-content></span>
+    <div class="ps-1"><ng-content select="[label]"></ng-content></div>
+</label>

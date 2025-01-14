@@ -20,8 +20,8 @@ export class PermissionService {
     return this.http.get<Permission[]>(environment.permissionAuth);
   }
 
-  all(parentId: string) {
-    return this.http.get<Permission[]>(`${environment.permissions}/${parentId}`,);
+  all() {
+    return this.http.get<Permission[]>(`${environment.permissions}`);
   }
 
 
