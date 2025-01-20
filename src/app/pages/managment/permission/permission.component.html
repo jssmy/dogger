@@ -1,1 +1,131 @@
-<p>permission works!</p>
+<div class="d-flex flex-column">
+    <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Control permission</h5>
+</div>
+
+<form [formGroup]="permissionPresenter.form">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">type</th>
+                <th scope="col">method</th>
+                <th scope="col">route</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            <tr>
+
+                <td colspan="2">
+                    <div class="">
+                        <app-input [formControl]="permissionPresenter.name"
+                            [errorControl]="permissionPresenter.ERROR_CONTROL.name" type="text" size="input--sm"
+                            class="w-100" styled="outlined" placeHolder="Name"></app-input>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="form-group">
+                        <select (change)="permissionPresenter.onChangeType()" [formControl]="permissionPresenter.type"
+                            class="form-select form-select-lg mb-3">
+                            <option [value]="permissionType.GROUP">GROUP</option>
+                            <option [value]="permissionType.MENU">MENU</option>
+                            <option [value]="permissionType.API">API</option>
+                            <option [value]="permissionType.OPTION">OPTION</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <select [formControl]="permissionPresenter.method" class="form-select form-select-lg mb-3">
+                            <option [value]="httpMethods.GET">GET</option>
+                            <option [value]="httpMethods.POST">POST</option>
+                            <option [value]="httpMethods.PUT">PUT</option>
+                            <option [value]="httpMethods.DELETE">DELETE</option>
+                            <option [value]="httpMethods.PATCH">PATCH</option>
+                        </select>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="">
+                        <app-input [errorControl]="permissionPresenter.ERROR_CONTROL.path"
+                            [formControl]="permissionPresenter.path" type="text" size="input--sm" class="w-100"
+                            styled="outlined" placeHolder="Path">
+                        </app-input>
+                    </div>
+
+                </td>
+
+                <td>
+                    @if (!hasEditOption()) {
+                    <button class="btn p-0 button--round button--sm bg-color-yellow color-white" (click)="onSave()"
+                        data-title="Add new permission"><i class="fa-solid fa-plus"></i>
+                    </button>
+                    } @else {
+                    <button class="btn ms-1 button--round button--sm bg-color-yellow color-white" (click)="onUpdate()"
+                        data-title="Clean fields"><i class="fa-regular fa-floppy-disk"></i>
+                    </button>
+                    }
+
+                    <button class="btn ms-1 button--round button--sm bg-color-yellow color-white" (click)="onClean()"
+                        data-title="Clean fields"><i class="fa-solid fa-minus"></i>
+                    </button>
+
+
+
+                </td>
+            </tr>
+
+            <ng-container *ngIf="paginationResolve$ | async as resolve">
+                @for (item of resolve.data; track item.name) {
+                <tr>
+                    <th scope="row">{{($index + 1) + ( resolve.currentPage - 1 ) * resolve.limit }}</th>
+                    <td>{{ item.name}}</td>
+                    <td><i [class]="icons[item.type]"></i> {{item.type}} </td>
+                    <td>{{item.method}}</td>
+                    <td>{{item.route}}</td>
+                    <td>
+
+                        
+
+                        @if (!item.protected) {
+                            <button class="btn p-0 button--round button--xs bg-color-yellow color-white"
+                            (click)="onEdit(item)" data-title="Edit route"><i class="fa-solid fa-pen"></i></button>
+                        }
+
+
+                        @if (hasSecondInstance() | async) {
+                        @if (item.type === permissionType.GROUP || item.type === permissionType.MENU) {
+                        <button class="btn p-0 button--round  button--xs bg-color-gray-2 color-white ms-1"
+                            (click)="goChild(item.id+'')" data-title="Children routes"><i
+                                class="fa-solid fa-chevron-right"></i></button>
+                        }
+                        }
+
+                        @if (!item.protected) {
+                        <button class="btn p-0 button--round  button--xs bg-color-red-dark color-white ms-1"
+                            (click)="onDelete(item.id + '')" data-title="Delete route"><i class="fa-solid fa-trash"></i>
+                        </button>
+                        }
+
+                    </td>
+                </tr>
+                }
+
+                @if (resolve.total > resolve.limit) {
+                <tr>
+                    <td colspan="6">
+                        <app-pagination (onSelected)="onPaginated($event)" [pagination]="resolve"></app-pagination>
+                    </td>
+                </tr>
+                }
+
+            </ng-container>
+
+        </tbody>
+    </table>
+</form>

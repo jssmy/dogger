@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { InputComponent } from '../../commons/components/input/input.component';
 import { ButtonComponent } from '../../commons/components/button/button.component';
 import { LoaderService } from '../../commons/services/loader.service';
@@ -29,7 +29,7 @@ export default class LoginComponent {
   presenter = inject(LoginPresenter);
   loginService = inject(LoginService);
   route = inject(Router);
-
+  errorMessage = signal<string | null>(null);
   constructor() { 
   }
 
@@ -41,6 +41,9 @@ export default class LoginComponent {
         error: (err: HttpErrorResponse) => {
           if (err.status === HttpStatusCode.Unauthorized) {
               this.presenter.setCredentialErrorControl();
+          } else if (err.status === HttpStatusCode.Forbidden) {
+            console.log(err.error);
+            this.errorMessage.set(err.error.message);
           }
         }
       });

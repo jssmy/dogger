@@ -1,4 +1,5 @@
-import { effect, Injectable, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { effect, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { BehaviorSubject, map, Subject, timer } from 'rxjs';
 
 @Injectable({
@@ -7,6 +8,7 @@ import { BehaviorSubject, map, Subject, timer } from 'rxjs';
 export class LoaderService {
 
 
+  private plataformId = inject(PLATFORM_ID);
   private $statusSignal = signal(false);
   private $messageSignal = signal('LOADING');
 
@@ -17,10 +19,12 @@ export class LoaderService {
     this.$state.set(true);
   }
 
-  inactive() {
-    setTimeout(() => {
-      this.$state.set(false)
-    }, 3000);
+  inactive(time: number = 500) {
+    if (isPlatformBrowser(this.plataformId))  {
+      setTimeout(() => {
+        this.$state.set(false)
+      }, time);
+    }
     
   }
 

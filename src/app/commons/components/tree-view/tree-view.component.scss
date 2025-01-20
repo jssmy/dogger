@@ -1,0 +1,22 @@
+.tree-view  ul {
+    list-style-type: none;
+    margin: 0;
+    
+  }
+  
+  .tree-view li {
+    margin: 5px 0;
+    position: relative;
+  }
+  
+
+  
+  .tree-view label {
+    cursor: pointer;
+  }
+  
+  .tree-view ul ul {
+    margin-left: 10px;
+    border-left: 2px solid #4caf50;
+  }
+  

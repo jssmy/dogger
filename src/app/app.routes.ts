@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { checkAuthGuard } from './commons/guards/check-auth.guard';
+import { confirmAccountGuard } from './commons/guards/confirm-account.guard';
 
 export const routes: Routes = [
 
@@ -18,12 +19,17 @@ export const routes: Routes = [
     {
         path: 'main',
         loadComponent: () => import('./pages/main/main.component'),
-        canActivate: [checkAuthGuard]
+        // canActivate: [checkAuthGuard]
     },
     {
-        path: 'mangment',
+        path: 'account-confirmation/:token',
+        loadComponent: () => import('./pages/confirm-account/confirm-account.component'),
+        canActivate: [confirmAccountGuard]
+    },
+    {
+        path: 'managment',
         loadComponent: () => import('./pages/managment/managment.component'),
-        canActivate: [checkAuthGuard],
+        canActivateChild: [checkAuthGuard],
         children: [
             {
                 path: 'users',
@@ -40,6 +46,14 @@ export const routes: Routes = [
             {
                 path: 'roles/create',
                 loadComponent: () => import('./pages/managment/rol/create-role/create-role.component')
+            },
+            {
+                path: 'roles/edit/:id',
+                loadComponent: () => import('./pages/managment/rol/create-role/create-role.component')
+            },
+            {
+                path: 'permissions/:parentId',
+                loadComponent: () => import('./pages/managment/permission/permission.component')
             },
             {
                 path: 'permissions',

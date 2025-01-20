@@ -1,8 +1,12 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../../commons/services/user.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
+import { ALERT_CONFIRM_DELETE } from '../../../commons/constants/alerts/alert-confirm-delete';
+import { ALERT_SUCCESS_DELETE } from '../../../commons/constants/alerts/alert-success-delete';
+import { User } from '../../../commons/interfaces/user';
+import { PaginationResolve } from '../../../commons/interfaces/pagination-resolve';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +15,33 @@ import { CommonModule } from '@angular/common';
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
-export default class UserComponent {
+export default class UserComponent implements OnInit {
   userService = inject(UserService);
-  users = toSignal(this.userService.getUsers());
+  paginationResolve = signal<PaginationResolve<User[]> | undefined>(undefined);
+
+
+  ngOnInit(): void {
+    this.userService.getUsers()
+      .subscribe(resolve => this.paginationResolve.set(resolve))
+  }
+
+  onDelete(id: string) {
+
+    Swal.fire(ALERT_CONFIRM_DELETE)
+      .then(result => result.isConfirmed)
+      .then(confirmed => {
+        if (confirmed) {
+          this.userService.delete(id)
+            .subscribe({
+              next: () => {
+                Swal.fire(ALERT_SUCCESS_DELETE);
+                this.userService.getUsers()
+                  .subscribe(resolve => this.paginationResolve.set(resolve))
+              },
+              error: (e) => Swal.fire("Ups!", Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error')
+            });
+        }
+      });
+  }
+
 }

@@ -1,0 +1,27 @@
+.confirm-validation {
+    background-color: #f4f4f4;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    &__text-thanks {
+        display: none;
+        font-size: 1px;
+        color: #fefefe;
+        line-height: 1px;
+        // font-family: 'Lato', Helvetica, Arial, sans-serif;
+        max-height: 0px;
+        max-width: 0px;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    &__head-card {
+        padding: 40px 20px 20px 20px;
+        border-radius: 17px 17px 0px 0px;
+        color: #111111;
+        font-size: 48px;
+        font-weight: 400;
+        letter-spacing: 4px;
+        line-height: 48px;
+    }
+}

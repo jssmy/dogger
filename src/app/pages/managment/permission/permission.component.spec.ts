@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PermissionComponent } from './permission.component';
+import PermissionComponent from './permission.component';
 
 describe('PermissionComponent', () => {
   let component: PermissionComponent;

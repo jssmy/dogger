@@ -1,0 +1,38 @@
+<div class="tree-view">
+  <!-- <input type="text"  [value]="value()">   -->
+  <ul>
+
+    @for (item of listItem(); track item.value) {
+    <li>
+      <div>
+        <app-check-box
+              [disabled]="item.children.length <= 0 && item.isDisabled"
+              [checked]="item.isChecked"
+              (checkedChange)="onChecked(item)"
+              [styled]="item.countChecked >= 1 && !item.isChecked ? 'outline' : 'default'">
+          <div label>{{item.value}}</div>
+        </app-check-box>
+        @if (item.children.length > 0 && item.isVisibleChildren) {
+        <label (click)="onVisibleChild(item)" class="ps-3"><i class="fa-solid fa-chevron-up"></i></label>
+        } @else if (item.children.length > 0 && !item.isVisibleChildren) {
+          <label (click)="onVisibleChild(item)" class="ps-3"><i class="fa-solid fa-chevron-down"></i></label>
+        }
+      </div>
+
+      @if (item.children.length > 0 && item.isVisibleChildren) {
+      <ul>
+        @for (child of item.children; track child.value) {
+        <li>
+          <app-check-box [checked]="child.isChecked" [disabled]="child.isDisabled" (checkedChange)="onCheckedChild(item, child)">
+            <div label>{{child.value}}</div>
+          </app-check-box>
+        </li>
+        }
+
+      </ul>
+      }
+
+    </li>
+    }
+  </ul>
+</div>

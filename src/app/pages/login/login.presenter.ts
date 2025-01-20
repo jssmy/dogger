@@ -8,8 +8,8 @@ import { LOGIN_FORM_CONTROL_ERRORS } from "./login.formcontrol.errors";
 })
 export class LoginPresenter {
     form: FormGroup;
-    usernameControl = new FormControl();
-    passwordControl = new FormControl();
+    usernameControl = new FormControl('');
+    passwordControl = new FormControl('');
 
     ERROR_CONTROL = LOGIN_FORM_CONTROL_ERRORS;
 
@@ -23,8 +23,8 @@ export class LoginPresenter {
 
     credentials(): Login {
         return {
-            email: this.usernameControl.value,
-            password: this.passwordControl.value
+            email: String(this.usernameControl.value),
+            password: String(this.passwordControl.value)
         }
     }
 
