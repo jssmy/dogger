@@ -1,7 +1,10 @@
 import { Item } from "./item";
 
 export interface TreeViewItemBase extends Item {
-    isChecked: boolean; isVisibleChildren: boolean; parentId: string;
+    isChecked: boolean;
+    isDisabled: boolean;
+    isVisibleChildren: boolean;
+    parentId: string;
     countChecked: number;
 };
 

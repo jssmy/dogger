@@ -1,6 +1,6 @@
-import { PermissionType } from "../../enum/permission-type";
-import { NavbarItem } from "../../interfaces/navbar-items"
-import { Permission } from "../../interfaces/permission"
+import { PermissionType } from "../enum/permission-type";
+import { NavbarItem } from "../interfaces/navbar-items"
+import { Permission } from "../interfaces/permission"
 
 export const permissionToNavbarMenuItem = (permissions: Permission[]) => {
     return permissions
@@ -14,4 +14,3 @@ export const permissionToNavbarMenuItem = (permissions: Permission[]) => {
             } as NavbarItem
         });
 }
-

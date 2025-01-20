@@ -3,6 +3,7 @@ import { Environment } from "./environment.model";
 export const environment: Environment = {
     mode: 'local',
     login: 'http://localhost:3000/login',
+    logout: 'http://localhost:3000/logout',
     checkAccessPage: 'http://localhost:3000/control-access/page',
     checkAuth: 'http://localhost:3000/control-access',
     permissionAuth: 'http://localhost:3000/control-access/permissions',
@@ -10,4 +11,5 @@ export const environment: Environment = {
     user: 'http://localhost:3000/user',
     createuser: 'http://localhost:3000/register',
     role: 'http://localhost:3000/roles',
+    confirmAccount: 'http://localhost:3000/confirm-account',
 };

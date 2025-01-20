@@ -1,4 +1,4 @@
-import { Inject, Injectable, PLATFORM_ID, signal, TransferState } from '@angular/core';
+import { computed, Inject, Injectable, PLATFORM_ID, signal, TransferState } from '@angular/core';
 import { AuthToken } from '../interfaces/auth-token';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { AUTH_TOKEN_KEY } from '../components/tokens/auth-token-key';
@@ -12,6 +12,7 @@ import { AuthUser } from '../interfaces/auth-user';
 })
 export class AuthService {
   private authToken = signal<AuthToken | null>(null);
+  check = computed(() => Boolean(this.authToken()));
   constructor(
     @Inject(PLATFORM_ID)
     private readonly platformId: Object
@@ -39,10 +40,6 @@ export class AuthService {
     }
   }
 
-  check(): boolean {
-    return Boolean(this.authToken());
-  }
-
   user(): AuthUser | null {
     if (this.check()) {
       const user = JWT.decode<AuthUser>(this.authToken()?.accessToken as string);
@@ -55,4 +52,13 @@ export class AuthService {
   get token() {
     return this.authToken();
   }
+
+
+  logout() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.authToken.set(null);
+      sessionStorage.clear();
+    }
+  }
+
 }

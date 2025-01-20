@@ -7,15 +7,15 @@
         <app-navbar [items]="navbarItems" class="w-md-100 w-auto"></app-navbar>
     </div>
     <div  class="w-100 hero__search d-flex flex-column justify-content-center align-items-center" [ngClass]="{'hero__search-active': isFocusModal}">
-        <h1 class="font-hight-retro text-center" [ngClass]="{'index-3': isFocusModal}">WHAT ARE YOU LOOKING FOR?</h1>
+        <h1 class="font-hight-retro text-center" [ngClass]="{'index-3': isFocusModal}">QUE ESTÁS BUSCANDO?</h1>
         <div class="col-md-8 col-sm-12 col-lg-6" [ngClass]="{'index-3': isFocusModal}">
-            <app-search #SearchComponent  (onSearch)="onSearch($event)" (onFocus)="onFocus()" (onSelected)="onSelected($event)" [items]="articlesTracked"></app-search>
+            <app-search #SearchComponent  placeHolder="Escribiendo..." (onSearch)="onSearch($event)" (onFocus)="onFocus()" (onSelected)="onSelected($event)" [items]="articlesTracked"></app-search>
         </div>
     </div>
 </section>
 <section class="container">
     <h2 class="font-hight-retro text-center d-flex flex-column align-items-center title_section mb-3 mt-3">
-        TOP ARTICLES
+        LO MÁS LEÍDO
         <span class="underline"></span>
     </h2>
     <div class="row w-100 d-flex m-0">

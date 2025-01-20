@@ -5,7 +5,7 @@ import { AuthService } from '../../commons/services/auth.service';
 import { PermissionService } from '../../commons/services/permission.service';
 import { Permission } from '../../commons/interfaces/permission';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { permissionToNavbarMenuItem } from '../../commons/components/mappers/permission-to-navbaritem';
+import { permissionToNavbarMenuItem } from '../../commons/mappers/permission-to-navbaritem';
 import { RouterOutlet } from '@angular/router';
 
 @Component({

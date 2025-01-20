@@ -1,16 +1,17 @@
 import { Injectable } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
-import { User } from "../../../../commons/interfaces/user";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { CreateUserDto } from "../../../../commons/interfaces/dto/create-user.dto";
+import { Password } from "../../../../commons/utils/password-generator";
 
 @Injectable({
     providedIn: 'root'
 })
 export class CreateUserPresenter {
     form: FormGroup;
-    nameControl: FormControl = new FormControl();
-    lastNameControl = new FormControl();
-    emailControl = new FormControl();
-    roleControl = new FormControl();
+    nameControl: FormControl = new FormControl<string>('', [Validators.required]);
+    lastNameControl = new FormControl<string>('', [Validators.required]);
+    emailControl = new FormControl<string>('', [Validators.email]);
+    roleControl = new FormControl<number>(1, [Validators.required]);
 
     constructor() {
         this.form = new FormGroup({
@@ -21,11 +22,19 @@ export class CreateUserPresenter {
         });
     }
 
-    getData(): User {
+    value(): CreateUserDto {
         return {
-            name: this.nameControl.value,
-            surnames: this.lastNameControl.value,
-            email: this.emailControl.value
-        } as User;
+            name: String(this.nameControl.value),
+            surnames: String(this.lastNameControl.value),
+            email: String(this.emailControl.value),
+            roleId: Number(this.roleControl.value),
+        };
+    }
+
+    reset() {
+        this.nameControl.setValue('');
+        this.lastNameControl.setValue('');
+        this.emailControl.setValue('');
+        this.roleControl.setValue(1);
     }
 }

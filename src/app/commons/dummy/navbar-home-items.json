@@ -1,10 +1,10 @@
 [    
     {
-        "label": "ARTICLES",
+        "label": "ARTICULOS",
         "route": "/articles"
     },
     {
-        "label": "RESOURCES",
+        "label": "RECURSOS",
         "route": "/resources"
     },
     {
@@ -12,18 +12,18 @@
         "route": "/services"
     },
     {
-        "label": "MORE",
+        "label": "MAS",
         "items": [
             {
-                "label": "CONTACT US",
+                "label": "CONTACTANOS",
                 "route": "/contact"
             },
             {
-                "label": "ABOUT US",
+                "label": "SOBRE NOSOTROS",
                 "route": "/about"
             },
             {
-                "label": "SIGN IN",
+                "label": "INICIAR SESION",
                 "route": "/login"
             }
         ]

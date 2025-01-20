@@ -1,4 +1,9 @@
 export const trim = (str: string, charToTrim: string) => {
+
+    if (!str) {
+        return '';
+    }
+
     const regex = new RegExp(`^[${charToTrim}]+|[${charToTrim}]+$`, 'g');
     return str.replace(regex, '');
 };

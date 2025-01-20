@@ -18,20 +18,20 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss'
 })
-export class InputComponent implements  OnInit, ControlValueAccessor {
-  
-  value = '';
+export class InputComponent implements OnInit, ControlValueAccessor {
+
+  value = model<string>();
   isTouched = false;
-  isDisabled = false;
-  onTouched = () => {};
-  onChange = (__value: string) => {};
+  disabled = model<boolean>();
+  onTouched = () => { };
+  onChange = (__value: string) => { };
 
   type = model<'text' | 'password' | 'email'>('text');
   styled = model<'outlined' | 'none'>('none');
 
   placeHolder = input<string>();
   size = input<'input--sm' | 'input--lg'>('input--lg');
-  
+
 
   protected showPassword = false;
   protected isPasswordInput = false;
@@ -42,7 +42,7 @@ export class InputComponent implements  OnInit, ControlValueAccessor {
 
   onShowPassword() {
     this.showPassword = !this.showPassword;
-    if(this.showPassword) {
+    if (this.showPassword) {
       this.type.set('text');
     } else {
       this.type.set('password');
@@ -58,15 +58,13 @@ export class InputComponent implements  OnInit, ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.isDisabled = isDisabled;
+    this.disabled.set(isDisabled);
   }
 
   writeValue(obj: any): void {
-    this.isTouched = true;
-    this.onChange(obj);
-    this.value = obj;
+    this.value.update(()=> obj);
   }
-  
+
 }
 
 

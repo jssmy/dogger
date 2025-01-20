@@ -1,6 +1,6 @@
-import { Item } from "../../interfaces/item";
-import { Permission } from "../../interfaces/permission";
-import { TreeViewItem } from "../../interfaces/tree-view-item";
+import { Item } from "../interfaces/item";
+import { Permission } from "../interfaces/permission";
+import { TreeViewItem } from "../interfaces/tree-view-item";
 
 export const permissionToItem = (permissions: Permission[]): TreeViewItem[] => {
 
@@ -14,9 +14,10 @@ export const permissionToItem = (permissions: Permission[]): TreeViewItem[] => {
             isVisibleChildren: false,
             countChecked: 0,
             isChecked: false,
+            isDisabled: Boolean(parent.protected),
             children: children?.
                 filter(child => child.parentId === parent.id)?.
-                map(child => ({ id: child.id, value: child.name, isChecked: false, isVisibleChildren: false, parentId: parent.id })) || []
+                map(child => ({ id: child.id, value: child.name, isChecked: false, isVisibleChildren: false, parentId: parent.id, isDisabled: Boolean(child.protected) })) || []
         }
     ) as TreeViewItem);
 }

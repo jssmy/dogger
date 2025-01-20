@@ -30,7 +30,7 @@ export class CreatePermissionPresenter {
     get value(): Permission {
         return {
             method: this.method.disabled ? undefined : this.method.value,
-            name: this.name.value,
+            name: (this.name.value || '').trim(),
             route: this.path.disabled ? undefined : `/${trim(this.path.value || '', '/')}`,
             type: this.type.value,
             parentId: '',
@@ -39,7 +39,7 @@ export class CreatePermissionPresenter {
     }
 
     reset() {
-        this.name.setValue(null);
+        this.name.setValue('');
         this.path.setValue(null);
         this.method.setValue(HttpMethods.GET);
         this.type.setValue(PermissionType.GROUP);
@@ -50,13 +50,13 @@ export class CreatePermissionPresenter {
     onChangeType() {
         const type = this.type.value as PermissionType;
         
-        if ([PermissionType.GROUP, PermissionType.OPTION].includes(type)) {
+        if ([PermissionType.GROUP].includes(type)) {
             this.path.setValue(null);
             this.path.disable();
             this.method.disable();
             this.method.setValue(HttpMethods.GET);
 
-        } else if (type === PermissionType.MENU) {
+        } else if ([PermissionType.OPTION, PermissionType.MENU].includes(type)) {
             this.method.disable();
             this.method.setValue(HttpMethods.GET);
             this.path.enable();

@@ -1,10 +1,10 @@
-<div class="input" class="{{size()}}" [ngClass]="{'border-solid': styled() === 'outlined'}" [ariaDisabled]="isDisabled">
-    <input [disabled]="isDisabled"
+<div class="input" class="{{size()}}" [ngClass]="{'border-solid': styled() === 'outlined'}" [ariaDisabled]="disabled()">
+    <input [disabled]="disabled()"
     #inputApp
     [type]="type()"
-    [value]="value"
-    
+    [value]="value()"
     (input)="writeValue(inputApp.value)"
+    (change)="onChange(inputApp.value)"
     (blur)="onTouched()"
     class="form-control input__box"    
     [placeholder]="placeHolder()">

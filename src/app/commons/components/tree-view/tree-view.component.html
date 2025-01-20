@@ -1,13 +1,15 @@
 <div class="tree-view">
+  <!-- <input type="text"  [value]="value()">   -->
   <ul>
 
-    @for (item of items(); track item.value) {
+    @for (item of listItem(); track item.value) {
     <li>
       <div>
-        <app-check-box [checked]="item.isChecked" (checkedChange)="onChecked(item)" [styled]="item.countChecked >= 1 && !item.isChecked ? 'outline' : 'default'">
-          <!-- @if (item.countChecked >= 1 && !item.isChecked) {
-            <i style="padding: 0px; margin: 0px;" icon class="fa-sharp fa-solid fa-circle"></i>
-          } -->
+        <app-check-box
+              [disabled]="item.children.length <= 0 && item.isDisabled"
+              [checked]="item.isChecked"
+              (checkedChange)="onChecked(item)"
+              [styled]="item.countChecked >= 1 && !item.isChecked ? 'outline' : 'default'">
           <div label>{{item.value}}</div>
         </app-check-box>
         @if (item.children.length > 0 && item.isVisibleChildren) {
@@ -21,7 +23,7 @@
       <ul>
         @for (child of item.children; track child.value) {
         <li>
-          <app-check-box [checked]="child.isChecked" (checkedChange)="onCheckedChild(item, child)">
+          <app-check-box [checked]="child.isChecked" [disabled]="child.isDisabled" (checkedChange)="onCheckedChild(item, child)">
             <div label>{{child.value}}</div>
           </app-check-box>
         </li>

@@ -17,7 +17,17 @@ export class PermissionService {
   private readonly http = inject(HttpClient);
 
   permissionAuth() {
-    return this.http.get<Permission[]>(environment.permissionAuth);
+    return this.http.get<Permission[]>(environment.permissionAuth)
+    .pipe(map(permission => {
+      const parents = permission.filter(parent => !parent.parentId);
+      const children = permission.filter(child => child.parentId);
+
+      return  parents.map(parent => ({
+        ...parent,
+        children: children.filter(child => child.parentId === parent.id)
+      }) as Permission);
+
+    }));
   }
 
   all() {

@@ -6,6 +6,8 @@ $color_gray: #acacac;
 $color_gray_2: #4aa1ad;
 $color_orange: #d6b830;
 $color_gray_3: hsl(0deg 7.67% 77.71%);
+$color_gray_4: rgba(0,0,0,0.05);
+$color_gray_5: #f4f4f4;
 $color_red_dark: #ba5428;
 $color_pink: #f89da7;
 
@@ -21,6 +23,10 @@ $color_pink: #f89da7;
     color: white;
 }
 
+.color-yellow {
+    color: $color_yellow !important;
+}
+
 .bg-color-yellow {
     background-color: $color_orange !important;
 }
@@ -30,6 +36,28 @@ $color_pink: #f89da7;
     background-color: $color_gray_2 !important;
 }
 
+
+.bg-color-gray-3 {
+    background-color: $color_gray_3 !important;
+}
+
+.bg-color-gray-4 {
+    background-color: $color_gray_4 !important;
+}
+
+
+.bg-color-gray-5 {
+    background-color: $color_gray_5 !important;
+}
+
+.bg-color-gray-white {
+    background-color: white !important;
+}
+
 .bg-color-red-dark {
     background-color: $color_red_dark !important;
+}
+
+.bg-color-pink {
+    background-color: $color_pink !important;
 }

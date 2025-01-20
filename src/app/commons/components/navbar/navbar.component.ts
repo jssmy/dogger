@@ -1,8 +1,10 @@
 import { Component, effect, inject, input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { NavbarItem } from '../../interfaces/navbar-items';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { LoginService } from '../../services/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -17,4 +19,14 @@ import { AuthService } from '../../services/auth.service';
 export class NavbarComponent {
   items = input.required<NavbarItem[]>();
   authService = inject(AuthService);
+  route = inject(Router);
+  loginService = inject(LoginService);
+
+  logout() {
+    this.loginService.out().subscribe({
+      next: () => this.route.navigate(['/']),
+      error: () => Swal.fire("Ups!", 'Error trying close session, please try again!', 'error')
+    });
+  }
+
 }

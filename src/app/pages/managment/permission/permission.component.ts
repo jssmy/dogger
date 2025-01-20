@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, signal, Signal } from '@angular/core';
+import { Component, computed, effect, inject, input, signal, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { PermissionService } from '../../../commons/services/permission.service';
 import { InputComponent } from "../../../commons/components/input/input.component";
@@ -42,7 +42,7 @@ export default class PermissionComponent {
   perrmisionService = inject(PermissionService);
   permissionPresenter = inject(CreatePermissionPresenter);
   paginationResolve$ = new Observable<PaginationResolve<Permission[]>>();
-  parentId = this.route.snapshot.paramMap.get('parentId') || '';
+  parentId = input('', {alias: 'parentId' });
   permissionSelected: Permission | undefined;
 
   permissionType = PermissionType;
@@ -54,6 +54,7 @@ export default class PermissionComponent {
   }
 
   goChild(parentId: string) {
+    this.permissionPresenter.reset();
     return this.router.navigate(['managment', 'permissions', parentId]);
   }
 
@@ -65,12 +66,10 @@ export default class PermissionComponent {
         if (confirmed) {
           this.perrmisionService.delete(id).subscribe({
             next: () => {
-              this.paginationResolve$ = this.perrmisionService.AllByGroup(this.parentId);
+              this.paginationResolve$ = this.perrmisionService.AllByGroup(this.parentId() || '');
               Swal.fire(ALERT_SUCCESS_DELETE);
             },
-            error: () => {
-              Swal.fire("Ups!", "Error trying delete route", 'error');
-            }
+            error: (e) => Swal.fire("Ups!", Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error')
           });
         }
       });
@@ -80,21 +79,19 @@ export default class PermissionComponent {
     if (this.permissionPresenter.form.valid) {
       this.perrmisionService.save({
         ...this.permissionPresenter.value,
-        parentId: this.parentId || undefined
+        parentId: this.parentId()
       }).subscribe({
         next: () => {
           this.onClean();
-          this.paginationResolve$ = this.perrmisionService.AllByGroup(this.parentId);
+          this.paginationResolve$ = this.perrmisionService.AllByGroup(this.parentId() || '');
           Swal.fire({
-            title: 'Route created!',
+            title: 'Permission created!',
             text: '',
             icon: 'success',
             draggable: true
           });
         },
-        error: (e) => {
-          Swal.fire("Ups!", Array.isArray(e.error.message[0]) ? e.error.message[0] : e.error.message, 'error');
-        }
+        error: (e) => Swal.fire("Ups!", Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error')
       });
     }
   }
@@ -103,11 +100,11 @@ export default class PermissionComponent {
     if (this.permissionPresenter.form.valid) {
       this.perrmisionService.update(this.permissionSelected?.id as string,{
         ...this.permissionPresenter.value,
-        parentId: this.parentId || undefined
+        parentId: this.parentId()
       }).subscribe({
         next: () => {
           this.onClean();
-          this.paginationResolve$ = this.perrmisionService.AllByGroup(this.parentId);
+          this.paginationResolve$ = this.perrmisionService.AllByGroup(this.parentId() || '');
           Swal.fire({
             title: 'Route upated!',
             text: '',
@@ -124,7 +121,7 @@ export default class PermissionComponent {
 
 
   onPaginated(page: number) {
-    this.paginationResolve$ = this.perrmisionService.AllByGroup(this.parentId, { page });
+    this.paginationResolve$ = this.perrmisionService.AllByGroup(this.parentId(), { page });
   }
 
 

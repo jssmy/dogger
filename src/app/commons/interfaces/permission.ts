@@ -10,4 +10,5 @@ export interface Permission {
     order: number;
     children?: Permission[];
     parentId?: string;
+    protected: boolean;
 }

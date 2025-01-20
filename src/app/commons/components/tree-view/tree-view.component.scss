@@ -1,7 +1,7 @@
-.tree-view ul {
+.tree-view  ul {
     list-style-type: none;
     margin: 0;
-    // padding-left: 20px;
+    
   }
   
   .tree-view li {
@@ -9,10 +9,7 @@
     position: relative;
   }
   
-  .tree-view input[type="checkbox"] {
-    margin-right: 5px;
-    cursor: pointer;
-  }
+
   
   .tree-view label {
     cursor: pointer;
@@ -21,6 +18,5 @@
   .tree-view ul ul {
     margin-left: 10px;
     border-left: 2px solid #4caf50;
-    // padding-left: 15px;
   }
   

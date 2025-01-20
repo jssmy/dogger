@@ -8,6 +8,7 @@ export interface User {
     surnames: string;
     avatars: string[];
     state: boolean;
+    protected: boolean;
     accountValidated: boolean;
     accountValidatedDate: Date;
     role: Role;

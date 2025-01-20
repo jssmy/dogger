@@ -19,6 +19,10 @@ export class CheckAccessService {
     return this.http.post(`${environment.checkAuth}`, null, { headers: this.getHeaders() })
   }
 
+  confirAccount(token: string) {
+    return this.http.get(`${environment.confirmAccount}/${token}`);
+  }
+
   private getHeaders(): HttpHeaders {
     const path = this.router.getCurrentNavigation()?.finalUrl?.toString();
     return (new HttpHeaders())

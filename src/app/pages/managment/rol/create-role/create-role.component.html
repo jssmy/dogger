@@ -1,18 +1,18 @@
 <div class="d-flex flex-column">
-    <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Create new role</h5>
+    <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">{{ currentRole() ? 'Update role' : 'Add new role' }}</h5>
 </div>
 <div class="d-flex justify-content-center h-100">
     <div class="w-100">
         <div class="card-body">
-            <form class="form">
+            <form [formGroup]="createRolePresenter.form" class="form">
                 <div class="w-100 input-group">
-                    <app-input type="text" styled="outlined" class="col-md-12 p-3" placeHolder="name"></app-input>
+                    <app-input [formControl]="createRolePresenter.name" type="text" styled="outlined" class="col-md-12 p-3" placeHolder="name"></app-input>
                 </div>
                 <div class="w-100 form-group input-group">
-                    <app-tree-view [items]="items() || []"></app-tree-view>
+                    <app-tree-view [formControl]="createRolePresenter.permissions" [items]="permissions() || []"></app-tree-view>
                 </div>
                 <div class="w-100 input-group">
-                    <app-button class="p-3">CREATE</app-button>
+                    <app-button (click)="onSave()" class="p-3">{{  currentRole() ? 'CONFIRM UPDATE' : 'CONFIRM CREATE' }}</app-button>
                 </div>
             </form>
         </div>

@@ -1,7 +1,7 @@
 <div class="d-flex flex-column">
     <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Control roles</h5>
     <div class="d-flex flex-row">
-        <a routerLink="/mangment/roles/create" class="color-gray text-decoration-none pointer"><i class="fa-solid fa-plus me-2"></i>Add new role</a>
+        <a routerLink="/managment/roles/create" class="color-gray text-decoration-none pointer"><i class="fa-solid fa-plus me-2"></i>Add new role</a>
     </div>
 </div>
 
@@ -11,22 +11,33 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
-        <th scope="col">status</th>
         <th scope="col">Options</th>
       </tr>
     </thead>
     <tbody>
-        @for (item of roles(); track item.name) {
+        @for (item of paginationRoles()?.data; track item.name) {
             <tr>
                 <th scope="row">{{$index + 1}}</th>
-                <td>{{ item.name +' '+item.name }}</td>
-                <td>empty</td>
+                <td>{{ item.name}}</td>
                 <td>
                   <button class="btn p-0 button--round button--xs bg-color-yellow color-white"
-                          routerLink="/managment/roles/create"
-                            data-title="Edit route"><i class="fa-solid fa-pen"></i></button>
+                          [routerLink]="'/managment/roles/edit/'+item.id"
+                            data-title="Editar rol"><i class="fa-solid fa-pen"></i></button>
+                  @if (!item.protected) {
+                    <button (click)="onDelete(item.id)" class="btn p-0 button--round  button--xs bg-color-red-dark color-white ms-1"
+                             data-title="Eliminar rol"><i class="fa-solid fa-trash"></i>
+                        </button>
+                  }
+                  
                 </td>
               </tr>
         }
+        @if ((paginationRoles()?.total || 0) > (paginationRoles()?.limit || 0) ) {
+          <tr>
+              <td colspan="6">
+                  <app-pagination  (onSelected)="onPaginated($event)" [pagination]="paginationRoles()"></app-pagination>
+              </td>
+          </tr>
+      }
     </tbody>
   </table>
