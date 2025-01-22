@@ -13,11 +13,11 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       headers: getHeaders(req.headers)
     })
   ).pipe(
-    catchError(() => {
-      authService.logout();
-      router.navigate(['/login']).finally();
-      return throwError(() => new Error('Logout'));
-    })
+    // catchError(() => {
+    //   authService.logout();
+    //   router.navigate(['/login']).finally();
+    //   return throwError(() => new Error('Logout'));
+    // })
   );
 };
 

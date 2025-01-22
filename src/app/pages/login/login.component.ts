@@ -39,10 +39,12 @@ export default class LoginComponent {
       .subscribe({
         next: () => this.route.navigate(['main']),
         error: (err: HttpErrorResponse) => {
+          console.log(err);
           if (err.status === HttpStatusCode.Unauthorized) {
+            console.log(err.status);
               this.presenter.setCredentialErrorControl();
           } else if (err.status === HttpStatusCode.Forbidden) {
-            console.log(err.error);
+            
             this.errorMessage.set(err.error.message);
           }
         }

@@ -78,6 +78,16 @@
   src: url("./jmh_typewriter/JMH\ Typewriter.ttf");
 }
 
+@font-face {
+  font-family: "JMH Typewriter";
+  src: url("./jmh_typewriter/JMH\ Typewriter.ttf");
+}
+
+
+@font-face {
+  font-family: "Gord-Quick-Font";
+  src: url("./Gord-Quick-Font/gordqucikblack-p7erv.otf");
+}
 
 
 $font_hight_retro: "Retro Team";
@@ -117,4 +127,6 @@ $font_typewriter_thin: "JMH Typewriter Thin";
 }
 
 
-
+.font-ford-quick-font {
+  font-family: "Gord-Quick-Font" !important;
+}
