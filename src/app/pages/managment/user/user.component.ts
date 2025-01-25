@@ -1,7 +1,7 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../../commons/services/user.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import Swal from 'sweetalert2';
 import { ALERT_CONFIRM_DELETE } from '../../../commons/constants/alerts/alert-confirm-delete';
 import { ALERT_SUCCESS_DELETE } from '../../../commons/constants/alerts/alert-success-delete';
@@ -18,11 +18,17 @@ import { PaginationResolve } from '../../../commons/interfaces/pagination-resolv
 export default class UserComponent implements OnInit {
   userService = inject(UserService);
   paginationResolve = signal<PaginationResolve<User[]> | undefined>(undefined);
+  plataformId = inject(PLATFORM_ID);
 
 
   ngOnInit(): void {
-    this.userService.getUsers()
+    if (isPlatformBrowser(this.plataformId)) {
+
+      this.userService.getUsers()
       .subscribe(resolve => this.paginationResolve.set(resolve))
+
+    }
+    
   }
 
   onDelete(id: string) {

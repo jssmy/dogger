@@ -21,6 +21,7 @@ export class LoaderService {
 
   inactive(time: number = 500) {
     if (isPlatformBrowser(this.plataformId))  {
+      
       setTimeout(() => {
         this.$state.set(false)
       }, time);
