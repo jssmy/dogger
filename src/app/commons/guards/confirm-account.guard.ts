@@ -1,11 +1,11 @@
 import { inject, PLATFORM_ID } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { CheckAccessService } from '../services/check-access.service';
-import { catchError, firstValueFrom, map, mergeMap, of, tap } from 'rxjs';
+import { catchError, map, of } from 'rxjs';
 import { isPlatformServer } from '@angular/common';
 
 
-export const confirmAccountGuard: CanActivateFn = (route, state) => {
+export const confirmAccountGuard: CanActivateFn = (route, __state) => {
   const plataformId = inject(PLATFORM_ID);
 
   if (isPlatformServer(plataformId)) {

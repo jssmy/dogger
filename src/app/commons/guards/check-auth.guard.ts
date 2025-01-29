@@ -19,6 +19,7 @@ export const checkAuthGuard: CanActivateFn = () => {
     .pipe(
       mergeMap(() => of(true)),
       catchError(err => {
+        alert('estoy en el guard')
         if (err.status === HttpStatusCode.Unauthorized) {
           return of(router.createUrlTree(['/login']));
         } else if (err.status === HttpStatusCode.Forbidden) {

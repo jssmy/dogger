@@ -2,11 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Permission } from '../interfaces/permission';
-import { map, mergeMap, of } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { map, mergeMap, of, tap } from 'rxjs';
 import { PaginationResolve } from '../interfaces/pagination-resolve';
-import { URLSearchParams } from 'node:url';
-import { query } from 'express';
 import { toQueryParams } from '../utils/string.util';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -24,8 +21,15 @@ export class PermissionService {
       .pipe(
         mergeMap(isBrowser => {
           if (isBrowser) {
+
+            const permission = (JSON.parse(sessionStorage.getItem('auth-permissions') || '[]')) as Permission[];
+
+            if (permission.length > 0) {
+              return of(permission);
+            }
             return this.http.get<Permission[]>(environment.permissionAuth)
-              .pipe(map(permission => {
+              .pipe(
+                map(permission => {
                 const parents = permission.filter(parent => !parent.parentId);
                 const children = permission.filter(child => child.parentId);
 
@@ -34,11 +38,13 @@ export class PermissionService {
                   children: children.filter(child => child.parentId === parent.id)
                 }) as Permission);
 
-              }));
+              }),
+              tap(permission => sessionStorage.setItem('auth-permissions', JSON.stringify(permission)))
+            );
           }
 
           return [];
-        })
+        }),
       )
 
   }

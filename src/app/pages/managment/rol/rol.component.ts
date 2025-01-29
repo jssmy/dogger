@@ -1,5 +1,4 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RoleService } from '../../../commons/services/role.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -8,7 +7,6 @@ import { ALERT_CONFIRM_DELETE } from '../../../commons/constants/alerts/alert-co
 import { ALERT_SUCCESS_DELETE } from '../../../commons/constants/alerts/alert-success-delete';
 import { PaginationComponent } from '../../../commons/components/pagination/pagination.component';
 import { Role } from '../../../commons/interfaces/role';
-import { Observable } from 'rxjs';
 import { PaginationResolve } from '../../../commons/interfaces/pagination-resolve';
 
 @Component({

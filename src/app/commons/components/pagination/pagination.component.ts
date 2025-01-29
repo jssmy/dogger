@@ -1,6 +1,4 @@
-import { Component, computed, effect, model, output } from '@angular/core';
-import { Item } from '../../interfaces/item';
-import { PaginationResolve } from '../../interfaces/pagination-resolve';
+import { Component, computed, model, output } from '@angular/core';
 import { Pagination } from '../../interfaces/pagination';
 import { CommonModule } from '@angular/common';
 

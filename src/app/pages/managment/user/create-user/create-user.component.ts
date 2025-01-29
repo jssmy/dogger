@@ -1,4 +1,4 @@
-import { Component, inject, input, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnDestroy } from '@angular/core';
 import { InputComponent } from '../../../../commons/components/input/input.component';
 import { ButtonComponent } from '../../../../commons/components/button/button.component';
 import { CreateUserPresenter } from './create-user.presenter';
@@ -22,20 +22,20 @@ export default class CreateUserComponent implements OnDestroy {
   userService = inject(UserService);
   roleService = inject(RoleService);
   paginationResolve = toSignal(this.roleService.getRoles({ page: 1, limit: 9999 }));
-  userId = input(null, { alias: 'id'});
+  userId = input(null, { alias: 'id' });
 
 
   onSave() {
     if (this.presenter.form.valid) {
       this.userService.create(this.presenter.value())
-      .subscribe({
-        next: () => {
-          Swal.fire(ALERT_SUCCESS_CREATE);
-          this.presenter.reset();
-        },
-        error: (e) => Swal.fire("Ups!",  Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error')
+        .subscribe({
+          next: () => {
+            Swal.fire(ALERT_SUCCESS_CREATE);
+            this.presenter.reset();
+          },
+          error: (e) => Swal.fire("Ups!", Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error')
 
-      });
+        });
     }
   }
 

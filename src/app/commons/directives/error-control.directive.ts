@@ -8,7 +8,7 @@ import { NgControl } from '@angular/forms';
 export class ErrorControlDirective implements OnInit {
 
 
-  @Input('errorControl') errorMessages!: { [key: string]: string }; // Objeto de mensajes de error
+  @Input('errorControl') errorMessages!: Record<string, string>; // Objeto de mensajes de error
   private errorSpan!: HTMLSpanElement;
 
 

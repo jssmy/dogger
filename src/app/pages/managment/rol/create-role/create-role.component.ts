@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, input, Input, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnDestroy, OnInit, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from '../../../../commons/components/input/input.component';
 import { ButtonComponent } from '../../../../commons/components/button/button.component';
@@ -28,6 +28,7 @@ import { ALERT_SUCCESS_UPDATE } from '../../../../commons/constants/alerts/alert
 export default class CreateRoleComponent implements OnInit, OnDestroy {
 
 
+  // @ts-ignore
   roleId = input<number>(0, { alias: 'id' });
   createRolePresenter = inject(CreateRolePresenter);
   permissionService = inject(PermissionService);
@@ -35,9 +36,6 @@ export default class CreateRoleComponent implements OnInit, OnDestroy {
   permissions = toSignal<TreeViewItem[]>(this.permissionService.all().pipe(map(permissions => permissionToItem(permissions))));
   roleService = inject(RoleService);
   currentRole = signal<Role | null>(null);
-
-  constructor() {
-  }
 
   ngOnInit(): void {
 

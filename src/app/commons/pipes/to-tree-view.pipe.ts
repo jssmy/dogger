@@ -7,7 +7,7 @@ import { TreeViewItem } from '../interfaces/tree-view-item';
 })
 export class ToTreeViewPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): TreeViewItem {
+  transform(value: unknown ): TreeViewItem {
     return value as TreeViewItem;
   }
 

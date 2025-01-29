@@ -8,10 +8,10 @@ export const routes: Routes = [
         path: '',
         loadComponent: () => import('./pages/home/home.component')
     },
-    {
-        path: 'blog/:id',
-        loadComponent: () => import('./pages/blog/blog.component')
-    },
+    // {
+    //     path: 'blog/:id',
+    //     loadComponent: () => import('./pages/blog/blog.component')
+    // },
     {
         path: 'login',
         loadComponent: () => import('./pages/login/login.component')
@@ -58,7 +58,12 @@ export const routes: Routes = [
             {
                 path: 'permissions',
                 loadComponent: () => import('./pages/managment/permission/permission.component')
+            },
+            {
+                path: 'blog/create',
+                loadComponent: () => import('./pages/managment/blog/create-blog/create-blog.component')
             }
+
         ]
     },
     {

@@ -1,4 +1,4 @@
-import { Item } from "../interfaces/item";
+
 import { Permission } from "../interfaces/permission";
 import { TreeViewItem } from "../interfaces/tree-view-item";
 

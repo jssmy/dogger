@@ -2,7 +2,6 @@ import { Component, inject, signal } from '@angular/core';
 import { InputComponent } from '../../commons/components/input/input.component';
 import { ButtonComponent } from '../../commons/components/button/button.component';
 import { LoaderService } from '../../commons/services/loader.service';
-import { timer } from 'rxjs';
 import { LoginService } from '../../commons/services/login.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginPresenter } from './login.presenter';
@@ -30,25 +29,26 @@ export default class LoginComponent {
   loginService = inject(LoginService);
   route = inject(Router);
   errorMessage = signal<string | null>(null);
-  constructor() { 
-  }
+  
 
   login() {
     if (this.presenter.form.valid) {
       this.loginService.in(this.presenter.credentials())
-      .subscribe({
-        next: () => this.route.navigate(['main']),
-        error: (err: HttpErrorResponse) => {
-          console.log(err);
-          if (err.status === HttpStatusCode.Unauthorized) {
-            console.log(err.status);
+        .subscribe({
+          next: () => this.route.navigate(['main']),
+          error: (err: HttpErrorResponse) => {
+            console.log({err});
+            if (err.status === HttpStatusCode.BadRequest) {
+
+              console.log({err});
+
               this.presenter.setCredentialErrorControl();
-          } else if (err.status === HttpStatusCode.Forbidden) {
-            
-            this.errorMessage.set(err.error.message);
+            } else if (err.status === HttpStatusCode.Forbidden) {
+
+              this.errorMessage.set(err.error.message);
+            }
           }
-        }
-      });
+        });
     }
 
   }

@@ -1,11 +1,9 @@
-import { inject, Inject, Injectable, makeStateKey, PLATFORM_ID, TransferState } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Login } from '../interfaces/login';
 import { HttpClient, HttpStatusCode } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { catchError, finalize, of, tap } from 'rxjs';
+import { catchError, finalize, of, tap, throwError } from 'rxjs';
 import { AuthToken } from '../interfaces/auth-token';
-import { isPlatformBrowser } from '@angular/common';
-import { AUTH_TOKEN_KEY } from '../components/tokens/auth-token-key';
 import { AuthService } from './auth.service';
 
 
@@ -38,6 +36,17 @@ export class LoginService {
         },
         ),
         finalize(() => this.authService.logout())
+      );
+  }
+
+  refresh() {
+    return this.http.post<AuthToken>(environment.refreshToken, null)
+      .pipe(
+        tap(resolve => this.authService.setAuthToken = resolve),
+        catchError(error => {
+          this.authService.logout();
+          return throwError(() => error)
+        })
       );
   }
 

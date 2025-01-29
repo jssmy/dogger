@@ -10,7 +10,7 @@ export const permissionToNavbarMenuItem = (permissions: Permission[]) => {
             return {
                 label: permission.name,
                 route: permission.route,
-                items: permission?.children?.map(per => ({ label: per.name, route: per.route }))
+                items: permission?.children?.filter(per => per.type === PermissionType.MENU)?.map(per => ({ label: per.name, route: per.route }))
             } as NavbarItem
         });
 }

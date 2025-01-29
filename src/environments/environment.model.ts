@@ -10,5 +10,6 @@ export interface Environment {
     createuser: string;
     role: string;
     confirmAccount: string;
+    refreshToken: string;
 
 }

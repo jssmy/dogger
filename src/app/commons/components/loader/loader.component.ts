@@ -1,7 +1,7 @@
-import { AfterContentInit, AfterViewInit, ChangeDetectionStrategy, Component, computed, effect, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { LoaderService } from '../../services/loader.service';
 import { CommonModule } from '@angular/common';
-import { from, of } from 'rxjs';
+
 
 @Component({
   selector: 'app-loader',

@@ -12,8 +12,10 @@ export class UserService {
 
   private readonly http = inject(HttpClient);
 
-  getUsers(page: number = 1, limit: number = 10) {
-    return this.http.get<PaginationResolve<User[]>>(environment.user);
+
+
+  getUsers(page = 1, limit = 10) {
+    return this.http.get<PaginationResolve<User[]>>(`${environment.user}?page=${page}&limit=${limit}`);
   }
 
   create(user: CreateUserDto) {
