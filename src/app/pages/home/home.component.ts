@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavbarComponent } from '../../commons/components/navbar/navbar.component';
 import { SearchComponent } from '../../commons/components/search/search.component';
 import { ArticleComponent } from '../../commons/components/article/article.component';
@@ -6,10 +6,8 @@ import { CommonModule } from '@angular/common';
 import { ArticleSearchService } from './services/article-search.service';
 import { Item } from '../../commons/interfaces/item';
 import { Article } from '../../commons/interfaces/article';
-import { tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { FooterComponent } from '../../commons/components/footer/footer.component';
-import { LoaderService } from '../../commons/services/loader.service';
 import { NavbarItem } from '../../commons/interfaces/navbar-items';
 import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
 
@@ -66,7 +64,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('document:keydown.escape', ['$event'])
-  onEscPressed(event: KeyboardEvent): void {
+  onEscPressed(__event: KeyboardEvent): void {
     this.isFocusModal = false;
     this.miInput.removeFocus();
   }

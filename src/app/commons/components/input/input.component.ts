@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, forwardRef, input, Input, model, OnInit } from '@angular/core';
+import { Component, forwardRef, input, model, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -23,8 +23,8 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   value = model<string>();
   isTouched = false;
   disabled = model<boolean>();
-  onTouched = () => { };
-  onChange = (__value: string) => { };
+  onTouched = () => true;
+  onChange = (__value: string) => __value;
 
   type = model<'text' | 'password' | 'email'>('text');
   styled = model<'outlined' | 'none'>('none');

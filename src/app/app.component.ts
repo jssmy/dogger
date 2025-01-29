@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoaderComponent } from './commons/components/loader/loader.component';
 import { CommonModule } from '@angular/common';

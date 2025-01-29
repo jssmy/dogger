@@ -364,7 +364,7 @@
     'fa-light': 'fasl',
     'fa-thin': 'fast'
   }), _familyProxy4));
-  var ICON_SELECTION_SYNTAX_PATTERN = /fa(s|r|l|t|d|b|k|ss|sr|sl|st)?[\-\ ]/; // eslint-disable-line no-useless-escape
+  var ICON_SELECTION_SYNTAX_PATTERN = /fa(s|r|l|t|d|b|k|ss|sr|sl|st)?[\-\ ]/;  
 
   var LAYERS_TEXT_CLASSNAME = 'fa-layers-text';
   var FONT_FAMILY_PATTERN = /Font ?Awesome ?([56 ]*)(Solid|Regular|Light|Thin|Duotone|Brands|Free|Pro|Sharp|Kit)?.*/i;
@@ -816,7 +816,7 @@
         var extra = string.charCodeAt(counter++);
 
         if ((extra & 0xFC00) == 0xDC00) {
-          // eslint-disable-line eqeqeq
+           
           output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
         } else {
           output.push(value);
@@ -1266,7 +1266,7 @@
 
     var hookFns = _hooks[hook] || [];
     hookFns.forEach(function (hookFn) {
-      accumulator = hookFn.apply(null, [accumulator].concat(args)); // eslint-disable-line no-useless-call
+      accumulator = hookFn.apply(null, [accumulator].concat(args));  
     });
     return accumulator;
   }

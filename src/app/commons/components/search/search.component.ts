@@ -25,7 +25,7 @@ export class SearchComponent implements ControlValueAccessor{
   
   @Input() placeHolder = 'Typing...';
   @Input() styled: 'ligth' | 'normal' = 'normal';
-  @Input() value: string = '';
+  @Input() value = '';
 
   @Input() items: Item[] = [];
 
@@ -34,14 +34,18 @@ export class SearchComponent implements ControlValueAccessor{
   @Output() onSelected = new EventEmitter<Item>;
 
   onChange = (value: string) => this.value = value;
+
   onTouched = () => {};
   touched = false;
   disabled = false;
 
+
+  // @ts-ignore: any
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
 
+  // @ts-ignore: any
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }

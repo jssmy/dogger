@@ -8,7 +8,8 @@
     "build:production": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:dogger": "node dist/dogger/server/server.mjs"
+    "serve:ssr:dogger": "node dist/dogger/server/server.mjs",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,12 @@
     "@angular/platform-server": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.11",
+    "@editorjs/code": "^2.9.3",
+    "@editorjs/editorjs": "^2.30.7",
+    "@editorjs/header": "^2.8.8",
+    "@editorjs/image": "^2.10.1",
+    "@editorjs/list": "^2.0.4",
+    "@editorjs/warning": "^1.4.1",
     "@mui/icons-material": "^5.16.13",
     "express": "^4.18.2",
     "generate-password-ts": "^1.6.5",
@@ -39,12 +46,15 @@
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
+    "angular-eslint": "19.0.2",
+    "eslint": "^9.16.0",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.5.2"
+    "typescript": "~5.5.2",
+    "typescript-eslint": "8.18.0"
   }
 }

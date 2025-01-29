@@ -1,4 +1,4 @@
-import { Component, computed, forwardRef, input, model, signal } from '@angular/core';
+import { Component, forwardRef, input, model } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -23,8 +23,8 @@ export class CheckBoxComponent implements ControlValueAccessor{
   styled = input<'outline' | 'default'>('default');
 
   // Métodos requeridos por ControlValueAccessor
-  onChange = (value: boolean) => {};
-  onTouched = () => {};
+  onChange = (value: boolean) => value;
+  onTouched = () => true;
 
 
 
@@ -35,7 +35,7 @@ export class CheckBoxComponent implements ControlValueAccessor{
     this.onTouched();
   }
 
-  // Métodos del ControlValueAccessor
+  
   writeValue(value: boolean): void {
     this.checked.set(value);
   }

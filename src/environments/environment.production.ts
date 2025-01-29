@@ -12,4 +12,5 @@ export const environment: Environment = {
     createuser: 'http://hardcodeando.com:3000/register',
     role: 'http://hardcodeando.com:3000/roles',
     confirmAccount: 'http://hardcodeando.com:3000/confirm-account',
+    refreshToken: 'http://hardcodeando.com:3000/token/refresh',
 };

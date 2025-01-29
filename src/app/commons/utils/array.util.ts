@@ -1,3 +1,4 @@
+// @ts-ignore
 export const toFlatten = (key: string, items : any[]): string[] => {
     const jsonString = JSON.stringify(items);
 

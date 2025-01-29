@@ -1,9 +1,8 @@
-import { Component, computed, effect, inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { NavbarComponent } from '../../commons/components/navbar/navbar.component';
 import { FooterComponent } from '../../commons/components/footer/footer.component';
 import { AuthService } from '../../commons/services/auth.service';
 import { PermissionService } from '../../commons/services/permission.service';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { Permission } from '../../commons/interfaces/permission';
 import { permissionToNavbarMenuItem } from '../../commons/mappers/permission-to-navbaritem';
 import { isPlatformBrowser } from '@angular/common';

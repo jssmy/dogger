@@ -7,11 +7,12 @@ import { ALERT_CONFIRM_DELETE } from '../../../commons/constants/alerts/alert-co
 import { ALERT_SUCCESS_DELETE } from '../../../commons/constants/alerts/alert-success-delete';
 import { User } from '../../../commons/interfaces/user';
 import { PaginationResolve } from '../../../commons/interfaces/pagination-resolve';
+import { PaginationComponent } from '../../../commons/components/pagination/pagination.component';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, PaginationComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
@@ -23,8 +24,7 @@ export default class UserComponent implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.plataformId)) {
-
-      this.userService.getUsers()
+      this.userService.getUsers(1)
       .subscribe(resolve => this.paginationResolve.set(resolve))
 
     }
@@ -48,6 +48,11 @@ export default class UserComponent implements OnInit {
             });
         }
       });
+  }
+
+  onPaginate(page: number) {
+    this.userService.getUsers(page)
+    .subscribe(resolve => this.paginationResolve.set(resolve));
   }
 
 }

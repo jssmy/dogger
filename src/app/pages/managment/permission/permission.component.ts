@@ -1,9 +1,8 @@
-import { Component, computed, effect, inject, input, signal, Signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Component, inject, input } from '@angular/core';
 import { PermissionService } from '../../../commons/services/permission.service';
 import { InputComponent } from "../../../commons/components/input/input.component";
-import { ActivatedRoute, Router, RouterModule, RouterOutlet } from '@angular/router';
-import { map, mergeMap, Observable, Subject } from 'rxjs';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { map, Observable } from 'rxjs';
 import Swal from 'sweetalert2'
 import { CommonModule } from '@angular/common';
 import { CreatePermissionPresenter } from './create-permission.presenter';
@@ -14,7 +13,6 @@ import { PaginationResolve } from '../../../commons/interfaces/pagination-resolv
 import { ALERT_CONFIRM_DELETE } from '../../../commons/constants/alerts/alert-confirm-delete';
 import { ALERT_SUCCESS_DELETE } from '../../../commons/constants/alerts/alert-success-delete';
 import { PaginationComponent } from "../../../commons/components/pagination/pagination.component";
-import { ButtonComponent } from "../../../commons/components/button/button.component";
 import { PermissionType } from '../../../commons/enum/permission-type';
 import { HttpMethods } from '../../../commons/enum/http-methods';
 import { PermissionTypeIcon } from '../../../commons/constants/icons/permission-type.icon';
@@ -42,7 +40,8 @@ export default class PermissionComponent {
   perrmisionService = inject(PermissionService);
   permissionPresenter = inject(CreatePermissionPresenter);
   paginationResolve$ = new Observable<PaginationResolve<Permission[]>>();
-  parentId = input('', {alias: 'parentId' });
+  // @ts-ignore
+  parentId = input('');
   permissionSelected: Permission | undefined;
 
   permissionType = PermissionType;
@@ -98,7 +97,7 @@ export default class PermissionComponent {
 
   onUpdate() {
     if (this.permissionPresenter.form.valid) {
-      this.perrmisionService.update(this.permissionSelected?.id as string,{
+      this.perrmisionService.update(this.permissionSelected?.id as string, {
         ...this.permissionPresenter.value,
         parentId: this.parentId()
       }).subscribe({
@@ -137,7 +136,7 @@ export default class PermissionComponent {
 
 
   hasSecondInstance() {
-    return this.route.paramMap.pipe(map(query => !Boolean(query.get('parentId'))));
+    return this.route.paramMap.pipe(map(query => !query.get('parentId')));
   }
 
   hasEditOption() {

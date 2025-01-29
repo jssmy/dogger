@@ -9,17 +9,12 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home/home.component')
     },
     {
-        path: 'blog/:id',
-        loadComponent: () => import('./pages/blog/blog.component')
-    },
-    {
         path: 'login',
         loadComponent: () => import('./pages/login/login.component')
     },
     {
         path: 'main',
         loadComponent: () => import('./pages/main/main.component'),
-        // canActivate: [checkAuthGuard]
     },
     {
         path: 'account-confirmation/:token',
@@ -58,7 +53,12 @@ export const routes: Routes = [
             {
                 path: 'permissions',
                 loadComponent: () => import('./pages/managment/permission/permission.component')
+            },
+            {
+                path: 'blog/create',
+                loadComponent: () => import('./pages/managment/blog/create-blog/create-blog.component')
             }
+
         ]
     },
     {

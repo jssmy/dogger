@@ -9,7 +9,7 @@ import { permissionToItem } from '../mappers/permission-to-item';
 })
 export class PermissionToItem implements PipeTransform {
 
-  transform(value: Permission[], ...args: unknown[]): TreeViewItem[] {
+  transform(value: Permission[]): TreeViewItem[] {
     return permissionToItem(value);
   }
 

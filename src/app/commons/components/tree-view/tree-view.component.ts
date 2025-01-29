@@ -1,4 +1,4 @@
-import { Component, computed, effect, forwardRef, Input, input, model } from '@angular/core';
+import { Component, computed, forwardRef, input, model } from '@angular/core';
 import { CheckBoxComponent } from '../check-box/check-box.component';
 import { TreeViewItem, TreeViewItemBase } from '../../interfaces/tree-view-item';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -29,7 +29,8 @@ export class TreeViewComponent implements ControlValueAccessor {
     return markTreeViewItem(this.items(), ids);
   });
 
-  onChange = (__value: TreeViewItem[] | null) => {};
+  onChange = (__value: TreeViewItem[] | null) => this.value;
+  // @ts-ignore
   onTouched = () => {};
 
   onVisibleChild(item: TreeViewItem) {
@@ -56,10 +57,12 @@ export class TreeViewComponent implements ControlValueAccessor {
     this.onTouched();
   }
 
+  // @ts-ignore: any
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
 
+  // @ts-ignore: any
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
