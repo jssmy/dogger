@@ -10,6 +10,7 @@ export interface Environment {
     createuser: string;
     role: string;
     confirmAccount: string;
+    blog: string;
     refreshToken: string;
 
 }

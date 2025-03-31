@@ -1,0 +1,39 @@
+<div class="d-flex flex-column">
+    <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Mi colección de blogs</h5>
+    <div class="d-flex flex-row">
+        <a routerLink="/managment/blog/create" class="color-gray text-decoration-none"><i class="fa-solid fa-plus me-2"></i>Preparar nuevo blog</a>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Título</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        @for (item of blogs(); track $index) {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.stage}}</td>
+                <td>
+
+                    <button 
+                    
+                        [routerLink]="'/managment/blog/'+item.stage + '/'+item.slug"
+                        class="btn ms-1 button--round button--sm bg-color-yellow color-white"
+                        data-title="Abrir contenido"><i class="fa-regular fa-folder-open"></i>
+                    </button>
+
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+  </table>

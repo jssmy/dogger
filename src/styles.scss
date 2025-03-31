@@ -284,3 +284,140 @@ body {
         color: $color_dark;
     }
 }
+
+
+/********************/
+
+.terminal  {
+    overflow-x: auto;
+    background: #414449;
+    color: #b3bccc;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .75);
+    margin-bottom: 25px;
+}
+
+.terminal__bar {
+    width: 100%;
+    height: 35px;
+    background: #f3eeee;
+    display: flex;
+    align-items: center;
+    padding-left: 15px
+}
+
+.terminal__bash_icon--red {
+    color: #FC625D;
+}
+
+.terminal__bash_icon--yellow {
+    color: #FDBC40;
+}
+
+.terminal__bash_icon--green {
+    color: #34C759;
+}
+
+.terminal__bash_icon {
+    font-size: 15px;
+}
+.terminal__block {
+    padding: 15px;
+}
+.terminal__title  {
+    color: $color_dark;
+}
+
+ .blog-container {
+    h1, h2, h3, h4, h5 {
+        font-family: $font_cacha;
+        color: $color_yellow;
+    }
+
+    a {
+        color: $color_gray_3;
+    }
+    color: $color_gray_5;
+}
+
+
+
+.fig-img-simple {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%;
+}
+.fig-img-simple > div {
+    max-width: 650px;
+    display: flex;
+    justify-content: center;
+}
+
+.fig-img-simple.img-bg {
+    background:  #e8e8eb40;
+}
+
+.fig-img-simple.img-border {
+    padding: 10px;
+    border: 1px solid #e8e8eb3b;
+}
+
+figure.fig-img-simple .image-container {
+    max-width: 60%;
+}
+
+figure.fig-img-simple.img-bg  .image-container {
+    max-width: 60%;
+}
+
+figure.fig-img-simple.img-fullwidth  .image-container {
+    max-width: 100%;
+}
+
+figure.fig-img-simple.img-bg .image-container img {
+    width: 100%;
+}
+
+
+
+
+/***
+MODIFICAR ESTILOS DE RENDER
+**/
+
+#blog-render, .codex-editor {
+    color: $color_gray_3;
+    font-weight: 100;
+    font-family: $font_typewriter;
+    
+    h1, h2, h3, h4, h5,h6 {
+        color: $color_orange;
+        font-family: $font_hight_retro;
+        text-transform: lowercase;
+        letter-spacing: 3px;
+        
+    }
+
+    b {
+        font-weight: bold;
+        color: darkcyan;
+    }
+
+}
+
+.codex-editor {
+    h1, h2, h3, h4, h5 {
+        color: $color_dark;
+    }
+
+    a {
+        color: $color_gray_3;
+    }
+    color: $color_dark;
+}

@@ -23,7 +23,7 @@ export class AuthService {
   set setAuthToken(auth: AuthToken) {
     this.authToken.set(auth);
     if (isPlatformBrowser(this.platformId)) {
-      sessionStorage.setItem(AUTH_TOKEN_KEY, JSON.stringify(auth));
+      localStorage.setItem(AUTH_TOKEN_KEY, JSON.stringify(auth));
     }
 
   }
@@ -31,7 +31,7 @@ export class AuthService {
 
   private get getStorageAuthToken(): AuthToken | null {
     try {
-      const store: AuthToken = JSON.parse(sessionStorage.getItem(AUTH_TOKEN_KEY) as string);
+      const store: AuthToken = JSON.parse(localStorage.getItem(AUTH_TOKEN_KEY) as string);
       return store;
     } catch (__e) {
       return null;
@@ -55,7 +55,7 @@ export class AuthService {
   logout() {
     if (isPlatformBrowser(this.platformId)) {
       this.authToken.set(null);
-      sessionStorage.clear();
+      localStorage.clear();
     }
   }
 

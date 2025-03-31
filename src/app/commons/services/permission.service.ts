@@ -22,7 +22,7 @@ export class PermissionService {
         mergeMap(isBrowser => {
           if (isBrowser) {
 
-            const permission = (JSON.parse(sessionStorage.getItem('auth-permissions') || '[]')) as Permission[];
+            const permission = (JSON.parse(localStorage.getItem('auth-permissions') || '[]')) as Permission[];
 
             if (permission.length > 0) {
               return of(permission);
@@ -39,7 +39,7 @@ export class PermissionService {
                 }) as Permission);
 
               }),
-              tap(permission => sessionStorage.setItem('auth-permissions', JSON.stringify(permission)))
+              tap(permission => localStorage.setItem('auth-permissions', JSON.stringify(permission)))
             );
           }
 

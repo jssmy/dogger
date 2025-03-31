@@ -2,6 +2,8 @@ import { inject, Injectable, PLATFORM_ID } from "@angular/core";
 import { DEFAULT_EDITOR_CONFIG } from "../commons/editor.config";
 import { isPlatformBrowser } from "@angular/common";
 import { EditorConfig } from "@editorjs/editorjs";
+// @ts-ignore
+import SimpleImage from '@editorjs/simple-image';
 
 @Injectable({
     providedIn: 'root'
@@ -13,25 +15,24 @@ export class CreateBlogPresenter {
 
 
     async getConfig(id: string) {
-        const { default: List } = await import('@editorjs/list');
-        const { default: Image } = await import('@editorjs/image');
-        const { default: Code } = await import('@editorjs/code');
-        const { default: Header } = await import('@editorjs/header');
-        const { default: Warning } = await import('@editorjs/warning');
+        const { default: list } = await import('@editorjs/list');
+        const { default: code } = await import('@editorjs/code');
+        const { default: header } = await import('@editorjs/header');
+        const { default: warning } = await import('@editorjs/warning');
 
         return {
             tools: {
                 warning: {
-                    class: Warning,
+                    class: warning,
                     inlineToolbar: true,
                     shortcut: 'CMD+SHIFT+W',
                     config: {
                         titlePlaceholder: 'Título',
-                        messagePlaceholder: 'Mensage',
+                        messagePlaceholder: 'Mensaje',
                     },
                 },
                 header: {
-                    class: Header as any,
+                    class: header as any,
                     shortcut: 'CMD+SHIFT+H',
                     config: {
                         placeholder: 'Enter a header',
@@ -40,18 +41,9 @@ export class CreateBlogPresenter {
                     }
 
                 },
-                Code,
-                List,
-                Image: {
-                    class: Image,
-                    config: {
-                        endpoints: {
-                            byFile: 'http://localhost:8008/uploadFile', // Your backend file uploader endpoint
-                            byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
-                        }
-                    }
-
-                }
+                list,
+                code,
+                simpleImage: SimpleImage
             },
             ...DEFAULT_EDITOR_CONFIG,
             holder: id

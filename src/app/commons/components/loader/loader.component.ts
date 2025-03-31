@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoaderService } from '../../services/loader.service';
 import { CommonModule } from '@angular/common';
 
@@ -11,11 +11,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './loader.component.scss'
 })
 export class LoaderComponent {
-
-
-  @ViewChild('container') container!: ElementRef;
-
-
   constructor(
     readonly loader: LoaderService
   ) {}

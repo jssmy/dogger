@@ -32,13 +32,10 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       if (error.status === HttpStatusCode.Unauthorized) {
         if (!isRefreshing) {
           isRefreshing = true;
-          // tokenSubject.next(null);
 
           return loginService.refresh().pipe(
-            switchMap((newToken) => {
+            switchMap(() => {
               isRefreshing = false;
-              // tokenSubject.next(newToken.accessToken);
-
               return next(
                 req.clone({
                   headers: getHeaders(req.headers, authService)

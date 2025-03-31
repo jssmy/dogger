@@ -64,7 +64,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('document:keydown.escape', ['$event'])
-  onEscPressed(__event: KeyboardEvent): void {
+  onEscPressed(_event: KeyboardEvent): void {
     this.isFocusModal = false;
     this.miInput.removeFocus();
   }

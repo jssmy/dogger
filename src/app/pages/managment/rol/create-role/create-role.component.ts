@@ -28,8 +28,7 @@ import { ALERT_SUCCESS_UPDATE } from '../../../../commons/constants/alerts/alert
 export default class CreateRoleComponent implements OnInit, OnDestroy {
 
 
-  // @ts-ignore
-  roleId = input<number>(0, { alias: 'id' });
+  id = input<number>();
   createRolePresenter = inject(CreateRolePresenter);
   permissionService = inject(PermissionService);
 
@@ -39,8 +38,8 @@ export default class CreateRoleComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    if (this.roleId()) {
-      this.roleService.getRole(this.roleId())
+    if (this.id()) {
+      this.roleService.getRole(this.id() as number)
         .subscribe(role => {
           this.currentRole.set(role);
           this.createRolePresenter.init(role);

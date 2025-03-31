@@ -56,10 +56,16 @@ export class CreatePermissionPresenter {
             this.method.disable();
             this.method.setValue(HttpMethods.GET);
 
-        } else if ([PermissionType.OPTION, PermissionType.MENU].includes(type)) {
+        } else if ([PermissionType.MENU].includes(type)) {
             this.method.disable();
             this.method.setValue(HttpMethods.GET);
             this.path.enable();
+        } else if ([PermissionType.OPTION].includes(type)) {
+            this.method.disable();
+            this.method.setValue(HttpMethods.GET);
+            this.path.enable();
+            this.path.clearValidators();
+            this.path.setErrors(null);
         } else {
             this.path.enable();
             this.method.enable();

@@ -75,6 +75,7 @@ export default class PermissionComponent {
   }
 
   onSave() {
+    
     if (this.permissionPresenter.form.valid) {
       this.perrmisionService.save({
         ...this.permissionPresenter.value,

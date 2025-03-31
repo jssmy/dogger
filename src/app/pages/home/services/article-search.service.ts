@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { filter, from, map, Observable, of, take, tap } from 'rxjs';
+import { filter, from, map, Observable, of } from 'rxjs';
 import { Article } from '../../../commons/interfaces/article';
 import { MathUtil } from '../../../commons/utils/math.util';
 const ARTICLES_DUMMY: Article[] = require('./../../../commons/dummy/articles.json')

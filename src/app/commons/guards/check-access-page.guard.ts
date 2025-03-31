@@ -4,7 +4,7 @@ import { Router } from 'express';
 import { inject } from '@angular/core';
 import { catchError, map, of } from 'rxjs';
 
-export const checkAccessPageGuard: CanActivateFn = (__route, __state) => {
+export const checkAccessPageGuard: CanActivateFn = (_route, _state) => {
 
   const checkAccess = inject(CheckAccessService);
   const router = inject(Router);

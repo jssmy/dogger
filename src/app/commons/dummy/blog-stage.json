@@ -1,0 +1,23 @@
+[
+    {
+        "id": "edit",
+        "label": "En edición",
+        "icon": "fa-solid fa-book-open",
+        "active": true,
+        "visited": false
+    },
+    {
+        "id": "draft",
+        "label": "En borrador",
+        "icon": "fa-solid fa-box-archive",
+        "active": false,
+        "visited": false
+    },
+    {
+        "id": "public",
+        "label": "Publicado",
+        "icon": "fa-solid fa-globe",
+        "false": true,
+        "visited": false
+    }
+]

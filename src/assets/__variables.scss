@@ -8,6 +8,7 @@ $color_orange: #d6b830;
 $color_gray_3: hsl(0deg 7.67% 77.71%);
 $color_gray_4: rgba(0,0,0,0.05);
 $color_gray_5: #f4f4f4;
+$color_gray_6: #578187;
 $color_red_dark: #ba5428;
 $color_pink: #f89da7;
 
@@ -60,4 +61,9 @@ $color_pink: #f89da7;
 
 .bg-color-pink {
     background-color: $color_pink !important;
+}
+
+
+.bg-color-dark {
+    background-color: $color_dark;
 }

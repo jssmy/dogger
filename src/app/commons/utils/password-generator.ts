@@ -3,7 +3,7 @@
  * 
  */
 
- import * as generator from 'generate-password-ts';
+import * as generator from 'generate-password-ts';
 
 export class Password {
 

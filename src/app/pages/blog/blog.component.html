@@ -1,0 +1,18 @@
+
+<main class="container blog-container">
+
+    @if (isResourceFound()) {
+        <div class="my-3 p-3 rounded box-shadow scroll-x">
+            <div id="blog-render" [innerHTML]=" blogContainer()"></div>
+        </div>
+    }
+    
+
+</main>
+
+
+@if (!isResourceFound()) {
+        <app-error-404></app-error-404>
+}
+
+<app-footer></app-footer>

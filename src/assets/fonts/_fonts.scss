@@ -89,6 +89,10 @@
   src: url("./Gord-Quick-Font/gordqucikblack-p7erv.otf");
 }
 
+@font-face {
+  font-family: "Cacha-font";
+  src: url("./cacha-font//CachaPersonalUseRegular-GOx6g.ttf");
+}
 
 $font_hight_retro: "Retro Team";
 $font_small_retro: "Mom Typewriter";
@@ -102,6 +106,7 @@ $font_kg_red_hands: "KGRedHands";
 $font_kg_red_hands_outline: "KGRedHandsOutline";
 $font_typewriter: "JMH Typewriter";
 $font_typewriter_thin: "JMH Typewriter Thin";
+$font_cacha: "Cacha-font";
 
 
 .font-hight-retro {
@@ -129,4 +134,9 @@ $font_typewriter_thin: "JMH Typewriter Thin";
 
 .font-ford-quick-font {
   font-family: "Gord-Quick-Font" !important;
+}
+
+
+.font-typewriter {
+  font-family: $font_typewriter !important;
 }

@@ -28,14 +28,19 @@ export function app(): express.Express {
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
-
+    // console.log('SSR Request:', req.url);
+    // console.log('SSR Headers:', req.headers);
     commonEngine
       .render({
         bootstrap,
         documentFilePath: indexHtml,
         url: `${protocol}://${headers.host}${originalUrl}`,
         publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+        providers: [
+          { provide: APP_BASE_HREF, useValue: baseUrl },
+          // { provide: 'SSR_DATA', useValue: { user: 'Admin' } }
+        ],
+        
       })
       .then((html) => res.send(html))
       .catch((err) => next(err));

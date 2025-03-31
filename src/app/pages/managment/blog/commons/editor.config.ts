@@ -51,6 +51,8 @@ export const DEFAULT_EDITOR_CONFIG = {
                 'Bold': 'Negrita',
                 'Italic': 'Cursiva',
                 'InlineCode': 'Código en línea',
+                'Unordered List': 'Lista desordenada',
+                'Ordered List': 'Lista ordenada'
 
             },
 

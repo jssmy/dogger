@@ -17,6 +17,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/main/main.component'),
     },
     {
+        path: 'blog/:id',
+        loadComponent: () => import('./pages/blog/blog.component'),
+    },
+    {
         path: 'account-confirmation/:token',
         loadComponent: () => import('./pages/confirm-account/confirm-account.component'),
         canActivate: [confirmAccountGuard]
@@ -55,15 +59,38 @@ export const routes: Routes = [
                 loadComponent: () => import('./pages/managment/permission/permission.component')
             },
             {
-                path: 'blog/create',
-                loadComponent: () => import('./pages/managment/blog/create-blog/create-blog.component')
-            }
+                path: 'blog',
+                loadComponent: () => import('./pages/managment/blog/blog.component'),
+                children: [
+                    {
+                        path: 'create',
+                        loadComponent: () => import('./pages/managment/blog/create-blog/create-blog.component')
+                    },
+                    {
+                        path: 'create/:slug',
+                        loadComponent: () => import('./pages/managment/blog/create-blog/create-blog.component')
+                    },
+                    {
+                        path: 'draft/:id',
+                        loadComponent: () => import('./pages/managment/blog/draft-blog/draft-blog.component')
+                    },
+                    {
+                        path: 'public/:id',
+                        loadComponent: () => import('./pages/managment/blog/public-blog/public-blog.component')
+                    }
+                ]
+            },
+            {
+                path: 'blog/list',
+                loadComponent: () => import('./pages/managment/blog/list-blog/list-blog.component'),
+            },
 
         ]
     },
     {
         path: '403',
-        loadComponent: () => import('./pages/errors/error-403/error-403.component')
+        loadComponent: () => import('./pages/errors/error-403/error-403.component'),
+        
     },
     {
         path: '**',
