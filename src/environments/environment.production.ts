@@ -14,4 +14,5 @@ export const environment: Environment = {
     confirmAccount: 'http://hardcodeando.com:3000/confirm-account',
     refreshToken: 'http://hardcodeando.com:3000/token/refresh',
     blog: 'http://hardcodeando.com:3001/api/blog',
+    blogWriter: 'http://hardcodeando.com:3000/user',
 };

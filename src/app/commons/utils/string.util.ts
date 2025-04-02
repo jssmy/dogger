@@ -16,3 +16,19 @@ export function toQueryParams(obj: any) {
     return '';
 
 }
+
+
+
+export function splitHTMLHeader(htmlString: string) {
+    const regex = /<(h[1-5])[^>]*>(.*?)<\/\1>/i;
+    const match = htmlString.match(regex);
+
+    if (match) {
+        const header = match[0]; // Captura la etiqueta completa
+        const content = htmlString.replace(header, "").trim(); // Elimina el encabezado del contenido
+
+        return { header, content };
+    }
+
+    return { header: '', content: htmlString };
+}

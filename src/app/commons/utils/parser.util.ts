@@ -18,8 +18,6 @@ const listParser = (block: any): string =>  {
         return '';
     }
 
-    console.log(block);
-
     return renderList(block.items, block.style === 'ordered' ? 'ol' : 'ul');
 };
 

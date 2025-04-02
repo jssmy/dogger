@@ -11,6 +11,7 @@ export interface Environment {
     role: string;
     confirmAccount: string;
     blog: string;
+    blogWriter: string;
     refreshToken: string;
 
 }

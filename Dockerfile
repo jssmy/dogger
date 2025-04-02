@@ -13,8 +13,9 @@ RUN npm install
 # Copiar el código fuente de la aplicación al contenedor
 COPY . .
 
+ARG STAGE_BUILD=production
 # Construir la aplicación Angular en modo producción
-RUN npm run build:production
+RUN npm run build:${STAGE_BUILD}
 
 # Etapa 2: Servir la aplicación con NGINX
 FROM node:22 AS production

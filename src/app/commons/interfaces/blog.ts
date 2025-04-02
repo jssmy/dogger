@@ -50,4 +50,5 @@ export interface Blog {
     version: string;
     time: number;
     title?: string;
+    userId: string;
 }

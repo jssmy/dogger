@@ -13,5 +13,6 @@ export const environment: Environment = {
     role: 'http://localhost:3000/roles',
     confirmAccount: 'http://localhost:3000/confirm-account',
     refreshToken: 'http://localhost:3000/token/refresh',
-    blog: 'http://localhost:30001/api/blog',
+    blog: 'http://localhost:3001/api/blog',
+    blogWriter: 'http://localhost:3000/user',
 };

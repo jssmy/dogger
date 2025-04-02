@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        STAGE_BUILD: ${STAGE_BUILD}
     container_name: node-dogger-front-container
     ports:
       - "80:80"

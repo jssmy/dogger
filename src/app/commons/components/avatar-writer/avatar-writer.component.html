@@ -1,0 +1,33 @@
+<div class="text-lg-left d-flex mt-3 flex-lg-row mb-4 flex-column justify-content-lg-between">
+    <div class="d-flex">
+        <!-- Author info -->
+        <div class="position-relative d-flex align-items-center">
+            <!-- Avatar -->
+            <div class="avatar avatar-xxl">
+                <!-- <img class="avatar-img rounded-circle" [src]="https://avatars.githubusercontent.com/u/12477590?v=4" alt="avatar"> -->
+                <img class="avatar-img rounded-circle" [src]="writer().avatars[0]" alt="avatar">
+            </div>
+        </div>
+        <!-- Info -->
+        <div class="d-flex flex-column ms-3">
+            <a href="#" class="h5 mt-2 mb-0 d-block avatar__user-name">{{writer().name + ' ' + writer().surnames}} </a>
+            <ul class="list-inline list-unstyled d-flex flex-row m-0">
+                <li class="list-inline-item d-lg-block">Nov 15, 2021 |</li>
+                <li class="list-inline-item d-lg-block">5 min read</li>
+            </ul>
+        </div>
+    </div>
+    <aside class="d-flex align-items-end">
+        <div class="d-flex flex-column">
+            <ul class="list-inline list-unstyled d-flex flex-row m-0">
+                <li class="list-inline-item d-lg-block">My networks:</li>
+                <li class="list-inline-item d-lg-block cursor-pointer"><i class="fa-brands fa-x-twitter"></i></li>
+                <li class="list-inline-item d-lg-block cursor-pointer"><i class="fa-brands fa-youtube"></i></li>
+                <li class="list-inline-item d-lg-block cursor-pointer"><i class="fa-brands fa-github"></i></li>
+                <li class="list-inline-item d-lg-block cursor-pointer"><i class="fa-brands fa-linkedin"></i></li>
+                <li class="list-inline-item d-lg-block cursor-pointer"><i class="fa-brands fa-facebook-f"></i></li>
+                <li class="list-inline-item d-lg-block cursor-pointer"><i class="fa-brands fa-discord"></i></li>
+            </ul>
+        </div>
+    </aside>
+</div>

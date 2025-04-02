@@ -1,8 +1,11 @@
-
 <main class="container blog-container">
-
+    <div class="d-flex w-100 flex-column align-items-center">
+        <app-navbar [items]="navbarItems" class="w-md-100 w-auto"></app-navbar>
+    </div>
     @if (isResourceFound()) {
         <div class="my-3 p-3 rounded box-shadow scroll-x">
+            <!-- <app-avatar-writer></app-avatar-writer> -->
+            <div [innerHTML]=" avatar()"></div>
             <div id="blog-render" [innerHTML]=" blogContainer()"></div>
         </div>
     }

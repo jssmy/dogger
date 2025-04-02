@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Blog, BlogStage } from '../interfaces/blog';
-import { map } from 'rxjs';
+import { map, mergeMap, of } from 'rxjs';
+import { BlogWriter } from '../interfaces/blog-writer';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,23 @@ export class BlogService {
   private readonly http = inject(HttpClient);
 
   getPublicBlog(slug: string) {
-    return this.http.get<Blog>(`${environment.blog}/public/${slug}`);
+    return this.http.get<Blog>(`${environment.blog}/public/${slug}`)
+    .pipe(
+      mergeMap(
+        blog => {
+          return this.getBlogWriter(blog.userId)
+          .pipe(
+            mergeMap(writer => of({
+              blog,
+              writer
+            }))
+          )
+        }
+      ));
+  }
+
+  getBlogWriter(userId: string) {
+    return this.http.get<BlogWriter>(`${environment.blogWriter}/${userId}`);
   }
 
   getDraftBlog(id: string) {
