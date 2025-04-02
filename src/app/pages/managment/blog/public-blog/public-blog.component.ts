@@ -41,7 +41,7 @@ export default class PublicBlogComponent implements OnInit {
             this.blogService.getPublicBlog(this.id() as string).subscribe({
               next: (content) => {
     
-                const html = new CustomParser().parse(content);
+                const html = new CustomParser().parse(content.blog);
                 this.blogContainer.set(this.sanitizer.bypassSecurityTrustHtml(html));
                 this.isResourceFound.set(true);
     
