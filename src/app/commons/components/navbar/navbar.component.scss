@@ -1,5 +1,5 @@
-@import "./../../../../assets/_variables";
-@import "./../../../../assets/fonts/fonts";
+@use "../../../../assets/_variables" as *;
+@use "../../../../assets/fonts/fonts" as *;
 
 .navbar {
     background-color: $color_gray_2;
