@@ -10,7 +10,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:dogger": "node dist/dogger/server/server.mjs",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "use-node18": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8'",
+    "dev": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng serve'",
+    "build:node18": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng build'"
   },
   "private": true,
   "dependencies": {
