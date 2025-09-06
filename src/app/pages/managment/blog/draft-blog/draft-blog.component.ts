@@ -12,11 +12,10 @@ import { ALERT_ERROR_MOVE_BLOG_STAGE } from '../../../../commons/constants/alert
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-draft-blog',
-  standalone: true,
-  imports: [ButtonComponent, Error404Component],
-  templateUrl: './draft-blog.component.html',
-  styleUrl: './draft-blog.component.scss'
+    selector: 'app-draft-blog',
+    imports: [ButtonComponent, Error404Component],
+    templateUrl: './draft-blog.component.html',
+    styleUrl: './draft-blog.component.scss'
 })
 export default class DraftBlogComponent implements OnInit {
 

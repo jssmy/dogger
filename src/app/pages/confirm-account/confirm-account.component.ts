@@ -3,11 +3,10 @@ import { ButtonComponent } from '../../commons/components/button/button.componen
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-confirm-account',
-  standalone: true,
-  imports: [ButtonComponent, RouterModule],
-  templateUrl: './confirm-account.component.html',
-  styleUrl: './confirm-account.component.scss'
+    selector: 'app-confirm-account',
+    imports: [ButtonComponent, RouterModule],
+    templateUrl: './confirm-account.component.html',
+    styleUrl: './confirm-account.component.scss'
 })
 export default class ConfirmAccountComponent {
 

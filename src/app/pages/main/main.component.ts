@@ -8,11 +8,10 @@ import { permissionToNavbarMenuItem } from '../../commons/mappers/permission-to-
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [NavbarComponent, FooterComponent],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+    selector: 'app-main',
+    imports: [NavbarComponent, FooterComponent],
+    templateUrl: './main.component.html',
+    styleUrl: './main.component.scss'
 })
 export default class MainComponent implements OnInit { 
   auth = inject(AuthService);

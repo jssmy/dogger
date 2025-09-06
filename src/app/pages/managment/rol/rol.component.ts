@@ -10,11 +10,10 @@ import { Role } from '../../../commons/interfaces/role';
 import { PaginationResolve } from '../../../commons/interfaces/pagination-resolve';
 
 @Component({
-  selector: 'app-rol',
-  standalone: true,
-  imports: [CommonModule, RouterModule, PaginationComponent],
-  templateUrl: './rol.component.html',
-  styleUrl: './rol.component.scss'
+    selector: 'app-rol',
+    imports: [CommonModule, RouterModule, PaginationComponent],
+    templateUrl: './rol.component.html',
+    styleUrl: './rol.component.scss'
 })
 export default class RolComponent implements OnInit {
 

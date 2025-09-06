@@ -12,11 +12,10 @@ import { Router } from '@angular/router';
 import { ALERT_SUCCESS_DRAFT } from '../../../../commons/constants/alerts/alert-success-draft';
 
 @Component({
-  selector: 'app-create-blog',
-  standalone: true,
-  imports: [ButtonComponent],
-  templateUrl: './create-blog.component.html',
-  styleUrl: './create-blog.component.scss'
+    selector: 'app-create-blog',
+    imports: [ButtonComponent],
+    templateUrl: './create-blog.component.html',
+    styleUrl: './create-blog.component.scss'
 })
 export default class CreateBlogComponent implements OnInit {
 

@@ -6,17 +6,16 @@ import { toFlatten } from '../../utils/array.util';
 import { markTreeViewItem } from '../../mappers/mark-tree-view-item';
 
 @Component({
-  selector: 'app-tree-view',
-  standalone: true,
-  imports: [CheckBoxComponent],
-  templateUrl: './tree-view.component.html',
-  styleUrl: './tree-view.component.scss',
-  providers: [
-      {
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => TreeViewComponent),
-        multi: true
-      }
+    selector: 'app-tree-view',
+    imports: [CheckBoxComponent],
+    templateUrl: './tree-view.component.html',
+    styleUrl: './tree-view.component.scss',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => TreeViewComponent),
+            multi: true
+        }
     ]
 })
 export class TreeViewComponent implements ControlValueAccessor { 

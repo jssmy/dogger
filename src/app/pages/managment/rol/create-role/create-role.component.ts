@@ -19,11 +19,10 @@ import { ALERT_SUCCESS_UPDATE } from '../../../../commons/constants/alerts/alert
 
 
 @Component({
-  selector: 'app-create-role',
-  standalone: true,
-  imports: [CommonModule, FormsModule, InputComponent, ButtonComponent, TreeViewComponent, ReactiveFormsModule, FormsModule],
-  templateUrl: './create-role.component.html',
-  styleUrl: './create-role.component.scss',
+    selector: 'app-create-role',
+    imports: [CommonModule, FormsModule, InputComponent, ButtonComponent, TreeViewComponent, ReactiveFormsModule, FormsModule],
+    templateUrl: './create-role.component.html',
+    styleUrl: './create-role.component.scss'
 })
 export default class CreateRoleComponent implements OnInit, OnDestroy {
 

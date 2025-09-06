@@ -18,11 +18,10 @@ const transferHtmlKey = makeStateKey<string>('html')
 
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [FooterComponent, CommonModule, Error404Component, NavbarComponent],
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss'
+    selector: 'app-blog',
+    imports: [FooterComponent, CommonModule, Error404Component, NavbarComponent],
+    templateUrl: './blog.component.html',
+    styleUrl: './blog.component.scss'
 })
 export default class BlogComponent implements OnInit{
     id = input<string>();    
