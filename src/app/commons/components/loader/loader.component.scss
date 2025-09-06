@@ -1,6 +1,6 @@
-@import "./../../../../assets/_index";
-@import "./../../../../assets/_variables";
-@import "./../../../../assets/fonts/fonts";
+@use "../../../../assets/_index" as *;
+@use "../../../../assets/_variables" as *;
+@use "../../../../assets/fonts/fonts" as *;
 
 .container-loader {
     position: fixed;
@@ -14,6 +14,7 @@
     z-index: $loaderIndex;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     
     &__title {
         color: $color_yellow;
@@ -21,7 +22,6 @@
         letter-spacing: 15px;
         font-size: 2rem;
     }
-    overflow-y: scroll;
 }
 .loader {
     margin-left: -1rem;

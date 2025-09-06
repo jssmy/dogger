@@ -1,4 +1,4 @@
-import { Component, inject, input, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnDestroy, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from '../../../../commons/components/input/input.component';
 import { ButtonComponent } from '../../../../commons/components/button/button.component';
@@ -12,18 +12,17 @@ import { CreateRolePresenter } from './create-role.presenter';
 import { RoleService } from '../../../../commons/services/role.service';
 import { toFlatten } from '../../../../commons/utils/array.util';
 import { Role } from '../../../../commons/interfaces/role';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ALERT_SUCCESS_CREATE } from '../../../../commons/constants/alerts/alert-succes-create';
 import Swal from 'sweetalert2';
 import { ALERT_SUCCESS_UPDATE } from '../../../../commons/constants/alerts/alert-success-update';
 
 
 @Component({
-  selector: 'app-create-role',
-  standalone: true,
-  imports: [CommonModule, FormsModule, InputComponent, ButtonComponent, TreeViewComponent, ReactiveFormsModule, FormsModule],
-  templateUrl: './create-role.component.html',
-  styleUrl: './create-role.component.scss',
+    selector: 'app-create-role',
+    imports: [CommonModule, FormsModule, InputComponent, ButtonComponent, TreeViewComponent, ReactiveFormsModule, FormsModule],
+    templateUrl: './create-role.component.html',
+    styleUrl: './create-role.component.scss'
 })
 export default class CreateRoleComponent implements OnInit, OnDestroy {
 
@@ -35,10 +34,11 @@ export default class CreateRoleComponent implements OnInit, OnDestroy {
   permissions = toSignal<TreeViewItem[]>(this.permissionService.all().pipe(map(permissions => permissionToItem(permissions))));
   roleService = inject(RoleService);
   currentRole = signal<Role | null>(null);
+  isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   ngOnInit(): void {
 
-    if (this.id()) {
+    if (this.id() && this.isBrowser) {
       this.roleService.getRole(this.id() as number)
         .subscribe(role => {
           this.currentRole.set(role);

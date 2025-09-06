@@ -9,11 +9,10 @@ import { permissionToNavbarMenuItem } from '../../commons/mappers/permission-to-
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-managment',
-  standalone: true,
-  imports: [NavbarComponent, FooterComponent, RouterOutlet],
-  templateUrl: './managment.component.html',
-  styleUrl: './managment.component.scss'
+    selector: 'app-managment',
+    imports: [NavbarComponent, FooterComponent, RouterOutlet],
+    templateUrl: './managment.component.html',
+    styleUrl: './managment.component.scss'
 })
 export default class ManagmentComponent {
   auth = inject(AuthService);

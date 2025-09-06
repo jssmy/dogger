@@ -3,11 +3,10 @@ import { Step } from '../../interfaces/step';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-stepper',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './stepper.component.html',
-  styleUrl: './stepper.component.scss'
+    selector: 'app-stepper',
+    imports: [CommonModule],
+    templateUrl: './stepper.component.html',
+    styleUrl: './stepper.component.scss'
 })
 export class StepperComponent {
 

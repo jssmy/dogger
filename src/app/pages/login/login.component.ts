@@ -10,17 +10,16 @@ import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [
-    InputComponent,
-    ButtonComponent,
-    FormsModule,
-    ReactiveFormsModule,
-    ErrorControlDirective
-  ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+    selector: 'app-login',
+    imports: [
+        InputComponent,
+        ButtonComponent,
+        FormsModule,
+        ReactiveFormsModule,
+        ErrorControlDirective
+    ],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.scss'
 })
 export default class LoginComponent {
 

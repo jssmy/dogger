@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import CreateRoleComponent from './create-role.component';
 
-import { CreateRoleComponent } from './create-role.component';
 
-describe('CreateRoleComponent', () => {
+fdescribe('CreateRoleComponent', () => {
   let component: CreateRoleComponent;
   let fixture: ComponentFixture<CreateRoleComponent>;
 

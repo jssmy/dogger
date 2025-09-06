@@ -12,14 +12,13 @@ import Swal from 'sweetalert2';
 import { ALERT_SUCCESS_DRAFT } from '../../../../commons/constants/alerts/alert-success-draft';
 
 @Component({
-  selector: 'app-public-blog',
-  standalone: true,
-  imports: [
-    ButtonComponent,
-    Error404Component
-  ],
-  templateUrl: './public-blog.component.html',
-  styleUrl: './public-blog.component.scss'
+    selector: 'app-public-blog',
+    imports: [
+        ButtonComponent,
+        Error404Component
+    ],
+    templateUrl: './public-blog.component.html',
+    styleUrl: './public-blog.component.scss'
 })
 export default class PublicBlogComponent implements OnInit {
 

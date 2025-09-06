@@ -2,18 +2,17 @@ import { Component, forwardRef, input, model } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'app-check-box',
-  standalone: true,
-  imports: [],
-  templateUrl: './check-box.component.html',
-  styleUrl: './check-box.component.scss',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CheckBoxComponent),
-      multi: true
-    }
-  ]
+    selector: 'app-check-box',
+    imports: [],
+    templateUrl: './check-box.component.html',
+    styleUrl: './check-box.component.scss',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => CheckBoxComponent),
+            multi: true
+        }
+    ]
 })
 export class CheckBoxComponent implements ControlValueAccessor{
 

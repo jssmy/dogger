@@ -10,11 +10,10 @@ import { PaginationResolve } from '../../../commons/interfaces/pagination-resolv
 import { PaginationComponent } from '../../../commons/components/pagination/pagination.component';
 
 @Component({
-  selector: 'app-user',
-  standalone: true,
-  imports: [RouterModule, CommonModule, PaginationComponent],
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.scss'
+    selector: 'app-user',
+    imports: [RouterModule, CommonModule, PaginationComponent],
+    templateUrl: './user.component.html',
+    styleUrl: './user.component.scss'
 })
 export default class UserComponent implements OnInit {
   userService = inject(UserService);

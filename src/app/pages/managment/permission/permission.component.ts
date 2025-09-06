@@ -19,19 +19,18 @@ import { PermissionTypeIcon } from '../../../commons/constants/icons/permission-
 
 
 @Component({
-  selector: 'app-permission',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-    InputComponent,
-    ErrorControlDirective,
-    PaginationComponent
-  ],
-  templateUrl: './permission.component.html',
-  styleUrl: './permission.component.scss'
+    selector: 'app-permission',
+    imports: [
+        CommonModule,
+        RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
+        InputComponent,
+        ErrorControlDirective,
+        PaginationComponent
+    ],
+    templateUrl: './permission.component.html',
+    styleUrl: './permission.component.scss'
 })
 export default class PermissionComponent {
 

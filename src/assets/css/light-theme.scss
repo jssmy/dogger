@@ -1,5 +1,5 @@
-@import "./../_variables";
-@import "./../fonts/fonts";
+@use "../_variables" as *;
+@use "../fonts/fonts" as *;
 
 .light-theme {
     background-color: $color_light;

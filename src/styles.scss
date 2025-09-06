@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./assets/_variables";
-@import "./assets/fonts/fonts";
-@import "./assets/_index";
+@use "assets/_variables" as *;
+@use "assets/fonts/fonts" as *;
+@use "assets/_index" as *;
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 

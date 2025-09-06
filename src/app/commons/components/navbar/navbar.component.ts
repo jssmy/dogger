@@ -7,14 +7,13 @@ import { LoginService } from '../../services/login.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [
-    RouterModule,
-    CommonModule
-  ],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+    selector: 'app-navbar',
+    imports: [
+        RouterModule,
+        CommonModule
+    ],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
   items = input.required<NavbarItem[]>();

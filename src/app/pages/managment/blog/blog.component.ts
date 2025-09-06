@@ -7,11 +7,10 @@ import { StepperService } from '../../../commons/services/stepper.service';
 const STEPS: Step[] = require('./../../../commons/dummy/blog-stage.json');
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [RouterModule, StepperComponent],
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss'
+    selector: 'app-blog',
+    imports: [RouterModule, StepperComponent],
+    templateUrl: './blog.component.html',
+    styleUrl: './blog.component.scss'
 })
 export default class BlogComponent {
 
