@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginPresenter } from './login.presenter';
 import { ErrorControlDirective } from '../../commons/directives/error-control.directive';
 import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -16,7 +16,8 @@ import { Router } from '@angular/router';
         ButtonComponent,
         FormsModule,
         ReactiveFormsModule,
-        ErrorControlDirective
+        ErrorControlDirective,
+        RouterModule
     ],
     templateUrl: './login.component.html',
     styleUrl: './login.component.scss'

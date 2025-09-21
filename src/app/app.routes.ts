@@ -1,12 +1,16 @@
 import { Routes } from '@angular/router';
 import { checkAuthGuard } from './commons/guards/check-auth.guard';
 import { confirmAccountGuard } from './commons/guards/confirm-account.guard';
+import { refreshTokenExpirationGuard } from './commons/guards/refresh-token-expiration.guard';
+import { sessionValidationGuard } from './commons/guards/session-validation.guard';
+import { resetTokenValidationGuard } from './commons/guards/reset-token-validation.guard';
 
 export const routes: Routes = [
 
     {
         path: '',
-        loadComponent: () => import('./pages/home/home.component')
+        loadComponent: () => import('./pages/home/home.component'),
+        canActivate: [sessionValidationGuard]
     },
     {
         path: 'login',
@@ -26,9 +30,26 @@ export const routes: Routes = [
         canActivate: [confirmAccountGuard]
     },
     {
+        path: 'forgot-password',
+        loadComponent: () => import('./pages/forgot-password/forgot-password.component')
+    },
+    {
+        path: 'forgot-password-confirmation',
+        loadComponent: () => import('./pages/forgot-password-confirmation/forgot-password-confirmation.component')
+    },
+    {
+        path: 'reset-password/:token',
+        loadComponent: () => import('./pages/reset-password/reset-password.component'),
+        canActivate: [resetTokenValidationGuard]
+    },
+    {
+        path: 'reset-password-expired',
+        loadComponent: () => import('./pages/reset-password-expired/reset-password-expired.component')
+    },
+    {
         path: 'managment',
         loadComponent: () => import('./pages/managment/managment.component'),
-        canActivateChild: [checkAuthGuard],
+        canActivateChild: [refreshTokenExpirationGuard, checkAuthGuard],
         children: [
             {
                 path: 'users',
@@ -90,6 +111,11 @@ export const routes: Routes = [
     {
         path: '403',
         loadComponent: () => import('./pages/errors/error-403/error-403.component'),
+        
+    },
+      {
+        path: '404',
+        loadComponent: () => import('./pages/errors/error-404/error-404.component'),
         
     },
     {
