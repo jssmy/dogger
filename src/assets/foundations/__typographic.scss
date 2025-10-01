@@ -1,0 +1,59 @@
+/* Tokens de color */
+.content-high {
+  color: var(--color-content-high);
+}
+
+.content-mid {
+  color: var(--color-content-mid);
+}
+
+.content-low {
+  color: var(--color-content-low);
+}
+
+/* Tokens tipográficos - Alta jerarquía */
+.high-xs {
+  font-size: var(--font-high-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.high-s {
+  font-size: var(--font-high-s);
+  font-weight: var(--font-weight-semibold);
+}
+
+.high-m {
+  font-size: var(--font-high-m);
+  font-weight: var(--font-weight-semibold);
+}
+
+.high-l {
+  font-size: var(--font-high-l);
+  font-weight: var(--font-weight-bold);
+}
+
+.high-xl {
+  font-size: var(--font-high-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Tokens tipográficos - Baja jerarquía */
+.low-xs {
+  font-size: var(--font-low-xs);
+  font-weight: var(--font-weight-normal);
+}
+
+.low-s {
+  font-size: var(--font-low-s);
+  font-weight: var(--font-weight-normal);
+}
+
+.low-m {
+  font-size: var(--font-low-m);
+  font-weight: var(--font-weight-normal);
+}
+
+.low-l {
+  font-size: var(--font-low-l);
+  font-weight: var(--font-weight-normal);
+}

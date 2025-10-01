@@ -1,0 +1,160 @@
+/* ===== RADIUS CLASSES ===== */
+/* Clases utilitarias para aplicar border-radius */
+/* Los tokens están definidos en __tokens.scss */
+
+/* Aplica border-radius a todos los lados */
+.radius-xs {
+  border-radius: var(--radius-tiny);
+}
+
+.radius-sm {
+  border-radius: var(--radius-small);
+}
+
+.radius-md {
+  border-radius: var(--radius-medium);
+}
+
+.radius-lg {
+  border-radius: var(--radius-large);
+}
+
+.radius-xl {
+  border-radius: var(--radius-xl);
+}
+
+/* ===== RADIUS POR LADOS ===== */
+/* Top - esquinas superiores (top-left + top-right) */
+.radius-top-xs {
+  border-top-left-radius: var(--radius-tiny);
+  border-top-right-radius: var(--radius-tiny);
+}
+
+.radius-top-sm {
+  border-top-left-radius: var(--radius-small);
+  border-top-right-radius: var(--radius-small);
+}
+
+.radius-top-md {
+  border-top-left-radius: var(--radius-medium);
+  border-top-right-radius: var(--radius-medium);
+}
+
+.radius-top-lg {
+  border-top-left-radius: var(--radius-large);
+  border-top-right-radius: var(--radius-large);
+}
+
+.radius-top-xl {
+  border-top-left-radius: var(--radius-xl);
+  border-top-right-radius: var(--radius-xl);
+}
+
+/* Bottom - esquinas inferiores (bottom-left + bottom-right) */
+.radius-bottom-xs {
+  border-bottom-left-radius: var(--radius-tiny);
+  border-bottom-right-radius: var(--radius-tiny);
+}
+
+.radius-bottom-sm {
+  border-bottom-left-radius: var(--radius-small);
+  border-bottom-right-radius: var(--radius-small);
+}
+
+.radius-bottom-md {
+  border-bottom-left-radius: var(--radius-medium);
+  border-bottom-right-radius: var(--radius-medium);
+}
+
+.radius-bottom-lg {
+  border-bottom-left-radius: var(--radius-large);
+  border-bottom-right-radius: var(--radius-large);
+}
+
+.radius-bottom-xl {
+  border-bottom-left-radius: var(--radius-xl);
+  border-bottom-right-radius: var(--radius-xl);
+}
+
+/* Left - esquinas izquierdas (top-left + bottom-left) */
+.radius-left-xs {
+  border-top-left-radius: var(--radius-tiny);
+  border-bottom-left-radius: var(--radius-tiny);
+}
+
+.radius-left-sm {
+  border-top-left-radius: var(--radius-small);
+  border-bottom-left-radius: var(--radius-small);
+}
+
+.radius-left-md {
+  border-top-left-radius: var(--radius-medium);
+  border-bottom-left-radius: var(--radius-medium);
+}
+
+.radius-left-lg {
+  border-top-left-radius: var(--radius-large);
+  border-bottom-left-radius: var(--radius-large);
+}
+
+.radius-left-xl {
+  border-top-left-radius: var(--radius-xl);
+  border-bottom-left-radius: var(--radius-xl);
+}
+
+/* Right - esquinas derechas (top-right + bottom-right) */
+.radius-right-xs {
+  border-top-right-radius: var(--radius-tiny);
+  border-bottom-right-radius: var(--radius-tiny);
+}
+
+.radius-right-sm {
+  border-top-right-radius: var(--radius-small);
+  border-bottom-right-radius: var(--radius-small);
+}
+
+.radius-right-md {
+  border-top-right-radius: var(--radius-medium);
+  border-bottom-right-radius: var(--radius-medium);
+}
+
+.radius-right-lg {
+  border-top-right-radius: var(--radius-large);
+  border-bottom-right-radius: var(--radius-large);
+}
+
+.radius-right-xl {
+  border-top-right-radius: var(--radius-xl);
+  border-bottom-right-radius: var(--radius-xl);
+}
+
+/* ===== DOCUMENTACIÓN DE USO ===== */
+/*
+NOMENCLATURA OPTIMIZADA (corta y clara):
+
+📏 TAMAÑOS:
+- xs: 4px     (extra pequeño)
+- sm: 6px     (pequeño) 
+- md: 8px     (mediano - usa --space-2)
+- lg: 12px    (grande)
+- xl: 16px    (extra grande)
+
+📍 APLICACIÓN:
+- radius-[tamaño]              → todos los lados
+- radius-top-[tamaño]          → esquinas superiores
+- radius-bottom-[tamaño]       → esquinas inferiores  
+- radius-left-[tamaño]         → esquinas izquierdas
+- radius-right-[tamaño]        → esquinas derechas
+
+💡 EJEMPLOS:
+- .radius-lg           → 12px en todos los lados
+- .radius-left-sm      → 6px solo en lado izquierdo
+- .radius-top-md       → 8px solo en esquinas superiores
+- .radius-bottom-xs    → 4px solo en esquinas inferiores
+
+✅ VENTAJAS:
+- Nombres descriptivos y claros
+- Sin ambigüedad entre tamaño y posición
+- Patrón consistente: radius-[lado]-[tamaño]
+- Fácil de entender y recordar
+*/

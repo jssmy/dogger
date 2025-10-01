@@ -1,0 +1,77 @@
+:root {
+  // Spacing tokens - each space unit is 4px
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+
+  // Font size tokens - Alta jerarquía (títulos, encabezados)
+  --font-high-xs: 0.875rem; /* 14px */
+  --font-high-s: 1rem; /* 16px */
+  --font-high-m: 1.25rem; /* 20px */
+  --font-high-l: 1.5rem; /* 24px */
+  --font-high-xl: 2rem; /* 32px */
+
+  // Font size tokens - Baja jerarquía (texto secundario, ayuda, labels)
+  --font-low-xs: 0.75rem; /* 12px */
+  --font-low-s: 0.875rem; /* 14px */
+  --font-low-m: 1rem; /* 16px */
+  --font-low-l: 1.125rem; /* 18px */
+
+  // Font weight tokens
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  // Font color tokens - basado en jerarquía de contenido (adaptado a fondos oscuros)
+  --color-content-high: #FFFFFF; /* Blanco puro para títulos y texto principal */
+  --color-content-mid: #E0E0E0; /* Gris claro para texto secundario */
+  --color-content-low: #BDBDBD; /* Gris medio para texto terciario o de ayuda */
+
+  // Radius tokens
+  --radius-tiny: 4px;     /* Muy pequeño - para elementos sutiles */
+  --radius-small: 6px;    /* Pequeño - usa --space-1 */
+  --radius-medium: 8px;   /* Medio - usa --space-2 */
+  --radius-large: 12px;   /* Grande - usa --space-3 */
+  --radius-xl: 16px;      /* Extra grande - usa --space-4 */
+
+  // Background colors
+  --color-background-primary: #000000; /* Fondo principal oscuro */
+  --color-background-secondary: #1A1A1A; /* Fondo secundario oscuro */
+  --color-background-accent: #87CEEB; /* Azul cielo claro para secciones especiales */
+
+  // Brand and Accent colors
+  --color-brand-primary: #4CAF50;       /* Verde vibrante principal */
+  --color-brand-secondary: #F44336;     /* Rojo secundario */
+  --color-brand-accent: #FF9800;        /* Naranja de acento */
+  --color-brand-blue: #2196F3;          /* Azul principal */
+  --color-brand-dark: #1A237E;          /* Azul oscuro para fondos */
+
+  // Interactive elements colors
+  --color-button-primary: #32CD32; /* Verde lima para botones principales */
+  --color-button-secondary: #FFFFFF; /* Blanco para botones secundarios */
+  --color-button-accent: #FF5722; /* Naranja-rojo para botones de acento */
+
+  // Icon and platform colors
+  --color-icon-pink: #E91E63;           /* Rosa/Púrpura */
+  --color-icon-blue: #2196F3;           /* Azul estándar */
+  --color-icon-teal: #00BCD4;           /* Teal/Cian */
+  --color-icon-indigo: #3F51B5;         /* Azul oscuro */
+  --color-icon-lime: #8BC34A;           /* Verde claro */
+  --color-icon-cyan: #1DA1F2;           /* Azul cian */
+
+  // Status and feedback colors
+  --color-success: #4CAF50; /* Verde para éxito */
+  --color-warning: #FF9800; /* Naranja para advertencias */
+  --color-error: #F44336;   /* Rojo para errores */
+  --color-info: #2196F3;    /* Azul para información */
+
+  // Text on colored backgrounds
+  --color-text-on-dark: #FFFFFF; /* Texto blanco para fondos oscuros */
+  --color-text-on-light: #000000; /* Texto negro para fondos claros */
+  --color-text-on-primary: #FFFFFF; /* Texto blanco para fondos primarios */
+}
