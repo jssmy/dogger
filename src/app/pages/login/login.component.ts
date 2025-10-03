@@ -10,17 +10,17 @@ import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-login',
-    imports: [
-        InputComponent,
-        ButtonComponent,
-        FormsModule,
-        ReactiveFormsModule,
-        ErrorControlDirective,
-        RouterModule
-    ],
-    templateUrl: './login.component.html',
-    styleUrl: './login.component.scss'
+  selector: 'app-login',
+  imports: [
+    InputComponent,
+    ButtonComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    ErrorControlDirective,
+    RouterModule,
+  ],
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss',
 })
 export default class LoginComponent {
 
@@ -29,7 +29,7 @@ export default class LoginComponent {
   loginService = inject(LoginService);
   route = inject(Router);
   errorMessage = signal<string | null>(null);
-  
+
 
   login() {
     if (this.presenter.form.valid) {
@@ -37,17 +37,17 @@ export default class LoginComponent {
         .subscribe({
           next: () => this.route.navigate(['main']),
           error: (err: HttpErrorResponse) => {
-            console.log({err});
+            console.log({ err });
             if (err.status === HttpStatusCode.BadRequest) {
 
-              console.log({err});
+              console.log({ err });
 
               this.presenter.setCredentialErrorControl();
             } else if (err.status === HttpStatusCode.Forbidden) {
 
               this.errorMessage.set(err.error.message);
             }
-          }
+          },
         });
     }
 

@@ -8,12 +8,12 @@ import { permissionToNavbarMenuItem } from '../../commons/mappers/permission-to-
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-    selector: 'app-main',
-    imports: [NavbarComponent, FooterComponent],
-    templateUrl: './main.component.html',
-    styleUrl: './main.component.scss'
+  selector: 'app-main',
+  imports: [NavbarComponent, FooterComponent],
+  templateUrl: './main.component.html',
+  styleUrl: './main.component.scss',
 })
-export default class MainComponent implements OnInit { 
+export default class MainComponent implements OnInit {
   auth = inject(AuthService);
   permissionService = inject(PermissionService);
   permissions = signal<Permission[]>([]);
@@ -21,10 +21,10 @@ export default class MainComponent implements OnInit {
   plataformId = inject(PLATFORM_ID);
 
   ngOnInit(): void {
-  
-    if(isPlatformBrowser(this.plataformId)) {
+
+    if (isPlatformBrowser(this.plataformId)) {
       this.permissionService.permissionAuth()
-      .subscribe(permissions => this.permissions.set(permissions));
+        .subscribe(permissions => this.permissions.set(permissions));
     }
   }
 

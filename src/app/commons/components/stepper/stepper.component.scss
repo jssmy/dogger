@@ -1,4 +1,3 @@
-@use "../../../../assets/_variables" as *;
 
 .design-process-section  {
     overflow-x: auto;
@@ -51,12 +50,12 @@
 .process-model li button {
     padding: 0;
     border: none;
-    color: $color_gray_2;
+    color: var(--color-teal-400); /* $color_gray_2 */
     text-decoration: none;
 }
 .process-model li.active,
 .process-model li.visited {
-    color: $color_gray_6;
+    color: var(--color-teal-600); /* $color_gray_6 */
 }
 .process-model li.active button,
 .process-model li.active button:hover,
@@ -64,7 +63,7 @@
 .process-model li.visited button,
 .process-model li.visited button:hover,
 .process-model li.visited button:focus {
-    color: $color_gray_6;
+    color: var(--color-teal-600); /* $color_gray_6 */
 }
 .process-model li.active p,
 .process-model li.visited p {
@@ -84,14 +83,14 @@
 }
 .process-model li.active i, .process-model li.visited i  {
     background: #fff;
-    border-color: $color_gray_6;
+    border-color: var(--color-teal-600); /* $color_gray_6 */
 }
 .process-model li p {
     font-size: 14px;
     margin-top: 11px;
 }
 .process-model.contact-us-tab li.visited button, .process-model.contact-us-tab li.visited p {
-    color: $color_gray_6!important;
+    color: var(--color-teal-600)!important; /* $color_gray_6 */
     font-weight: normal
 }
 .process-model.contact-us-tab li::after  {

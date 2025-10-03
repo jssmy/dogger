@@ -21,7 +21,7 @@ export const refreshTokenExpirationGuard: CanActivateFn = () => {
   }
 
   const token = authService.token();
-  
+
   // Si no hay token o refresh token, redirigir al login
   if (!token || !token.refreshToken) {
     authService.logout();
@@ -31,7 +31,7 @@ export const refreshTokenExpirationGuard: CanActivateFn = () => {
   try {
     // Decodificar el refresh token para obtener la fecha de expiración
     const decodedToken = JWT.decode<{ exp: number }>(token.refreshToken);
-    
+
     if (!decodedToken || !decodedToken.exp) {
       // Si no se puede decodificar o no tiene expiración, redirigir al login
       authService.logout();

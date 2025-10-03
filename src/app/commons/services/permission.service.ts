@@ -8,7 +8,7 @@ import { toQueryParams } from '../utils/string.util';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PermissionService {
 
@@ -30,22 +30,22 @@ export class PermissionService {
             return this.http.get<Permission[]>(environment.permissionAuth)
               .pipe(
                 map(permission => {
-                const parents = permission.filter(parent => !parent.parentId);
-                const children = permission.filter(child => child.parentId);
+                  const parents = permission.filter(parent => !parent.parentId);
+                  const children = permission.filter(child => child.parentId);
 
-                return parents.map(parent => ({
-                  ...parent,
-                  children: children.filter(child => child.parentId === parent.id)
-                }) as Permission);
+                  return parents.map(parent => ({
+                    ...parent,
+                    children: children.filter(child => child.parentId === parent.id),
+                  }) as Permission);
 
-              }),
-              tap(permission => localStorage.setItem('auth-permissions', JSON.stringify(permission)))
-            );
+                }),
+                tap(permission => localStorage.setItem('auth-permissions', JSON.stringify(permission))),
+              );
           }
 
           return [];
         }),
-      )
+      );
 
   }
 
@@ -57,20 +57,20 @@ export class PermissionService {
   AllByGroup(parentId: string | undefined, pagination?: { page: number, limit?: number }) {
 
     return this.isPlatformBrowser
-    .pipe(
-      mergeMap(isBrowser => {
+      .pipe(
+        mergeMap(isBrowser => {
 
-        if (isBrowser) {
-          const query = toQueryParams(pagination);
-        return this.http.get<PaginationResolve<Permission[]>>(`${environment.permissions}/parent/${parentId}?${query}`);
-        }
+          if (isBrowser) {
+            const query = toQueryParams(pagination);
+            return this.http.get<PaginationResolve<Permission[]>>(`${environment.permissions}/parent/${parentId}?${query}`);
+          }
 
-        return [];
-        
-      })
-    )
+          return [];
 
-    
+        }),
+      );
+
+
   }
 
   delete(id: string) {

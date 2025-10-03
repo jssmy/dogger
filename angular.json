@@ -32,18 +32,7 @@
               }
             ],
             "styles": [
-              "src/assets/plugins/bootstrap-5.0.2-dist/css/bootstrap.min.css",
-              "src/assets/plugins/fontawesome-6.5.2-web/css/brands.min.css",
-              "src/assets/plugins/fontawesome-6.5.2-web/css/solid.min.css",
-              "src/assets/plugins/fontawesome-6.5.2-web/css/fontawesome.min.css",
-              "src/assets/css/dark-theme.scss",
-              "src/assets/css/light-theme.scss",
-              "src/assets/__index.scss",
-              "src/assets/__variables.scss",
               "src/styles.scss"
-            ],
-            "scripts": [
-              "src/assets/plugins/bootstrap-5.0.2-dist/js/bootstrap.min.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,

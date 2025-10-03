@@ -21,7 +21,7 @@ export const sessionValidationGuard: CanActivateFn = () => {
   }
 
   const token = authService.token();
-  
+
   // Si no hay token o refresh token, permitir acceso
   if (!token || !token.refreshToken) {
     return true;
@@ -30,7 +30,7 @@ export const sessionValidationGuard: CanActivateFn = () => {
   try {
     // Decodificar el refresh token para obtener la fecha de expiración
     const decodedToken = JWT.decode<{ exp: number }>(token.refreshToken);
-    
+
     if (!decodedToken || !decodedToken.exp) {
       return true; // No se puede decodificar, permitir acceso
     }
@@ -63,7 +63,7 @@ function showSessionExpiredAlert(authService: AuthService, router: Router): void
     allowOutsideClick: false,
     allowEscapeKey: false,
     showConfirmButton: true,
-    confirmButtonColor: '#3085d6'
+    confirmButtonColor: '#3085d6',
   }).then(() => {
     // Hacer logout y redirigir al login
     authService.logout();

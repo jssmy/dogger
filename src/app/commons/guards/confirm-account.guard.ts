@@ -21,7 +21,7 @@ export const confirmAccountGuard: CanActivateFn = (route, __state) => {
     catchError(() => {
       router.navigate(['/403']);
       return of(false);
-    })
+    }),
   );
 };
 

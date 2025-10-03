@@ -33,7 +33,7 @@ export interface Block {
 }
 
 
-export enum BlogStage {  
+export enum BlogStage {
 
     EDIT = 'edit',
 

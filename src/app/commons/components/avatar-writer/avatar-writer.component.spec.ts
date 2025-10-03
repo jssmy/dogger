@@ -8,9 +8,9 @@ describe('AvatarWriterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AvatarWriterComponent]
+      imports: [AvatarWriterComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AvatarWriterComponent);
     component = fixture.componentInstance;

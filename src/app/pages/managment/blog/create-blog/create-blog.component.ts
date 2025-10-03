@@ -12,10 +12,10 @@ import { Router } from '@angular/router';
 import { ALERT_SUCCESS_DRAFT } from '../../../../commons/constants/alerts/alert-success-draft';
 
 @Component({
-    selector: 'app-create-blog',
-    imports: [ButtonComponent],
-    templateUrl: './create-blog.component.html',
-    styleUrl: './create-blog.component.scss'
+  selector: 'app-create-blog',
+  imports: [ButtonComponent],
+  templateUrl: './create-blog.component.html',
+  styleUrl: './create-blog.component.scss',
 })
 export default class CreateBlogComponent implements OnInit {
 
@@ -26,7 +26,6 @@ export default class CreateBlogComponent implements OnInit {
   private readonly stepperService = inject(StepperService);
   private readonly routerService = inject(Router);
   slug = input<string>();
-
 
 
   ngOnInit(): void {
@@ -42,24 +41,23 @@ export default class CreateBlogComponent implements OnInit {
   initializeEditor() {
     this.blogPresenter.getConfig('editor-container')
       .then(config => {
-        
+
         if (this.slug()) {
           this.blogService.getDraftBlog(this.slug() as string).subscribe(blog => {
             this.editor = new EditorJS({
               ...config,
-              data: blog
+              data: blog,
             });
-          })
+          });
         } else {
           this.editor = new EditorJS({
-            ...config
+            ...config,
           });
         }
 
-        
 
         /// load editar data
-      })
+      });
   }
 
 
@@ -72,17 +70,14 @@ export default class CreateBlogComponent implements OnInit {
         } else {
           this.blogService.create({
             ...blog,
-            stage: BlogStage.DRAFT
-           }).subscribe(blog => {
+            stage: BlogStage.DRAFT,
+          }).subscribe(blog => {
             Swal.fire(ALERT_SUCCESS_DRAFT)
-            .then(() => this.routerService.navigate(['managment','blog','draft', blog.slug]))
-          })
+              .then(() => this.routerService.navigate(['managment','blog','draft', blog.slug]));
+          });
         }
       });
   }
-
-
-
 
 
 }

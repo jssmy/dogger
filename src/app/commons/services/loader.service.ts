@@ -2,7 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoaderService {
 
@@ -22,7 +22,7 @@ export class LoaderService {
     if (isPlatformBrowser(this.plataformId)) {
 
       setTimeout(() => {
-        this.$state.set(false)
+        this.$state.set(false);
       }, time);
     }
 

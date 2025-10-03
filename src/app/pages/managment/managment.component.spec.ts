@@ -7,9 +7,9 @@ describe('ManagmentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManagmentComponent]
+      imports: [ManagmentComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ManagmentComponent);
     component = fixture.componentInstance;

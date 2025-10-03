@@ -1,0 +1,258 @@
+/* ===== BORDER SYSTEM ===== */
+/* Sistema completo de borders con diferentes grosores y estilos */
+/* Los tokens están definidos en __tokens.scss */
+
+/* ===== BORDER WIDTH CLASSES ===== */
+/* Aplica border-width a todos los lados */
+.border-xs {
+  border-width: var(--border-xs);
+  border-style: solid;
+}
+
+.border-sm {
+  border-width: var(--border-sm);
+  border-style: solid;
+}
+
+.border-md {
+  border-width: var(--border-md);
+  border-style: solid;
+}
+
+.border-lg {
+  border-width: var(--border-lg);
+  border-style: solid;
+}
+
+.border-xl {
+  border-width: var(--border-xl);
+  border-style: solid;
+}
+
+/* ===== BORDER POR LADOS ===== */
+/* Top - borde superior */
+.border-top-xs {
+  border-top-width: var(--border-xs);
+  border-top-style: solid;
+}
+
+.border-top-sm {
+  border-top-width: var(--border-sm);
+  border-top-style: solid;
+}
+
+.border-top-md {
+  border-top-width: var(--border-md);
+  border-top-style: solid;
+}
+
+.border-top-lg {
+  border-top-width: var(--border-lg);
+  border-top-style: solid;
+}
+
+.border-top-xl {
+  border-top-width: var(--border-xl);
+  border-top-style: solid;
+}
+
+/* Bottom - borde inferior */
+.border-bottom-xs {
+  border-bottom-width: var(--border-xs);
+  border-bottom-style: solid;
+}
+
+.border-bottom-sm {
+  border-bottom-width: var(--border-sm);
+  border-bottom-style: solid;
+}
+
+.border-bottom-md {
+  border-bottom-width: var(--border-md);
+  border-bottom-style: solid;
+}
+
+.border-bottom-lg {
+  border-bottom-width: var(--border-lg);
+  border-bottom-style: solid;
+}
+
+.border-bottom-xl {
+  border-bottom-width: var(--border-xl);
+  border-bottom-style: solid;
+}
+
+/* Left - borde izquierdo */
+.border-left-xs {
+  border-left-width: var(--border-xs);
+  border-left-style: solid;
+}
+
+.border-left-sm {
+  border-left-width: var(--border-sm);
+  border-left-style: solid;
+}
+
+.border-left-md {
+  border-left-width: var(--border-md);
+  border-left-style: solid;
+}
+
+.border-left-lg {
+  border-left-width: var(--border-lg);
+  border-left-style: solid;
+}
+
+.border-left-xl {
+  border-left-width: var(--border-xl);
+  border-left-style: solid;
+}
+
+/* Right - borde derecho */
+.border-right-xs {
+  border-right-width: var(--border-xs);
+  border-right-style: solid;
+}
+
+.border-right-sm {
+  border-right-width: var(--border-sm);
+  border-right-style: solid;
+}
+
+.border-right-md {
+  border-right-width: var(--border-md);
+  border-right-style: solid;
+}
+
+.border-right-lg {
+  border-right-width: var(--border-lg);
+  border-right-style: solid;
+}
+
+.border-right-xl {
+  border-right-width: var(--border-xl);
+  border-right-style: solid;
+}
+
+/* ===== BORDER STYLES ===== */
+/* Estilos de borde independientes del grosor */
+.border-solid { border-style: solid; }
+.border-dashed { border-style: dashed; }
+.border-dotted { border-style: dotted; }
+.border-double { border-style: double; }
+.border-none { border-style: none; }
+
+/* ===== BORDER COMBINATIONS ===== */
+/* Combinaciones de lados */
+.border-x-xs {
+  border-left-width: var(--border-xs);
+  border-right-width: var(--border-xs);
+  border-left-style: solid;
+  border-right-style: solid;
+}
+
+.border-x-sm {
+  border-left-width: var(--border-sm);
+  border-right-width: var(--border-sm);
+  border-left-style: solid;
+  border-right-style: solid;
+}
+
+.border-x-md {
+  border-left-width: var(--border-md);
+  border-right-width: var(--border-md);
+  border-left-style: solid;
+  border-right-style: solid;
+}
+
+.border-x-lg {
+  border-left-width: var(--border-lg);
+  border-right-width: var(--border-lg);
+  border-left-style: solid;
+  border-right-style: solid;
+}
+
+.border-x-xl {
+  border-left-width: var(--border-xl);
+  border-right-width: var(--border-xl);
+  border-left-style: solid;
+  border-right-style: solid;
+}
+
+.border-y-xs {
+  border-top-width: var(--border-xs);
+  border-bottom-width: var(--border-xs);
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+
+.border-y-sm {
+  border-top-width: var(--border-sm);
+  border-bottom-width: var(--border-sm);
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+
+.border-y-md {
+  border-top-width: var(--border-md);
+  border-bottom-width: var(--border-md);
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+
+.border-y-lg {
+  border-top-width: var(--border-lg);
+  border-bottom-width: var(--border-lg);
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+
+.border-y-xl {
+  border-top-width: var(--border-xl);
+  border-bottom-width: var(--border-xl);
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+
+/* ===== DOCUMENTACIÓN DE USO ===== */
+/*
+NOMENCLATURA OPTIMIZADA (corta y clara):
+
+📏 GROSORES (progresión con máximo 8px, -1px sucesivamente):
+- xs: 1px     (extra pequeño)
+- sm: 2px     (pequeño) 
+- md: 4px     (mediano)
+- lg: 6px     (grande)
+- xl: 8px     (extra grande, máximo)
+
+📍 APLICACIÓN:
+- border-[grosor]              → todos los lados
+- border-top-[grosor]          → borde superior
+- border-bottom-[grosor]       → borde inferior  
+- border-left-[grosor]         → borde izquierdo
+- border-right-[grosor]        → borde derecho
+- border-x-[grosor]            → bordes horizontales (izq + der)
+- border-y-[grosor]            → bordes verticales (top + bottom)
+
+🎨 ESTILOS:
+- border-solid                 → línea continua
+- border-dashed                → línea discontinua
+- border-dotted                → línea punteada
+- border-double                → línea doble
+- border-none                  → sin borde
+
+💡 EJEMPLOS:
+- .border-md                   → 4px en todos los lados
+- .border-left-sm              → 2px solo en lado izquierdo
+- .border-top-lg               → 6px solo en borde superior
+- .border-x-xs                 → 1px en bordes horizontales
+- .border-y-md                 → 4px en bordes verticales
+- .border-sm border-dashed     → 2px discontinua en todos los lados
+
+✅ VENTAJAS:
+- Nombres descriptivos y claros
+- Sin ambigüedad entre grosor y posición
+- Patrón consistente: border-[lado]-[grosor]
+- Fácil de entender y recordar
+- Compatible con el sistema de colores existente
+*/

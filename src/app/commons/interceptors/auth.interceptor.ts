@@ -18,15 +18,15 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   if (req.url.includes(environment.refreshToken)) {
     return next(
       req.clone({
-        headers: getHeadersRefresh(req.headers, authService)
-      })
+        headers: getHeadersRefresh(req.headers, authService),
+      }),
     );
   }
 
   return next(
     req.clone({
-      headers: getHeaders(req.headers, authService)
-    })
+      headers: getHeaders(req.headers, authService),
+    }),
   ).pipe(
     catchError((error: HttpErrorResponse) => {
       if (error.status === HttpStatusCode.Unauthorized) {
@@ -38,8 +38,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
               isRefreshing = false;
               return next(
                 req.clone({
-                  headers: getHeaders(req.headers, authService)
-                })
+                  headers: getHeaders(req.headers, authService),
+                }),
               );
             }),
             catchError((err: HttpErrorResponse) => {
@@ -47,39 +47,39 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
               // tokenSubject.next(null);
               router.navigate(['/login']);
               return throwError(() => err);
-            })
-          );
-        } else {
-          // Esperar hasta que el token sea refrescado
-          return toObservable(authService.token).pipe(
-            filter((token) => token !== null),
-            take(1),
-            switchMap((token) =>
-              next(
-                req.clone({
-                  headers: req.headers.set('Authorization', `Bearer ${token}`)
-                })
-              )
-            )
+            }),
           );
         }
+        // Esperar hasta que el token sea refrescado
+        return toObservable(authService.token).pipe(
+          filter((token) => token !== null),
+          take(1),
+          switchMap((token) =>
+            next(
+              req.clone({
+                headers: req.headers.set('Authorization', `Bearer ${token}`),
+              }),
+            ),
+          ),
+        );
+
       }
 
       return throwError(() => error);
-    })
+    }),
   );
 };
 
 const getHeaders = (headers: HttpHeaders, authService: AuthService) => {
   return headers.set(
     'Authorization',
-    `Bearer ${authService.token()?.accessToken || 'xxxx'}`
+    `Bearer ${authService.token()?.accessToken || 'xxxx'}`,
   );
 };
 
 const getHeadersRefresh = (headers: HttpHeaders, authService: AuthService) => {
   return headers.set(
     'Authorization',
-    `Bearer ${authService.token()?.refreshToken || 'xxxx'}`
+    `Bearer ${authService.token()?.refreshToken || 'xxxx'}`,
   );
 };

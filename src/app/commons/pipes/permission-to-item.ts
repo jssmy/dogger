@@ -5,7 +5,7 @@ import { permissionToItem } from '../mappers/permission-to-item';
 
 @Pipe({
   name: 'permissionToItem',
-  standalone: true
+  standalone: true,
 })
 export class PermissionToItem implements PipeTransform {
 

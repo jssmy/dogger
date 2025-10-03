@@ -40,7 +40,7 @@ export function app(): express.Express {
           { provide: APP_BASE_HREF, useValue: baseUrl },
           // { provide: 'SSR_DATA', useValue: { user: 'Admin' } }
         ],
-        
+
       })
       .then((html) => res.send(html))
       .catch((err) => next(err));

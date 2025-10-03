@@ -11,10 +11,10 @@ import Swal from 'sweetalert2';
 import { ALERT_SUCCESS_CREATE } from '../../../../commons/constants/alerts/alert-succes-create';
 
 @Component({
-    selector: 'app-create-user',
-    imports: [InputComponent, ButtonComponent, FormsModule, ReactiveFormsModule, CommonModule],
-    templateUrl: './create-user.component.html',
-    styleUrl: './create-user.component.scss'
+  selector: 'app-create-user',
+  imports: [InputComponent, ButtonComponent, FormsModule, ReactiveFormsModule, CommonModule],
+  templateUrl: './create-user.component.html',
+  styleUrl: './create-user.component.scss',
 })
 export default class CreateUserComponent implements OnDestroy {
   presenter = inject(CreateUserPresenter);
@@ -30,7 +30,7 @@ export default class CreateUserComponent implements OnDestroy {
             Swal.fire(ALERT_SUCCESS_CREATE);
             this.presenter.reset();
           },
-          error: (e) => Swal.fire("Ups!", Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error')
+          error: (e) => Swal.fire('Ups!', Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error'),
 
         });
     }

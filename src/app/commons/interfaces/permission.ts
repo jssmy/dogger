@@ -1,5 +1,5 @@
-import { HttpMethods } from "../enum/http-methods";
-import { PermissionType } from "../enum/permission-type";
+import { HttpMethods } from '../enum/http-methods';
+import { PermissionType } from '../enum/permission-type';
 
 export interface Permission {
     id?: string;

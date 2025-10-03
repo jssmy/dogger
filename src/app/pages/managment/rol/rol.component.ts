@@ -10,10 +10,10 @@ import { Role } from '../../../commons/interfaces/role';
 import { PaginationResolve } from '../../../commons/interfaces/pagination-resolve';
 
 @Component({
-    selector: 'app-rol',
-    imports: [CommonModule, RouterModule, PaginationComponent],
-    templateUrl: './rol.component.html',
-    styleUrl: './rol.component.scss'
+  selector: 'app-rol',
+  imports: [CommonModule, RouterModule, PaginationComponent],
+  templateUrl: './rol.component.html',
+  styleUrl: './rol.component.scss',
 })
 export default class RolComponent implements OnInit {
 
@@ -38,7 +38,7 @@ export default class RolComponent implements OnInit {
                 this.roleService.getRoles({ page: 1 })
                   .subscribe(resolve => this.paginationRoles.set(resolve));
               },
-              error: (e) => Swal.fire("Ups!",  Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error')
+              error: (e) => Swal.fire('Ups!',  Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error'),
             });
         }
       });

@@ -12,13 +12,13 @@ export const appConfig: ApplicationConfig = {
       withFetch(),
       withInterceptors([
         loaderInterceptor,
-        authInterceptor
-      ])
+        authInterceptor,
+      ]),
     ),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes, withComponentInputBinding()),
     provideClientHydration(withHttpTransferCacheOptions({
-      includePostRequests: true
+      includePostRequests: true,
     })),
-  ]
+  ],
 };

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Sistema de Colores con Herencia de Sombras</title>
+    <link rel="stylesheet" href="src/assets/foundations/__index.scss">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .demo-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .demo-item {
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .demo-item .class-name {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+        
+        .shadow-demo {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .code-block {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 style="text-align: center; margin-bottom: 32px; color: #1a1a1a;">
+            🎨 Sistema de Colores con Herencia de Sombras
+        </h1>
+        
+        <!-- Background Colors Demo -->
+        <div class="demo-section">
+            <h2 class="demo-title">Colores de Fondo</h2>
+            <div class="demo-grid">
+                <div class="demo-item bg-white">
+                    <div>Fondo Blanco</div>
+                    <div class="class-name">bg-white</div>
+                </div>
+                <div class="demo-item bg-red-100">
+                    <div>Fondo Rojo Claro</div>
+                    <div class="class-name">bg-red-100</div>
+                </div>
+                <div class="demo-item bg-blue-200">
+                    <div>Fondo Azul Claro</div>
+                    <div class="class-name">bg-blue-200</div>
+                </div>
+                <div class="demo-item bg-green-300">
+                    <div>Fondo Verde Claro</div>
+                    <div class="class-name">bg-green-300</div>
+                </div>
+                <div class="demo-item bg-purple-400">
+                    <div>Fondo Púrpura</div>
+                    <div class="class-name">bg-purple-400</div>
+                </div>
+                <div class="demo-item bg-yellow-500">
+                    <div>Fondo Amarillo</div>
+                    <div class="class-name">bg-yellow-500</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Border Colors Demo -->
+        <div class="demo-section">
+            <h2 class="demo-title">Colores de Borde</h2>
+            <div class="demo-grid">
+                <div class="demo-item bg-white border border-red-500">
+                    <div>Borde Rojo</div>
+                    <div class="class-name">border-red-500</div>
+                </div>
+                <div class="demo-item bg-white border border-blue-500">
+                    <div>Borde Azul</div>
+                    <div class="class-name">border-blue-500</div>
+                </div>
+                <div class="demo-item bg-white border border-green-500">
+                    <div>Borde Verde</div>
+                    <div class="class-name">border-green-500</div>
+                </div>
+                <div class="demo-item bg-white border border-purple-500">
+                    <div>Borde Púrpura</div>
+                    <div class="class-name">border-purple-500</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Shadow Inheritance Demo -->
+        <div class="demo-section">
+            <h2 class="demo-title">✨ Herencia de Sombras (La característica principal)</h2>
+            <p style="margin-bottom: 20px; color: #666;">
+                Las sombras heredan automáticamente el color del borde. Cuando usas <span class="highlight">border-[color]</span> 
+                junto con <span class="highlight">shadow-*-colored</span>, la sombra tendrá el mismo color que el borde.
+            </p>
+            
+            <div class="shadow-demo bg-white border border-red-500 shadow-lg-colored">
+                <div>
+                    <strong>Borde Rojo + Sombra Roja</strong>
+                    <div class="class-name">border-red-500 shadow-lg-colored</div>
+                </div>
+            </div>
+            
+            <div class="shadow-demo bg-white border border-blue-500 shadow-lg-colored">
+                <div>
+                    <strong>Borde Azul + Sombra Azul</strong>
+                    <div class="class-name">border-blue-500 shadow-lg-colored</div>
+                </div>
+            </div>
+            
+            <div class="shadow-demo bg-white border border-green-500 shadow-lg-colored">
+                <div>
+                    <strong>Borde Verde + Sombra Verde</strong>
+                    <div class="class-name">border-green-500 shadow-lg-colored</div>
+                </div>
+            </div>
+            
+            <div class="shadow-demo bg-white border border-purple-500 shadow-lg-colored">
+                <div>
+                    <strong>Borde Púrpura + Sombra Púrpura</strong>
+                    <div class="class-name">border-purple-500 shadow-lg-colored</div>
+                </div>
+            </div>
+            
+            <!-- Ejemplo específico mencionado -->
+            <div class="shadow-demo bg-gray-100 border border-white shadow-colored">
+                <div>
+                    <strong>🎯 Ejemplo específico: Borde Blanco + Sombra Blanca</strong>
+                    <div class="class-name">border-white shadow-colored</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Different Shadow Sizes -->
+        <div class="demo-section">
+            <h2 class="demo-title">Diferentes Tamaños de Sombra</h2>
+            <div class="demo-grid">
+                <div class="demo-item bg-white border border-orange-500 shadow-sm-colored">
+                    <div>Sombra Pequeña</div>
+                    <div class="class-name">shadow-sm-colored</div>
+                </div>
+                <div class="demo-item bg-white border border-orange-500 shadow-colored">
+                    <div>Sombra Normal</div>
+                    <div class="class-name">shadow-colored</div>
+                </div>
+                <div class="demo-item bg-white border border-orange-500 shadow-md-colored">
+                    <div>Sombra Media</div>
+                    <div class="class-name">shadow-md-colored</div>
+                </div>
+                <div class="demo-item bg-white border border-orange-500 shadow-lg-colored">
+                    <div>Sombra Grande</div>
+                    <div class="class-name">shadow-lg-colored</div>
+                </div>
+                <div class="demo-item bg-white border border-orange-500 shadow-xl-colored">
+                    <div>Sombra Extra Grande</div>
+                    <div class="class-name">shadow-xl-colored</div>
+                </div>
+                <div class="demo-item bg-white border border-orange-500 shadow-2xl-colored">
+                    <div>Sombra 2XL</div>
+                    <div class="class-name">shadow-2xl-colored</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Usage Examples -->
+        <div class="demo-section">
+            <h2 class="demo-title">Ejemplos de Uso</h2>
+            
+            <h3>1. Borde blanco con sombra blanca (como solicitaste):</h3>
+            <div class="code-block">
+&lt;div class="border-white shadow-colored"&gt;
+  Contenido con borde blanco y sombra blanca
+&lt;/div&gt;
+            </div>
+            
+            <h3>2. Combinación completa con diferentes colores:</h3>
+            <div class="code-block">
+&lt;div class="bg-white border-red-300 rounded-lg shadow-xl-colored"&gt;
+  Tarjeta con fondo blanco, borde rojo y sombra roja
+&lt;/div&gt;
+            </div>
+            
+            <h3>3. Botón con efecto de sombra heredada:</h3>
+            <div class="code-block">
+&lt;button class="bg-blue-500 text-white border-blue-600 shadow-md-colored px-4 py-2 rounded"&gt;
+  Botón con sombra azul
+&lt;/button&gt;
+            </div>
+        </div>
+        
+        <!-- Technical Notes -->
+        <div class="demo-section">
+            <h2 class="demo-title">Notas Técnicas</h2>
+            <ul style="color: #666; line-height: 1.6;">
+                <li>Las clases <code>border-[color]</code> establecen automáticamente la variable <code>--shadow-color-rgb</code></li>
+                <li>Las clases <code>shadow-*-colored</code> utilizan esta variable para crear sombras del mismo color</li>
+                <li>Si no se define un borde, las sombras usan negro por defecto</li>
+                <li>El sistema funciona completamente con CSS puro, sin necesidad de JavaScript</li>
+                <li>Todos los colores incluyen variantes del 50 al 900 para máxima flexibilidad</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

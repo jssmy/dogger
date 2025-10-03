@@ -6,12 +6,11 @@ import { CreateUserDto } from '../interfaces/dto/create-user.dto';
 import { PaginationResolve } from '../interfaces/pagination-resolve';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
 
   private readonly http = inject(HttpClient);
-
 
 
   getUsers(page = 1, limit = 10) {

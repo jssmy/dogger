@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-password-strength-indicator',
   imports: [CommonModule],
   templateUrl: './password-strength-indicator.component.html',
-  styleUrl: './password-strength-indicator.component.scss'
+  styleUrl: './password-strength-indicator.component.scss',
 })
 export class PasswordStrengthIndicatorComponent {
   strength = input<number>(0);

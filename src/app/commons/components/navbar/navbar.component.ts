@@ -5,26 +5,28 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { LoginService } from '../../services/login.service';
 import Swal from 'sweetalert2';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
-    selector: 'app-navbar',
-    imports: [
-        RouterModule,
-        CommonModule
-    ],
-    templateUrl: './navbar.component.html',
-    styleUrl: './navbar.component.scss'
+  selector: 'app-navbar',
+  imports: [
+    RouterModule,
+    CommonModule,
+    ButtonComponent,
+  ],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  items = input.required<NavbarItem[]>();
-  authService = inject(AuthService);
-  route = inject(Router);
-  loginService = inject(LoginService);
+  readonly items = input.required<NavbarItem[]>();
+  readonly authService = inject(AuthService);
+  readonly route = inject(Router);
+  readonly loginService = inject(LoginService);
 
   logout() {
     this.loginService.out().subscribe({
       next: () => this.route.navigate(['/']),
-      error: () => Swal.fire("Ups!", 'Error trying close session, please try again!', 'error')
+      error: () => Swal.fire('Ups!', 'Error trying close session, please try again!', 'error'),
     });
   }
 

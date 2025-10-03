@@ -1,4 +1,4 @@
-import { ErrorControlDirective } from "./error-control.directive";
+import { ErrorControlDirective } from './error-control.directive';
 
 
 describe('ErrorControlDirective', () => {

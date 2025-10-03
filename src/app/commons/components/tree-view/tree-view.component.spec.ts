@@ -8,9 +8,9 @@ describe('TreeViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TreeViewComponent]
+      imports: [TreeViewComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TreeViewComponent);
     component = fixture.componentInstance;

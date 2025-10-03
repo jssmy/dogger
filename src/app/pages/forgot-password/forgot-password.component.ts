@@ -10,17 +10,17 @@ import { ForgotPasswordPresenter } from './forgot-password.presenter';
 import { ForgotPasswordService } from '../../commons/services/forgot-password.service';
 
 @Component({
-    selector: 'app-forgot-password',
-    imports: [
-        InputComponent,
-        ButtonComponent,
-        FormsModule,
-        ReactiveFormsModule,
-        ErrorControlDirective,
-        RouterModule
-    ],
-    templateUrl: './forgot-password.component.html',
-    styleUrl: './forgot-password.component.scss'
+  selector: 'app-forgot-password',
+  imports: [
+    InputComponent,
+    ButtonComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    ErrorControlDirective,
+    RouterModule,
+  ],
+  templateUrl: './forgot-password.component.html',
+  styleUrl: './forgot-password.component.scss',
 })
 export default class ForgotPasswordComponent {
 
@@ -47,7 +47,7 @@ export default class ForgotPasswordComponent {
             } else {
               this.errorMessage.set(err.error?.message || 'Error al solicitar cambio de contraseña');
             }
-          }
+          },
         });
     }
   }

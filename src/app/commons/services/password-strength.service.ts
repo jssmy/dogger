@@ -7,7 +7,7 @@ export interface PasswordStrengthResult {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PasswordStrengthService {
 
@@ -53,7 +53,7 @@ export class PasswordStrengthService {
 
   getStrengthLevel(password: string): 'easy' | 'medium' | 'hard' {
     const score = this.calculateStrength(password);
-    
+
     if (score <= 3) return 'easy';
     if (score <= 6) return 'medium';
     return 'hard';
@@ -61,7 +61,7 @@ export class PasswordStrengthService {
 
   getStrengthFeedback(password: string): string[] {
     const feedback: string[] = [];
-    
+
     if (!password) return ['Enter a password'];
 
     if (password.length < 8) feedback.push('Use at least 8 characters');

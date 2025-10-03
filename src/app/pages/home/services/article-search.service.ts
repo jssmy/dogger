@@ -2,20 +2,20 @@ import { Injectable } from '@angular/core';
 import { filter, from, map, Observable, of } from 'rxjs';
 import { Article } from '../../../commons/interfaces/article';
 import { MathUtil } from '../../../commons/utils/math.util';
-const ARTICLES_DUMMY: Article[] = require('./../../../commons/dummy/articles.json')
+const ARTICLES_DUMMY: Article[] = require('./../../../commons/dummy/articles.json');
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ArticleSearchService {
 
 
   findById(id: string): Observable<Article> {
     return from<Article[]>(ARTICLES_DUMMY)
-    .pipe(
-      filter(article => article.id === id)
-    );
+      .pipe(
+        filter(article => article.id === id),
+      );
   }
 
   findAllByQuery(query: string): Observable<Article[]> {
@@ -39,8 +39,8 @@ export class ArticleSearchService {
 
 
   private articleMatched(query: string, article: Article[]): Article[] {
-      const querySplit = query.split(' ');
-      return article.filter(article => querySplit.some(split => article.keywords.includes(split.trim())))
+    const querySplit = query.split(' ');
+    return article.filter(article => querySplit.some(split => article.keywords.includes(split.trim())))
       .slice(0, 8);
   }
 

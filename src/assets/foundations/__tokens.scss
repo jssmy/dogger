@@ -32,12 +32,19 @@
   --color-content-mid: #E0E0E0; /* Gris claro para texto secundario */
   --color-content-low: #BDBDBD; /* Gris medio para texto terciario o de ayuda */
 
-  // Radius tokens
-  --radius-tiny: 4px;     /* Muy pequeño - para elementos sutiles */
-  --radius-small: 6px;    /* Pequeño - usa --space-1 */
-  --radius-medium: 8px;   /* Medio - usa --space-2 */
-  --radius-large: 12px;   /* Grande - usa --space-3 */
-  --radius-xl: 16px;      /* Extra grande - usa --space-4 */
+  // Radius tokens - progresión con máximo 40px, -8px sucesivamente
+  --radius-xs: 8px;       /* Extra pequeño (40-32) */
+  --radius-sm: 16px;      /* Pequeño (40-24) */
+  --radius-md: 24px;      /* Medio (40-16) */
+  --radius-lg: 32px;      /* Grande (40-8) */
+  --radius-xl: 40px;      /* Extra grande (máximo) */
+
+  // Border width tokens - progresión con máximo 8px, -1px sucesivamente
+  --border-xs: 1px;       /* Extra pequeño */
+  --border-sm: 2px;       /* Pequeño */
+  --border-md: 4px;       /* Medio */
+  --border-lg: 6px;       /* Grande */
+  --border-xl: 8px;       /* Extra grande (máximo) */
 
   // Background colors
   --color-background-primary: #000000; /* Fondo principal oscuro */
@@ -74,4 +81,219 @@
   --color-text-on-dark: #FFFFFF; /* Texto blanco para fondos oscuros */
   --color-text-on-light: #000000; /* Texto negro para fondos claros */
   --color-text-on-primary: #FFFFFF; /* Texto blanco para fondos primarios */
+
+  // Extended color palette for comprehensive system
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray-50: #FAFAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #EEEEEE;
+  --color-gray-300: #E0E0E0;
+  --color-gray-400: #BDBDBD;
+  --color-gray-500: #9E9E9E;
+  --color-gray-600: #757575;
+  --color-gray-700: #616161;
+  --color-gray-800: #424242;
+  --color-gray-900: #212121;
+
+  // Extended brand colors
+  --color-red-50: #FFEBEE;
+  --color-red-100: #FFCDD2;
+  --color-red-200: #EF9A9A;
+  --color-red-300: #E57373;
+  --color-red-400: #EF5350;
+  --color-red-500: #F44336;
+  --color-red-600: #E53935;
+  --color-red-700: #D32F2F;
+  --color-red-800: #C62828;
+  --color-red-900: #B71C1C;
+
+  --color-blue-50: #E3F2FD;
+  --color-blue-100: #BBDEFB;
+  --color-blue-200: #90CAF9;
+  --color-blue-300: #64B5F6;
+  --color-blue-400: #42A5F5;
+  --color-blue-500: #2196F3;
+  --color-blue-600: #1E88E5;
+  --color-blue-700: #1976D2;
+  --color-blue-800: #1565C0;
+  --color-blue-900: #0D47A1;
+
+  --color-green-50: #E8F5E8;
+  --color-green-100: #C8E6C9;
+  --color-green-200: #A5D6A7;
+  --color-green-300: #81C784;
+  --color-green-400: #66BB6A;
+  --color-green-500: #4CAF50;
+  --color-green-600: #43A047;
+  --color-green-700: #388E3C;
+  --color-green-800: #2E7D32;
+  --color-green-900: #1B5E20;
+
+  --color-yellow-50: #FFFDE7;
+  --color-yellow-100: #FFF9C4;
+  --color-yellow-200: #FFF59D;
+  --color-yellow-300: #FFF176;
+  --color-yellow-400: #FFEE58;
+  --color-yellow-500: #FFEB3B;
+  --color-yellow-600: #FDD835;
+  --color-yellow-700: #FBC02D;
+  --color-yellow-800: #F9A825;
+  --color-yellow-900: #F57F17;
+
+  --color-purple-50: #F3E5F5;
+  --color-purple-100: #E1BEE7;
+  --color-purple-200: #CE93D8;
+  --color-purple-300: #BA68C8;
+  --color-purple-400: #AB47BC;
+  --color-purple-500: #9C27B0;
+  --color-purple-600: #8E24AA;
+  --color-purple-700: #7B1FA2;
+  --color-purple-800: #6A1B9A;
+  --color-purple-900: #4A148C;
+
+  --color-orange-50: #FFF3E0;
+  --color-orange-100: #FFE0B2;
+  --color-orange-200: #FFCC80;
+  --color-orange-300: #FFB74D;
+  --color-orange-400: #FFA726;
+  --color-orange-500: #FF9800;
+  --color-orange-600: #FB8C00;
+  --color-orange-700: #F57C00;
+  --color-orange-800: #EF6C00;
+  --color-orange-900: #E65100;
+
+  --color-pink-50: #FCE4EC;
+  --color-pink-100: #F8BBD9;
+  --color-pink-200: #F48FB1;
+  --color-pink-300: #F06292;
+  --color-pink-400: #EC407A;
+  --color-pink-500: #E91E63;
+  --color-pink-600: #D81B60;
+  --color-pink-700: #C2185B;
+  --color-pink-800: #AD1457;
+  --color-pink-900: #880E4F;
+
+  --color-teal-50: #E0F2F1;
+  --color-teal-100: #B2DFDB;
+  --color-teal-200: #80CBC4;
+  --color-teal-300: #4DB6AC;
+  --color-teal-400: #26A69A;
+  --color-teal-500: #009688;
+  --color-teal-600: #00897B;
+  --color-teal-700: #00796B;
+  --color-teal-800: #00695C;
+  --color-teal-900: #004D40;
+
+  // Shadow tokens
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  // RGB color values for shadow inheritance
+  --color-white-rgb: 255, 255, 255;
+  --color-black-rgb: 0, 0, 0;
+  
+  --color-gray-50-rgb: 250, 250, 250;
+  --color-gray-100-rgb: 245, 245, 245;
+  --color-gray-200-rgb: 238, 238, 238;
+  --color-gray-300-rgb: 224, 224, 224;
+  --color-gray-400-rgb: 189, 189, 189;
+  --color-gray-500-rgb: 158, 158, 158;
+  --color-gray-600-rgb: 117, 117, 117;
+  --color-gray-700-rgb: 97, 97, 97;
+  --color-gray-800-rgb: 66, 66, 66;
+  --color-gray-900-rgb: 33, 33, 33;
+
+  --color-red-50-rgb: 255, 235, 238;
+  --color-red-100-rgb: 255, 205, 210;
+  --color-red-200-rgb: 239, 154, 154;
+  --color-red-300-rgb: 229, 115, 115;
+  --color-red-400-rgb: 239, 83, 80;
+  --color-red-500-rgb: 244, 67, 54;
+  --color-red-600-rgb: 229, 57, 53;
+  --color-red-700-rgb: 211, 47, 47;
+  --color-red-800-rgb: 198, 40, 40;
+  --color-red-900-rgb: 183, 28, 28;
+
+  --color-blue-50-rgb: 227, 242, 253;
+  --color-blue-100-rgb: 187, 222, 251;
+  --color-blue-200-rgb: 144, 202, 249;
+  --color-blue-300-rgb: 100, 181, 246;
+  --color-blue-400-rgb: 66, 165, 245;
+  --color-blue-500-rgb: 33, 150, 243;
+  --color-blue-600-rgb: 30, 136, 229;
+  --color-blue-700-rgb: 25, 118, 210;
+  --color-blue-800-rgb: 21, 101, 192;
+  --color-blue-900-rgb: 13, 71, 161;
+
+  --color-green-50-rgb: 232, 245, 232;
+  --color-green-100-rgb: 200, 230, 201;
+  --color-green-200-rgb: 165, 214, 167;
+  --color-green-300-rgb: 129, 199, 132;
+  --color-green-400-rgb: 102, 187, 106;
+  --color-green-500-rgb: 76, 175, 80;
+  --color-green-600-rgb: 67, 160, 71;
+  --color-green-700-rgb: 56, 142, 60;
+  --color-green-800-rgb: 46, 125, 50;
+  --color-green-900-rgb: 27, 94, 32;
+
+  --color-yellow-50-rgb: 255, 253, 231;
+  --color-yellow-100-rgb: 255, 249, 196;
+  --color-yellow-200-rgb: 255, 245, 157;
+  --color-yellow-300-rgb: 255, 241, 118;
+  --color-yellow-400-rgb: 255, 238, 88;
+  --color-yellow-500-rgb: 255, 235, 59;
+  --color-yellow-600-rgb: 253, 216, 53;
+  --color-yellow-700-rgb: 251, 192, 45;
+  --color-yellow-800-rgb: 249, 168, 37;
+  --color-yellow-900-rgb: 245, 127, 23;
+
+  --color-purple-50-rgb: 243, 229, 245;
+  --color-purple-100-rgb: 225, 190, 231;
+  --color-purple-200-rgb: 206, 147, 216;
+  --color-purple-300-rgb: 186, 104, 200;
+  --color-purple-400-rgb: 171, 71, 188;
+  --color-purple-500-rgb: 156, 39, 176;
+  --color-purple-600-rgb: 142, 36, 170;
+  --color-purple-700-rgb: 123, 31, 162;
+  --color-purple-800-rgb: 106, 27, 154;
+  --color-purple-900-rgb: 74, 20, 140;
+
+  --color-orange-50-rgb: 255, 243, 224;
+  --color-orange-100-rgb: 255, 224, 178;
+  --color-orange-200-rgb: 255, 204, 128;
+  --color-orange-300-rgb: 255, 183, 77;
+  --color-orange-400-rgb: 255, 167, 38;
+  --color-orange-500-rgb: 255, 152, 0;
+  --color-orange-600-rgb: 251, 140, 0;
+  --color-orange-700-rgb: 245, 124, 0;
+  --color-orange-800-rgb: 239, 108, 0;
+  --color-orange-900-rgb: 230, 81, 0;
+
+  --color-pink-50-rgb: 252, 228, 236;
+  --color-pink-100-rgb: 248, 187, 217;
+  --color-pink-200-rgb: 244, 143, 177;
+  --color-pink-300-rgb: 240, 98, 146;
+  --color-pink-400-rgb: 236, 64, 122;
+  --color-pink-500-rgb: 233, 30, 99;
+  --color-pink-600-rgb: 216, 27, 96;
+  --color-pink-700-rgb: 194, 24, 91;
+  --color-pink-800-rgb: 173, 20, 87;
+  --color-pink-900-rgb: 136, 14, 79;
+
+  --color-teal-50-rgb: 224, 242, 241;
+  --color-teal-100-rgb: 178, 223, 219;
+  --color-teal-200-rgb: 128, 203, 196;
+  --color-teal-300-rgb: 77, 182, 172;
+  --color-teal-400-rgb: 38, 166, 154;
+  --color-teal-500-rgb: 0, 150, 136;
+  --color-teal-600-rgb: 0, 137, 123;
+  --color-teal-700-rgb: 0, 121, 107;
+  --color-teal-800-rgb: 0, 105, 92;
+  --color-teal-900-rgb: 0, 77, 64;
 }

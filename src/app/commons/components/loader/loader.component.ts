@@ -4,14 +4,14 @@ import { CommonModule } from '@angular/common';
 
 
 @Component({
-    selector: 'app-loader',
-    imports: [CommonModule],
-    templateUrl: './loader.component.html',
-    styleUrl: './loader.component.scss'
+  selector: 'app-loader',
+  imports: [CommonModule],
+  templateUrl: './loader.component.html',
+  styleUrl: './loader.component.scss',
 })
 export class LoaderComponent {
   constructor(
-    readonly loader: LoaderService
+    readonly loader: LoaderService,
   ) {}
 
 }

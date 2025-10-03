@@ -1,40 +1,40 @@
-import { Injectable, inject, signal, computed } from "@angular/core";
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from "@angular/forms";
-import { toSignal } from "@angular/core/rxjs-interop";
-import { FORGOT_PASSWORD_FORM_CONTROL_ERRORS } from "./forgot-password.formcontrol.errors";
+import { Injectable, inject, signal, computed } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { FORGOT_PASSWORD_FORM_CONTROL_ERRORS } from './forgot-password.formcontrol.errors';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class ForgotPasswordPresenter {
-    readonly form: FormGroup;
-    readonly emailControl = new FormControl('');
+  readonly form: FormGroup;
+  readonly emailControl = new FormControl('');
 
-    readonly ERROR_CONTROL = FORGOT_PASSWORD_FORM_CONTROL_ERRORS;
+  readonly ERROR_CONTROL = FORGOT_PASSWORD_FORM_CONTROL_ERRORS;
 
-    // Reactive signal for email value
-    readonly emailValue = toSignal(this.emailControl.valueChanges, { initialValue: '' });
+  // Reactive signal for email value
+  readonly emailValue = toSignal(this.emailControl.valueChanges, { initialValue: '' });
 
-    constructor() {
-        this.addValidations();
-        this.form = new FormGroup({
-            emailControl: this.emailControl
-        });
-    }
+  constructor() {
+    this.addValidations();
+    this.form = new FormGroup({
+      emailControl: this.emailControl,
+    });
+  }
 
-    private addValidations(): void {
-        this.emailControl.setValidators([
-            Validators.required,
-            Validators.email,
-            Validators.pattern(/^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/)
-        ]);
-    }
+  private addValidations(): void {
+    this.emailControl.setValidators([
+      Validators.required,
+      Validators.email,
+      Validators.pattern(/^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/),
+    ]);
+  }
 
-    setEmailErrorControl(): void {
-        this.emailControl.setErrors({ userNotFound: true });
-    }
+  setEmailErrorControl(): void {
+    this.emailControl.setErrors({ userNotFound: true });
+  }
 
-    setEmptyErrorControl(): void {
-        this.emailControl.setErrors(null);
-    }
+  setEmptyErrorControl(): void {
+    this.emailControl.setErrors(null);
+  }
 }

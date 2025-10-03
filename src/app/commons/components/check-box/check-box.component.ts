@@ -2,19 +2,19 @@ import { Component, forwardRef, input, model } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-    selector: 'app-check-box',
-    imports: [],
-    templateUrl: './check-box.component.html',
-    styleUrl: './check-box.component.scss',
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => CheckBoxComponent),
-            multi: true
-        }
-    ]
+  selector: 'app-check-box',
+  imports: [],
+  templateUrl: './check-box.component.html',
+  styleUrl: './check-box.component.scss',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => CheckBoxComponent),
+      multi: true,
+    },
+  ],
 })
-export class CheckBoxComponent implements ControlValueAccessor{
+export class CheckBoxComponent implements ControlValueAccessor {
 
 
   checked = model<boolean>(false);
@@ -26,7 +26,6 @@ export class CheckBoxComponent implements ControlValueAccessor{
   onTouched = () => true;
 
 
-
   // Cambio manual del estado
   toggleChecked(): void {
     this.checked.set(!this.checked());
@@ -34,7 +33,7 @@ export class CheckBoxComponent implements ControlValueAccessor{
     this.onTouched();
   }
 
-  
+
   writeValue(value: boolean): void {
     this.checked.set(value);
   }

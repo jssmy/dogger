@@ -6,25 +6,25 @@ import { toFlatten } from '../../utils/array.util';
 import { markTreeViewItem } from '../../mappers/mark-tree-view-item';
 
 @Component({
-    selector: 'app-tree-view',
-    imports: [CheckBoxComponent],
-    templateUrl: './tree-view.component.html',
-    styleUrl: './tree-view.component.scss',
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => TreeViewComponent),
-            multi: true
-        }
-    ]
+  selector: 'app-tree-view',
+  imports: [CheckBoxComponent],
+  templateUrl: './tree-view.component.html',
+  styleUrl: './tree-view.component.scss',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TreeViewComponent),
+      multi: true,
+    },
+  ],
 })
-export class TreeViewComponent implements ControlValueAccessor { 
+export class TreeViewComponent implements ControlValueAccessor {
 
   items = input.required<TreeViewItem[]>();
   value = model<TreeViewItem[] | null>();
-  
+
   listItem = computed(() => {
-    const ids = toFlatten('id', this.value() || [])
+    const ids = toFlatten('id', this.value() || []);
     return markTreeViewItem(this.items(), ids);
   });
 
@@ -40,7 +40,7 @@ export class TreeViewComponent implements ControlValueAccessor {
     item.isChecked = !item.isChecked;
     item.children = item.children?.map(child => ({
       ...child,
-      isChecked: child.isDisabled || item.isChecked
+      isChecked: child.isDisabled || item.isChecked,
     } as TreeViewItem));
     item.countChecked = item.children.filter(child => child.isChecked).length;
     // item.isChecked = item.children.length === item.countChecked;
@@ -50,7 +50,7 @@ export class TreeViewComponent implements ControlValueAccessor {
 
   onCheckedChild(parent: TreeViewItem, child: TreeViewItemBase) {
     child.isChecked = !child.isChecked;
-    parent.countChecked = parent.children.filter(c => c.isChecked).length;    
+    parent.countChecked = parent.children.filter(c => c.isChecked).length;
     parent.isChecked = parent.children.length === parent.countChecked;
     this.onChange(this.selectedItems());
     this.onTouched();
@@ -67,7 +67,7 @@ export class TreeViewComponent implements ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    
+
   }
 
   writeValue(obj: TreeViewItem[]): void {
@@ -78,10 +78,10 @@ export class TreeViewComponent implements ControlValueAccessor {
     return [
       ///  has children
       ... this.items().filter(item => item.children.length > 0)
-      .map( item => ({ ...item, children: item.children.filter(child => child.isChecked)}))
-      .filter(item => item.children.length > 0),
+        .map( item => ({ ...item, children: item.children.filter(child => child.isChecked) }))
+        .filter(item => item.children.length > 0),
       /// not has children
-      ... this.items().filter(item => item.children.length <= 0 && item.isChecked)
+      ... this.items().filter(item => item.children.length <= 0 && item.isChecked),
     ];
   }
 

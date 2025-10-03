@@ -3,10 +3,10 @@ import { Step } from '../../interfaces/step';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-stepper',
-    imports: [CommonModule],
-    templateUrl: './stepper.component.html',
-    styleUrl: './stepper.component.scss'
+  selector: 'app-stepper',
+  imports: [CommonModule],
+  templateUrl: './stepper.component.html',
+  styleUrl: './stepper.component.scss',
 })
 export class StepperComponent {
 
@@ -21,7 +21,7 @@ export class StepperComponent {
     if (this.steps()) {
 
       const steps = this.steps().map((step, index) => {
-        
+
         step.active = false;
 
         if (index < this.indexCurrentStep()) {
@@ -31,8 +31,8 @@ export class StepperComponent {
           return {
             ...step,
             active: true,
-            visted: false
-          }
+            visted: false,
+          };
         }
 
         return step;
@@ -50,7 +50,6 @@ export class StepperComponent {
 
     return `${per}%`;
   });
-
 
 
   onSelected(step: Step) {

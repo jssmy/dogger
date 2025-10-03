@@ -1,8 +1,7 @@
-@use "../_variables" as *;
 @use "../fonts/fonts" as *;
 
 .light-theme {
-    background-color: $color_light;
+    background-color: var(--color-white); /* $color_light */
     font-family: $font_typewriter;
-    color: $color_yellow;
+    color: var(--color-yellow-500); /* $color_yellow */
 }

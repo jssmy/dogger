@@ -8,9 +8,9 @@ fdescribe('CreateRoleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CreateRoleComponent]
+      imports: [CreateRoleComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CreateRoleComponent);
     component = fixture.componentInstance;

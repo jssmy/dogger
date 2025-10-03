@@ -9,13 +9,13 @@ import { toQueryParams } from '../utils/string.util';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RoleService {
 
   private  isPlatformBrowser = of(isPlatformBrowser(inject(PLATFORM_ID)));
   constructor(
-    private readonly http: HttpClient
+    private readonly http: HttpClient,
   ) { }
 
 
@@ -23,19 +23,19 @@ export class RoleService {
 
 
     return this.isPlatformBrowser
-    .pipe(
-      mergeMap(isBrowser => {
+      .pipe(
+        mergeMap(isBrowser => {
 
-        if (isBrowser) {
-          const query = toQueryParams(pagination) ;
-          return this.http.get<PaginationResolve<Role[]>>(`${environment.role}?${query}`);
-        }
+          if (isBrowser) {
+            const query = toQueryParams(pagination) ;
+            return this.http.get<PaginationResolve<Role[]>>(`${environment.role}?${query}`);
+          }
 
-        return [];
-      })
-    )
-    
-    
+          return [];
+        }),
+      );
+
+
   }
 
   getRole(id: number): Observable<Role> {

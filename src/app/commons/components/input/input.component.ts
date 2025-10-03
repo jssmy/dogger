@@ -3,19 +3,19 @@ import { Component, forwardRef, input, model, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-    selector: 'app-input',
-    imports: [
-        CommonModule
-    ],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            multi: true,
-            useExisting: forwardRef(() => InputComponent)
-        }
-    ],
-    templateUrl: './input.component.html',
-    styleUrl: './input.component.scss'
+  selector: 'app-input',
+  imports: [
+    CommonModule,
+  ],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      multi: true,
+      useExisting: forwardRef(() => InputComponent),
+    },
+  ],
+  templateUrl: './input.component.html',
+  styleUrl: './input.component.scss',
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
 
@@ -65,5 +65,4 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   }
 
 }
-
 

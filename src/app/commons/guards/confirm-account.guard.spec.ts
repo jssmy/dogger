@@ -4,8 +4,8 @@ import { CanActivateFn } from '@angular/router';
 import { confirmAccountGuard } from './confirm-account.guard';
 
 describe('confirmAccountGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => confirmAccountGuard(...guardParameters));
+  const executeGuard: CanActivateFn = (...guardParameters) =>
+    TestBed.runInInjectionContext(() => confirmAccountGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

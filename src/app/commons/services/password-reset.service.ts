@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { PasswordReset } from '../interfaces/password-reset';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PasswordResetService {
 
@@ -11,7 +11,7 @@ export class PasswordResetService {
     // TODO: Implement actual password reset API call
     // This is a placeholder implementation
     console.log('Password reset request:', { token, passwordData });
-    
+
     // Simulate API call
     return new Observable(observer => {
       setTimeout(() => {
@@ -25,7 +25,7 @@ export class PasswordResetService {
     // TODO: Implement token validation API call
     // This is a placeholder implementation
     console.log('Token validation request:', token);
-    
+
     // Simulate API call with different responses based on token
     return new Observable(observer => {
       setTimeout(() => {

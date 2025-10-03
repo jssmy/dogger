@@ -3,13 +3,13 @@ import { ButtonComponent } from '../../commons/components/button/button.componen
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-forgot-password-confirmation',
-    imports: [
-        ButtonComponent,
-        RouterModule
-    ],
-    templateUrl: './forgot-password-confirmation.component.html',
-    styleUrl: './forgot-password-confirmation.component.scss'
+  selector: 'app-forgot-password-confirmation',
+  imports: [
+    ButtonComponent,
+    RouterModule,
+  ],
+  templateUrl: './forgot-password-confirmation.component.html',
+  styleUrl: './forgot-password-confirmation.component.scss',
 })
 export default class ForgotPasswordConfirmationComponent {
 

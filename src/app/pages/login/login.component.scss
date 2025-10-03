@@ -1,5 +1,4 @@
 /* Made with love by Mutiullah Samim*/
-@use "../../../assets/_variables" as *;
 
 .container {
     height: 100%;
@@ -17,10 +16,10 @@
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
-    background-color: $color_gray_2;
+    background-color: var(--color-teal-400); /* $color_gray_2 */
     border-radius: 17px;
     background-color: #4aa1ad;
-    color: $color_dark;
+    color: var(--color-black); /* $color_dark */
     border-style: solid;
     box-shadow: 0px 0px 20px 0px;
 
@@ -46,14 +45,14 @@
 
 
     .card-header h3 {
-        color: $color_dark;
+        color: var(--color-black); /* $color_dark */
     }
 
 
 
     .input-group-prepend span {
         width: 50px;
-        background-color: $color_yellow;
+        background-color: var(--color-yellow-500); /* $color_yellow */
         color: black;
         border: 0 !important;
     }
@@ -65,7 +64,7 @@
     }
 
     .remember {
-        color: $color_dark;
+        color: var(--color-black); /* $color_dark */
     }
 
     .remember input {
@@ -77,7 +76,7 @@
 
     .login_btn {
         color: black;
-        background-color: $color_yellow;
+        background-color: var(--color-yellow-500); /* $color_yellow */
         width: 100px;
     }
 

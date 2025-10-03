@@ -12,16 +12,16 @@ import { NavbarItem } from '../../commons/interfaces/navbar-items';
 import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
 
 @Component({
-    selector: 'app-home',
-    imports: [
-        NavbarComponent,
-        SearchComponent,
-        ArticleComponent,
-        CommonModule,
-        FooterComponent
-    ],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.scss'
+  selector: 'app-home',
+  imports: [
+    NavbarComponent,
+    SearchComponent,
+    ArticleComponent,
+    CommonModule,
+    FooterComponent,
+  ],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss',
 })
 export default class HomeComponent implements OnInit, AfterViewInit {
 
@@ -34,7 +34,7 @@ export default class HomeComponent implements OnInit, AfterViewInit {
 
   constructor(
     private readonly articleSearchService: ArticleSearchService,
-    private readonly router: Router
+    private readonly router: Router,
   ) { }
 
 

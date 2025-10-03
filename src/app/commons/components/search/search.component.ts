@@ -4,24 +4,24 @@ import { Item } from '../../interfaces/item';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-search',
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            multi: true,
-            useExisting: forwardRef(() => SearchComponent)
-        }
-    ],
-    imports: [
-        CommonModule
-    ],
-    templateUrl: './search.component.html',
-    styleUrl: './search.component.scss'
+  selector: 'app-search',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      multi: true,
+      useExisting: forwardRef(() => SearchComponent),
+    },
+  ],
+  imports: [
+    CommonModule,
+  ],
+  templateUrl: './search.component.html',
+  styleUrl: './search.component.scss',
 })
-export class SearchComponent implements ControlValueAccessor{
+export class SearchComponent implements ControlValueAccessor {
 
   @ViewChild('inputSearch') searchInput!: ElementRef;
-  
+
   @Input() placeHolder = 'Typing...';
   @Input() styled: 'ligth' | 'normal' = 'normal';
   @Input() value = '';

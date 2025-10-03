@@ -6,10 +6,10 @@ import { Router, RouterModule } from '@angular/router';
   selector: 'app-reset-password-expired',
   imports: [
     ButtonComponent,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './reset-password-expired.component.html',
-  styleUrl: './reset-password-expired.component.scss'
+  styleUrl: './reset-password-expired.component.scss',
 })
 export default class ResetPasswordExpiredComponent {
   router = inject(Router);
@@ -22,5 +22,4 @@ export default class ResetPasswordExpiredComponent {
     this.router.navigate(['/forgot-password']);
   }
 }
-
 

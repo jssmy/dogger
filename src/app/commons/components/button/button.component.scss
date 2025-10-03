@@ -1,37 +1,31 @@
-@use "../../../../assets/_variables" as *;
-
-.container {
-    padding: 0px;
-    margin: 0px;
-    &__button {
-        border-radius: 27px;
-        background-color: white;
-        font-size: 18px;
-        height: 55px;
-        padding: 10px 20px;
-        min-width: 120px;
-        border-style: none;
+.button {
+    border-radius: 27px;
+    background-color: white;
+    font-size: 18px;
+    height: 55px;
+    padding: 10px 20px;
+    min-width: 120px;
+    border-style: none;
+    
+    &-primary {
+        background: var(--color-yellow-500); /* $color_yellow */
         
-        &-primary {
-            background: $color_yellow;
-            
-        }
-
-        &-success {
-            background: $color_gray;
-        }
-
-        &-danger {
-            background: $color_red_dark;
-        }
-
-        &-info {
-            background: $color_pink;
-        }
-
-        &-warning {
-            background: $color_yellow;
-        }
-
     }
+
+    &-success {
+        background: var(--color-gray-400); /* $color_gray */
+    }
+
+    &-danger {
+        background: var(--color-red-700); /* $color_red_dark */
+    }
+
+    &-info {
+        background: var(--color-pink-400); /* $color_pink */
+    }
+
+    &-warning {
+        background: var(--color-yellow-500); /* $color_yellow */
+    }
+
 }

@@ -1,7 +1,11 @@
 /* ===== FOUNDATIONS INDEX ===== */
 /* Importa todos los archivos de foundations */
 
-@import '__tokens.scss';
-@import '__spacing.scss';
-@import '__radius.scss';
-@import '__typographic.scss';
+@use '__tokens.scss';
+@use '__colors.scss';
+@use '__spacing.scss';
+@use '__radius.scss';
+@use '__borders.scss';
+@use '__typographic.scss';
+@use '__grid.scss';
+@use '__navbar.scss';

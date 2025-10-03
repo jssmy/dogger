@@ -1,4 +1,4 @@
-import { Item } from "./item";
+import { Item } from './item';
 
 export interface TreeViewItemBase extends Item {
     isChecked: boolean;
@@ -6,7 +6,7 @@ export interface TreeViewItemBase extends Item {
     isVisibleChildren: boolean;
     parentId: string;
     countChecked: number;
-};
+}
 
 export interface TreeViewItem extends TreeViewItemBase {
     children: TreeViewItemBase[];

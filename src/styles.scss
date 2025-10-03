@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@use "assets/_variables" as *;
 @use "assets/fonts/fonts" as *;
-@use "assets/_index" as *;
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@use "assets/foundations/__index" as *;
+//@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 
 body {
-    font-size: 1.1rem;
+    padding: 0px;
+    margin: 0px;
 }
 
 @media (min-width: 768px) {
@@ -36,7 +36,7 @@ body {
     height: 3px;
     bottom: 0px;
     left: calc(50% - 20px);
-    background: $color_yellow;
+    background: var(--color-yellow-500); /* $color_yellow */
 }
 
 .card {
@@ -100,19 +100,19 @@ body {
     &__icon {
         width: 50px;
         height: 45px;
-        background-color: $color_yellow;
+        background-color: var(--color-yellow-500); /* $color_yellow */
         color: white;
         border-style: none;
     }
 
     &__icon:hover {
-        background-color: $color_orange;
+        background-color: var(--color-orange-500); /* $color_orange */
     }
 
 }
 
 .input:focus {
-    border-color: $color_orange;
+    border-color: var(--color-orange-500); /* $color_orange */
 }
 
 .hide {
@@ -124,7 +124,7 @@ body {
 }
 
 .error {
-    color: $color_yellow;
+    color: var(--color-yellow-500); /* $color_yellow */
     font-size: 15px;
 }
 
@@ -238,12 +238,12 @@ body {
 
     &--border-solid {
         border-style: solid;
-        border-color: $color_dark;
+        border-color: var(--color-black); /* $color_dark */
         border-width: 2px;
     }
 
     &--active {
-        background-color: $color_pink !important;
+        background-color: var(--color-pink-400) !important; /* $color_pink */
 
     }
   }
@@ -273,15 +273,15 @@ body {
     }
 
     .swal2-confirm {
-        background: $color_yellow !important;
+        background: var(--color-yellow-500) !important; /* $color_yellow */
     }
 
     .swal2-cancel {
-        border-color: $color_red_dark !important;
+        border-color: var(--color-red-700) !important; /* $color_red_dark */
         border-style: solid;
         border-width: 3px;
         background-color: white !important;
-        color: $color_dark;
+        color: var(--color-black); /* $color_dark */
     }
 }
 
@@ -327,19 +327,19 @@ body {
     padding: 15px;
 }
 .terminal__title  {
-    color: $color_dark;
+    color: var(--color-black); /* $color_dark */
 }
 
  .blog-container {
     h1, h2, h3, h4, h5 {
         font-family: $font_cacha;
-        color: $color_yellow;
+        color: var(--color-yellow-500); /* $color_yellow */
     }
 
     a {
-        color: $color_gray_3;
+        color: var(--color-gray-300); /* $color_gray_3 */
     }
-    color: $color_gray_5;
+    color: var(--color-gray-100); /* $color_gray_5 */
 }
 
 
@@ -392,12 +392,12 @@ MODIFICAR ESTILOS DE RENDER
 **/
 
 #blog-render, .codex-editor {
-    color: $color_gray_3;
+    color: var(--color-gray-300); /* $color_gray_3 */
     font-weight: 100;
     font-family: $font_typewriter;
     
     h1, h2, h3, h4, h5,h6 {
-        color: $color_orange;
+        color: var(--color-orange-500); /* $color_orange */
         font-family: $font_navbar;
         text-transform: lowercase;
         letter-spacing: 3px;
@@ -413,13 +413,13 @@ MODIFICAR ESTILOS DE RENDER
 
 .codex-editor {
     h1, h2, h3, h4, h5 {
-        color: $color_dark;
+        color: var(--color-black); /* $color_dark */
     }
 
     a {
-        color: $color_gray_3;
+        color: var(--color-gray-300); /* $color_gray_3 */
     }
-    color: $color_dark;
+    color: var(--color-black); /* $color_dark */
 }
 
 /******
@@ -461,7 +461,7 @@ AVATAR WRITER
 }
 
 .list-inline {
-    color: $color_gray;
+    color: var(--color-gray-400); /* $color_gray */
     font-family: $font_typewriter;
 }
 

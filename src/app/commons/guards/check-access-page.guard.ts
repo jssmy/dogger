@@ -22,9 +22,9 @@ export const checkAccessPageGuard: CanActivateFn = (_route, _state) => {
           return of(router.createUrlTree(['/login']));
         } else if (err.status == 403) {
           return of(router.createUrlTree(['/403']));
-        } else {
-          return of(router.createUrlTree(['/login']));
         }
-      })
+        return of(router.createUrlTree(['/login']));
+
+      }),
     );
 };

@@ -7,9 +7,9 @@ describe('ListBlogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ListBlogComponent]
+      imports: [ListBlogComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ListBlogComponent);
     component = fixture.componentInstance;

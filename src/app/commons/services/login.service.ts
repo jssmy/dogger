@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
 
@@ -18,7 +18,7 @@ export class LoginService {
   in(credential: Login) {
     return this.http.post<AuthToken>(environment.login, credential)
       .pipe(
-        tap((authToken: AuthToken) => this.authService.setAuthToken = authToken)
+        tap((authToken: AuthToken) => this.authService.setAuthToken = authToken),
       );
   }
 
@@ -27,7 +27,7 @@ export class LoginService {
       .pipe(
         catchError(err => {
           if (err.status != HttpStatusCode.Unauthorized) {
-            throw new Error('Error trying logout')
+            throw new Error('Error trying logout');
           }
 
           this.authService.logout();
@@ -35,7 +35,7 @@ export class LoginService {
           return of();
         },
         ),
-        finalize(() => this.authService.logout())
+        finalize(() => this.authService.logout()),
       );
   }
 
@@ -45,8 +45,8 @@ export class LoginService {
         tap(resolve => this.authService.setAuthToken = resolve),
         catchError(error => {
           this.authService.logout();
-          return throwError(() => error)
-        })
+          return throwError(() => error);
+        }),
       );
   }
 

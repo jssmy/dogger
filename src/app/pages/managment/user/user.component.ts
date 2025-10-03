@@ -10,10 +10,10 @@ import { PaginationResolve } from '../../../commons/interfaces/pagination-resolv
 import { PaginationComponent } from '../../../commons/components/pagination/pagination.component';
 
 @Component({
-    selector: 'app-user',
-    imports: [RouterModule, CommonModule, PaginationComponent],
-    templateUrl: './user.component.html',
-    styleUrl: './user.component.scss'
+  selector: 'app-user',
+  imports: [RouterModule, CommonModule, PaginationComponent],
+  templateUrl: './user.component.html',
+  styleUrl: './user.component.scss',
 })
 export default class UserComponent implements OnInit {
   userService = inject(UserService);
@@ -24,10 +24,10 @@ export default class UserComponent implements OnInit {
   ngOnInit(): void {
     if (isPlatformBrowser(this.plataformId)) {
       this.userService.getUsers(1)
-      .subscribe(resolve => this.paginationResolve.set(resolve))
+        .subscribe(resolve => this.paginationResolve.set(resolve));
 
     }
-    
+
   }
 
   onDelete(id: string) {
@@ -41,9 +41,9 @@ export default class UserComponent implements OnInit {
               next: () => {
                 Swal.fire(ALERT_SUCCESS_DELETE);
                 this.userService.getUsers()
-                  .subscribe(resolve => this.paginationResolve.set(resolve))
+                  .subscribe(resolve => this.paginationResolve.set(resolve));
               },
-              error: (e) => Swal.fire("Ups!", Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error')
+              error: (e) => Swal.fire('Ups!', Array.isArray(e.error.message) ? e.error.message[0] : e.error.message, 'error'),
             });
         }
       });
@@ -51,7 +51,7 @@ export default class UserComponent implements OnInit {
 
   onPaginate(page: number) {
     this.userService.getUsers(page)
-    .subscribe(resolve => this.paginationResolve.set(resolve));
+      .subscribe(resolve => this.paginationResolve.set(resolve));
   }
 
 }

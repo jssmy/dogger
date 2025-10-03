@@ -3,7 +3,7 @@ import { TreeViewItem } from '../interfaces/tree-view-item';
 
 @Pipe({
   name: 'toTreeView',
-  standalone: true
+  standalone: true,
 })
 export class ToTreeViewPipe implements PipeTransform {
 

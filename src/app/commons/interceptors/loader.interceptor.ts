@@ -24,6 +24,6 @@ export const loaderInterceptor: HttpInterceptorFn = (req, next) => {
         if (countLoadings <= 0) {
           loder.inactive();
         }
-      })
+      }),
     );
 };

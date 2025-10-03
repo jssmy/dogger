@@ -7,9 +7,9 @@ describe('Error403Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Error403Component]
+      imports: [Error403Component],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(Error403Component);
     component = fixture.componentInstance;

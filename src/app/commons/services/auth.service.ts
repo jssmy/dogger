@@ -1,14 +1,13 @@
 import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { AuthToken } from '../interfaces/auth-token';
-import { isPlatformBrowser, } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { AUTH_TOKEN_KEY } from '../components/tokens/auth-token-key';
 import { JWT } from '../utils/jwt.util';
 import { AuthUser } from '../interfaces/auth-user';
 
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private authToken = signal<AuthToken | null>(null);

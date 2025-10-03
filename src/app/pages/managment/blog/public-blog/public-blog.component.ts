@@ -12,13 +12,13 @@ import Swal from 'sweetalert2';
 import { ALERT_SUCCESS_DRAFT } from '../../../../commons/constants/alerts/alert-success-draft';
 
 @Component({
-    selector: 'app-public-blog',
-    imports: [
-        ButtonComponent,
-        Error404Component
-    ],
-    templateUrl: './public-blog.component.html',
-    styleUrl: './public-blog.component.scss'
+  selector: 'app-public-blog',
+  imports: [
+    ButtonComponent,
+    Error404Component,
+  ],
+  templateUrl: './public-blog.component.html',
+  styleUrl: './public-blog.component.scss',
 })
 export default class PublicBlogComponent implements OnInit {
 
@@ -35,20 +35,20 @@ export default class PublicBlogComponent implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.plataformId)) {
-          this.stepperService.indexStep.set(2);
-          if (this.id()) {
-            this.blogService.getPublicBlog(this.id() as string).subscribe({
-              next: (content) => {
-    
-                const html = new CustomParser().parse(content.blog);
-                this.blogContainer.set(this.sanitizer.bypassSecurityTrustHtml(html));
-                this.isResourceFound.set(true);
-    
-              },
-              error: () => this.isResourceFound.set(false)
-            });
-          }
-        }
+      this.stepperService.indexStep.set(2);
+      if (this.id()) {
+        this.blogService.getPublicBlog(this.id() as string).subscribe({
+          next: (content) => {
+
+            const html = new CustomParser().parse(content.blog);
+            this.blogContainer.set(this.sanitizer.bypassSecurityTrustHtml(html));
+            this.isResourceFound.set(true);
+
+          },
+          error: () => this.isResourceFound.set(false),
+        });
+      }
+    }
   }
 
 
@@ -57,14 +57,14 @@ export default class PublicBlogComponent implements OnInit {
       error: () => Swal.fire(ALERT_ERROR_MOVE_BLOG_STAGE),
       next: () => {
         Swal.fire(ALERT_SUCCESS_DRAFT)
-        .finally(() => {
-          console.log('$$$$')
-          this.router.navigate(['/managment/blog/draft', this.id()]).finally();
-        })
-        
-      }
+          .finally(() => {
+            console.log('$$$$');
+            this.router.navigate(['/managment/blog/draft', this.id()]).finally();
+          });
+
+      },
     });
-    
+
   }
 
 

@@ -13,7 +13,7 @@ export interface ForgotPasswordResponse {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ForgotPasswordService {
   // private readonly apiUrl = `${environment.apiUrl}/auth/forgot-password`;
@@ -22,10 +22,10 @@ export class ForgotPasswordService {
 
   requestPasswordReset(email: string): Observable<ForgotPasswordResponse> {
     const request: ForgotPasswordRequest = { email };
-    
+
     // TODO: Replace with actual API call
     // return this.http.post<ForgotPasswordResponse>(this.apiUrl, request);
-    
+
     // Simulate API call for demo
     return new Observable(observer => {
       setTimeout(() => {
@@ -33,14 +33,14 @@ export class ForgotPasswordService {
         if (email === 'test@example.com') {
           observer.next({
             message: 'Se ha enviado un correo para cambiar la contraseña',
-            success: true
+            success: true,
           });
         } else {
           observer.error({
             status: 404,
             error: {
-              message: 'Usuario no encontrado'
-            }
+              message: 'Usuario no encontrado',
+            },
           });
         }
         observer.complete();

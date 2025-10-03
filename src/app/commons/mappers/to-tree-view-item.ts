@@ -1,7 +1,7 @@
-import { TreeViewItem, TreeViewItemBase } from "../interfaces/tree-view-item";
+import { TreeViewItem, TreeViewItemBase } from '../interfaces/tree-view-item';
 
 export const toTreeViewItem = (item: TreeViewItemBase) => {
-    return {
-        ...item
-    } as TreeViewItem;
-}
+  return {
+    ...item,
+  } as TreeViewItem;
+};

@@ -4,7 +4,7 @@ import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CheckAccessService {
 
@@ -12,11 +12,11 @@ export class CheckAccessService {
   private readonly router = inject(Router);
 
   hasAccessPage() {
-  return this.http.post(`${environment.checkAccessPage}`, null, { headers: this.getHeaders() });
+    return this.http.post(`${environment.checkAccessPage}`, null, { headers: this.getHeaders() });
   }
 
   hasValidAuth() {
-    return this.http.post(`${environment.checkAuth}`, null, { headers: this.getHeaders() })
+    return this.http.post(`${environment.checkAuth}`, null, { headers: this.getHeaders() });
   }
 
   confirAccount(token: string) {

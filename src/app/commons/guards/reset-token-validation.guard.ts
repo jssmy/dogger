@@ -24,10 +24,10 @@ export const resetTokenValidationGuard: CanActivateFn = (route, __state) => {
     map((isValid: boolean) => {
       if (isValid) {
         return true; // Allow access to reset-password page
-      } else {
-        router.navigate(['/reset-password-expired']);
-        return false;
       }
+      router.navigate(['/reset-password-expired']);
+      return false;
+
     }),
     catchError((error) => {
       console.error('Token validation error:', error);
@@ -37,6 +37,6 @@ export const resetTokenValidationGuard: CanActivateFn = (route, __state) => {
         router.navigate(['/reset-password-expired']);
       }
       return of(false);
-    })
+    }),
   );
 };

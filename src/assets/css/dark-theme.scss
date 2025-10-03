@@ -1,10 +1,9 @@
-@use "../_variables" as *;
 @use "../fonts/fonts" as *;
 
 
 .dark-theme {
-    background-color: $color_dark;
-    color: $color_yellow;
+    background-color: var(--color-black); /* $color_dark */
+    color: var(--color-yellow-500); /* $color_yellow */
     font-family: $font_typewriter;
     .title_section {
         color: white;

@@ -5,10 +5,10 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-list-blog',
-    imports: [RouterModule],
-    templateUrl: './list-blog.component.html',
-    styleUrl: './list-blog.component.scss'
+  selector: 'app-list-blog',
+  imports: [RouterModule],
+  templateUrl: './list-blog.component.html',
+  styleUrl: './list-blog.component.scss',
 })
 export default class ListBlogComponent {
 
@@ -18,19 +18,16 @@ export default class ListBlogComponent {
   private readonly getBlogs = toSignal(this.blogService.getBlogs());
 
   readonly blogs = computed(() => {
-    if(this.isPlataformBrowser) {
-      
+    if (this.isPlataformBrowser) {
+
       const blogs = this.getBlogs();
 
       return blogs;
-      
+
     }
 
     return [];
   });
-
-  
-
 
 
 }

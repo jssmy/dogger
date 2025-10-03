@@ -3,7 +3,7 @@ import { NgControl } from '@angular/forms';
 
 @Directive({
   selector: '[errorControl]',
-  standalone: true
+  standalone: true,
 })
 export class ErrorControlDirective implements OnInit {
 
@@ -15,7 +15,7 @@ export class ErrorControlDirective implements OnInit {
   constructor(
     private el: ElementRef,
     private renderer: Renderer2,
-    private control: NgControl
+    private control: NgControl,
   ) { }
 
 
