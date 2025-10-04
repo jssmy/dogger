@@ -38,5 +38,14 @@
   "html.format.wrapLineLength": 120,
   "css.validate": false,
   "scss.validate": false,
-  "less.validate": false
+  "less.validate": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }

@@ -8,11 +8,13 @@
     border-width: var(--border-sm);
     border-style: solid;
     border-color: var(--color-gray-900);
+
     &__logo {
         width: 65px;
         height: 65px;
         border-radius: var(--radius-xl);
     }
+
     min-width: 600px;
     border-radius: var(--radius-xl);
 
@@ -22,6 +24,13 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        font-family: var(--font-family-high);
     }
-    
+
+    &__item:last-of-type>button,
+    a,
+    span {
+        border-bottom-right-radius: var(--radius-lg) !important;
+        border-top-right-radius: var(--radius-lg) !important;
+    }
 }

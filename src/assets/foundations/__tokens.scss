@@ -27,6 +27,11 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
+  // Font family tokens
+  --font-family-high: "Nougat-ExtraBlack";
+  --font-family-mid: "JMH Typewriter bold";
+  --font-family-low: "JMH Typewriter";
+
   // Font color tokens - basado en jerarquía de contenido (adaptado a fondos oscuros)
   --color-content-high: #FFFFFF; /* Blanco puro para títulos y texto principal */
   --color-content-mid: #E0E0E0; /* Gris claro para texto secundario */

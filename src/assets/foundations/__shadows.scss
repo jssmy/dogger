@@ -1,0 +1,188 @@
+/* ===== SHADOW SYSTEM ===== */
+/* Sistema completo de sombras con herencia automática del color del borde */
+
+/* ===== SHADOW TOKENS ===== */
+/* Los tokens de sombra están definidos en __tokens.scss */
+
+/* ===== SHADOW CLASSES ===== */
+/* Sombras estándar (negras por defecto) */
+.shadow-none {
+    box-shadow: none !important;
+}
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow {
+    box-shadow: var(--shadow-base);
+}
+
+.shadow-md {
+    box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
+
+.shadow-xl {
+    box-shadow: var(--shadow-xl);
+}
+
+.shadow-2xl {
+    box-shadow: var(--shadow-2xl);
+}
+
+.shadow-inner {
+    box-shadow: var(--shadow-inner);
+}
+
+/* ===== SHADOW HOVER CLASSES ===== */
+/* Sombras que aparecen solo en hover */
+.shadow-hover-none:hover {
+    box-shadow: none !important;
+}
+
+.shadow-hover-sm:hover {
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow-hover:hover {
+    box-shadow: var(--shadow-base) !important;
+}
+
+.shadow-hover-md:hover {
+    box-shadow: var(--shadow-md) !important;
+}
+
+.shadow-hover-lg:hover {
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.shadow-hover-xl:hover {
+    box-shadow: var(--shadow-xl) !important;
+}
+
+.shadow-hover-2xl:hover {
+    box-shadow: var(--shadow-2xl) !important;
+}
+
+.shadow-hover-inner:hover {
+    box-shadow: var(--shadow-inner) !important;
+}
+
+/* ===== COLORED SHADOWS ===== */
+/* Sombras con herencia de color del borde */
+/* Si existe --shadow-color-rgb (definido por border-*), usa ese color */
+
+.shadow-sm-colored {
+    box-shadow: 0 1px 2px 0 rgba(var(--shadow-color-rgb, 0, 0, 0), 0.05);
+}
+
+.shadow-colored {
+    box-shadow: 0 1px 3px 0 rgba(var(--shadow-color-rgb, 0, 0, 0), 0.1), 0 1px 2px 0 rgba(var(--shadow-color-rgb, 0, 0, 0), 0.06);
+}
+
+.shadow-md-colored {
+    box-shadow: 0 4px 6px -1px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.1), 0 2px 4px -1px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.06);
+}
+
+.shadow-lg-colored {
+    box-shadow: 0 10px 15px -3px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.1), 0 4px 6px -2px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.05);
+}
+
+.shadow-xl-colored {
+    box-shadow: 0 20px 25px -5px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.1), 0 10px 10px -5px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.04);
+}
+
+.shadow-2xl-colored {
+    box-shadow: 0 25px 50px -12px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.25);
+}
+
+/* ===== COLORED SHADOW HOVER CLASSES ===== */
+/* Sombras coloreadas que aparecen solo en hover */
+.shadow-hover-sm-colored:hover {
+    box-shadow: 0 1px 2px 0 rgba(var(--shadow-color-rgb, 0, 0, 0), 0.05) !important;
+}
+
+.shadow-hover-colored:hover {
+    box-shadow: 0 1px 3px 0 rgba(var(--shadow-color-rgb, 0, 0, 0), 0.1), 0 1px 2px 0 rgba(var(--shadow-color-rgb, 0, 0, 0), 0.06) !important;
+}
+
+.shadow-hover-md-colored:hover {
+    box-shadow: 0 4px 6px -1px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.1), 0 2px 4px -1px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.06) !important;
+}
+
+.shadow-hover-lg-colored:hover {
+    box-shadow: 0 10px 15px -3px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.1), 0 4px 6px -2px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.05) !important;
+}
+
+.shadow-hover-xl-colored:hover {
+    box-shadow: 0 20px 25px -5px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.1), 0 10px 10px -5px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.04) !important;
+}
+
+.shadow-hover-2xl-colored:hover {
+    box-shadow: 0 25px 50px -12px rgba(var(--shadow-color-rgb, 0, 0, 0), 0.25) !important;
+}
+
+/* ===== DOCUMENTACIÓN DE USO ===== */
+/*
+NOMENCLATURA DEL SISTEMA DE SOMBRAS:
+
+📏 TAMAÑOS DISPONIBLES:
+- none: Sin sombra
+- sm: Sombra pequeña
+- base: Sombra base (clase .shadow)
+- md: Sombra mediana
+- lg: Sombra grande
+- xl: Sombra extra grande
+- 2xl: Sombra doble extra grande
+- inner: Sombra interna
+
+📍 APLICACIÓN:
+- shadow-[tamaño]              → sombra normal
+- shadow-hover-[tamaño]        → sombra solo en hover
+- shadow-[tamaño]-colored      → sombra con color del borde
+- shadow-hover-[tamaño]-colored → sombra coloreada solo en hover
+
+🎨 EJEMPLOS DE USO:
+
+1. Sombras normales:
+   <div class="shadow-sm">Sombra pequeña</div>
+   <div class="shadow-md">Sombra mediana</div>
+   <div class="shadow-lg">Sombra grande</div>
+
+2. Sombras de hover:
+   <div class="shadow-hover-md">Sin sombra, sombra mediana en hover</div>
+   <div class="shadow-sm shadow-hover-lg">Sombra pequeña, grande en hover</div>
+
+3. Sombras coloreadas:
+   <div class="border-blue-500 shadow-md-colored">Sombra azul</div>
+   <div class="border-red-500 shadow-lg-colored">Sombra roja</div>
+
+4. Combinaciones:
+   <div class="border-green-500 shadow-sm shadow-hover-lg-colored">
+     Sombra pequeña verde, grande verde en hover
+   </div>
+
+5. Botones con sombras:
+   <button class="btn-primary shadow-md shadow-hover-lg">Botón con sombra</button>
+   <button class="btn-success border-green-500 shadow-hover-md-colored">
+     Botón con sombra verde en hover
+   </button>
+
+🔧 FUNCIONAMIENTO:
+1. Las clases border-* establecen --shadow-color-rgb
+2. Las clases shadow-*-colored usan esta variable
+3. Si no hay --shadow-color-rgb, usa negro por defecto
+4. Las clases shadow-hover-* solo aplican sombra en :hover
+5. El !important asegura que las sombras hover tengan prioridad
+
+💡 MEJORES PRÁCTICAS:
+- Usa shadow-hover para feedback visual
+- Combina shadow normal con shadow-hover para transiciones suaves
+- Las sombras coloreadas funcionan mejor con bordes del mismo color
+- Considera el fondo al elegir la intensidad de la sombra
+- Usa shadow-inner para elementos hundidos (inputs, botones presionados)
+*/

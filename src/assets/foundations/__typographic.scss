@@ -1,14 +1,17 @@
 /* Tokens de color */
 .content-high {
   color: var(--color-content-high);
+  font-family: var(--font-family-high);
 }
 
 .content-mid {
   color: var(--color-content-mid);
+  font-family: var(--font-family-mid);
 }
 
 .content-low {
   color: var(--color-content-low);
+  font-family: var(--font-family-low);
 }
 
 /* Tokens tipográficos - Alta jerarquía */
@@ -56,4 +59,177 @@
 .low-lg {
   font-size: var(--font-low-l);
   font-weight: var(--font-weight-normal);
+}
+
+/* ===== CLASES DE FUENTES ===== */
+
+/* Fuentes principales */
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-primary-bold {
+  font-family: var(--font-primary-bold);
+}
+
+.font-primary-italic {
+  font-family: var(--font-primary-italic);
+}
+
+.font-primary-bold-italic {
+  font-family: var(--font-primary-bold-italic);
+}
+
+/* Fuentes secundarias */
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+.font-secondary-display {
+  font-family: var(--font-secondary-display);
+}
+
+/* Fuentes decorativas */
+.font-decorative {
+  font-family: var(--font-decorative);
+}
+
+.font-decorative-outline {
+  font-family: var(--font-decorative-outline);
+}
+
+.font-decorative-solid {
+  font-family: var(--font-decorative-solid);
+}
+
+.font-decorative-display {
+  font-family: var(--font-decorative-display);
+}
+
+/* Fuentes monoespaciadas */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-mono-bold {
+  font-family: var(--font-mono-bold);
+}
+
+.font-mono-black {
+  font-family: var(--font-mono-black);
+}
+
+.font-mono-thin {
+  font-family: var(--font-mono-thin);
+}
+
+.font-mono-alt {
+  font-family: var(--font-mono-alt);
+}
+
+/* Fuentes especiales */
+.font-special {
+  font-family: var(--font-special);
+}
+
+.font-special-alt {
+  font-family: var(--font-special-alt);
+}
+
+/* ===== COMBINACIONES TIPOGRAFICAS ===== */
+
+/* Títulos principales con fuente decorativa */
+.title-primary {
+  font-family: var(--font-decorative);
+  font-size: var(--font-high-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-content-high);
+}
+
+.title-secondary {
+  font-family: var(--font-primary);
+  font-size: var(--font-high-l);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-content-high);
+}
+
+/* Subtítulos con fuente secundaria */
+.subtitle-primary {
+  font-family: var(--font-secondary);
+  font-size: var(--font-high-m);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-content-mid);
+}
+
+.subtitle-secondary {
+  font-family: var(--font-secondary-display);
+  font-size: var(--font-high-s);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-content-mid);
+}
+
+/* Texto de cuerpo con fuente principal */
+.body-primary {
+  font-family: var(--font-primary);
+  font-size: var(--font-low-m);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-content-high);
+}
+
+.body-secondary {
+  font-family: var(--font-secondary);
+  font-size: var(--font-low-m);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-content-mid);
+}
+
+/* Texto de código y datos */
+.code-primary {
+  font-family: var(--font-mono);
+  font-size: var(--font-low-s);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-content-high);
+  background-color: var(--color-background-secondary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-xs);
+}
+
+.code-bold {
+  font-family: var(--font-mono-bold);
+  font-size: var(--font-low-s);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-content-high);
+}
+
+/* Texto de etiquetas y pequeños */
+.label-primary {
+  font-family: var(--font-primary);
+  font-size: var(--font-low-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-content-low);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.label-secondary {
+  font-family: var(--font-secondary);
+  font-size: var(--font-low-xs);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-content-low);
+}
+
+/* Texto de ayuda y captions */
+.caption-primary {
+  font-family: var(--font-secondary);
+  font-size: var(--font-low-xs);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-content-low);
+  font-style: italic;
+}
+
+.caption-secondary {
+  font-family: var(--font-mono-thin);
+  font-size: var(--font-low-xs);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-content-low);
 }

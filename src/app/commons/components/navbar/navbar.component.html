@@ -2,7 +2,8 @@
   <img class="navbar__logo" src="https://adzilla.fun/images/icon.svg">
   <div class="navbar__items">
     @for (item of items(); track $index) {
-      <app-button class="navbar__item" [routerLink]="item.route">{{item.label}}</app-button>
+    <app-button [shadow]="'md-hover'" [radius]="'none'" [type]="'primary-ghost'" class="navbar__item"
+      [routerLink]="item.route">{{item.label}}</app-button>
     }
   </div>
 </nav>

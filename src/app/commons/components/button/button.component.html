@@ -1,4 +1,3 @@
-<button type="button" class="button font-plane-cash"
-    [ngClass]="{'button-primary': type() === 'primary', 'button-danger': type() === 'danger', 'button-warning': type() === 'warning', 'button-info': type() === 'info', 'button-success': type() === 'success'}">
+<button type="button" class="button font-plane-cash" [ngClass]="allClasses()">
     <ng-content></ng-content>
 </button>

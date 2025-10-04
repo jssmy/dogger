@@ -1,31 +1,195 @@
+// Mixin para botones con colores
+@mixin button-variant($bg-color, $text-color, $border-color: $bg-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    border-color: $border-color;
+}
+
+// Mixin para botones ghost
+@mixin button-ghost($text-color) {
+    background-color: transparent;
+    color: $text-color;
+    border-color: transparent;
+}
+
+// Mixin para botones outline
+@mixin button-outline($text-color, $border-color) {
+    background-color: transparent;
+    color: $text-color;
+    border-color: $border-color;
+}
+
 .button {
-    border-radius: 27px;
-    background-color: white;
-    font-size: 18px;
-    height: 55px;
-    padding: 10px 20px;
+    font-size: var(--font-high-s);
+    padding: var(--space-3) var(--space-5);
     min-width: 120px;
-    border-style: none;
-    
+    border: var(--border-sm) solid;
+    font-family: var(--font-family-high);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Botones principales */
     &-primary {
-        background: var(--color-yellow-500); /* $color_yellow */
-        
+        @include button-variant(var(--color-button-primary), var(--color-text-on-primary));
+    }
+
+    &-secondary {
+        @include button-variant(var(--color-button-secondary), var(--color-text-on-light));
     }
 
     &-success {
-        background: var(--color-gray-400); /* $color_gray */
+        @include button-variant(var(--color-success), var(--color-text-on-primary));
     }
 
     &-danger {
-        background: var(--color-red-700); /* $color_red_dark */
+        @include button-variant(var(--color-error), var(--color-text-on-primary));
     }
 
     &-info {
-        background: var(--color-pink-400); /* $color_pink */
+        @include button-variant(var(--color-info), var(--color-text-on-primary));
     }
 
     &-warning {
-        background: var(--color-yellow-500); /* $color_yellow */
+        @include button-variant(var(--color-warning), var(--color-text-on-light));
     }
 
+    &-accent {
+        @include button-variant(var(--color-button-accent), var(--color-text-on-primary));
+    }
+
+    &-brand-primary {
+        @include button-variant(var(--color-brand-primary), var(--color-text-on-primary));
+    }
+
+    &-brand-secondary {
+        @include button-variant(var(--color-brand-secondary), var(--color-text-on-primary));
+    }
+
+    &-brand-blue {
+        @include button-variant(var(--color-brand-blue), var(--color-text-on-primary));
+    }
+
+    /* Botones outline */
+    &-outline-primary {
+        @include button-outline(var(--color-button-primary), var(--color-button-primary));
+    }
+
+    &-outline-success {
+        @include button-outline(var(--color-success), var(--color-success));
+    }
+
+    &-outline-danger {
+        @include button-outline(var(--color-error), var(--color-error));
+    }
+
+    &-outline-warning {
+        @include button-outline(var(--color-warning), var(--color-warning));
+    }
+
+    &-outline-info {
+        @include button-outline(var(--color-info), var(--color-info));
+    }
+
+    /* Botones ghost */
+    &-ghost-primary {
+        @include button-ghost(var(--color-button-primary));
+    }
+
+    &-ghost-success {
+        @include button-ghost(var(--color-success));
+    }
+
+    &-ghost-danger {
+        @include button-ghost(var(--color-error));
+    }
+
+    &-ghost-warning {
+        @include button-ghost(var(--color-warning));
+    }
+
+    &-ghost-info {
+        @include button-ghost(var(--color-info));
+    }
+
+    /* Botones ghost con guión (para el componente) */
+    &-primary-ghost {
+        @include button-ghost(var(--color-button-primary));
+    }
+
+    &-success-ghost {
+        @include button-ghost(var(--color-success));
+    }
+
+    &-danger-ghost {
+        @include button-ghost(var(--color-error));
+    }
+
+    &-warning-ghost {
+        @include button-ghost(var(--color-warning));
+    }
+
+    &-info-ghost {
+        @include button-ghost(var(--color-info));
+    }
+
+    /* Botones outline con guión (para el componente) */
+    &-primary-outline {
+        @include button-outline(var(--color-button-primary), var(--color-button-primary));
+    }
+
+    &-success-outline {
+        @include button-outline(var(--color-success), var(--color-success));
+    }
+
+    &-danger-outline {
+        @include button-outline(var(--color-error), var(--color-error));
+    }
+
+    &-warning-outline {
+        @include button-outline(var(--color-warning), var(--color-warning));
+    }
+
+    &-info-outline {
+        @include button-outline(var(--color-info), var(--color-info));
+    }
+
+    /* Tamaños */
+    &-sm {
+        height: 40px;
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--font-low-s);
+        min-width: 100px;
+    }
+
+    &-lg {
+        height: 65px;
+        padding: var(--space-4) var(--space-6);
+        font-size: var(--font-high-m);
+        min-width: 140px;
+    }
+
+    &-xl {
+        height: 75px;
+        padding: var(--space-5) var(--space-8);
+        font-size: var(--font-high-l);
+        min-width: 160px;
+    }
+
+
+    /* Iconos */
+    &-icon {
+        width: 55px;
+        min-width: 55px;
+        padding: var(--space-3);
+    }
+}
+
+/* Clase para botones sin radius */
+.radius-none {
+    border-radius: 0 !important;
 }

@@ -1,5 +1,90 @@
 :host {
   .hero {
     height: 100svh;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    flex: 1;
+    padding: var(--space-6) var(--space-4);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contract-address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+
+    code {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: var(--border-xs) solid var(--color-gray-600);
+
+      &:hover {
+        background-color: var(--color-gray-700);
+        border-color: var(--color-gray-500);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .hero-actions {
+    .btn {
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      font-weight: var(--font-weight-semibold);
+      transition: all 0.3s ease;
+      border: var(--border-sm) solid transparent;
+
+      &.btn-primary {
+        background-color: var(--color-brand-primary);
+        color: var(--color-text-on-primary);
+
+        &:hover {
+          background-color: var(--color-green-600);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-md);
+        }
+      }
+
+      &.btn-secondary {
+        background-color: transparent;
+        color: var(--color-content-high);
+        border-color: var(--color-content-high);
+
+        &:hover {
+          background-color: var(--color-content-high);
+          color: var(--color-background-primary);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-md);
+        }
+      }
+    }
+  }
+
+  .social-links {
+    .social-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-1);
+      padding: var(--space-2);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: var(--color-gray-800);
+        transform: translateY(-2px);
+      }
+
+      .social-icon {
+        font-size: var(--font-high-m);
+        line-height: 1;
+      }
+    }
   }
 }

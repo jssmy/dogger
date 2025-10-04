@@ -41,11 +41,11 @@ body {
 
 .card {
     border: none;
-    background-color: transparent;
+  //  background-color: transparent;
 }
 
 .card-title {
-    font-family: $font_hight_retro;
+   // font-family: $font_hight_retro;
     letter-spacing: 2px;
 }
 
@@ -56,7 +56,7 @@ body {
 .input {
     border-radius: 27px;
     background-color: white;
-    font-family: $font_typewriter;
+//    font-family: $font_typewriter;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -87,7 +87,7 @@ body {
     }
 
     &__box::placeholder {
-        font-family: $font_typewriter;
+        //font-family: $font_typewriter;
         font-size: inherit;
     }
 
@@ -332,7 +332,7 @@ body {
 
  .blog-container {
     h1, h2, h3, h4, h5 {
-        font-family: $font_cacha;
+    //font-family: $font_cacha;
         color: var(--color-yellow-500); /* $color_yellow */
     }
 
@@ -394,11 +394,11 @@ MODIFICAR ESTILOS DE RENDER
 #blog-render, .codex-editor {
     color: var(--color-gray-300); /* $color_gray_3 */
     font-weight: 100;
-    font-family: $font_typewriter;
+  //  font-family: $font_typewriter;
     
     h1, h2, h3, h4, h5,h6 {
         color: var(--color-orange-500); /* $color_orange */
-        font-family: $font_navbar;
+    //    font-family: $font_navbar;
         text-transform: lowercase;
         letter-spacing: 3px;
         
@@ -433,7 +433,7 @@ AVATAR WRITER
 
     &__user-name {
         color: white;
-        font-family: $font_navbar;
+    //    font-family: $font_navbar;
         text-transform: lowercase;
         text-decoration: none;
         letter-spacing: 3px;
@@ -462,7 +462,7 @@ AVATAR WRITER
 
 .list-inline {
     color: var(--color-gray-400); /* $color_gray */
-    font-family: $font_typewriter;
+  //      font-family: $font_typewriter;
 }
 
 .list-inline-item {
