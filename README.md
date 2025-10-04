@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Update
 - Simple change for testing push functionality
+- Another small change for testing
 
 ## Development server
 
