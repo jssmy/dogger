@@ -1,10 +1,8 @@
 @use "../../../../assets/_variables" as *;
 
-.design-process-section  {
+.design-process-section {
     overflow-x: auto;
-    
 }
-
 
 .process-model {
     list-style: none;
@@ -12,102 +10,103 @@
     position: relative;
     max-width: 600px;
     margin: 20px auto 26px;
-    border: none;
     z-index: 0;
-}
 
-.process-model li::after {
-    background: #e5e5e5 none repeat scroll 0 0;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 4px;
-    margin: 0 auto;
-    position: absolute;
-    right: -50%;
-    top: 33px;
-    width: 85%;
-    z-index: -1;
-}
-.process-model li.visited::after {
-    background: #57b87b;
-}
+    li {
+        display: inline-block;
+        text-align: center;
+        position: relative;
 
-.process-model li:last-child::after {
-    width: 0;
-}
-.process-model li {
-    display: inline-block;
-    // width: 18%;
-    text-align: center;
-    float: none;
-    position: relative;
-}
-.nav-tabs.process-model > li.active > button, .nav-tabs.process-model > li.active > button:hover, .nav-tabs.process-model > li.active > button:focus, .process-model li button:hover, .process-model li button:focus {
-    border: none;
-    background: transparent;
+        &::after {
+            background: #e5e5e5;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 4px;
+            margin: 0 auto;
+            position: absolute;
+            right: -50%;
+            top: 33px;
+            width: 85%;
+            z-index: -1;
+        }
 
-}
-.process-model li button {
-    padding: 0;
-    border: none;
-    color: $color_gray_2;
-    text-decoration: none;
-}
-.process-model li.active,
-.process-model li.visited {
-    color: $color_gray_6;
-}
-.process-model li.active button,
-.process-model li.active button:hover,
-.process-model li.active button:focus,
-.process-model li.visited button,
-.process-model li.visited button:hover,
-.process-model li.visited button:focus {
-    color: $color_gray_6;
-}
-.process-model li.active p,
-.process-model li.visited p {
-    font-weight: 600;
-}
-.process-model li i {
-    display: block;
-    height: 68px;
-    width: 68px;
-    text-align: center;
-    margin: 0 auto;
-    background: #f5f6f7;
-    border: 2px solid #e5e5e5;
-    line-height: 65px;
-    font-size: 30px;
-    border-radius: 50%;
-}
-.process-model li.active i, .process-model li.visited i  {
-    background: #fff;
-    border-color: $color_gray_6;
-}
-.process-model li p {
-    font-size: 14px;
-    margin-top: 11px;
-}
-.process-model.contact-us-tab li.visited button, .process-model.contact-us-tab li.visited p {
-    color: $color_gray_6!important;
-    font-weight: normal
-}
-.process-model.contact-us-tab li::after  {
-    display: none; 
-}
-.process-model.contact-us-tab li.visited i {
-    border-color: #e5e5e5; 
-}
+        &.visited::after {
+            background: #57b87b;
+        }
 
+        &:last-child::after {
+            width: 0;
+        }
 
-@media screen and (max-width: 380px) {
-    .process-model {
-        width: 500px;
+        button {
+            padding: 0;
+            border: none;
+            color: $color_gray_2;
+            text-decoration: none;
+            background: transparent;
+        }
+
+        &.active, &.visited {
+            color: $color_gray_6;
+            
+            button {
+                color: $color_gray_6;
+            }
+            
+            p {
+                font-weight: 600;
+            }
+            
+            i {
+                background: #fff;
+                border-color: $color_gray_6;
+            }
+        }
+
+        i {
+            display: block;
+            height: 68px;
+            width: 68px;
+            text-align: center;
+            margin: 0 auto;
+            background: #f5f6f7;
+            border: 2px solid #e5e5e5;
+            line-height: 65px;
+            font-size: 30px;
+            border-radius: 50%;
+        }
+
+        p {
+            font-size: 14px;
+            margin-top: 11px;
+        }
+    }
+
+    &.contact-us-tab li {
+        &.visited {
+            button, p {
+                color: $color_gray_6 !important;
+                font-weight: normal;
+            }
+            
+            i {
+                border-color: #e5e5e5;
+            }
+        }
+
+        &::after {
+            display: none;
+        }
     }
 }
 
 .btn:focus {
     box-shadow: none;
+}
+
+@media screen and (max-width: 380px) {
+    .process-model {
+        width: 500px;
+    }
 }

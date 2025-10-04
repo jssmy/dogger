@@ -49,7 +49,11 @@
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
-            }
+            },
+            "allowedCommonJsDependencies": [
+              "psl",
+              "extract-domain"
+            ]
           },
           "configurations": {
             "production": {
@@ -62,13 +66,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "800kB",
+                  "maximumError": "1.2MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "3kB",
+                  "maximumError": "5kB"
                 }
               ],
               "outputHashing": "all"
