@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
     selector: 'app-navbar',
     imports: [
         RouterModule,
-        CommonModule
+        CommonModule,
     ],
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.scss'

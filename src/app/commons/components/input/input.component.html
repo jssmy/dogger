@@ -1,7 +1,7 @@
 <div class="input" class="{{size()}}" [ngClass]="{'border-solid': styled() === 'outlined'}" [ariaDisabled]="disabled()">
     <input [disabled]="disabled()" #inputApp [type]="type()" [value]="value()" (input)="onChange(inputApp.value)"
         (change)="onChange(inputApp.value)" (blur)="onTouched()" class="form-control input__box content-low size-md"
-        [placeholder]="placeHolder()">
+        [placeholder]="placeHolder()"/>
     @if(isPasswordInput) {
     <button (click)="onShowPassword()" type="button" class="btn"><i class="fa-regular"
             [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i></button>

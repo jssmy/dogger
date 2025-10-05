@@ -17,7 +17,6 @@ import { ResetPasswordPresenter } from './reset-password.presenter';
         FormsModule,
         ReactiveFormsModule,
         ErrorControlDirective,
-        PasswordStrengthIndicatorComponent,
         RouterModule
     ],
     templateUrl: './reset-password.component.html',

@@ -31,7 +31,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   placeHolder = input<string>();
   size = input<'input--sm' | 'input--lg'>('input--lg');
 
-
   protected showPassword = false;
   protected isPasswordInput = false;
 

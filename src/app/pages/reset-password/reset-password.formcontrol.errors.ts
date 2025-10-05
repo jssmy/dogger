@@ -1,11 +1,11 @@
 export const RESET_PASSWORD_FORM_CONTROL_ERRORS = {
     password: {
-        required: 'Password is required',
-        minlength: 'Password must be at least 8 characters',
-        weakPassword: 'Password is too weak. Please use a stronger password'
+        required: 'La contraseña es requerida',
+        minlength: 'Mínimo 8 caracteres',
+        weakPassword: 'Contraseña demasiado débil'
     },
     confirmPassword: {
-        required: 'Password confirmation is required',
-        passwordMismatch: 'Passwords do not match'
+        required: 'Confirmar contraseña',
+        passwordMismatch: 'Las contraseñas no coinciden'
     }
 }

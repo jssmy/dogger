@@ -1,12 +1,12 @@
 export const LOGIN_FORM_CONTROL_ERRORS = {
     email: {
-        pattern:  'Please enter a valid email',
-        required: 'Email is required'
+        pattern:  'Por favor ingresa un email válido',
+        required: 'El email es requerido'
     },
     password: {
-        required: 'Email is required',
-        minlength: 'Password must be at least 8 characters',
-        pattern: 'Password must be strong',
-        incorrect: 'Credentials are incorrect'
+        required: 'La contraseña es requerida',
+        minlength: 'La contraseña debe tener al menos 8 caracteres',
+        pattern: 'La contraseña debe ser segura',
+        incorrect: 'Las credenciales son incorrectas'
     }
 }
