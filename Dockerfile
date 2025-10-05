@@ -39,7 +39,8 @@ WORKDIR /app
 
 # Copiar solo los archivos necesarios para el servidor Node.js
 COPY --from=build --chown=nextjs:nodejs /app/dist ./dist
-COPY --from=build --chown=nextjs:nodejs /app/package.json ./
+COPY --from=build --chown=nextjs:nodejs /app/package.json ./package.json
+COPY --from=build --chown=nextjs:nodejs /app/package-lock.json ./package-lock.json
 
 # Instalar solo dependencias de producción para el servidor
 RUN npm ci --only=production --silent --no-audit --no-fund && \
@@ -57,8 +58,8 @@ CMD ["dumb-init", "node", "dist/dogger/server/server.mjs"]
 # Etapa 3: Nginx como servidor principal
 FROM nginx:alpine AS production
 
-# Instalar dumb-init
-RUN apk add --no-cache dumb-init
+# Instalar Node.js y dumb-init
+RUN apk add --no-cache nodejs npm dumb-init
 
 # Crear usuario no-root para Nginx
 RUN addgroup -g 1001 -S nginx-user && \
