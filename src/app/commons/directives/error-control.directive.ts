@@ -37,6 +37,8 @@ export class ErrorControlDirective implements OnInit {
       if (errors) {
         this.renderer.addClass(this.errorSpan, 'error');
         this.renderer.addClass(this.errorSpan, 'ms-4');
+        this.renderer.addClass(this.errorSpan, 'content-low');
+        this.renderer.addClass(this.errorSpan, 'size-md');
         const firstErrorKey = Object.keys(errors)[0];
         const errorMessage = this.errorMessages[firstErrorKey];
         this.renderer.setProperty(this.errorSpan, 'textContent', errorMessage || '');

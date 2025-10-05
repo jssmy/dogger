@@ -22,16 +22,27 @@ $color_pink: #f89da7;
 }
 
 .color-white {
-    color: white;
+    color: white !important;
+}
+
+.bg-color-white {
+    background-color: white !important;
 }
 
 .color-yellow {
     color: $color_yellow !important;
 }
 
-.bg-color-yellow {
-    background-color: $color_orange !important;
+.color-orange {
+    color: $color_orange !important;
 }
+
+
+.bg-color-yellow {
+    background-color: $color_yellow !important;
+}
+
+
 
 
 .bg-color-gray-2 {

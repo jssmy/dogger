@@ -1,26 +1,29 @@
 <section class="container vh-100">
 	<div class="d-flex justify-content-center h-100">
-		<div  class="form">
-			<div class="card-header">
-				<h3 class="font-plane-cash">INICIAR SESION</h3>
-				
+		<div class="form card">
+			<div class="card-header ps-4 pe-4 pt-4">
+				<h3 class="content-high sieze-lg text-center">INICIAR SESIÒN</h3>
+
 			</div>
-			<div class="card-body">
+			<div class="card-body ps-4 pe-4 pt-4 pb-4">
 				@if (errorMessage()) {
-					<div class="alert alert-warning alert-dismissible fade show" role="alert">
-						{{errorMessage()}}
-						<button  (click)="errorMessage.set(null)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					  </div>
+				<div class="alert alert-warning alert-dismissible fade show content-low size-sm" role="alert">
+					{{errorMessage()}}
+					<button (click)="errorMessage.set(null)" type="button" class="btn-close" data-bs-dismiss="alert"
+						aria-label="Close"></button>
+				</div>
 				}
-				
+
 				<form [formGroup]="presenter.form">
-					<div class="input-group form-group mb-3">
-                        <app-input formControlName="usernameControl" [errorControl]="presenter.ERROR_CONTROL.email"  class="w-100" placeHolder="email@example.com"></app-input>
+					<div class="input-group form-group mb-4">
+						<app-input formControlName="usernameControl" [errorControl]="presenter.ERROR_CONTROL.email"
+							class="w-100" placeHolder="email@example.com"></app-input>
 					</div>
-					<div class="input-group form-group mb-3">
-						<app-input formControlName="passwordControl" [errorControl]="presenter.ERROR_CONTROL.password"  class="w-100" type="password" placeHolder="password"></app-input>
+					<div class="input-group form-group mb-4">
+						<app-input formControlName="passwordControl" [errorControl]="presenter.ERROR_CONTROL.password"
+							class="w-100" type="password" placeHolder="password"></app-input>
 					</div>
-					<div class="row align-items-center remember mb-3">
+					<div class="row align-items-center remember mb-3 content-low size-md">
 						<input type="checkbox">Recordarme
 					</div>
 					<div class="form-group">
@@ -30,7 +33,7 @@
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center mb-2 mt-2">
-					<a routerLink="/forgot-password">Olvidaste tu contraseña?</a>
+					<a routerLink="/forgot-password" class="content-low size-md">Olvidaste tu contraseña?</a>
 				</div>
 			</div>
 		</div>

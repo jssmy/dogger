@@ -94,6 +94,11 @@
   src: url("./cacha-font//CachaPersonalUseRegular-GOx6g.ttf");
 }
 
+@font-face {
+  font-family: "Nougat-ExtraBlack";
+  src: url("./Nougat-ExtraBlack.ttf");
+}
+
 $font_hight_retro: "Retro Team";
 $font_small_retro: "Mom Typewriter";
 $font_navbar: "Plane Cash";
@@ -109,34 +114,39 @@ $font_typewriter_thin: "JMH Typewriter Thin";
 $font_cacha: "Cacha-font";
 
 
-.font-hight-retro {
-  font-family: $font_hight_retro;
-  letter-spacing: 3px;
+.content-high {
+  font-family: "Nougat-ExtraBlack";
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.font-small-retro {
-  font-family: $font_small_retro;
-  letter-spacing: 2px;
-}
-
-.font-hight-retro_1 {
-  text-transform: lowercase;
-  font-family: $font_navbar;
+.content-mid {
+  font-family: "JMH Typewriter Bold";
   letter-spacing: 1px;
 }
 
-.font-plane-cash {
-  text-transform: lowercase;
-  font-family: $font_navbar;
-  letter-spacing: 2px;
+.content-low {
+  font-family: "JMH Typewriter";
+  letter-spacing: 1px;
 }
 
 
-.font-ford-quick-font {
-  font-family: "Gord-Quick-Font" !important;
+.size-xlg {
+  font-size: 2rem;;
 }
 
+.size-lg {
+  font-size: 1.5rem;
+}
 
-.font-typewriter {
-  font-family: $font_typewriter !important;
+.size-md {
+  font-size: 1rem;
+}
+
+.size-sm {
+  font-size: 0.8rem;
+}
+
+.size-xs {
+  font-size: 0.6rem;
 }

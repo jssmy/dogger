@@ -9,9 +9,6 @@
     border-bottom-style: solid;
     box-shadow: 0px 0px 20px 0px;
     min-height: 4rem;
-    height: auto;
-    font-family: $font_navbar;
-
     &__logo {
         height: 40px;
     }
@@ -53,4 +50,10 @@
 .dropdown-item:focus {
     background-color: $color_orange;
     color: $color_dark;
+}
+
+
+.dropdown-toggle::after {
+     margin-left: 0px; 
+
 }

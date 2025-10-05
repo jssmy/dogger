@@ -5,9 +5,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 
-body {
-    font-size: 1.1rem;
-}
+
 
 @media (min-width: 768px) {
     .w-md-auto {
@@ -44,11 +42,6 @@ body {
     background-color: transparent;
 }
 
-.card-title {
-    font-family: $font_hight_retro;
-    letter-spacing: 2px;
-}
-
 .pointer {
     cursor: pointer;
 }
@@ -56,7 +49,6 @@ body {
 .input {
     border-radius: 27px;
     background-color: white;
-    font-family: $font_typewriter;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -87,7 +79,6 @@ body {
     }
 
     &__box::placeholder {
-        font-family: $font_typewriter;
         font-size: inherit;
     }
 
@@ -332,7 +323,6 @@ body {
 
  .blog-container {
     h1, h2, h3, h4, h5 {
-        font-family: $font_cacha;
         color: $color_yellow;
     }
 
@@ -433,7 +423,6 @@ AVATAR WRITER
 
     &__user-name {
         color: white;
-        font-family: $font_navbar;
         text-transform: lowercase;
         text-decoration: none;
         letter-spacing: 3px;
@@ -465,10 +454,7 @@ AVATAR WRITER
     font-family: $font_typewriter;
 }
 
-.list-inline-item {
-    letter-spacing: 3px;
-    font-size: 0.8rem;
-    .fa-brands {
-        font-size: 1rem;
-    }
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
 }

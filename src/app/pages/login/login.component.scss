@@ -16,14 +16,13 @@
     position: relative;
     margin-top: auto;
     margin-bottom: auto;
-    width: 400px;
     background-color: $color_gray_2;
     border-radius: 17px;
     background-color: #4aa1ad;
     color: $color_dark;
     border-style: solid;
     box-shadow: 0px 0px 20px 0px;
-
+    width: 500px;
 
     &__social_icon {
         position: absolute;
@@ -96,6 +95,11 @@
 
     .card-footer a {
         color: white;
+        text-decoration: none;
+    }
+
+    .card-footer a:hover {
+        color: $color_yellow;
         text-decoration: none;
     }
 }
