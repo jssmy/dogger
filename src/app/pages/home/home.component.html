@@ -9,7 +9,7 @@
     <div  class="w-100 hero__search d-flex flex-column justify-content-center align-items-center" [ngClass]="{'hero__search-active': isFocusModal}">
         <h1 class="text-center content-mid size-xlg p-3 color-yellow" [ngClass]="{'index-3': isFocusModal}">Qué estás buscando?</h1>
         <div class="col-md-8 col-sm-12 col-lg-6" [ngClass]="{'index-3': isFocusModal}">
-            <app-search #SearchComponent  placeHolder="Escribiendo..." (onSearch)="onSearch($event)" (onFocus)="onFocus()" (onSelected)="onSelected($event)" [items]="articlesTracked"></app-search>
+            <app-search #SearchComponent  placeHolder="Búscame..." (onSearch)="onSearch($event)" (onFocus)="onFocus()" (onSelected)="onSelected($event)" [items]="articlesTracked"></app-search>
         </div>
     </div>
 </section>

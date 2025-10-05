@@ -2,7 +2,7 @@
     <div [ngClass]="{'search-engine-active':touched && value}" class="input circule" [className]="'input--lg input ' + styled">
         <input  type="text"
                 #inputSearch
-                class="form-control input__box"
+                class="form-control input__box content-low size-md"
                 (input)="writeValue(inputSearch.value)"
                 (change)="onChangedValue(inputSearch.value)"
                 (focus)="onFocusEvent()"
@@ -26,7 +26,7 @@
     
                 </a>
             } @empty {
-                <a  class="p-2">No se han encontrado resultados</a>
+                <a  class="p-2 content-low size-md">No se han encontrado resultados</a>
             }
             
         </div>
