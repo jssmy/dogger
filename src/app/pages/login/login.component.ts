@@ -37,14 +37,9 @@ export default class LoginComponent {
         .subscribe({
           next: () => this.route.navigate(['main']),
           error: (err: HttpErrorResponse) => {
-            console.log({err});
             if (err.status === HttpStatusCode.BadRequest) {
-
-              console.log({err});
-
               this.presenter.setCredentialErrorControl();
             } else if (err.status === HttpStatusCode.Forbidden) {
-
               this.errorMessage.set(err.error.message);
             }
           }

@@ -27,6 +27,7 @@ export default class BlogComponent implements OnInit{
     id = input<string>();    
     blogContainer = signal<SafeHtml | null>(null);
     avatar = signal<SafeHtml | null>(null);
+
     isResourceFound = signal<boolean>(true);
 
     private readonly plataformId = inject(PLATFORM_ID);

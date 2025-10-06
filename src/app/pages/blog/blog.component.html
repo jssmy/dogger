@@ -3,19 +3,19 @@
         <app-navbar [items]="navbarItems" class="w-md-100 w-auto"></app-navbar>
     </div>
     @if (isResourceFound()) {
-        <div class="my-3 p-3 rounded box-shadow scroll-x">
-            <!-- <app-avatar-writer></app-avatar-writer> -->
-            <div [innerHTML]=" avatar()"></div>
-            <div id="blog-render" [innerHTML]=" blogContainer()"></div>
-        </div>
+    <div class="my-3 p-3 rounded box-shadow scroll-x">
+        <!-- <app-avatar-writer></app-avatar-writer> -->
+        <div [innerHTML]=" avatar()"></div>
+        <div id="blog-render" [innerHTML]=" blogContainer()"></div>
+    </div>
     }
-    
+
 
 </main>
 
 
 @if (!isResourceFound()) {
-        <app-error-404></app-error-404>
+<app-error-404></app-error-404>
 }
 
 <app-footer></app-footer>

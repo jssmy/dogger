@@ -71,15 +71,17 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 };
 
 const getHeaders = (headers: HttpHeaders, authService: AuthService) => {
-  return headers.set(
-    'Authorization',
-    `Bearer ${authService.token()?.accessToken || 'xxxx'}`
-  );
+  const token = authService.token()?.accessToken;
+  if (!token) {
+    throw new Error('No access token available');
+  }
+  return headers.set('Authorization', `Bearer ${token}`);
 };
 
 const getHeadersRefresh = (headers: HttpHeaders, authService: AuthService) => {
-  return headers.set(
-    'Authorization',
-    `Bearer ${authService.token()?.refreshToken || 'xxxx'}`
-  );
+  const token = authService.token()?.refreshToken;
+  if (!token) {
+    throw new Error('No refresh token available');
+  }
+  return headers.set('Authorization', `Bearer ${token}`);
 };
