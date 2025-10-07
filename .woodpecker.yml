@@ -1,0 +1,18 @@
+# .woodpecker.yml
+name: Dogger Production Build
+
+steps:
+  - name: build-production
+    image: node:18
+    volumes:
+      - /builds:/app/dist
+    commands:
+      - npm ci
+      - npm run build:production
+      - mkdir -p /builds/dogger
+      - cp -r dist/dogger/* /builds/dogger/
+      - echo "✅ Dogger production build completed"
+      - echo "📁 Files saved to: /home/www/builds/dogger/"
+    when:
+      - branch: master
+      - event: push
