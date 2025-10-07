@@ -1,6 +1,4 @@
 # .woodpecker.yml
-name: Dogger Production Build
-
 steps:
   - name: build-production
     image: node:18
