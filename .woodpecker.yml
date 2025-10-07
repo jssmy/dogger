@@ -11,8 +11,7 @@ steps:
       - npm run build:production
       - mkdir -p /builds/dogger
       - cp -r dist/dogger/* /builds/dogger/
-      - echo "✅ Dogger production build completed"
-      - echo "📁 Files saved to: /home/www/builds/dogger/"
+      - ls -la /builds/dogger/
     when:
       - branch: master
       - event: push
