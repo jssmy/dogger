@@ -1,15 +1,17 @@
 # .woodpecker.yml
 steps:
-  - name: build-production
+  - name: build-ssr-production
     image: node:22
     volumes:
       - /home/www/public/doger:/app/dist
     commands:
       - npm ci
       - npm run build:production
-      - mkdir -p /builds/dogger
-      - cp -r dist/dogger/* /home/www/public/doger
+      - mkdir -p /home/www/public/doger
+      - cp -r dist/dogger/browser/* /home/www/public/doger/
+      - cp -r dist/dogger/server /home/www/public/doger/
       - ls -la /home/www/public/doger
+      - ls -la /home/www/public/doger/server
     when:
       - branch: master
       - event: push
