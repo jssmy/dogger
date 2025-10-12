@@ -4,7 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        STAGE_BUILD: ${STAGE_BUILD}
+        - STAGE_BUILD=production
+    image: dogger-front:latest
     container_name: node-dogger-front-container
     ports:
       - "80:80"

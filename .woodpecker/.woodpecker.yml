@@ -1,10 +1,26 @@
 # .woodpecker.yml
 steps:
-  - name: build-ssr-production
-    image: node:22
+  - name: build-and-deploy
+    image: docker:24-cli
     commands:
-      - npm ci
-      - npm run build:production
+      - echo "=== Variables de entorno de Woodpecker ==="
+      - echo "CI_WORKSPACE=$CI_WORKSPACE"
+      - echo "CI_REPO=$CI_REPO"
+      - echo "CI_REPO_OWNER=$CI_REPO_OWNER"
+      - echo "CI_REPO_NAME=$CI_REPO_NAME"
+      - echo "CI_COMMIT_SHA=$CI_COMMIT_SHA"
+      - echo "CI_COMMIT_BRANCH=$CI_COMMIT_BRANCH"
+      - echo "CI_COMMIT_MESSAGE=$CI_COMMIT_MESSAGE"
+      - echo "CI_COMMIT_AUTHOR=$CI_COMMIT_AUTHOR"
+      - echo "=========================================="
+      - pwd
+      - ls -la
+      - docker build -t dogger-front:latest --build-arg STAGE_BUILD=production .
+      - docker stop node-dogger-front-container || true
+      - docker rm node-dogger-front-container || true
+      - docker run -d --name node-dogger-front-container -p 80:80 --restart always dogger-front:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     when:
       - branch: master
       - event: push
