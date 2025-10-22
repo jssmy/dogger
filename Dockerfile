@@ -18,9 +18,6 @@ RUN npm ci --silent --no-audit --no-fund && \
 # Copiar el código fuente de la aplicación
 COPY . .
 
-# Asegurar que la carpeta public se copie para los assets
-COPY public/ ./public/
-
 ARG STAGE_BUILD=production
 # Construir la aplicación Angular con optimizaciones
 RUN npm run build:${STAGE_BUILD} && \
