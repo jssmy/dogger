@@ -4,16 +4,24 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "ng serve --configuration=development",
+    "start:prod": "ng serve --configuration=production",
+    "start:local": "ng serve",
     "build": "ng build",
     "build:production": "ng build --configuration=production",
     "build:development": "ng build --configuration=development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:dogger": "node dist/dogger/server/server.mjs",
+    "serve:ssr:dev": "ng build --configuration=development && node dist/dogger/server/server.mjs",
+    "serve:ssr:prod": "ng build --configuration=production && node dist/dogger/server/server.mjs",
     "lint": "ng lint",
     "use-node18": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8'",
-    "dev": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng serve'",
-    "build:node18": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng build'"
+    "dev": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng serve --configuration=development'",
+    "dev:prod": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng serve --configuration=production'",
+    "build:node18": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng build'",
+    "build:node18:dev": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng build --configuration=development'",
+    "build:node18:prod": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng build --configuration=production'"
   },
   "private": true,
   "dependencies": {

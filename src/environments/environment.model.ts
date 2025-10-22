@@ -13,5 +13,8 @@ export interface Environment {
     blog: string;
     blogWriter: string;
     refreshToken: string;
+    requestResetPassword: string;
+    validateTokenResetPassword: string;
+    resetPassword: string
 
 }

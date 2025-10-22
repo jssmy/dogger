@@ -61,7 +61,7 @@ export const routes: Routes = [
             },
             {
                 path: 'roles',
-                loadComponent: () => import('./pages/managment/rol/rol.component')   
+                loadComponent: () => import('./pages/managment/rol/rol.component')
             },
             {
                 path: 'roles/create',
@@ -111,12 +111,17 @@ export const routes: Routes = [
     {
         path: '403',
         loadComponent: () => import('./pages/errors/error-403/error-403.component'),
-        
+
     },
-      {
+    {
         path: '404',
         loadComponent: () => import('./pages/errors/error-404/error-404.component'),
-        
+
+    },
+    {
+        path: '500',
+        loadComponent: () => import('./pages/errors/error-500/error-500.component'),
+
     },
     {
         path: '**',

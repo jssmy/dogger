@@ -10,7 +10,6 @@ import { RESET_PASSWORD_FORM_CONTROL_ERRORS } from "./reset-password.formcontrol
 export class ResetPasswordPresenter {
     readonly form: FormGroup;
     readonly passwordControl = new FormControl('');
-    readonly confirmPasswordControl = new FormControl('');
 
     readonly ERROR_CONTROL = RESET_PASSWORD_FORM_CONTROL_ERRORS;
     private readonly passwordStrengthService = inject(PasswordStrengthService);
@@ -33,14 +32,13 @@ export class ResetPasswordPresenter {
         this.addValidations();
         this.form = new FormGroup({
             passwordControl: this.passwordControl,
-            confirmPasswordControl: this.confirmPasswordControl
         }, { validators: this.passwordMatchValidator });
     }
 
     passwordData(): { password: string; confirmPassword: string } {
         return {
             password: String(this.passwordControl.value),
-            confirmPassword: String(this.confirmPasswordControl.value)
+            confirmPassword: String(this.passwordControl.value)
         };
     }
 
@@ -49,10 +47,6 @@ export class ResetPasswordPresenter {
             Validators.required,
             Validators.minLength(8),
             this.passwordStrengthValidator.bind(this)
-        ]);
-        
-        this.confirmPasswordControl.setValidators([
-            Validators.required
         ]);
     }
 
@@ -89,12 +83,8 @@ export class ResetPasswordPresenter {
         this.passwordControl.setErrors({ weakPassword: true });
     }
 
-    setConfirmPasswordErrorControl(): void {
-        this.confirmPasswordControl.setErrors({ passwordMismatch: true });
-    }
 
     setEmptyErrorControl(): void {
         this.passwordControl.setErrors(null);
-        this.confirmPasswordControl.setErrors(null);
     }
 }

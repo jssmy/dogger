@@ -1,11 +1,12 @@
 <section class="design-process-section ">
     <ul #step class="nav nav-tabs process-model more-icon-preocess d-flex justify-content-between" role="tablist">
         @for (item of stepsComputed(); track item.id) {
-            <li  [ngStyle]="{ 'width': witdhStepComputed()  }" [ngClass]="{ 'active':  item.active, 'visited': item.visited}" class="active">
-                <button  (click)="onSelected(item)"  class="btn font-typewriter">
-                        <i [class]="item.icon"></i>
-                <p>{{ item.label }}</p>
-                </button>
+        <li [ngStyle]="{ 'width': witdhStepComputed()  }" [ngClass]="{ 'active':  item.active, 'visited': item.visited}"
+            class="active">
+            <button (click)="onSelected(item)" class="btn size-md">
+                <i [class]="item.icon"></i>
+                <p [ngClass]="{ 'content-mid': item.active, 'content-low': !item.active }" class="size-md">{{ item.label }}</p>
+            </button>
         </li>
         }
     </ul>

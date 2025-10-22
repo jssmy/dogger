@@ -9,11 +9,27 @@ import { toObservable } from '@angular/core/rxjs-interop';
 
 let isRefreshing = false;
 
+// URLs que deben ser ignoradas por el interceptor
+const IGNORED_URLS: string[] = [
+  environment.login,
+  environment.createuser,
+  environment.requestResetPassword,
+  environment.validateTokenResetPassword,
+  environment.resetPassword,
+  environment.confirmAccount
+];
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const loginService = inject(LoginService);
   const router = inject(Router);
   const authService = inject(AuthService);
+
+  // Verificar si la URL debe ser ignorada
+  const shouldIgnore = IGNORED_URLS.some(url => req.url.includes(url));
+  
+  if (shouldIgnore) {
+    return next(req);
+  }
 
   if (req.url.includes(environment.refreshToken)) {
     return next(

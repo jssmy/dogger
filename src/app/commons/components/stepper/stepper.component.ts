@@ -17,14 +17,13 @@ export class StepperComponent {
   selectedStep = output<Step | undefined>();
 
   stepsComputed = computed(() => {
-
     if (this.steps()) {
 
       const steps = this.steps().map((step, index) => {
         
         step.active = false;
 
-        if (index < this.indexCurrentStep()) {
+        if (index <= this.indexCurrentStep()) {
           step.visited = true;
         }
         if (this.indexCurrentStep() === index) {
@@ -50,8 +49,6 @@ export class StepperComponent {
 
     return `${per}%`;
   });
-
-
 
   onSelected(step: Step) {
     this.selectedStep.emit(step);

@@ -15,4 +15,7 @@ export const environment: Environment = {
     refreshToken: 'http://hardcodeando.com:3000/token/refresh',
     blog: 'http://hardcodeando.com:3001/api/blog',
     blogWriter: 'http://hardcodeando.com:3000/user',
+    requestResetPassword: 'http://hardcodeando.com:3000/password/request',
+    validateTokenResetPassword: 'http://hardcodeando.com:3000/password/token',
+    resetPassword: 'http://hardcodeando.com:3000/password/change',
 };

@@ -26,7 +26,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         @if (authService.check()) {
         <li class="nav-item">
-          <a class="nav-link" routerLink="/main">home</a>
+          <a class="nav-link size-lg content-high" routerLink="/main">home</a>
         </li>
         }
         @for (item of items(); track item.label) {
@@ -56,16 +56,16 @@
 
         @if(authService.check()) {
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          <a class="nav-link dropdown-toggle size-lg content-high" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             my account
           </a>
 
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/profile">profile</a></li>
-            <li><a class="dropdown-item" routerLink="/profile">security and privacity</a></li>
-            <li><a class="dropdown-item" (click)="logout()">logout</a></li>
+            <li><a class="dropdown-item size-md content-high" routerLink="/profile">profile</a></li>
+            <li><a class="dropdown-item size-md content-high" routerLink="/profile">security and privacity</a></li>
+            <li><a class="dropdown-item size-md content-high" (click)="logout()">logout</a></li>
           </ul>
         </li>
         }

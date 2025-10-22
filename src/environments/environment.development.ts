@@ -15,4 +15,7 @@ export const environment: Environment = {
     refreshToken: 'http://localhost:3000/token/refresh',
     blog: 'http://localhost:3001/api/blog',
     blogWriter: 'http://localhost:3000/user',
+    requestResetPassword: 'http://localhost:3000/password/request',
+    validateTokenResetPassword: 'http://localhost:3000/password/token',
+    resetPassword: 'http://localhost:3000/password/change',
 };

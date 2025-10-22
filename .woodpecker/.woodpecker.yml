@@ -1,7 +1,7 @@
 # .woodpecker.yml
 steps:
-  - name: build-and-deploy
-    image: docker:24-cli
+  - name: build
+    image: node:22-alpine
     commands:
       - echo "=== Variables de entorno de Woodpecker ==="
       - echo "CI_WORKSPACE=$CI_WORKSPACE"
@@ -15,12 +15,25 @@ steps:
       - echo "=========================================="
       - pwd
       - ls -la
-      - docker build -t dogger-front:latest --build-arg STAGE_BUILD=production .
-      - docker stop node-dogger-front-container || true
-      - docker rm node-dogger-front-container || true
-      - docker run -d --name node-dogger-front-container -p 80:80 --restart always dogger-front:latest
+      - apk add --no-cache python3 make g++
+      - npm ci --silent --no-audit --no-fund
+      - npm run build:production
+      - echo "Build completado exitosamente!"
+      - ls -la dist/dogger/
+    when:
+      - branch: master
+      - event: push
+
+  - name: deploy
+    image: alpine:latest
+    commands:
+      - echo "=== Preparando despliegue ==="
+      - mkdir -p /deploy/dogger-front
+      - cp -r dist/dogger/* /deploy/dogger-front/
+      - echo "Archivos copiados a /deploy/dogger-front"
+      - ls -la /deploy/dogger-front/
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/www/dogger:/deploy/dogger-front
     when:
       - branch: master
       - event: push

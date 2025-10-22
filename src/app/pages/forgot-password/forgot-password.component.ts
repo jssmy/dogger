@@ -7,33 +7,33 @@ import { ErrorControlDirective } from '../../commons/directives/error-control.di
 import { Router, RouterModule } from '@angular/router';
 import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { ForgotPasswordPresenter } from './forgot-password.presenter';
-import { ForgotPasswordService } from '../../commons/services/forgot-password.service';
+import { PasswordService } from '../../commons/services/password.service';
 
 @Component({
-    selector: 'app-forgot-password',
-    imports: [
-        InputComponent,
-        ButtonComponent,
-        FormsModule,
-        ReactiveFormsModule,
-        ErrorControlDirective,
-        RouterModule
-    ],
-    templateUrl: './forgot-password.component.html',
-    styleUrl: './forgot-password.component.scss'
+  selector: 'app-forgot-password',
+  imports: [
+    InputComponent,
+    ButtonComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    ErrorControlDirective,
+    RouterModule
+  ],
+  templateUrl: './forgot-password.component.html',
+  styleUrl: './forgot-password.component.scss'
 })
 export default class ForgotPasswordComponent {
 
   loader = inject(LoaderService);
   presenter = inject(ForgotPasswordPresenter);
-  forgotPasswordService = inject(ForgotPasswordService);
+  passwordService = inject(PasswordService);
   route = inject(Router);
   errorMessage = signal<string | null>(null);
 
   requestPasswordReset() {
     if (this.presenter.form.valid) {
       this.loader.active();
-      this.forgotPasswordService.requestPasswordReset(this.presenter.emailValue() || '')
+      this.passwordService.requestPasswordReset(this.presenter.emailValue() || '')
         .subscribe({
           next: () => {
             this.loader.inactive();
@@ -43,7 +43,6 @@ export default class ForgotPasswordComponent {
             this.loader.inactive();
             if (err.status === HttpStatusCode.NotFound) {
               this.presenter.setEmailErrorControl();
-              this.errorMessage.set('Usuario no encontrado. Verifique el email ingresado.');
             } else {
               this.errorMessage.set(err.error?.message || 'Error al solicitar cambio de contraseña');
             }

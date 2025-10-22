@@ -59,8 +59,9 @@
             }
             
             i {
-                background: #fff;
-                border-color: $color_gray_6;
+                background: $color_gray_6;
+                border-color: #fff;
+                color: #fff;
             }
         }
 
@@ -78,7 +79,6 @@
         }
 
         p {
-            font-size: 14px;
             margin-top: 11px;
         }
     }
