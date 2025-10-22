@@ -18,6 +18,9 @@ RUN npm ci --silent --no-audit --no-fund && \
 # Copiar el código fuente de la aplicación
 COPY . .
 
+# Asegurar que la carpeta public se copie para los assets
+COPY public/ ./public/
+
 ARG STAGE_BUILD=production
 # Construir la aplicación Angular con optimizaciones
 RUN npm run build:${STAGE_BUILD} && \
@@ -70,6 +73,9 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copiar archivos estáticos desde la etapa de build
 COPY --from=build /app/dist/dogger/browser /usr/share/nginx/html
+
+# Copiar carpeta public para assets
+COPY --from=build /app/public /usr/share/nginx/html/public
 
 # Crear directorio para logs y dar permisos
 RUN mkdir -p /var/log/nginx && \
