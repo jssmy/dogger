@@ -58,7 +58,6 @@ export default class PublicBlogComponent implements OnInit {
       next: () => {
         Swal.fire(ALERT_SUCCESS_DRAFT)
         .finally(() => {
-          console.log('$$$$')
           this.router.navigate(['/managment/blog/draft', this.id()]).finally();
         })
         

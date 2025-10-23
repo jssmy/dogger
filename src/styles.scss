@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use "assets/_variables" as *;
 @use "assets/fonts/fonts" as *;
-@use "assets/_index" as *;
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
+@use "assets/foundations.scss" as *;
 
 
 
@@ -390,8 +388,37 @@ MODIFICAR ESTILOS DE RENDER
         color: $color_orange;
         font-family: $font_navbar;
         text-transform: lowercase;
-        letter-spacing: 3px;
-        
+        letter-spacing: 3px; 
+    }
+
+    h1 {
+        font-size: var(--size-lg);
+        font-weight: 100;
+    }
+
+    h2 {
+        font-size: var(--size-md);
+        font-weight: 100;
+    }
+    
+    h3 {
+        font-size: var(--size-sm);
+        font-weight: 100;
+    }
+
+    h4 {
+        font-size: var(--size-xs);
+        font-weight: 100;
+    }
+
+    h5 {
+        font-size: var(--size-xxs);
+        font-weight: 100;
+    }
+
+    h6 {
+        font-size: var(--size-xxs);
+        font-weight: 100;
     }
 
     b {

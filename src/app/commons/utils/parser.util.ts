@@ -23,7 +23,6 @@ const listParser = (block: any): string =>  {
 
 
 const renderWarning = (block: any) => {
-    console.log(block);
         if (!block) {
             return '';
         }

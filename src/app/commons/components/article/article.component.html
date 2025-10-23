@@ -3,6 +3,6 @@
                 class="card-img-top" src="{{article().images![0]}}"></a></figure>
     <div class="card-body ps-0 pe-0">
         <h5 class="card-title content-high size-md color-white">{{article().title}}</h5>
-        <p class="color-gray content-low size-md">{{article().summary }}</p>
+        <p class="color-gray content-low size-md" [innerHTML]="article().summary"></p>
     </div>
 </article>
