@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { environment } from '../../../environments/environment';
 import { toObservable } from '@angular/core/rxjs-interop';
+import { url } from 'inspector';
 
 let isRefreshing = false;
 
@@ -16,7 +17,9 @@ const IGNORED_URLS: string[] = [
   environment.requestResetPassword,
   environment.validateTokenResetPassword,
   environment.resetPassword,
-  environment.confirmAccount
+  environment.confirmAccount,
+  environment.blog,
+  environment.blogWriter
 ];
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
@@ -26,7 +29,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
   // Verificar si la URL debe ser ignorada
   const shouldIgnore = IGNORED_URLS.some(url => req.url.includes(url));
-  
   if (shouldIgnore) {
     return next(req);
   }

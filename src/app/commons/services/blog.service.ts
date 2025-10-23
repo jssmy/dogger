@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Blog, BlogStage } from '../interfaces/blog';
-import { map, mergeMap, of } from 'rxjs';
+import { map, mergeMap, of, timeout } from 'rxjs';
 import { BlogWriter } from '../interfaces/blog-writer';
 
 @Injectable({
@@ -14,6 +14,7 @@ export class BlogService {
   getPublicBlog(slug: string) {
     return this.http.get<Blog>(`${environment.blog}/public/${slug}`)
     .pipe(
+      timeout(5000),
       mergeMap(
         blog => {
           return this.getBlogWriter(blog.userId)

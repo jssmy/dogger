@@ -14,8 +14,12 @@
 </main>
 
 
-@if (!isResourceFound()) {
+@if (!isResourceFound() && !isTimeoutError()) {
 <app-error-404></app-error-404>
+}
+
+@if (isTimeoutError()) {
+<app-error-500></app-error-500>
 }
 
 <app-footer></app-footer>
