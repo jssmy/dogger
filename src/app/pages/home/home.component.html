@@ -19,7 +19,7 @@
         <span class="underline bg-color-white"></span>
     </h2>
     <div class="row w-100 d-flex m-0">
-        @for(article of articlesTop; track article.id) {
+        @for(article of articlesTop(); track article.id) {
             <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
                 <app-article [article]="article"></app-article>
             </div>

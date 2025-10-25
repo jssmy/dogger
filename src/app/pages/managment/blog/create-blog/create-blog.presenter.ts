@@ -36,7 +36,7 @@ export class CreateBlogPresenter {
                     shortcut: 'CMD+SHIFT+H',
                     config: {
                         placeholder: 'Enter a header',
-                        levels: [1, 2, 3, 4],
+                        levels: [1, 2],
                         defaultLevel: 3
                     }
 

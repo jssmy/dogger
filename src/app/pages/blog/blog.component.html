@@ -2,24 +2,19 @@
     <div class="d-flex w-100 flex-column align-items-center">
         <app-navbar [items]="navbarItems" class="w-md-100 w-auto"></app-navbar>
     </div>
-    @if (isResourceFound()) {
+    @if (statusError() === httpStatusCode.Ok) {
     <div class="my-3 p-3 rounded box-shadow scroll-x">
-        <!-- <app-avatar-writer></app-avatar-writer> -->
         <div [innerHTML]=" avatar()"></div>
         <div id="blog-render" [innerHTML]=" blogContainer()"></div>
     </div>
     }
-
-
+   
 </main>
-
-
-@if (!isResourceFound() && !isTimeoutError()) {
-<app-error-404></app-error-404>
-}
-
-@if (isTimeoutError()) {
-<app-error-500></app-error-500>
-}
+@if (statusError() === httpStatusCode.NotFound) {
+    <app-error-404 />
+    }
+    @if (statusError() === httpStatusCode.InternalServerError) {
+    <app-error-500 />
+    }
 
 <app-footer></app-footer>

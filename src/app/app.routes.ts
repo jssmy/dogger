@@ -23,6 +23,7 @@ export const routes: Routes = [
     {
         path: 'blog/:id',
         loadComponent: () => import('./pages/blog/blog.component'),
+        title: 'Dogger | Blog',
     },
     {
         path: 'account-confirmation/:token',
@@ -125,7 +126,7 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        loadComponent: () => import('./pages/errors/error-404/error-404.component')
+        loadComponent: () => import('./pages/errors/error-404/error-404.component'),
     }
 
 ];

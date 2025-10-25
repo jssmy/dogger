@@ -14,6 +14,7 @@ import { splitHTMLHeader } from '../../commons/utils/string.util';
 import { BlogWriter } from '../../commons/interfaces/blog-writer';
 import { TimeoutError } from 'rxjs';
 import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
+import { LoaderComponent } from '../../commons/components/loader/loader.component';
 const transferHtmlKey = makeStateKey<string>('html')
 
 
@@ -21,7 +22,7 @@ const transferHtmlKey = makeStateKey<string>('html')
 
 @Component({
   selector: 'app-blog',
-  imports: [FooterComponent, CommonModule, Error404Component, Error500Component, NavbarComponent],
+  imports: [FooterComponent, CommonModule, Error404Component, Error500Component, NavbarComponent, LoaderComponent],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'
 })
@@ -30,8 +31,8 @@ export default class BlogComponent implements OnInit {
   blogContainer = signal<SafeHtml | null>(null);
   avatar = signal<SafeHtml | null>(null);
 
-  readonly statusError = signal<HttpStatusCode.Ok | HttpStatusCode.InternalServerError | HttpStatusCode.NotFound>(HttpStatusCode.Ok);
-
+  readonly statusError = signal<HttpStatusCode.Ok | HttpStatusCode.InternalServerError | HttpStatusCode.NotFound | HttpStatusCode.NoContent>(HttpStatusCode.NoContent);
+  readonly httpStatusCode = HttpStatusCode;
 
   isResourceFound = signal<boolean>(true);
   isTimeoutError = signal<boolean>(false);
@@ -51,9 +52,9 @@ export default class BlogComponent implements OnInit {
         this.transferState.get<string>(transferHtmlKey, '')
       );
       this.blogContainer.set(contentHTML);
-
+      this.statusError.set(HttpStatusCode.Ok);
     } else {
-      this.isResourceFound.set(false)
+      this.statusError.set(HttpStatusCode.NotFound);
 
     }
 
@@ -61,6 +62,7 @@ export default class BlogComponent implements OnInit {
     if (this.id() && isPlatformServer(this.plataformId)) {
       this.blogService.getPublicBlog(this.id() as string).subscribe({
         next: content => {
+          console.log(content);
           const html = new CustomParser().parse(content.blog);
           const finalHTML = this.finalHTML(html, content.writer);
           const contentHTML = this.sanitizer.bypassSecurityTrustHtml(finalHTML);

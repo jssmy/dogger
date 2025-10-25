@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, inject, viewChild, ViewChild } from '@angular/core';
 import { NavbarComponent } from '../../commons/components/navbar/navbar.component';
 import { SearchComponent } from '../../commons/components/search/search.component';
 import { ArticleComponent } from '../../commons/components/article/article.component';
@@ -10,44 +10,35 @@ import { Router } from '@angular/router';
 import { FooterComponent } from '../../commons/components/footer/footer.component';
 import { NavbarItem } from '../../commons/interfaces/navbar-items';
 import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
-    selector: 'app-home',
-    imports: [
-        NavbarComponent,
-        SearchComponent,
-        ArticleComponent,
-        CommonModule,
-        FooterComponent
-    ],
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.scss'
+  selector: 'app-home',
+  imports: [
+    NavbarComponent,
+    SearchComponent,
+    ArticleComponent,
+    CommonModule,
+    FooterComponent
+  ],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export default class HomeComponent implements OnInit, AfterViewInit {
+export default class HomeComponent implements AfterViewInit {
+  private readonly articleSearchService = inject(ArticleSearchService);
+  private readonly router = inject(Router);
 
-
-  @ViewChild('SearchComponent') miInput!: SearchComponent;
+  readonly searchComponent = viewChild<SearchComponent>('SearchComponent');
 
   articlesTracked: Item[] = [];
-  articlesTop: Article[] = [];
+  readonly articlesTop = toSignal(this.articleSearchService.getTop());
   navbarItems: NavbarItem[] = NAVBAR_HOME_ITEMS;
-
-  constructor(
-    private readonly articleSearchService: ArticleSearchService,
-    private readonly router: Router
-  ) { }
-
-
-  ngOnInit(): void {
-    this.articleSearchService.getTop()
-      .subscribe(articles => this.articlesTop = articles);
-  }
 
   isFocusModal = false;
   onFocus() {
     this.isFocusModal = !this.isFocusModal;
     if (!this.isFocusModal) {
-      this.miInput.removeFocus();
+      this.searchComponent()?.removeFocus();
     }
   }
 
@@ -65,11 +56,11 @@ export default class HomeComponent implements OnInit, AfterViewInit {
   @HostListener('document:keydown.escape', ['$event'])
   onEscPressed(_event: KeyboardEvent): void {
     this.isFocusModal = false;
-    this.miInput.removeFocus();
+    this.searchComponent()?.removeFocus();
   }
 
   ngAfterViewInit(): void {
-    this.miInput.removeFocus();
+    this.searchComponent()?.removeFocus();
   }
 
 

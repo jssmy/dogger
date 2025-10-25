@@ -1,3 +1,35 @@
+// Font Size Tokens
+:root {
+  --font-size-xs: 0.6rem;
+  --font-size-sm: 0.8rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xlg: 2rem;
+}
+
+// Font Family Tokens
+:root {
+  --font-family-high: "Nougat-ExtraBlack";
+  --font-family-mid: "JMH Typewriter Bold";
+  --font-family-low: "JMH Typewriter";
+  --font-family-retro-team: "Retro Team";
+  --font-family-plane-cash: "Plane Cash";
+  --font-family-mom-typewriter: "Mom Typewriter";
+  --font-family-hornbil-black: "Hornbil Black";
+  --font-family-hornbil-black-italic: "Hornbil Black Italic";
+  --font-family-hornbil-bold: "Hornbil Bold";
+  --font-family-hornbil-bold-italic: "Hornbil Bold Italic";
+  --font-family-benjamin-franklin: "BenjaminFranklin";
+  --font-family-kg-red-hands: "KGRedHands";
+  --font-family-kg-red-hands-outline: "KGRedHandsOutline";
+  --font-family-typewriter: "JMH Typewriter";
+  --font-family-typewriter-bold: "JMH Typewriter Bold";
+  --font-family-typewriter-thin: "JMH Typewriter Thin";
+  --font-family-gord-quick: "Gord-Quick-Font";
+  --font-family-cacha: "Cacha-font";
+  --font-family-nougat: "Nougat-ExtraBlack";
+}
+
 @font-face {
   font-family: "Retro Team";
   src: url(./retro/RetroTeam.otf);
@@ -115,38 +147,38 @@ $font_cacha: "Cacha-font";
 
 
 .content-high {
-  font-family: "Nougat-ExtraBlack";
+  font-family: var(--font-family-high);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .content-mid {
-  font-family: "JMH Typewriter Bold";
+  font-family: var(--font-family-mid);
   letter-spacing: 1px;
 }
 
 .content-low {
-  font-family: "JMH Typewriter";
+  font-family: var(--font-family-low);
   letter-spacing: 1px;
 }
 
 
 .size-xlg {
-  font-size: 2rem;;
+  font-size: var(--font-size-xlg);
 }
 
 .size-lg {
-  font-size: 1.5rem;
+  font-size: var(--font-size-lg);
 }
 
 .size-md {
-  font-size: 1rem;
+  font-size: var(--font-size-md);
 }
 
 .size-sm {
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
 }
 
 .size-xs {
-  font-size: 0.6rem;
+  font-size: var(--font-size-xs);
 }

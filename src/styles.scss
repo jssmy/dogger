@@ -348,7 +348,7 @@
 }
 
 .fig-img-simple.img-bg {
-    background:  #e8e8eb40;
+    background:  rgb(232 232 235 / 13%);
 }
 
 .fig-img-simple.img-border {
@@ -382,48 +382,55 @@ MODIFICAR ESTILOS DE RENDER
 #blog-render, .codex-editor {
     color: $color_gray_3;
     font-weight: 100;
-    font-family: $font_typewriter;
+    font-family: var(--font-family-low);
+    font-size: var(--font-size-md);
     
     h1, h2, h3, h4, h5,h6 {
         color: $color_orange;
-        font-family: $font_navbar;
-        text-transform: lowercase;
-        letter-spacing: 3px; 
+        font-family: var(--font-family-high);
+        text-transform: uppercase;
+        letter-spacing: 1px; 
     }
+    
 
     h1 {
-        font-size: var(--size-lg);
+        font-size: var(--font-size-lg);
         font-weight: 100;
     }
 
     h2 {
-        font-size: var(--size-md);
+        font-size: var(--font-size-md);
         font-weight: 100;
     }
     
     h3 {
-        font-size: var(--size-sm);
+        font-size: var(--font-size-sm);
         font-weight: 100;
     }
 
     h4 {
-        font-size: var(--size-xs);
+        font-size: var(--font-size-xs);
         font-weight: 100;
     }
 
     h5 {
-        font-size: var(--size-xxs);
+        font-size: var(--font-size-xxs);
         font-weight: 100;
     }
 
     h6 {
-        font-size: var(--size-xxs);
+        font-size: var(--font-size-xxs);
         font-weight: 100;
     }
 
     b {
         font-weight: bold;
         color: darkcyan;
+        font-family: var(--font-family-mid);
+    }
+
+    p {
+        font-size: var(--font-size-md);
     }
 
 }
@@ -452,8 +459,8 @@ AVATAR WRITER
         color: white;
         text-transform: lowercase;
         text-decoration: none;
-        letter-spacing: 3px;
-        font-size: .65rem;
+        letter-spacing: 1px;
+        font-size: var(--font-size-sm);
     }
 }
 
