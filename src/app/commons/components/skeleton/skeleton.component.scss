@@ -1,0 +1,54 @@
+:host {
+    $base-color: #ddd;
+    $shine-color: #e8e8e8;
+    $animation-duration: 2.5s;
+
+    // Colores para tema light
+    $light-base: #ddd;
+    $light-shine: #e8e8e8;
+    
+    // Colores para tema dark
+    $dark-base: #2a2a2a;
+    $dark-shine: #3a3a3a;
+
+    @mixin background-gradient($base, $shine) {
+        background-image: linear-gradient(90deg, $base 0px, $shine 40px, $base 80px);
+        background-size: 600px;
+    }
+
+    @keyframes shine-lines {
+        0% {
+            background-position: -100px;
+        }
+        
+        40%, 100% {
+            background-position: 500px
+        }
+    }
+
+    .skeleton {
+        background-color: $base-color;
+        border-radius: 7px;
+        @include background-gradient($light-base, $light-shine);
+        animation: shine-lines $animation-duration infinite linear;
+        
+        // Variables CSS dinámicas para diferentes tamaños
+        --skeleton-width: 100%;
+        --skeleton-height: 20px;
+        
+        width: var(--skeleton-width);
+        height: var(--skeleton-height);
+        
+        // Tema light (por defecto)
+        &--light {
+            background-color: $light-base;
+            @include background-gradient($light-base, $light-shine);
+        }
+        
+        // Tema dark
+        &--dark {
+            background-color: $dark-base;
+            @include background-gradient($dark-base, $dark-shine);
+        }
+    }
+}

@@ -16,7 +16,7 @@
     
     &__title {
         color: $color_yellow;
-        font-family: $font_hight_retro;
+        font-family: var(--font-family-high);
         letter-spacing: 15px;
         font-size: 2rem;
     }

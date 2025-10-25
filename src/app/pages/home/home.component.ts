@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, HostListener, inject, viewChild, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, inject, resource, viewChild, ViewChild, PLATFORM_ID } from '@angular/core';
 import { NavbarComponent } from '../../commons/components/navbar/navbar.component';
 import { SearchComponent } from '../../commons/components/search/search.component';
 import { ArticleComponent } from '../../commons/components/article/article.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ArticleSearchService } from './services/article-search.service';
 import { Item } from '../../commons/interfaces/item';
 import { Article } from '../../commons/interfaces/article';
@@ -11,6 +11,8 @@ import { FooterComponent } from '../../commons/components/footer/footer.componen
 import { NavbarItem } from '../../commons/interfaces/navbar-items';
 import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { lastValueFrom, of } from 'rxjs';
+import { SkeletonComponents } from '../../commons/components/skeleton/skeleton.component';
 
 @Component({
   selector: 'app-home',
@@ -19,19 +21,26 @@ import { toSignal } from '@angular/core/rxjs-interop';
     SearchComponent,
     ArticleComponent,
     CommonModule,
-    FooterComponent
+    FooterComponent,
+    SkeletonComponents,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export default class HomeComponent implements AfterViewInit {
   private readonly articleSearchService = inject(ArticleSearchService);
   private readonly router = inject(Router);
+  private readonly platformId = inject(PLATFORM_ID);
 
   readonly searchComponent = viewChild<SearchComponent>('SearchComponent');
 
   articlesTracked: Item[] = [];
-  readonly articlesTop = toSignal(this.articleSearchService.getTop());
+  readonly articlesTop = toSignal(
+    isPlatformBrowser(this.platformId) 
+      ? this.articleSearchService.getTop() 
+      : of([])
+  );
+
   navbarItems: NavbarItem[] = NAVBAR_HOME_ITEMS;
 
   isFocusModal = false;
@@ -43,10 +52,12 @@ export default class HomeComponent implements AfterViewInit {
   }
 
   onSearch(query: string) {
-    this.articleSearchService.findAllByQuery(query)
-      .subscribe(articles => {
-        this.articlesTracked = articles.map(article => ({ id: article.id, value: article.title }));
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      this.articleSearchService.findAllByQuery(query)
+        .subscribe(articles => {
+          this.articlesTracked = articles.map(article => ({ id: article.id, value: article.title }));
+        });
+    }
   }
 
   onSelected(item: Item) {

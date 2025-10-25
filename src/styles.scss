@@ -96,6 +96,7 @@
 
     &__icon:hover {
         background-color: $color_orange;
+        transition: background-color 0.3s ease;
     }
 
 }
@@ -485,10 +486,14 @@ AVATAR WRITER
 
 .list-inline {
     color: $color_gray;
-    font-family: $font_typewriter;
+    font-family: var(--font-family-low);
 }
 
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0px;
+}
+
+.ce-block--stretched .ce-block__content {
+    max-width: 650px;
 }

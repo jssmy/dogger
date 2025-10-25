@@ -84,3 +84,52 @@ $color_pink: #f89da7;
 .bg-color-dark {
     background-color: $color_dark;
 }
+
+// Background Overlays
+.bg-overlay-dark {
+    background-color: rgba(1, 1, 1, 0.5);
+}
+
+.bg-overlay-light {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.bg-overlay-gray {
+    background-color: rgba(172, 172, 172, 0.6);
+}
+
+.bg-overlay-yellow {
+    background-color: rgba(244, 205, 37, 0.7);
+}
+
+.bg-overlay-orange {
+    background-color: rgba(214, 184, 48, 0.6);
+}
+
+.bg-overlay-red-dark {
+    background-color: rgba(186, 84, 40, 0.6);
+}
+
+.bg-overlay-pink {
+    background-color: rgba(248, 157, 167, 0.6);
+}
+
+// Overlay with blur effect
+.bg-overlay-blur {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+// Gradient overlays
+.bg-overlay-gradient-dark {
+    background: linear-gradient(135deg, rgba(1, 1, 1, 0.8) 0%, rgba(1, 1, 1, 0.4) 100%);
+}
+
+.bg-overlay-gradient-light {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.bg-overlay-gradient-yellow {
+    background: linear-gradient(135deg, rgba(244, 205, 37, 0.8) 0%, rgba(244, 205, 37, 0.4) 100%);
+}
+

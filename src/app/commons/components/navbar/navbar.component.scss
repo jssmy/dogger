@@ -13,6 +13,9 @@
         height: 40px;
     }
 }
+.navbar-nav {
+    gap: 1rem;
+}
 
 .navbar-brand {
     color: black;
@@ -25,6 +28,18 @@
 
 .nav-link {
     color: black;
+    padding: 0px !important;
+    transition: color 0.3s ease, font-size 0.3s ease, font-weight 0.3s ease;
+}
+
+.nav-link.active {
+    color: $color-yellow;
+}
+
+
+.nav-link:hover {
+    color: $color-yellow;
+    font-size: calc(var(--font-size-lg) + 0.2rem);
 }
 
 .dropdown-menu {

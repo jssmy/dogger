@@ -12,138 +12,26 @@
   --font-family-high: "Nougat-ExtraBlack";
   --font-family-mid: "JMH Typewriter Bold";
   --font-family-low: "JMH Typewriter";
-  --font-family-retro-team: "Retro Team";
-  --font-family-plane-cash: "Plane Cash";
-  --font-family-mom-typewriter: "Mom Typewriter";
-  --font-family-hornbil-black: "Hornbil Black";
-  --font-family-hornbil-black-italic: "Hornbil Black Italic";
-  --font-family-hornbil-bold: "Hornbil Bold";
-  --font-family-hornbil-bold-italic: "Hornbil Bold Italic";
-  --font-family-benjamin-franklin: "BenjaminFranklin";
-  --font-family-kg-red-hands: "KGRedHands";
-  --font-family-kg-red-hands-outline: "KGRedHandsOutline";
-  --font-family-typewriter: "JMH Typewriter";
-  --font-family-typewriter-bold: "JMH Typewriter Bold";
-  --font-family-typewriter-thin: "JMH Typewriter Thin";
-  --font-family-gord-quick: "Gord-Quick-Font";
-  --font-family-cacha: "Cacha-font";
-  --font-family-nougat: "Nougat-ExtraBlack";
-}
-
-@font-face {
-  font-family: "Retro Team";
-  src: url(./retro/RetroTeam.otf);
-}
-
-@font-face {
-  font-family: "Plane Cash";
-  src: url(./plane_crash/PlaneCrash.ttf);
-}
-
-@font-face {
-  font-family: "Mom Typewriter";
-  src: url(./moms_typewriter/Momt___.ttf);
 }
 
 
 @font-face {
-  font-family: "Hornbil Black";
-  src: url("/assets/fonts/hornbill/Hornbill-Personal-Use-Black.otf");
-}
-
-@font-face {
-  font-family: "Hornbil Black";
-  src: url("/assets/fonts/hornbill/Hornbill-Personal-Use-Black.otf");
-}
-
-@font-face {
-  font-family: "Hornbil Black Italic";
-  src: url("/assets/fonts/hornbill/Hornbill-Personal-Use-BlackItalic.otf");
-}
-
-@font-face {
-  font-family: "Hornbil Bold";
-  src: url("/assets/fonts/hornbill/Hornbill-Personal-Use-Bold.otf");
-}
-
-
-@font-face {
-  font-family: "Hornbil Bold Italic";
-  src: url("/assets/fonts/hornbill/Hornbill-Personal-Use-BoldItalic.otf");
-}
-
-
-@font-face {
-  font-family: "BenjaminFranklin";
-  src: url("./BenjaminFranklin.ttf");
-}
-
-@font-face {
-  font-family: "KGRedHands";
-  src: url("./kg_red_hands/KGRedHands.ttf");
-}
-
-@font-face {
-  font-family: "KGRedHandsOutline";
-  src: url("./kg_red_hands/KGRedHandsOutline.ttf");
-}
-
-@font-face {
-  font-family: "JMH Typewriter black";
-  src: url("./jmh_typewriter/JMH Typewriter-Black.otf");
-}
-
-
-@font-face {
-  font-family: "JMH Typewriter bold";
+  font-family: "JMH Typewriter Bold";
   src: url("./jmh_typewriter/JMH Typewriter-Bold.ttf");
 }
 
-@font-face {
-  font-family: "JMH Typewriter Thin";
-  src: url("./jmh_typewriter/JMH Typewriter-Thin.ttf");
-}
-
 
 @font-face {
   font-family: "JMH Typewriter";
   src: url("./jmh_typewriter/JMH\ Typewriter.ttf");
 }
 
-@font-face {
-  font-family: "JMH Typewriter";
-  src: url("./jmh_typewriter/JMH\ Typewriter.ttf");
-}
-
-
-@font-face {
-  font-family: "Gord-Quick-Font";
-  src: url("./Gord-Quick-Font/gordqucikblack-p7erv.otf");
-}
-
-@font-face {
-  font-family: "Cacha-font";
-  src: url("./cacha-font//CachaPersonalUseRegular-GOx6g.ttf");
-}
 
 @font-face {
   font-family: "Nougat-ExtraBlack";
   src: url("./Nougat-ExtraBlack.ttf");
 }
 
-$font_hight_retro: "Retro Team";
-$font_small_retro: "Mom Typewriter";
-$font_navbar: "Plane Cash";
-$font_hornbil_black: "Hornbil Black";
-$font_hornbil_black_italic: "Hornbil Black Italic";
-$font_hornbil_bold: "Hornbil Bold";
-$font_hornbil_bold_italic: "Hornbil Bold Italic";
-$font_benjamin_franklin: "BenjaminFranklin";
-$font_kg_red_hands: "KGRedHands";
-$font_kg_red_hands_outline: "KGRedHandsOutline";
-$font_typewriter: "JMH Typewriter";
-$font_typewriter_thin: "JMH Typewriter Thin";
-$font_cacha: "Cacha-font";
 
 
 .content-high {

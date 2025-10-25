@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { InputComponent } from '../../commons/components/input/input.component';
 import { ButtonComponent } from '../../commons/components/button/button.component';
 import { LoaderService } from '../../commons/services/loader.service';
@@ -22,7 +22,7 @@ import { ResetPasswordPresenter } from './reset-password.presenter';
     templateUrl: './reset-password.component.html',
     styleUrl: './reset-password.component.scss'
 })
-export default class ResetPasswordComponent {
+export default class ResetPasswordComponent implements OnInit {
 
   loader = inject(LoaderService);
   presenter = inject(ResetPasswordPresenter);
@@ -32,7 +32,7 @@ export default class ResetPasswordComponent {
   errorMessage = signal<string | null>(null);
   successMessage = signal<string | null>(null);
   
-  token: string = '';
+  token = '';
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {

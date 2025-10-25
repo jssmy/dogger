@@ -13,8 +13,7 @@ import { AvatarWriterComponent } from '../../commons/components/avatar-writer/av
 import { splitHTMLHeader } from '../../commons/utils/string.util';
 import { BlogWriter } from '../../commons/interfaces/blog-writer';
 import { TimeoutError } from 'rxjs';
-import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
-import { LoaderComponent } from '../../commons/components/loader/loader.component';
+import { HttpStatusCode } from '@angular/common/http';
 const transferHtmlKey = makeStateKey<string>('html')
 
 
@@ -22,7 +21,7 @@ const transferHtmlKey = makeStateKey<string>('html')
 
 @Component({
   selector: 'app-blog',
-  imports: [FooterComponent, CommonModule, Error404Component, Error500Component, NavbarComponent, LoaderComponent],
+  imports: [FooterComponent, CommonModule, Error404Component, Error500Component, NavbarComponent],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'
 })
@@ -62,7 +61,6 @@ export default class BlogComponent implements OnInit {
     if (this.id() && isPlatformServer(this.plataformId)) {
       this.blogService.getPublicBlog(this.id() as string).subscribe({
         next: content => {
-          console.log(content);
           const html = new CustomParser().parse(content.blog);
           const finalHTML = this.finalHTML(html, content.writer);
           const contentHTML = this.sanitizer.bypassSecurityTrustHtml(finalHTML);
@@ -75,7 +73,7 @@ export default class BlogComponent implements OnInit {
 
           // Verificar si es un error de timeout
           if (error instanceof TimeoutError) {
-              this.statusError.set(HttpStatusCode.InternalServerError);
+            this.statusError.set(HttpStatusCode.InternalServerError);
           } else {
             if (error.status === HttpStatusCode.NotFound) {
               this.statusError.set(HttpStatusCode.NotFound);

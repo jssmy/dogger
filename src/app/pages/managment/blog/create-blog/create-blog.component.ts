@@ -57,6 +57,21 @@ export default class CreateBlogComponent implements OnInit {
     }
   }
 
+  private createOrUpdateBlog(blog: Blog) {
+    if (this.slug()) {
+      this.blogService.update(blog, this.slug() as string).subscribe(blog => {
+        this.alertService.fire(ALERT_SUCCESS_DRAFT).then(() => {
+          this.routerService.navigate(['managment','blog','draft', this.slug() as string]);
+        });
+      })
+    } else {
+      this.blogService.create(blog).subscribe(blog => {
+         this.alertService.fire(ALERT_SUCCESS_DRAFT).then(() => {
+          this.routerService.navigate(['managment','blog','draft', blog.slug]);
+        });
+      })
+    }
+  }
 
   async save() {
     const data = await this.editor?.save();
@@ -65,13 +80,7 @@ export default class CreateBlogComponent implements OnInit {
     if (blog.blocks.length < 5) {
       await this.alertService.fire(ALERT_MIN_BLOCKS);
     } else {
-      this.blogService.create({
-        ...blog,
-        stage: BlogStage.DRAFT
-       }).subscribe(async (blog) => {
-        await this.alertService.fire(ALERT_SUCCESS_DRAFT);
-        this.routerService.navigate(['managment','blog','draft', blog.slug]);
-      })
+      this.createOrUpdateBlog(blog);
     }
   }
 

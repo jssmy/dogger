@@ -23,16 +23,16 @@
       </i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
         @if (authService.check()) {
         <li class="nav-item">
-          <a class="nav-link size-lg content-high" routerLink="/main">home</a>
+          <a class="nav-link size-lg content-high" [class.active]="isActiveRoute('/home')" routerLink="/home">home</a>
         </li>
         }
         @for (item of items(); track item.label) {
         @if (!item.items?.length) {
         <li class="nav-item">
-          <a class="nav-link content-high size-lg" aria-current="page"
+          <a class="nav-link content-high size-lg" [class.active]="isActiveRoute(item.route)"
             [routerLink]="'/'+item.route.replace(':id?', '')">{{item.label}}</a>
         </li>
         } @else {

@@ -1,12 +1,12 @@
 import { HttpErrorResponse, HttpHeaders, HttpInterceptorFn, HttpStatusCode } from '@angular/common/http';
-import { inject } from '@angular/core';
+import { inject, PLATFORM_ID } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { catchError, switchMap, throwError, filter, take } from 'rxjs';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { environment } from '../../../environments/environment';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { url } from 'inspector';
+import { isPlatformBrowser } from '@angular/common';
 
 let isRefreshing = false;
 
@@ -18,7 +18,8 @@ const IGNORED_URLS: string[] = [
   environment.validateTokenResetPassword,
   environment.resetPassword,
   environment.confirmAccount,
-  environment.blog,
+  `${environment.blog}/public`,
+  `${environment.blog}`,
   environment.blogWriter
 ];
 
@@ -26,9 +27,15 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const loginService = inject(LoginService);
   const router = inject(Router);
   const authService = inject(AuthService);
+  const platformId = inject(PLATFORM_ID);
+
+  // Solo aplicar el interceptor en el browser
+  if (!isPlatformBrowser(platformId)) {
+    return next(req);
+  }
 
   // Verificar si la URL debe ser ignorada
-  const shouldIgnore = IGNORED_URLS.some(url => req.url.includes(url));
+  const shouldIgnore = IGNORED_URLS.some(url => url.includes(req.url));
   if (shouldIgnore) {
     return next(req);
   }

@@ -33,7 +33,6 @@ export default class DraftBlogComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.id())
     if (isPlatformBrowser(this.plataformId)) {
       this.stepperService.indexStep.set(1);
       if (this.id()) {

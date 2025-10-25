@@ -19,11 +19,27 @@
         <span class="underline bg-color-white"></span>
     </h2>
     <div class="row w-100 d-flex m-0">
-        @for(article of articlesTop(); track article.id) {
-            <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-                <app-article [article]="article"></app-article>
-            </div>
+        @defer (when articlesTop();) {
+            @for(article of articlesTop(); track article.id) {
+                <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                    <app-article [article]="article"></app-article>
+                </div>
+            }
+        } @placeholder {
+            @for(i of [1, 2, 3]; track i) {
+                <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                    <skeleton width="100%" height="250px" borderRadius="radius-md" theme="dark" />
+                </div>
+            }
+        } @loading(minimum 5000ms) {
+            @for(i of [1, 2, 3]; track i) {
+                <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                    <skeleton width="100%" height="250px" borderRadius="radius-md" theme="dark" />
+                </div>
+            }
         }
+    
+    
     </div>
 </section>
 <app-footer></app-footer>
