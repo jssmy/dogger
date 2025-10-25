@@ -70,7 +70,7 @@ export default class BlogComponent implements OnInit {
           this.statusError.set(HttpStatusCode.Ok);
         },
         error: (error) => {
-
+          console.error(error);
           // Verificar si es un error de timeout
           if (error instanceof TimeoutError) {
             this.statusError.set(HttpStatusCode.InternalServerError);
@@ -80,6 +80,8 @@ export default class BlogComponent implements OnInit {
             } else {
               this.statusError.set(HttpStatusCode.InternalServerError);
             }
+
+            console.warn(error);
           }
         }
       })
