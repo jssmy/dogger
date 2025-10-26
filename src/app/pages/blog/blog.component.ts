@@ -42,8 +42,7 @@ export default class BlogComponent implements OnInit {
   private readonly sanitizer = inject(DomSanitizer);
   private readonly transferState = inject(TransferState);
   private readonly viewContainer = inject(ViewContainerRef);
-  navbarItems: NavbarItem[] = NAVBAR_HOME_ITEMS;
-
+  readonly navbarItems: NavbarItem[] = NAVBAR_HOME_ITEMS;
 
 
   ngOnInit(): void {

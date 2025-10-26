@@ -29,6 +29,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService);
   const platformId = inject(PLATFORM_ID);
 
+  console.log(req.url);
   // Solo aplicar el interceptor en el browser
   if (!isPlatformBrowser(platformId)) {
     return next(req);
