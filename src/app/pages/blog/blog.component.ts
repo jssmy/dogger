@@ -61,7 +61,7 @@ export default class BlogComponent implements OnInit {
     }
 
 
-    if (this.id() && isPlatformServer(this.plataformId)) {
+    if (this.id() && isPlatformBrowser(this.plataformId)) {
       this.blogService.getPublicBlog(this.id() as string).subscribe({
         next: content => {
           console.log(content);

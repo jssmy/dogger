@@ -37,7 +37,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   }
 
   // Verificar si la URL debe ser ignorada
-  const shouldIgnore = IGNORED_URLS.some(url => url.includes(req.url));
+  const shouldIgnore = IGNORED_URLS.some(url => req.url.includes(url));
+
   if (shouldIgnore) {
     console.log('⏭️ [AuthInterceptor] URL ignored, skipping auth:', req.url);
     return next(req);
