@@ -31,7 +31,7 @@ export default class BlogComponent implements OnInit {
   blogContainer = signal<SafeHtml | null>(null);
   avatar = signal<SafeHtml | null>(null);
 
-  readonly statusError = signal<HttpStatusCode.Ok | HttpStatusCode.InternalServerError | HttpStatusCode.NotFound | HttpStatusCode.NoContent>(HttpStatusCode.NoContent);
+  readonly statusError = signal<HttpStatusCode>(HttpStatusCode.NoContent);
   readonly httpStatusCode = HttpStatusCode;
 
   isResourceFound = signal<boolean>(true);
@@ -50,7 +50,7 @@ export default class BlogComponent implements OnInit {
     // Inicializar statusError desde TransferState si existe
     if (this.transferState.hasKey(transferStatusErrorKey)) {
       const serverStatusError = this.transferState.get<HttpStatusCode>(transferStatusErrorKey, HttpStatusCode.NoContent);
-      this.statusError.set(serverStatusError as HttpStatusCode.Ok | HttpStatusCode.InternalServerError | HttpStatusCode.NotFound | HttpStatusCode.NoContent);
+      this.statusError.set(serverStatusError as HttpStatusCode);
     }
 
     if (this.transferState.hasKey(transferHtmlKey)) {
