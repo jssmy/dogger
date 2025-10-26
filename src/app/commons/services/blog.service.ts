@@ -14,7 +14,6 @@ export class BlogService {
   getPublicBlog(slug: string) {
     return this.http.get<Blog>(`${environment.blog}/public/${slug}`)
     .pipe(
-      timeout(5000),
       mergeMap(
         blog => {
           return this.getBlogWriter(blog.userId)
