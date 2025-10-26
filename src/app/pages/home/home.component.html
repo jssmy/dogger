@@ -1,45 +1,61 @@
 @if(isFocusModal) {
-    <div class="search-modal" (click)="onFocus()"></div>
+<div class="search-modal" (click)="onFocus()"></div>
 }
 
 <section class="container d-flex flex-column align-items-center hero">
     <div class="d-flex w-100 flex-column align-items-center">
         <app-navbar [items]="navbarItems" class="w-md-100 w-auto"></app-navbar>
     </div>
-    <div  class="w-100 hero__search d-flex flex-column justify-content-center align-items-center" [ngClass]="{'hero__search-active': isFocusModal}">
-        <h1 class="text-center content-mid size-xlg p-3 color-yellow" [ngClass]="{'index-3': isFocusModal}">Qué estás buscando?</h1>
+    <div class="w-100 hero__search d-flex flex-column justify-content-center align-items-center"
+        [ngClass]="{'hero__search-active': isFocusModal}">
+        <h1 class="text-center content-mid size-xlg p-3 color-yellow" [ngClass]="{'index-3': isFocusModal}">Qué estás
+            buscando?</h1>
         <div class="col-md-8 col-sm-12 col-lg-6" [ngClass]="{'index-3': isFocusModal}">
-            <app-search #SearchComponent  placeHolder="Búscame..." (onSearch)="onSearch($event)" (onFocus)="onFocus()" (onSelected)="onSelected($event)" [items]="articlesTracked"></app-search>
+            <app-search #SearchComponent placeHolder="Búscame..." (onSearch)="onSearch($event)" (onFocus)="onFocus()"
+                (onSelected)="onSelected($event)" [items]="articlesTracked"></app-search>
         </div>
     </div>
 </section>
 <section class="container">
-    <h2 class="font-hight-retro text-center d-flex flex-column align-items-center mb-3 mt-3 size-lg content-high color-white">
+    <h2
+        class="font-hight-retro text-center d-flex flex-column align-items-center mb-3 mt-3 size-lg content-high color-white">
         Agregados recientemente
         <span class="underline bg-color-white"></span>
     </h2>
     <div class="row w-100 d-flex m-0">
         @defer (when articlesTop();) {
-            @for(article of articlesTop(); track article.id) {
-                <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-                    <app-article [article]="article"></app-article>
-                </div>
-            }
-        } @placeholder {
-            @for(i of [1, 2, 3]; track i) {
-                <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="250px" borderRadius="radius-md" theme="dark" />
-                </div>
-            }
-        } @loading(minimum 500ms) {
-            @for(i of [1, 2, 3]; track i) {
-                <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="250px" borderRadius="radius-md" theme="dark" />
-                </div>
-            }
+        @for(article of articlesTop(); track article.id) {
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+            <app-article [article]="article"></app-article>
+        </div>
         }
-    
-    
+        } @placeholder {
+        @for(i of [1, 2, 3]; track i) {
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-4 d-flex flex-column gap-3">
+                <app-shimmer shimmerWidth="100%" shimmerHeight="200px" borderRadius="radius-md" theme="dark" />
+                <div class="d-flex flex-column gap-1">
+                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                </div>
+            </div>
+        }
+        } @loading(minimum 500ms) {
+        @for(i of [1, 2, 3]; track i) {
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-4 d-flex flex-column gap-3">
+                <app-shimmer shimmerWidth="100%" shimmerHeight="200px" borderRadius="radius-md" theme="dark" />
+                <div class="d-flex flex-column gap-1">
+                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                </div>
+            </div>
+        }
+        }
+
+
     </div>
 </section>
 <app-footer></app-footer>
