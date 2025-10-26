@@ -52,9 +52,6 @@ export default class BlogComponent implements OnInit {
       );
       this.blogContainer.set(contentHTML);
       this.statusError.set(HttpStatusCode.Ok);
-    } else {
-      this.statusError.set(HttpStatusCode.NotFound);
-
     }
 
 
