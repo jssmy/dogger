@@ -63,7 +63,6 @@ export default class BlogComponent implements OnInit {
     if (this.id() && isPlatformBrowser(this.plataformId)) {
       this.blogService.getPublicBlog(this.id() as string).subscribe({
         next: content => {
-          console.log(content);
           const html = new CustomParser().parse(content.blog);
           const finalHTML = this.finalHTML(html, content.writer);
           const contentHTML = this.sanitizer.bypassSecurityTrustHtml(finalHTML);
@@ -73,7 +72,6 @@ export default class BlogComponent implements OnInit {
           this.statusError.set(HttpStatusCode.Ok);
         },
         error: (error) => {
-          console.error(error);
           // Verificar si es un error de timeout
           if (error instanceof TimeoutError) {
             this.statusError.set(HttpStatusCode.InternalServerError);
@@ -85,9 +83,7 @@ export default class BlogComponent implements OnInit {
             } else {
               this.statusError.set(HttpStatusCode.InternalServerError);
               this.transferState.set(transferStatusErrorKey, HttpStatusCode.InternalServerError);
-            }
-
-            console.warn(error);
+            }          
           }
         }
       })
