@@ -9,7 +9,10 @@ import bootstrap from './src/main.server';
 export function app(): express.Express {
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, '../browser');
+  // En Docker, los archivos estáticos están en /usr/share/nginx/html
+  const browserDistFolder = process.env.NODE_ENV === 'production' 
+    ? '/usr/share/nginx/html' 
+    : resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
   const commonEngine = new CommonEngine();
