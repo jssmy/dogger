@@ -74,4 +74,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost/health || exit 1
 
 # Comando de inicio optimizado
-CMD ["sh", "-c", "mkdir -p /var/run && chmod 777 /var/run && nginx -g 'daemon off;' & NODE_ENV=production node /app/server/server.mjs"]
+CMD ["sh", "-c", "nginx -g 'daemon off;' & NODE_ENV=production node /app/server/server.mjs"]
