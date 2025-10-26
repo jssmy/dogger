@@ -41,6 +41,9 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Copiar archivos estáticos desde la etapa de build
 COPY --from=build /app/dist/dogger/browser /usr/share/nginx/html
 
+# Eliminar el index.html por defecto de Nginx
+RUN rm -f /usr/share/nginx/html/index.html
+
 # Copiar carpeta public para assets
 COPY --from=build /app/public /usr/share/nginx/html/public
 
