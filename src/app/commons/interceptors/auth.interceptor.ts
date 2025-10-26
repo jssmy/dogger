@@ -29,10 +29,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService);
   const platformId = inject(PLATFORM_ID);
 
-  console.log('🌐 [AuthInterceptor] Processing request to:', req.url);
   // Solo aplicar el interceptor en el browser
   if (!isPlatformBrowser(platformId)) {
-    console.log('🖥️ [AuthInterceptor] Server-side request, skipping interceptor');
     return next(req);
   }
 
@@ -40,11 +38,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const shouldIgnore = IGNORED_URLS.some(url => req.url.includes(url));
 
   if (shouldIgnore) {
-    console.log('⏭️ [AuthInterceptor] URL ignored, skipping auth:', req.url);
     return next(req);
   }
-
-  console.log('🔐 [AuthInterceptor] Adding authentication to request');
 
   if (req.url.includes(environment.refreshToken)) {
     return next(
@@ -60,12 +55,10 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     })
   ).pipe(
     catchError((error: HttpErrorResponse) => {
-      console.log('🚨 [AuthInterceptor] Request failed with status:', error.status);
+
       if (error.status === HttpStatusCode.Unauthorized) {
-        console.log('🔑 [AuthInterceptor] Unauthorized error, attempting token refresh');
         if (!isRefreshing) {
           isRefreshing = true;
-          console.log('🔄 [AuthInterceptor] Starting token refresh process');
 
           return loginService.refresh().pipe(
             switchMap(() => {
@@ -106,24 +99,23 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
 const getHeaders = (headers: HttpHeaders, authService: AuthService) => {
   const token = authService.token()?.accessToken;
-  console.log('🔑 [AuthInterceptor] Getting access token:', token ? 'Token found' : 'No token');
+
   if (!token) {
-    console.error('❌ [AuthInterceptor] No access token available');
+
     throw new Error('No access token available');
   }
   const newHeaders = headers.set('Authorization', `Bearer ${token}`);
-  console.log('✅ [AuthInterceptor] Authorization header added:', `Bearer ${token.substring(0, 20)}...`);
   return newHeaders;
 };
 
 const getHeadersRefresh = (headers: HttpHeaders, authService: AuthService) => {
   const token = authService.token()?.refreshToken;
-  console.log('🔄 [AuthInterceptor] Getting refresh token:', token ? 'Token found' : 'No token');
+
   if (!token) {
-    console.error('❌ [AuthInterceptor] No refresh token available');
+
     throw new Error('No refresh token available');
   }
   const newHeaders = headers.set('Authorization', `Bearer ${token}`);
-  console.log('✅ [AuthInterceptor] Refresh token header added:', `Bearer ${token.substring(0, 20)}...`);
+  
   return newHeaders;
 };

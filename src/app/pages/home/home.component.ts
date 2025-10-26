@@ -12,7 +12,7 @@ import { NavbarItem } from '../../commons/interfaces/navbar-items';
 import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { lastValueFrom, of } from 'rxjs';
-import { SkeletonComponents } from '../../commons/components/skeleton/skeleton.component';
+import { ShimmerComponent } from '../../commons/components/shimmer/shimmer.component';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +22,7 @@ import { SkeletonComponents } from '../../commons/components/skeleton/skeleton.c
     ArticleComponent,
     CommonModule,
     FooterComponent,
-    SkeletonComponents,
+    ShimmerComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

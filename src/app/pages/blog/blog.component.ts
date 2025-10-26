@@ -14,15 +14,14 @@ import { splitHTMLHeader } from '../../commons/utils/string.util';
 import { BlogWriter } from '../../commons/interfaces/blog-writer';
 import { TimeoutError } from 'rxjs';
 import { HttpStatusCode } from '@angular/common/http';
+import BlogSkeletonComponent from './commons/components/blog-steketon/blog-skeleton.component';
 const transferHtmlKey = makeStateKey<string>('html')
 const transferStatusErrorKey = makeStateKey<HttpStatusCode>('statusError')
 
 
-
-
 @Component({
   selector: 'app-blog',
-  imports: [FooterComponent, CommonModule, Error404Component, Error500Component, NavbarComponent],
+  imports: [FooterComponent, CommonModule, Error404Component, Error500Component, NavbarComponent, BlogSkeletonComponent],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'
 })

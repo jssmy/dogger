@@ -35,7 +35,7 @@ export default class LoginComponent {
     if (this.presenter.form.valid) {
       this.loginService.in(this.presenter.credentials())
         .subscribe({
-          next: () => this.route.navigate(['main']),
+          next: () => this.route.navigate(['home']),
           error: (err: HttpErrorResponse) => {
             if (err.status === HttpStatusCode.BadRequest) {
               this.presenter.setCredentialErrorControl();

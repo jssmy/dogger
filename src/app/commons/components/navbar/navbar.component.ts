@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { NavbarItem } from '../../interfaces/navbar-items';
 import { CommonModule } from '@angular/common';
@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
     CommonModule,
   ],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
   readonly items = input.required<NavbarItem[]>();

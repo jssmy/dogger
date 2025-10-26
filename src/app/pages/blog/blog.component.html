@@ -2,19 +2,27 @@
     <div class="d-flex w-100 flex-column align-items-center">
         <app-navbar [items]="navbarItems" class="w-md-100 w-auto"></app-navbar>
     </div>
-    @if (statusError() === httpStatusCode.Ok) {
+
     <div class="my-3 p-3 rounded box-shadow scroll-x">
-        <div [innerHTML]=" avatar()"></div>
-        <div id="blog-render" [innerHTML]=" blogContainer()"></div>
+        @defer(when statusError() === httpStatusCode.Ok) {
+            <div [innerHTML]=" avatar()"></div>
+            <div id="blog-render" [innerHTML]=" blogContainer()"></div>
+        } @placeholder {
+         <app-blog-skeleton />
+        }
+        @loading(minimum 500ms) {
+            <app-blog-skeleton />
+        } @error {
+            <app-blog-skeleton />
+        }
     </div>
-    }
-   
+
 </main>
 @if (statusError() === httpStatusCode.NotFound) {
-    <app-error-404 />
-    }
-    @if (statusError() === httpStatusCode.InternalServerError) {
-    <app-error-500 />
-    }
+<app-error-404 />
+}
+@if (statusError() === httpStatusCode.InternalServerError) {
+<app-error-500 />
+}
 
 <app-footer></app-footer>

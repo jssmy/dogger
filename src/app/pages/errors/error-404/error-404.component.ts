@@ -3,7 +3,6 @@ import { FooterComponent } from '../../../commons/components/footer/footer.compo
 
 @Component({
     selector: 'app-error-404',
-    imports: [FooterComponent],
     templateUrl: './error-404.component.html',
     styleUrl: './error-404.component.scss'
 })
