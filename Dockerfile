@@ -82,10 +82,6 @@ RUN mkdir -p /var/log/nginx /var/run /var/cache/nginx && \
 # Copiar el servidor Node.js desde la etapa anterior
 COPY --from=nodejs-server /app /app/nodejs-server
 
-# Copiar script de inicio mejorado
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
-
 # Cambiar al usuario no-root
 USER nginx-user
 
@@ -96,8 +92,8 @@ EXPOSE 80
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost/health || exit 1
 
-# Comando de inicio
-CMD ["/start.sh"]
+# Comando de inicio inline
+CMD ["sh", "-c", "mkdir -p /var/run /var/cache/nginx && chown -R nginx-user:nginx-user /var/run /var/cache/nginx && nginx -g 'daemon off;' & cd /app/nodejs-server && node dist/dogger/server/server.mjs"]
 
 
 
