@@ -36,6 +36,7 @@
               "src/assets/plugins/fontawesome-6.5.2-web/css/brands.min.css",
               "src/assets/plugins/fontawesome-6.5.2-web/css/solid.min.css",
               "src/assets/plugins/fontawesome-6.5.2-web/css/fontawesome.min.css",
+              "src/assets/css/bootstrap-fixes.scss",
               "src/assets/css/dark-theme.scss",
               "src/assets/css/light-theme.scss",
               "src/assets/__index.scss",

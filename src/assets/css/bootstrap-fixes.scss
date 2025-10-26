@@ -1,0 +1,45 @@
+// Fixes para Bootstrap CSS que causan errores de selector
+// Solución para el error: .btn-group>+.btn -> Did not expect successive traversals
+
+// Reemplazar selectores problemáticos de Bootstrap
+.btn-group {
+  // Fix para el selector problemático
+  > .btn + .btn {
+    margin-left: -1px;
+  }
+  
+  // Fix para el selector problemático con :not()
+  > .btn:not(:first-child) {
+    margin-left: -1px;
+  }
+  
+  // Fix para el selector problemático con :nth-child()
+  > .btn:nth-child(n+3) {
+    margin-left: -1px;
+  }
+}
+
+// Fix para btn-group-vertical
+.btn-group-vertical {
+  > .btn + .btn {
+    margin-top: -1px;
+  }
+  
+  > .btn:not(:first-child) {
+    margin-top: -1px;
+  }
+}
+
+// Fix para dropdown-toggle-split
+.btn + .dropdown-toggle-split {
+  margin-left: -1px;
+}
+
+// Fix para btn-group con :not() y :nth-child()
+.btn-group > .btn-group:not(:first-child) > .btn {
+  margin-left: -1px;
+}
+
+.btn-group > .btn-group:not(:last-child) > .btn {
+  margin-right: -1px;
+}

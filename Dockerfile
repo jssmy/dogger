@@ -75,18 +75,16 @@ COPY --from=build /app/dist/dogger/browser /usr/share/nginx/html
 COPY --from=build /app/public /usr/share/nginx/html/public
 
 # Crear directorio para logs y dar permisos
-RUN mkdir -p /var/log/nginx && \
+RUN mkdir -p /var/log/nginx /var/run /var/cache/nginx && \
     chown -R nginx-user:nginx-user /var/log/nginx /var/cache/nginx /var/run /usr/share/nginx/html && \
-    chmod -R 755 /var/log/nginx
+    chmod -R 755 /var/log/nginx /var/run /var/cache/nginx
 
 # Copiar el servidor Node.js desde la etapa anterior
 COPY --from=nodejs-server /app /app/nodejs-server
 
-# Crear script de inicio simple
-RUN echo '#!/bin/sh' > /start.sh && \
-    echo 'nginx -g "daemon off;" &' >> /start.sh && \
-    echo 'cd /app/nodejs-server && node dist/dogger/server/server.mjs' >> /start.sh && \
-    chmod +x /start.sh
+# Copiar script de inicio mejorado
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
 # Cambiar al usuario no-root
 USER nginx-user
