@@ -15,6 +15,7 @@ import { BlogWriter } from '../../commons/interfaces/blog-writer';
 import { TimeoutError } from 'rxjs';
 import { HttpStatusCode } from '@angular/common/http';
 const transferHtmlKey = makeStateKey<string>('html')
+const transferStatusErrorKey = makeStateKey<HttpStatusCode>('statusError')
 
 
 
@@ -46,6 +47,12 @@ export default class BlogComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // Inicializar statusError desde TransferState si existe
+    if (this.transferState.hasKey(transferStatusErrorKey)) {
+      const serverStatusError = this.transferState.get<HttpStatusCode>(transferStatusErrorKey, HttpStatusCode.NoContent);
+      this.statusError.set(serverStatusError as HttpStatusCode.Ok | HttpStatusCode.InternalServerError | HttpStatusCode.NotFound | HttpStatusCode.NoContent);
+    }
+
     if (this.transferState.hasKey(transferHtmlKey)) {
       const contentHTML = this.sanitizer.bypassSecurityTrustHtml(
         this.transferState.get<string>(transferHtmlKey, '')
@@ -71,11 +78,14 @@ export default class BlogComponent implements OnInit {
           // Verificar si es un error de timeout
           if (error instanceof TimeoutError) {
             this.statusError.set(HttpStatusCode.InternalServerError);
+            this.transferState.set(transferStatusErrorKey, HttpStatusCode.InternalServerError);
           } else {
             if (error.status === HttpStatusCode.NotFound) {
               this.statusError.set(HttpStatusCode.NotFound);
+              this.transferState.set(transferStatusErrorKey, HttpStatusCode.NotFound);
             } else {
               this.statusError.set(HttpStatusCode.InternalServerError);
+              this.transferState.set(transferStatusErrorKey, HttpStatusCode.InternalServerError);
             }
 
             console.warn(error);
