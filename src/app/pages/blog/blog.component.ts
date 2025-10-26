@@ -65,6 +65,7 @@ export default class BlogComponent implements OnInit {
     if (this.id() && isPlatformServer(this.plataformId)) {
       this.blogService.getPublicBlog(this.id() as string).subscribe({
         next: content => {
+          console.log(content);
           const html = new CustomParser().parse(content.blog);
           const finalHTML = this.finalHTML(html, content.writer);
           const contentHTML = this.sanitizer.bypassSecurityTrustHtml(finalHTML);
