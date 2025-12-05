@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg">
+<nav aria-label="Navegacion principal" class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex flex-row" routerLink="/">
+    <a aria-label="Logo del sitio" class="navbar-brand d-flex flex-row" routerLink="/">
       <img class="navbar__logo" src="icons/logo.png">
       <div class="ps-3 d-flex flex-row justify-content-center align-items-center">
         <div class="d-flex flex-row align-items-baseline">
@@ -23,28 +23,28 @@
       </i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+      <ul role="list" class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
         @if (authService.check()) {
-        <li class="nav-item">
+        <li class="nav-item" role="listitem">
           <a class="nav-link size-lg content-high" [class.active]="isActiveRoute('/home')" routerLink="/home">home</a>
         </li>
         }
         @for (item of items(); track item.label) {
         @if (!item.items?.length) {
-        <li class="nav-item">
+        <li class="nav-item" role="listitem">
           <a class="nav-link content-high size-lg" [class.active]="isActiveRoute(item.route)"
             [routerLink]="'/'+item.route.replace(':id?', '')">{{item.label}}</a>
         </li>
         } @else {
-        <li class="nav-item dropdown d-flex align-items-center">
+        <li class="nav-item dropdown d-flex align-items-center" role="listitem">
           <a class="nav-link dropdown-toggle content-high size-lg" href="#" id="navbarDropdown" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             {{item.label}}
           </a>
 
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" role="list">
             @for (subItem of item.items; track subItem.label) {
-            <li><a class="dropdown-item content-high size-md color-dark" [routerLink]="subItem.route">{{subItem.label}}</a>
+            <li role="listitem"><a class="dropdown-item content-high size-md color-dark" [routerLink]="subItem.route">{{subItem.label}}</a>
             </li>
             }
 

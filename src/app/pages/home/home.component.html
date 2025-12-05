@@ -6,12 +6,12 @@
     <div class="d-flex w-100 flex-column align-items-center">
         <app-navbar [items]="navbarItems" class="w-md-100 w-auto"></app-navbar>
     </div>
-    <div class="w-100 hero__search d-flex flex-column justify-content-center align-items-center"
+    <div [attr.aria-labelledby]="'search-label'" class="w-100 hero__search d-flex flex-column justify-content-center align-items-center"
         [ngClass]="{'hero__search-active': isFocusModal}">
-        <h1 class="text-center content-mid size-xlg p-3 color-yellow" [ngClass]="{'index-3': isFocusModal}">Qué estás
-            buscando?</h1>
+        <label id="search-label" for="search" class="text-center content-mid size-xlg p-3 color-yellow" [ngClass]="{'index-3': isFocusModal}">Qué estás
+            buscando?</label>
         <div class="col-md-8 col-sm-12 col-lg-6" [ngClass]="{'index-3': isFocusModal}">
-            <app-search #SearchComponent placeHolder="Búscame..." (onSearch)="onSearch($event)" (onFocus)="onFocus()"
+            <app-search id="search" aria-label="escribe lo que estás buscando" #SearchComponent placeHolder="Búscame..." (onSearch)="onSearch($event)" (onFocus)="onFocus()"
                 (onSelected)="onSelected($event)" [items]="articlesTracked"></app-search>
         </div>
     </div>
