@@ -8,7 +8,7 @@ export const trim = (str: string, charToTrim: string) => {
     return str.replace(regex, '');
 };
 
-export function toQueryParams(obj: Record<string, string | number | boolean>) {
+export function toQueryParams(obj: any) {
     if (obj) {
         return new URLSearchParams(obj).toString();
     }

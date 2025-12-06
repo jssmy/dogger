@@ -1,43 +1,44 @@
 <div class="d-flex flex-column">
-    <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Control roles</h5>
-    <div class="d-flex flex-row">
-        <a routerLink="/managment/roles/create" class="color-gray text-decoration-none pointer"><i class="fa-solid fa-plus me-2"></i>Agregar nuevo rol</a>
-    </div>
+  <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Control roles</h5>
+  <div class="d-flex flex-row">
+    <a routerLink="/managment/roles/create" class="color-gray text-decoration-none pointer"><i
+        class="fa-solid fa-plus me-2"></i>Agregar nuevo rol</a>
+  </div>
 </div>
 
 
 <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Opciones</th>
-      </tr>
-    </thead>
-    <tbody>
-        @for (item of paginationRoles()?.data; track item.name) {
-            <tr>
-                <th scope="row">{{$index + 1}}</th>
-                <td>{{ item.name}}</td>
-                <td>
-                  <button class="btn p-0 button--round button--xs bg-color-yellow color-white"
-                          [routerLink]="'/managment/roles/edit/'+item.id"
-                            data-title="Editar rol"><i class="fa-solid fa-pen"></i></button>
-                  @if (!item.protected) {
-                    <button (click)="onDelete(item.id)" class="btn p-0 button--round  button--xs bg-color-red-dark color-white ms-1"
-                             data-title="Eliminar rol"><i class="fa-solid fa-trash"></i>
-                        </button>
-                  }
-                  
-                </td>
-              </tr>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of paginationRoles()?.data; track item.name) {
+    <tr>
+      <th scope="row">{{$index + 1}}</th>
+      <td>{{ item.name}}</td>
+      <td>
+        <button class="btn p-0 button--round button--xs bg-color-yellow color-white"
+          [routerLink]="'/managment/roles/edit/'+item.id" data-title="Editar rol"><i
+            class="fa-solid fa-pen"></i></button>
+        @if (!item.protected) {
+        <button (click)="onDelete(item.id)" class="btn p-0 button--round  button--xs bg-color-red-dark color-white ms-1"
+          data-title="Eliminar rol"><i class="fa-solid fa-trash"></i>
+        </button>
         }
-        @if ((paginationRoles()?.total || 0) > (paginationRoles()?.limit || 0) ) {
-          <tr>
-              <td colspan="6">
-                  <app-pagination  (onSelected)="onPaginated($event)" [pagination]="paginationRoles()"></app-pagination>
-              </td>
-          </tr>
-      }
-    </tbody>
-  </table>
+
+      </td>
+    </tr>
+    }
+    @if ((paginationRoles()?.total || 0) > (paginationRoles()?.limit || 0) ) {
+    <tr>
+      <td colspan="6">
+        <app-pagination (selected)="onPaginated($event)" [pagination]="paginationRoles()"></app-pagination>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

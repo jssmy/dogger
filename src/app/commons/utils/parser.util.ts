@@ -19,7 +19,7 @@ const renderList = (items: ListItem[], tag: string): string => {
 
 const listParser = (block: { items: ListItem[]; style: string }): string => {
     if (!block?.items || !Array.isArray(block.items)) {
-        console.error('Error: `items` no es un array válido', block?.data);
+        console.error('Error: `items` no es un array válido', block?.items);
         return '';
     }
 
@@ -96,9 +96,9 @@ const simpleImage = (data: {
         // so, config.image.path property is useless in this case!
         imageSrc = data.url;
     } else if (config.simpleImage.path === "absolute") {
-        imageSrc = data.file.url;
+        imageSrc = data.file?.url || '';
     } else {
-        imageSrc = config.simpleImage.path.replace(
+        imageSrc = config.simpleImage.path?.replace(
             /<(.+)>/,
             (_match: string, p1: string) => data.file?.[p1] || ''
         );

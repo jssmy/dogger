@@ -1,14 +1,14 @@
-import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, input, OnInit, Renderer2 } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 @Directive({
-  selector: '[appErrorControl]',
+  selector: '[errorControl]',
   standalone: true
 })
 export class ErrorControlDirective implements OnInit {
 
 
-  @Input() errorMessages!: Record<string, string>; // Objeto de mensajes de error
+  readonly errorControl = input<Record<string, string>>({ alias: 'errorControl' }); // Objeto de mensajes de error
   private errorSpan!: HTMLSpanElement;
 
 
@@ -41,7 +41,7 @@ export class ErrorControlDirective implements OnInit {
         this.renderer.addClass(this.errorSpan, 'size-md');
         this.renderer.addClass(this.errorSpan, 'pt-1');
         const firstErrorKey = Object.keys(errors)[0];
-        const errorMessage = this.errorMessages[firstErrorKey];
+        const errorMessage = this.errorControl()?.[firstErrorKey];
         this.renderer.setProperty(this.errorSpan, 'textContent', errorMessage || '');
       }
     } else {
