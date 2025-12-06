@@ -39,7 +39,7 @@ RUN addgroup -g 1001 -S app-user && \
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Copiar archivos estáticos desde la etapa de build
-COPY --from=build /app/dist/dogger/browser /usr/share/nginx/html
+COPY --from=build /app/dist/bugzilo/browser /usr/share/nginx/html
 
 # Eliminar el index.html por defecto de Nginx
 RUN rm -f /usr/share/nginx/html/index.html
@@ -48,7 +48,7 @@ RUN rm -f /usr/share/nginx/html/index.html
 COPY --from=build /app/public /usr/share/nginx/html/public
 
 # Copiar servidor Node.js desde la etapa de build
-COPY --from=build /app/dist/dogger/server /app/server
+COPY --from=build /app/dist/bugzilo/server /app/server
 COPY --from=build /app/package.json /app/package.json
 COPY --from=build /app/package-lock.json /app/package-lock.json
 

@@ -1,12 +1,12 @@
 services:
-  dogger-front:
+  bugzilo-front:
     build:
       context: .
       dockerfile: Dockerfile
       args:
         - STAGE_BUILD=production
-    image: dogger-front:latest
-    container_name: node-dogger-front-container
+    image: bugzilo-front:latest
+    container_name: node-bugzilo-front-container
     ports:
       - "80:80"
     restart: always

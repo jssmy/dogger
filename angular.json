@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dogger": {
+    "bugzilo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/dogger",
+            "outputPath": "dist/bugzilo",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -122,10 +122,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "dogger:build:production"
+              "buildTarget": "bugzilo:build:production"
             },
             "development": {
-              "buildTarget": "dogger:build:development"
+              "buildTarget": "bugzilo:build:development"
             }
           },
           "defaultConfiguration": "development"

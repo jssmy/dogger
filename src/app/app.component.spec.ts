@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppSettings } from './commons/utils/app-settings';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -14,16 +15,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'dogger' title`, () => {
+  it(`should have the '${AppSettings.APP_NAME_FORMATTED}' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('dogger');
+    expect(app.title).toEqual(AppSettings.APP_NAME_FORMATTED);
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, dogger');
+    expect(compiled.querySelector('h1')?.textContent).toContain(`Hello, ${AppSettings.APP_NAME_FORMATTED}`);
   });
 });

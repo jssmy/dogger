@@ -1,5 +1,5 @@
 {
-  "name": "dogger",
+  "name": "bugzilo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -12,9 +12,9 @@
     "build:development": "ng build --configuration=development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:dogger": "node dist/dogger/server/server.mjs",
-    "serve:ssr:dev": "ng build --configuration=development && node dist/dogger/server/server.mjs",
-    "serve:ssr:prod": "ng build --configuration=production && node dist/dogger/server/server.mjs",
+    "serve:ssr:bugzilo": "node dist/bugzilo/server/server.mjs",
+    "serve:ssr:dev": "ng build --configuration=development && node dist/bugzilo/server/server.mjs",
+    "serve:ssr:prod": "ng build --configuration=production && node dist/bugzilo/server/server.mjs",
     "lint": "ng lint",
     "use-node18": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8'",
     "dev": "bash -c 'source ~/.nvm/nvm.sh && nvm use 18.20.8 && ng serve --configuration=development'",

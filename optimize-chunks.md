@@ -56,7 +56,7 @@ ng build --configuration=production
 ### **Análisis de Bundle:**
 ```bash
 ng build --configuration=production --stats-json
-npx webpack-bundle-analyzer dist/dogger/stats.json
+npx webpack-bundle-analyzer dist/bugzilo/stats.json
 ```
 
 ## 📊 Monitoreo de Chunks
@@ -64,10 +64,10 @@ npx webpack-bundle-analyzer dist/dogger/stats.json
 ### **Verificar Tamaños:**
 ```bash
 # Ver archivos generados
-ls -la dist/dogger/browser/
+ls -la dist/bugzilo/browser/
 
 # Analizar chunks
-npx webpack-bundle-analyzer dist/dogger/browser/
+npx webpack-bundle-analyzer dist/bugzilo/browser/
 ```
 
 ## 🚀 Optimizaciones Adicionales
@@ -108,5 +108,5 @@ npx webpack-bundle-analyzer dist/dogger/browser/
 npm install -g webpack-bundle-analyzer
 
 # Analizar
-webpack-bundle-analyzer dist/dogger/browser/
+webpack-bundle-analyzer dist/bugzilo/browser/
 ```
