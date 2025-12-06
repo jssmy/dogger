@@ -20,7 +20,7 @@ const transferStatusErrorKey = makeStateKey<HttpStatusCode>('statusError')
 
 
 @Component({
-  selector: 'app-blog',
+  selector: 'bgz-blog',
   imports: [FooterComponent, CommonModule, Error404Component, Error500Component, NavbarComponent, BlogSkeletonComponent],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'

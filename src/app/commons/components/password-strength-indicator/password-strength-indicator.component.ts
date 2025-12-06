@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-password-strength-indicator',
+  selector: 'bgz-password-strength-indicator',
   imports: [CommonModule],
   templateUrl: './password-strength-indicator.component.html',
   styleUrl: './password-strength-indicator.component.scss'

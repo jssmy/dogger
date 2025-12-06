@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { LoaderService } from './commons/services/loader.service';
 
 @Component({
-    selector: 'app-root',
+    selector: 'bgz-root',
     imports: [
         LoaderComponent,
         RouterOutlet,

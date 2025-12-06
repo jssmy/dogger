@@ -36,7 +36,7 @@
     @if ((paginationRoles()?.total || 0) > (paginationRoles()?.limit || 0) ) {
     <tr>
       <td colspan="6">
-        <app-pagination (selected)="onPaginated($event)" [pagination]="paginationRoles()"></app-pagination>
+        <bgz-pagination (selected)="onPaginated($event)" [pagination]="paginationRoles()"></bgz-pagination>
       </td>
     </tr>
     }

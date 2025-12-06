@@ -2,7 +2,7 @@ import { NgClass, NgStyle } from "@angular/common";
 import { Component, computed, input } from "@angular/core";
 
 @Component({
-  selector: 'app-shimmer',
+  selector: 'bgz-shimmer',
   templateUrl: './shimmer.component.html',
   styleUrl: './shimmer.component.scss',
   imports: [NgStyle, NgClass]

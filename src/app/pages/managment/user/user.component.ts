@@ -10,7 +10,7 @@ import { PaginationResolve } from '../../../commons/interfaces/pagination-resolv
 import { PaginationComponent } from '../../../commons/components/pagination/pagination.component';
 
 @Component({
-    selector: 'app-user',
+    selector: 'bgz-user',
     imports: [RouterModule, CommonModule, PaginationComponent],
     templateUrl: './user.component.html',
     styleUrl: './user.component.scss'

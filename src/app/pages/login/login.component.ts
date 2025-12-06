@@ -10,7 +10,7 @@ import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-login',
+    selector: 'bgz-login',
     imports: [
         InputComponent,
         ButtonComponent,

@@ -1,4 +1,7 @@
 import Parser from '@herii/editorjs-parser';
+import { AppSettings } from './app-settings';
+
+
 
 
 interface ListItem {
@@ -50,6 +53,7 @@ export const sanitizeHtml = function (markup: string) {
 };
 
 const codeParser = (data: { code: string }, config: { code: { codeBlockClass: string } }) => {
+    const appSettings = AppSettings;
     const markup = sanitizeHtml(data.code);
     return `<div class='terminal'>
                 <div class='terminal__bar'>
@@ -59,7 +63,7 @@ const codeParser = (data: { code: string }, config: { code: { codeBlockClass: st
                         <i class="fa-solid fa-circle terminal__bash_icon terminal__bash_icon--red"></i>
                         
                     </div>
-                    <label class='terminal__title ms-lg-5 ms-1'>root@hardcodeando.com</label>
+                    <label class='terminal__title ms-lg-5 ms-1'>root@${appSettings.APP_NAME_FORMATTED}.com</label>
                 </div>
                 <pre class='terminal__block'><code class="${config.code.codeBlockClass}">${markup}</code></pre>
             </div>`;

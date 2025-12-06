@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-error-403',
+    selector: 'bgz-error-403',
     templateUrl: './error-403.component.html',
     styleUrl: './error-403.component.scss'
 })

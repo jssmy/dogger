@@ -8,7 +8,7 @@ import { StepperService } from '../../../commons/services/stepper.service';
 const STEPS: Step[] = require('./../../../commons/dummy/blog-stage.json');
 
 @Component({
-  selector: 'app-blog',
+  selector: 'bgz-blog',
   imports: [RouterModule, StepperComponent],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'

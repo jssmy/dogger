@@ -14,7 +14,7 @@ import { NavbarItem } from '../../commons/interfaces/navbar-items';
 import { ArticleSearchService } from './services/article-search.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'bgz-home',
   imports: [
     NavbarComponent,
     SearchComponent,

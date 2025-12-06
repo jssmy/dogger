@@ -65,7 +65,7 @@
     @if ((paginationResolve()?.total || 0) > (paginationResolve()?.limit || 0) ) {
     <tr>
       <td colspan="6">
-        <app-pagination (selected)="onPaginate($event)" [pagination]="paginationResolve()"></app-pagination>
+        <bgz-pagination (selected)="onPaginate($event)" [pagination]="paginationResolve()"></bgz-pagination>
       </td>
     </tr>
     }

@@ -6,13 +6,13 @@
         <div class="card-body">
             <form [formGroup]="createRolePresenter.form" class="form">
                 <div class="w-100 input-group">
-                    <app-input [formControl]="createRolePresenter.name" type="text" styled="outlined" class="col-md-12 p-3" placeHolder="name"></app-input>
+                    <bgz-input [formControl]="createRolePresenter.name" type="text" styled="outlined" class="col-md-12 p-3" placeHolder="name"></bgz-input>
                 </div>
                 <div class="w-100 form-group input-group">
-                    <app-tree-view [formControl]="createRolePresenter.permissions" [items]="permissions() || []"></app-tree-view>
+                    <bgz-tree-view [formControl]="createRolePresenter.permissions" [items]="permissions() || []"></bgz-tree-view>
                 </div>
                 <div class="w-100 input-group">
-                    <app-button (click)="onSave()" class="p-3">CONFIRMAR</app-button>
+                    <bgz-button (click)="onSave()" class="p-3">CONFIRMAR</bgz-button>
                 </div>
             </form>
         </div>

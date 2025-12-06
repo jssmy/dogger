@@ -3,7 +3,7 @@ import { Step } from '../../interfaces/step';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-stepper',
+    selector: 'bgz-stepper',
     imports: [CommonModule],
     templateUrl: './stepper.component.html',
     styleUrl: './stepper.component.scss'

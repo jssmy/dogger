@@ -9,7 +9,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ResetPasswordPresenter } from './reset-password.presenter';
 
 @Component({
-    selector: 'app-reset-password',
+    selector: 'bgz-reset-password',
     imports: [
         InputComponent,
         ButtonComponent,

@@ -2,7 +2,7 @@ import { NgClass, NgStyle } from "@angular/common";
 import { Component, input } from "@angular/core";
 
 @Component({
-  selector: 'app-skeleton',
+  selector: 'bgz-skeleton',
   templateUrl: './skeleton.component.html',
   styleUrl: './skeleton.component.scss',
   imports: [NgStyle, NgClass]

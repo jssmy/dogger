@@ -1,6 +1,6 @@
 <section class="bg-color-dark">
     @if (!isResourceFound()) {
-        <app-error-404></app-error-404>
+        <bgz-error-404></bgz-error-404>
     }
     @if (isResourceFound()) {
         <div class="my-3 p-3 rounded box-shadow scroll-x">
@@ -12,7 +12,7 @@
 
 @if (isResourceFound()) {
     <div class="d-flex w-50 w-md-100">
-        <app-button (click)="moveEditing()" class="me-2" >VOLVER A EDITAR</app-button>
-        <app-button (click)="movePublic()" >MOVER A PUBLICO</app-button>
+        <bgz-button (click)="moveEditing()" class="me-2" >VOLVER A EDITAR</bgz-button>
+        <bgz-button (click)="movePublic()" >MOVER A PUBLICO</bgz-button>
     </div>
 }

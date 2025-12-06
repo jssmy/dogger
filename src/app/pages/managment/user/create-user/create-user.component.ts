@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 import { ALERT_SUCCESS_CREATE } from '../../../../commons/constants/alerts/alert-succes-create';
 
 @Component({
-    selector: 'app-create-user',
+    selector: 'bgz-create-user',
     imports: [InputComponent, ButtonComponent, FormsModule, ReactiveFormsModule, CommonModule],
     templateUrl: './create-user.component.html',
     styleUrl: './create-user.component.scss'

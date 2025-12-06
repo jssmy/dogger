@@ -2,7 +2,7 @@ import { Component, forwardRef, input, model } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-    selector: 'app-check-box',
+    selector: 'bgz-check-box',
     imports: [],
     templateUrl: './check-box.component.html',
     styleUrl: './check-box.component.scss',

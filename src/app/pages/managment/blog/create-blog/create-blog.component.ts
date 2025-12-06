@@ -11,7 +11,7 @@ import { StepperService } from '../../../../commons/services/stepper.service';
 import { CreateBlogPresenter } from './create-blog.presenter';
 
 @Component({
-  selector: 'app-create-blog',
+  selector: 'bgz-create-blog',
   imports: [ButtonComponent],
   templateUrl: './create-blog.component.html',
   styleUrl: './create-blog.component.scss'

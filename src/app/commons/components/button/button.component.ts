@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 
 @Component({
-    selector: 'app-button',
+    selector: 'bgz-button',
     imports: [
         CommonModule
     ],

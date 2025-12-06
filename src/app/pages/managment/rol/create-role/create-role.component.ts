@@ -19,7 +19,7 @@ import { ALERT_SUCCESS_UPDATE } from '../../../../commons/constants/alerts/alert
 
 
 @Component({
-    selector: 'app-create-role',
+    selector: 'bgz-create-role',
     imports: [CommonModule, FormsModule, InputComponent, ButtonComponent, TreeViewComponent, ReactiveFormsModule, FormsModule],
     templateUrl: './create-role.component.html',
     styleUrl: './create-role.component.scss'

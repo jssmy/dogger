@@ -3,7 +3,7 @@ import { Pagination } from '../../interfaces/pagination';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-pagination',
+    selector: 'bgz-pagination',
     imports: [CommonModule],
     templateUrl: './pagination.component.html',
     styleUrl: './pagination.component.scss'

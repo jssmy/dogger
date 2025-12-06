@@ -6,7 +6,7 @@ import { toFlatten } from '../../utils/array.util';
 import { markTreeViewItem } from '../../mappers/mark-tree-view-item';
 
 @Component({
-    selector: 'app-tree-view',
+    selector: 'bgz-tree-view',
     imports: [CheckBoxComponent],
     templateUrl: './tree-view.component.html',
     styleUrl: './tree-view.component.scss',

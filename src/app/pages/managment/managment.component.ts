@@ -9,7 +9,7 @@ import { permissionToNavbarMenuItem } from '../../commons/mappers/permission-to-
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-    selector: 'app-managment',
+    selector: 'bgz-managment',
     imports: [NavbarComponent, FooterComponent, RouterOutlet],
     templateUrl: './managment.component.html',
     styleUrl: './managment.component.scss'

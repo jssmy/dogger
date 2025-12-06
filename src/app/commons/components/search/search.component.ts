@@ -4,7 +4,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Item } from '../../interfaces/item';
 
 @Component({
-  selector: 'app-search',
+  selector: 'bgz-search',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

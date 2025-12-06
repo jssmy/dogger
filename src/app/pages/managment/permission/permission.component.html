@@ -21,9 +21,9 @@
 
                 <td colspan="2">
                     <div class="">
-                        <app-input [formControl]="permissionPresenter.name"
-                            [appErrorControl]="permissionPresenter.ERROR_CONTROL.name" type="text" size="input--sm"
-                            class="w-100" styled="outlined" placeHolder="Name"></app-input>
+                        <bgz-input [formControl]="permissionPresenter.name"
+                            [bgzErrorControl]="permissionPresenter.ERROR_CONTROL.name" type="text" size="input--sm"
+                            class="w-100" styled="outlined" placeHolder="Name"></bgz-input>
                     </div>
                 </td>
 
@@ -52,11 +52,11 @@
 
                 <td>
                     <div class="">
-                        <app-input [appErrorControl]="permissionPresenter.ERROR_CONTROL.path"
+                        <bgz-input [bgzErrorControl]="permissionPresenter.ERROR_CONTROL.path"
                             [formControl]="permissionPresenter.path" type="text" size="input--sm" class="w-100"
                             styled="outlined" placeHolder="Path">
-                        </app-input>
-                    </div>
+                        </bgz-input>
+                    </div>/Users/jssmy/Downloads/Proyecto nuevo.svg
 
                 </td>
 
@@ -119,7 +119,7 @@
                 @if (resolve.total > resolve.limit) {
                 <tr>
                     <td colspan="6">
-                        <app-pagination (selected)="onPaginated($event)" [pagination]="resolve"></app-pagination>
+                        <bgz-pagination (selected)="onPaginated($event)" [pagination]="resolve"></bgz-pagination>
                     </td>
                 </tr>
                 }

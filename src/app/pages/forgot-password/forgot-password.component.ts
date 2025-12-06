@@ -10,7 +10,7 @@ import { ForgotPasswordPresenter } from './forgot-password.presenter';
 import { PasswordService } from '../../commons/services/password.service';
 
 @Component({
-  selector: 'app-forgot-password',
+  selector: 'bgz-forgot-password',
   imports: [
     InputComponent,
     ButtonComponent,

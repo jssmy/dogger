@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import { AppSettings } from '../../utils/app-settings';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'bgz-navbar',
   imports: [
     RouterModule,
     CommonModule,

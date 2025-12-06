@@ -5,11 +5,11 @@
     @for (item of listItem(); track item.value) {
     <li>
       <div>
-        <app-check-box [disabled]="item.children.length <= 0 && item.isDisabled" [checked]="item.isChecked"
+        <bgz-check-box [disabled]="item.children.length <= 0 && item.isDisabled" [checked]="item.isChecked"
           (checkedChange)="onChecked(item)"
           [styled]="item.countChecked >= 1 && !item.isChecked ? 'outline' : 'default'">
           <div label>{{item.value}}</div>
-        </app-check-box>
+        </bgz-check-box>
         @if (item.children.length > 0 && item.isVisibleChildren) {
         <button type="button" (click)="onVisibleChild(item)" (keyup.enter)="onVisibleChild(item)" class="ps-3" tabindex="0" aria-label="Contraer elemento"><i class="fa-solid fa-chevron-up"></i></button>
         } @else if (item.children.length > 0 && !item.isVisibleChildren) {
@@ -21,10 +21,10 @@
       <ul>
         @for (child of item.children; track child.value) {
         <li>
-          <app-check-box [checked]="child.isChecked" [disabled]="child.isDisabled"
+          <bgz-check-box [checked]="child.isChecked" [disabled]="child.isDisabled"
             (checkedChange)="onCheckedChild(item, child)">
             <div label>{{child.value}}</div>
-          </app-check-box>
+          </bgz-check-box>
         </li>
         }
 

@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 import { ALERT_SUCCESS_DRAFT } from '../../../../commons/constants/alerts/alert-success-draft';
 
 @Component({
-    selector: 'app-public-blog',
+    selector: 'bgz-public-blog',
     imports: [
         ButtonComponent,
         Error404Component

@@ -3,7 +3,7 @@ import { ButtonComponent } from '../../commons/components/button/button.componen
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-forgot-password-confirmation',
+    selector: 'bgz-forgot-password-confirmation',
     imports: [
         ButtonComponent,
         RouterModule

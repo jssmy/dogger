@@ -12,7 +12,7 @@ import { ALERT_ERROR_MOVE_BLOG_STAGE } from '../../../../commons/constants/alert
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-draft-blog',
+    selector: 'bgz-draft-blog',
     imports: [ButtonComponent, Error404Component],
     templateUrl: './draft-blog.component.html',
     styleUrl: './draft-blog.component.scss'

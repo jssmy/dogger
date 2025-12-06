@@ -3,7 +3,7 @@ import { Component, forwardRef, input, model, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-    selector: 'app-input',
+    selector: 'bgz-input',
     imports: [
         CommonModule
     ],

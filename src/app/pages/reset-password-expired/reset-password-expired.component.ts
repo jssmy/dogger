@@ -3,7 +3,7 @@ import { ButtonComponent } from '../../commons/components/button/button.componen
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-reset-password-expired',
+  selector: 'bgz-reset-password-expired',
   imports: [
     ButtonComponent,
     RouterModule

@@ -1,6 +1,6 @@
 <main class="container blog-container">
     <div class="d-flex w-100 flex-column align-items-center">
-        <app-navbar [items]="navbarItems" class="w-md-100 w-auto"></app-navbar>
+        <bgz-navbar [items]="navbarItems" class="w-md-100 w-auto"></bgz-navbar>
     </div>
 
     <div class="my-3 p-3 rounded box-shadow scroll-x">
@@ -8,21 +8,21 @@
             <div [innerHTML]=" avatar()"></div>
             <div id="blog-render" [innerHTML]=" blogContainer()"></div>
         } @placeholder {
-         <app-blog-skeleton />
+         <bgz-blog-skeleton />
         }
         @loading(minimum 300ms) {
-            <app-blog-skeleton />
+            <bgz-blog-skeleton />
         } @error {
-            <app-blog-skeleton />
+            <bgz-blog-skeleton />
         }
     </div>
 
 </main>
 @if (statusError() === httpStatusCode.NotFound) {
-<app-error-404 />
+<bgz-error-404 />
 }
 @if (statusError() === httpStatusCode.InternalServerError) {
-<app-error-500 />
+<bgz-error-500 />
 }
 
-<app-footer></app-footer>
+<bgz-footer></bgz-footer>

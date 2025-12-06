@@ -10,7 +10,7 @@ import { Role } from '../../../commons/interfaces/role';
 import { PaginationResolve } from '../../../commons/interfaces/pagination-resolve';
 
 @Component({
-    selector: 'app-rol',
+    selector: 'bgz-rol',
     imports: [CommonModule, RouterModule, PaginationComponent],
     templateUrl: './rol.component.html',
     styleUrl: './rol.component.scss'

@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { Article } from '../../interfaces/article';
 
 @Component({
-    selector: 'app-article',
+    selector: 'bgz-article',
     imports: [],
     templateUrl: './article.component.html',
     styleUrl: './article.component.scss'

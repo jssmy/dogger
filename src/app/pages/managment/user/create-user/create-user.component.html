@@ -6,11 +6,11 @@
         <div class="card-body">
             <form [formGroup]="presenter.form" class="form">
                 <div class="w-100 input-group">
-                    <app-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="name"  placeHolder="nombre"></app-input>
-                    <app-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="lastname" placeHolder="apellidos"></app-input>
+                    <bgz-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="name"  placeHolder="nombre"></bgz-input>
+                    <bgz-input type="text" styled="outlined" class="col-md-6 p-3" formControlName="lastname" placeHolder="apellidos"></bgz-input>
                 </div>
                 <div class="w-100 form-group input-group">
-                    <app-input type="email" styled="outlined" class="col-md-6 p-3" formControlName="email" placeHolder="example@mail.com"></app-input>
+                    <bgz-input type="email" styled="outlined" class="col-md-6 p-3" formControlName="email" placeHolder="example@mail.com"></bgz-input>
                     <div class="form-group col-md-6 p-3">
                         <select formControlName="role" class="form-select form-select-lg">
                             @for (item of paginationResolve()?.data; track item.name) {
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="w-100 input-group">
-                    <app-button (click)="onSave()" class="p-3">CONFIRMAR</app-button>
+                    <bgz-button (click)="onSave()" class="p-3">CONFIRMAR</bgz-button>
                 </div>
             </form>
         </div>

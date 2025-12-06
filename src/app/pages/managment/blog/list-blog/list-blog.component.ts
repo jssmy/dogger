@@ -5,7 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-list-blog',
+    selector: 'bgz-list-blog',
     imports: [RouterModule],
     templateUrl: './list-blog.component.html',
     styleUrl: './list-blog.component.scss'

@@ -19,7 +19,7 @@ import { PermissionTypeIcon } from '../../../commons/constants/icons/permission-
 
 
 @Component({
-    selector: 'app-permission',
+    selector: 'bgz-permission',
     imports: [
         CommonModule,
         RouterModule,
