@@ -1,11 +1,11 @@
 <nav aria-label="Navegacion principal" class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a aria-label="Logo del sitio" class="navbar-brand d-flex flex-row" routerLink="/">
-      <img class="navbar__logo" src="icons/logo.png">
+      <img class="navbar__logo" src="icons/logo.png" alt="Logo de Dogger">
       <div class="ps-3 d-flex flex-row justify-content-center align-items-center">
         <div class="d-flex flex-row align-items-baseline">
-          <h1 class="size-lg content-high color-dark">PECODE</h1>
-          <h1 class="size-sm content-high color-dark">.com</h1>
+          <h1 class="size-lg content-high color-dark">{{ appSettings.APP_NAME_FORMATTED }}</h1>
+          <!-- <h1 class="size-sm content-high color-dark">.com</h1> -->
         </div>
       </div>
 
@@ -44,7 +44,8 @@
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" role="list">
             @for (subItem of item.items; track subItem.label) {
-            <li role="listitem"><a class="dropdown-item content-high size-md color-dark" [routerLink]="subItem.route">{{subItem.label}}</a>
+            <li role="listitem"><a class="dropdown-item content-high size-md color-dark"
+                [routerLink]="subItem.route">{{subItem.label}}</a>
             </li>
             }
 
@@ -56,8 +57,8 @@
 
         @if(authService.check()) {
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle size-lg content-high" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle size-lg content-high" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
             my account
           </a>
 
@@ -65,7 +66,8 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item size-md content-high" routerLink="/profile">profile</a></li>
             <li><a class="dropdown-item size-md content-high" routerLink="/profile">security and privacity</a></li>
-            <li><a class="dropdown-item size-md content-high" (click)="logout()">logout</a></li>
+            <li><button type="button" class="dropdown-item size-md content-high" (click)="logout()"
+                (keyup.enter)="logout()">logout</button></li>
           </ul>
         </li>
         }

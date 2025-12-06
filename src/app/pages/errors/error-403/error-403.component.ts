@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FooterComponent } from '../../../commons/components/footer/footer.component';
 
 @Component({
     selector: 'app-error-403',

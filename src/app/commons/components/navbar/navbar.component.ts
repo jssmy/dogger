@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { LoginService } from '../../services/login.service';
 import Swal from 'sweetalert2';
+import { AppSettings } from '../../utils/app-settings';
 
 @Component({
   selector: 'app-navbar',
@@ -22,6 +23,8 @@ export class NavbarComponent {
   private readonly loginService = inject(LoginService);
 
   readonly currentUrl = computed(() => this.route.url);
+
+  readonly appSettings = AppSettings;
 
   isActiveRoute(route: string) {
     if (this.currentUrl() === '/' || this.currentUrl() === '') {

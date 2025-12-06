@@ -1,5 +1,4 @@
-// @ts-ignore
-export const toFlatten = (key: string, items : any[]): string[] => {
+export const toFlatten = (key: string, items: unknown[]): string[] => {
     const jsonString = JSON.stringify(items);
 
     // Crear una expresión regular dinámica basada en el key proporcionado

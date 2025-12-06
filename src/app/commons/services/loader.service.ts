@@ -11,8 +11,6 @@ export class LoaderService {
   private $statusSignal = signal(false);
   private $messageSignal = signal('LOADING');
 
-  constructor() { }
-
   active(message = 'LOADING') {
     this.$messageSignal.set(message);
     this.$state.set(true);

@@ -1,7 +1,7 @@
-import { inject, Injectable, PLATFORM_ID } from "@angular/core";
-import { DEFAULT_EDITOR_CONFIG } from "../commons/editor.config";
 import { isPlatformBrowser } from "@angular/common";
+import { inject, Injectable, PLATFORM_ID } from "@angular/core";
 import { EditorConfig } from "@editorjs/editorjs";
+import { DEFAULT_EDITOR_CONFIG } from "../commons/editor.config";
 // @ts-ignore
 import SimpleImage from '@editorjs/simple-image';
 
@@ -32,6 +32,7 @@ export class CreateBlogPresenter {
                     },
                 },
                 header: {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     class: header as any,
                     shortcut: 'CMD+SHIFT+H',
                     config: {

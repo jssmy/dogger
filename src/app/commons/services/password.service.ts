@@ -1,9 +1,7 @@
 import { Injectable, inject } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
-import { PasswordReset } from '../interfaces/password-reset';
 
 export interface ForgotPasswordRequest {
   email: string;

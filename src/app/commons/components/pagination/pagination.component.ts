@@ -17,6 +17,6 @@ export class PaginationComponent {
 
   nextPage = computed(() => (this.pagination()?.currentPage || 0) +  1);
   beforePage = computed(() => (this.pagination()?.currentPage || 0) - 1);
-  onSelected = output<number>();
+  selected = output<number>();
 
 }

@@ -1,6 +1,6 @@
-import { Injectable, inject, signal, computed } from "@angular/core";
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from "@angular/forms";
+import { Injectable, computed, inject } from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from "@angular/forms";
 import { PasswordStrengthService } from "../../commons/services/password-strength.service";
 import { RESET_PASSWORD_FORM_CONTROL_ERRORS } from "./reset-password.formcontrol.errors";
 
@@ -21,7 +21,7 @@ export class ResetPasswordPresenter {
         if (!password) return 0;
         return this.passwordStrengthService.calculateStrength(password);
     });
-    
+
     readonly passwordStrengthLevel = computed(() => {
         const password = this.passwordValue();
         if (!password) return 'easy' as const;
@@ -53,7 +53,7 @@ export class ResetPasswordPresenter {
     private passwordStrengthValidator(control: AbstractControl): ValidationErrors | null {
         const password = control.value;
         if (!password) return null;
-        
+
         const strength = this.passwordStrengthService.calculateStrength(password);
         if (strength < 3) {
             return { weakPassword: true };
@@ -64,7 +64,7 @@ export class ResetPasswordPresenter {
     private passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
         const password = control.get('passwordControl')?.value;
         const confirmPassword = control.get('confirmPasswordControl')?.value;
-        
+
         if (password && confirmPassword && password !== confirmPassword) {
             return { passwordMismatch: true };
         }

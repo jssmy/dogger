@@ -11,9 +11,9 @@
           <div label>{{item.value}}</div>
         </app-check-box>
         @if (item.children.length > 0 && item.isVisibleChildren) {
-        <label (click)="onVisibleChild(item)" class="ps-3"><i class="fa-solid fa-chevron-up"></i></label>
+        <button type="button" (click)="onVisibleChild(item)" (keyup.enter)="onVisibleChild(item)" class="ps-3" tabindex="0" aria-label="Contraer elemento"><i class="fa-solid fa-chevron-up"></i></button>
         } @else if (item.children.length > 0 && !item.isVisibleChildren) {
-        <label (click)="onVisibleChild(item)" class="ps-3"><i class="fa-solid fa-chevron-down"></i></label>
+        <button type="button" (click)="onVisibleChild(item)" (keyup.enter)="onVisibleChild(item)" class="ps-3" tabindex="0" aria-label="Expandir elemento"><i class="fa-solid fa-chevron-down"></i></button>
         }
       </div>
 

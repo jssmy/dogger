@@ -1,18 +1,22 @@
 @if(isFocusModal) {
-<div class="search-modal" (click)="onFocus()"></div>
+<div class="search-modal" (click)="onFocus()" (keyup.enter)="onFocus()" tabindex="0" role="button"
+    aria-label="Cerrar búsqueda"></div>
 }
 
 <section class="container d-flex flex-column align-items-center hero">
     <div class="d-flex w-100 flex-column align-items-center">
         <app-navbar [items]="navbarItems" class="w-md-100 w-auto"></app-navbar>
     </div>
-    <div [attr.aria-labelledby]="'search-label'" class="w-100 hero__search d-flex flex-column justify-content-center align-items-center"
+    <div [attr.aria-labelledby]="'search-label'"
+        class="w-100 hero__search d-flex flex-column justify-content-center align-items-center"
         [ngClass]="{'hero__search-active': isFocusModal}">
-        <label id="search-label" for="search" class="text-center content-mid size-xlg p-3 color-yellow" [ngClass]="{'index-3': isFocusModal}">Qué estás
+        <label id="search-label" for="search" class="text-center content-mid size-xlg p-3 color-yellow"
+            [ngClass]="{'index-3': isFocusModal}">Qué estás
             buscando?</label>
         <div class="col-md-8 col-sm-12 col-lg-6" [ngClass]="{'index-3': isFocusModal}">
-            <app-search id="search" aria-label="escribe lo que estás buscando" #SearchComponent placeHolder="Búscame..." (onSearch)="onSearch($event)" (onFocus)="onFocus()"
-                (onSelected)="onSelected($event)" [items]="articlesTracked"></app-search>
+            <app-search id="search" aria-label="escribe lo que estás buscando" #SearchComponent placeHolder="Búscame..."
+                (searchEvent)="onSearch($event)" (focusEvent)="onFocus()" (selectedEvent)="onSelected($event)"
+                [items]="articlesTracked"></app-search>
         </div>
     </div>
 </section>
@@ -31,27 +35,27 @@
         }
         } @placeholder {
         @for(i of [1, 2, 3]; track i) {
-            <div class="col-sm-6 col-md-6 col-lg-4 mb-4 d-flex flex-column gap-3">
-                <app-shimmer shimmerWidth="100%" shimmerHeight="200px" borderRadius="radius-md" theme="dark" />
-                <div class="d-flex flex-column gap-1">
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
-                </div>
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-4 d-flex flex-column gap-3">
+            <app-shimmer shimmerWidth="100%" shimmerHeight="200px" borderRadius="radius-md" theme="dark" />
+            <div class="d-flex flex-column gap-1">
+                <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
             </div>
+        </div>
         }
         } @loading(minimum 500ms) {
         @for(i of [1, 2, 3]; track i) {
-            <div class="col-sm-6 col-md-6 col-lg-4 mb-4 d-flex flex-column gap-3">
-                <app-shimmer shimmerWidth="100%" shimmerHeight="200px" borderRadius="radius-md" theme="dark" />
-                <div class="d-flex flex-column gap-1">
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
-                    <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
-                </div>
+        <div class="col-sm-6 col-md-6 col-lg-4 mb-4 d-flex flex-column gap-3">
+            <app-shimmer shimmerWidth="100%" shimmerHeight="200px" borderRadius="radius-md" theme="dark" />
+            <div class="d-flex flex-column gap-1">
+                <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
+                <app-shimmer shimmerWidth="100%" shimmerHeight="15px" borderRadius="radius-xs" theme="dark" />
             </div>
+        </div>
         }
         }
 

@@ -15,6 +15,7 @@ export interface Environment {
     refreshToken: string;
     requestResetPassword: string;
     validateTokenResetPassword: string;
-    resetPassword: string
+    resetPassword: string;
+
 
 }

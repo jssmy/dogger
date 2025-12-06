@@ -33,6 +33,14 @@ module.exports = tseslint.config(
       "@typescript-eslint/ban-ts-comment": [
         "error",
         { "ts-ignore": false }  // Permite @ts-ignore
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "caughtErrorsIgnorePattern": "^_"
+        }
       ]
     },
   },

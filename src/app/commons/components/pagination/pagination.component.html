@@ -2,9 +2,9 @@
     @if (pages().length > 0) {
         <ul class="pagination">
 
-            @if (pagination()?.currentPage != 1) {
+            @if (pagination()?.currentPage !== 1) {
                 <li class="page-item p-1"><button
-                    (click)="onSelected.emit(beforePage())"
+                    (click)="selected.emit(beforePage())"
                     class="btn p-0 button--round button--xs button--border-solid d-flex align-items-center justify-content-center border-solid"
                     href="#"><i class="fa-solid fa-angles-left"></i></button></li>
             }
@@ -17,7 +17,7 @@
                     </li>        
                 } @else {
                     <li class="page-item p-1">
-                        <button (click)="onSelected.emit(item)" class="btn p-0 button--round button--xs button--border-solid d-flex align-items-center justify-content-center">{{item}}</button>
+                        <button (click)="selected.emit(item)" class="btn p-0 button--round button--xs button--border-solid d-flex align-items-center justify-content-center">{{item}}</button>
                     </li>        
                 }
     
@@ -25,9 +25,9 @@
             }
         
     
-            @if (pagination()?.currentPage != pagination()?.totalPages) {
+            @if (pagination()?.currentPage !== pagination()?.totalPages) {
                 <li class="page-item p-1">
-                    <button (click)="onSelected.emit(nextPage())" class="btn p-0 button--round button--xs button--border-solid d-flex align-items-center justify-content-center"><i class="fa-solid fa-angles-right"></i></button>
+                    <button (click)="selected.emit(nextPage())" class="btn p-0 button--round button--xs button--border-solid d-flex align-items-center justify-content-center"><i class="fa-solid fa-angles-right"></i></button>
                 </li>
             } 
     

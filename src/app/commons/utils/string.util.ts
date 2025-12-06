@@ -8,8 +8,7 @@ export const trim = (str: string, charToTrim: string) => {
     return str.replace(regex, '');
 };
 
-// @ts-ignore: any
-export function toQueryParams(obj: any) {
+export function toQueryParams(obj: Record<string, string | number | boolean>) {
     if (obj) {
         return new URLSearchParams(obj).toString();
     }
@@ -31,4 +30,40 @@ export function splitHTMLHeader(htmlString: string) {
     }
 
     return { header: '', content: htmlString };
+}
+
+export function capitalizeFirstLetter(value: string): string {
+    if (!value) {
+        return '';
+    }
+    return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+export function capitalizeWords(value: string): string {
+    if (!value) {
+        return '';
+    }
+    return value
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+}
+
+export function toCamelCase(value: string): string {
+    if (!value) {
+        return '';
+    }
+    return value
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9]+(.)/g, (_, char) => char.toUpperCase());
+}
+
+export function toPascalCase(value: string): string {
+    if (!value) {
+        return '';
+    }
+    const camelCase = value
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9]+(.)/g, (_, char) => char.toUpperCase());
+    return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
 }

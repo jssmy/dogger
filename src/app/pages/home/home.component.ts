@@ -1,18 +1,17 @@
-import { AfterViewInit, Component, HostListener, inject, resource, viewChild, ViewChild, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, HostListener, inject, PLATFORM_ID, viewChild } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Router } from '@angular/router';
+import { of } from 'rxjs';
+import { ArticleComponent } from '../../commons/components/article/article.component';
+import { FooterComponent } from '../../commons/components/footer/footer.component';
 import { NavbarComponent } from '../../commons/components/navbar/navbar.component';
 import { SearchComponent } from '../../commons/components/search/search.component';
-import { ArticleComponent } from '../../commons/components/article/article.component';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { ArticleSearchService } from './services/article-search.service';
-import { Item } from '../../commons/interfaces/item';
-import { Article } from '../../commons/interfaces/article';
-import { Router } from '@angular/router';
-import { FooterComponent } from '../../commons/components/footer/footer.component';
-import { NavbarItem } from '../../commons/interfaces/navbar-items';
-import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { lastValueFrom, of } from 'rxjs';
 import { ShimmerComponent } from '../../commons/components/shimmer/shimmer.component';
+import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
+import { Item } from '../../commons/interfaces/item';
+import { NavbarItem } from '../../commons/interfaces/navbar-items';
+import { ArticleSearchService } from './services/article-search.service';
 
 @Component({
   selector: 'app-home',
@@ -36,8 +35,8 @@ export default class HomeComponent implements AfterViewInit {
 
   articlesTracked: Item[] = [];
   readonly articlesTop = toSignal(
-    isPlatformBrowser(this.platformId) 
-      ? this.articleSearchService.getTop() 
+    isPlatformBrowser(this.platformId)
+      ? this.articleSearchService.getTop()
       : of([])
   );
 

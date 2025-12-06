@@ -1,5 +1,5 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import { inject, PLATFORM_ID } from '@angular/core';
+import { inject } from '@angular/core';
 import { tap } from 'rxjs';
 import { LoaderService } from '../services/loader.service';
 import { NOT_LOADER_INTERCEPTOR } from './constants/not-loader-url';

@@ -1,4 +1,4 @@
-import { Component, effect, input, OnInit } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { BlogWriter } from '../../interfaces/blog-writer';
 
 @Component({

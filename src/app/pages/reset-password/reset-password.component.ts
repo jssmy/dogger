@@ -6,7 +6,6 @@ import { PasswordService } from '../../commons/services/password.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorControlDirective } from '../../commons/directives/error-control.directive';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { PasswordStrengthIndicatorComponent } from '../../commons/components/password-strength-indicator/password-strength-indicator.component';
 import { ResetPasswordPresenter } from './reset-password.presenter';
 
 @Component({

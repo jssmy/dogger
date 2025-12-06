@@ -4,13 +4,14 @@ import { confirmAccountGuard } from './commons/guards/confirm-account.guard';
 import { refreshTokenExpirationGuard } from './commons/guards/refresh-token-expiration.guard';
 import { sessionValidationGuard } from './commons/guards/session-validation.guard';
 import { resetTokenValidationGuard } from './commons/guards/reset-token-validation.guard';
+import { AppSettings } from './commons/utils/app-settings';
 
 export const routes: Routes = [
-
     {
         path: '',
         loadComponent: () => import('./pages/home/home.component'),
-        canActivate: [sessionValidationGuard]
+        canActivate: [sessionValidationGuard],
+        title: AppSettings.APP_NAME_FORMATTED
     },
     {
         path: 'login',

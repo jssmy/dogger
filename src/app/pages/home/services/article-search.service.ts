@@ -1,11 +1,11 @@
-import { Injectable, inject } from '@angular/core';
-import { filter, from, map, Observable, of, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { filter, from, map, Observable, of } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 import { Article } from '../../../commons/interfaces/article';
 import { BlogPreview } from '../../../commons/interfaces/blog-preview';
-import { environment } from '../../../../environments/environment';
-import { MathUtil } from '../../../commons/utils/math.util';
 import { PagintationResponse } from '../../../commons/interfaces/pagintation-response';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const ARTICLES_DUMMY: Article[] = require('./../../../commons/dummy/articles.json')
 
 
@@ -18,9 +18,9 @@ export class ArticleSearchService {
 
   findById(id: string): Observable<Article> {
     return from<Article[]>(ARTICLES_DUMMY)
-    .pipe(
-      filter(article => article.id === id)
-    );
+      .pipe(
+        filter(article => article.id === id)
+      );
   }
 
   findAllByQuery(query: string): Observable<Article[]> {
@@ -39,14 +39,14 @@ export class ArticleSearchService {
 
   getSuggest(id: string): Observable<Article[]> {
     const article = ARTICLES_DUMMY.find(articleDummy => articleDummy.id === id);
-    const articles = ARTICLES_DUMMY.filter(articleDummy => articleDummy.keywords.some(keyDummy => article?.keywords.includes(keyDummy) )).slice(0,3);
+    const articles = ARTICLES_DUMMY.filter(articleDummy => articleDummy.keywords.some(keyDummy => article?.keywords.includes(keyDummy))).slice(0, 3);
     return of(articles);
   }
 
 
   private articleMatched(query: string, article: Article[]): Article[] {
-      const querySplit = query.split(' ');
-      return article.filter(article => querySplit.some(split => article.keywords.includes(split.trim())))
+    const querySplit = query.split(' ');
+    return article.filter(article => querySplit.some(split => article.keywords.includes(split.trim())))
       .slice(0, 8);
   }
 

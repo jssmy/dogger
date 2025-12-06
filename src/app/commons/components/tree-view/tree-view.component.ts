@@ -29,8 +29,7 @@ export class TreeViewComponent implements ControlValueAccessor {
   });
 
   onChange = (__value: TreeViewItem[] | null) => this.value;
-  // @ts-ignore
-  onTouched = () => {};
+  onTouched = () => { /* Required by ControlValueAccessor */ };
 
   onVisibleChild(item: TreeViewItem) {
     item.isVisibleChildren = !item.isVisibleChildren;
@@ -56,18 +55,18 @@ export class TreeViewComponent implements ControlValueAccessor {
     this.onTouched();
   }
 
-  // @ts-ignore: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
 
-  // @ts-ignore: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
 
-  setDisabledState(isDisabled: boolean): void {
-    
+  setDisabledState(_isDisabled: boolean): void {
+    // Not implemented
   }
 
   writeValue(obj: TreeViewItem[]): void {

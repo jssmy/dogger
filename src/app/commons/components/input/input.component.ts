@@ -47,10 +47,12 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
@@ -59,7 +61,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.disabled.set(isDisabled);
   }
 
-  writeValue(obj: any): void {
+  writeValue(obj: string): void {
     this.value.update(()=> obj);
   }
 

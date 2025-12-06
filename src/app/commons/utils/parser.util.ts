@@ -1,18 +1,23 @@
 import Parser from '@herii/editorjs-parser';
 
 
-const renderList = (items: any[], tag: string): string  => {
-    
+interface ListItem {
+    content: string;
+    items?: ListItem[];
+}
+
+const renderList = (items: ListItem[], tag: string): string => {
+
     if (!items || items.length === 0) return '';
-    
+
     return `<${tag}>${items?.map(
         (item) =>
-          `<li>${item.content}${item.items && item.items.length > 0 ? renderList(item.items, tag) : ''}</li>`
-      )
-      ?.join('')}</${tag}>`;
-    }
+            `<li>${item.content}${item.items && item.items.length > 0 ? renderList(item.items, tag) : ''}</li>`
+    )
+        ?.join('')}</${tag}>`;
+}
 
-const listParser = (block: any): string =>  {
+const listParser = (block: { items: ListItem[]; style: string }): string => {
     if (!block?.items || !Array.isArray(block.items)) {
         console.error('Error: `items` no es un array válido', block?.data);
         return '';
@@ -22,12 +27,12 @@ const listParser = (block: any): string =>  {
 };
 
 
-const renderWarning = (block: any) => {
-        if (!block) {
-            return '';
-        }
+const renderWarning = (block: { title: string; message: string }) => {
+    if (!block) {
+        return '';
+    }
 
-        return `
+    return `
         <div  style='background: none; color: white' class="alert alert-info d-flex align-items-center" role="alert">
         <image style='height: 100px;' src='/icons/warning.png'>
         <div>
@@ -38,14 +43,14 @@ const renderWarning = (block: any) => {
     `;
 
 }
-export const sanitizeHtml = function(markup: string) {
+export const sanitizeHtml = function (markup: string) {
     markup = markup.replace(/&/g, "&amp;");
     markup = markup.replace(/</g, "&lt;");
     markup = markup.replace(/>/g, "&gt;");
     return markup;
 };
 
-const codeParser = (data: any, config: any) => {
+const codeParser = (data: { code: string }, config: { code: { codeBlockClass: string } }) => {
     const markup = sanitizeHtml(data.code);
     return `<div class='terminal'>
                 <div class='terminal__bar'>
@@ -59,34 +64,52 @@ const codeParser = (data: any, config: any) => {
                 </div>
                 <pre class='terminal__block'><code class="${config.code.codeBlockClass}">${markup}</code></pre>
             </div>`;
-  };
+};
 
 
-  const simpleImage = (data: any, config: any) => {
+const simpleImage = (data: {
+    url?: string;
+    file?: { url: string;[key: string]: string };
+    caption: string;
+    stretched?: boolean;
+    withBorder?: boolean;
+    withBackground?: boolean
+}, config: {
+    simpleImage: {
+        imgClass?: string;
+        path?: string;
+        use?: string;
+        figureClass?: string;
+        figCapClass?: string
+    };
+    image: {
+        use?: string
+    }
+}) => {
     const imageConditions = `${data.stretched ? "img-fullwidth" : ""} ${data.withBorder ? "img-border" : ""} ${data.withBackground ? "img-bg" : ""}`;
     const imgClass = config.simpleImage.imgClass || "";
     let imageSrc;
 
     if (data.url) {
-      // simple-image was used and the image probably is not uploaded to this server
-      // therefore, we use the absolute path provided in data.url
-      // so, config.image.path property is useless in this case!
-      imageSrc = data.url;
+        // simple-image was used and the image probably is not uploaded to this server
+        // therefore, we use the absolute path provided in data.url
+        // so, config.image.path property is useless in this case!
+        imageSrc = data.url;
     } else if (config.simpleImage.path === "absolute") {
-      imageSrc = data.file.url;
+        imageSrc = data.file.url;
     } else {
-      imageSrc = config.simpleImage.path.replace(
-        /<(.+)>/,
-        (match: any, p1: any) => data.file[p1]
-      );
+        imageSrc = config.simpleImage.path.replace(
+            /<(.+)>/,
+            (_match: string, p1: string) => data.file?.[p1] || ''
+        );
     }
 
     if (config.image.use === "img") {
-      return `<img class="${imageConditions} ${imgClass}" src="${imageSrc}" alt="${data.caption}">`;
-    }  if (config.simpleImage.use === "figure") {
-      const figureClass = config.simpleImage.figureClass || "";
-      const figCapClass = config.simpleImage.figCapClass || "";
-      return `<figure class="${figureClass} ${imageConditions}">
+        return `<img class="${imageConditions} ${imgClass}" src="${imageSrc}" alt="${data.caption}">`;
+    } if (config.simpleImage.use === "figure") {
+        const figureClass = config.simpleImage.figureClass || "";
+        const figCapClass = config.simpleImage.figCapClass || "";
+        return `<figure class="${figureClass} ${imageConditions}">
                 <div>
                     <div class="image-container">
                         <img class="${imgClass}" src="${imageSrc}" alt="${data.caption}">
@@ -96,10 +119,10 @@ const codeParser = (data: any, config: any) => {
             </figure>`;
     }
     return '';
-  };
- 
+};
 
-const customParsers  = {
+
+const customParsers = {
     list: listParser,
     warning: renderWarning,
     code: codeParser,
@@ -112,11 +135,11 @@ const customParsers  = {
 
 
 export class CustomParser extends Parser {
-  
+
 
     constructor() {
         super({}, customParsers, {});
     }
 
-    
+
 }

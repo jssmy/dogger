@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import type { SweetAlertOptions } from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlertService {
   
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private swalPromise: Promise<any> | null = null;
 
   private async getSwal() {
@@ -15,12 +17,12 @@ export class AlertService {
     return Swal;
   }
 
-  async fire(config: any) {
+  async fire(config: SweetAlertOptions) {
     const Swal = await this.getSwal();
     return Swal.fire(config);
   }
 
-  async confirm(config: any) {
+  async confirm(config: SweetAlertOptions) {
     const Swal = await this.getSwal();
     return Swal.fire({
       ...config,

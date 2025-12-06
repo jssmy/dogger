@@ -4,13 +4,14 @@ import { StepperComponent } from "../../../commons/components/stepper/stepper.co
 import { Step } from '../../../commons/interfaces/step';
 import { StepperService } from '../../../commons/services/stepper.service';
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const STEPS: Step[] = require('./../../../commons/dummy/blog-stage.json');
 
 @Component({
-    selector: 'app-blog',
-    imports: [RouterModule, StepperComponent],
-    templateUrl: './blog.component.html',
-    styleUrl: './blog.component.scss'
+  selector: 'app-blog',
+  imports: [RouterModule, StepperComponent],
+  templateUrl: './blog.component.html',
+  styleUrl: './blog.component.scss'
 })
 export default class BlogComponent {
 

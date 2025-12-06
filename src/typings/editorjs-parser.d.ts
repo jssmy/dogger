@@ -1,7 +1,8 @@
 declare module '@herii/editorjs-parser' {
   export default class Parser {
-    constructor(...arg: any) {}
-    parse(...data: any): string;
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    constructor(..._arg: unknown[]) { }
+    parse(...data: unknown[]): string;
     parsers: string;
 
   }

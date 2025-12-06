@@ -1,35 +1,35 @@
 <div class="search-engine">
-    <div [ngClass]="{'search-engine-active':touched && value}" class="input circule" [className]="'input--lg input ' + styled">
-        <input  type="text"
-                autofocus
-                #inputSearch
-                class="form-control input__box content-low size-md"
-                (input)="writeValue(inputSearch.value)"
-                (change)="onChangedValue(inputSearch.value)"
-                (focus)="onFocusEvent()"
-                [disabled]="disabled"
-                [value]="value"                
-                [placeholder]="placeHolder">
-        <button aria-label="presione para buscar" (click)="onSearchEvent()" [disabled]="disabled" class="circule input__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-              </svg>
+    <div [ngClass]="{'search-engine-active':touched && value}" class="input circule"
+        [className]="'input--lg input ' + styled">
+        <input type="text" #inputSearch class="form-control input__box content-low size-md"
+            (input)="writeValue(inputSearch.value)" (change)="onChangedValue(inputSearch.value)"
+            (focus)="onFocusEvent()" [disabled]="disabled" [value]="value" [placeholder]="placeHolder">
+        <button aria-label="presione para buscar" (click)="onSearchEvent()" [disabled]="disabled"
+            class="circule input__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
         </button>
     </div>
 
     @if(touched && value) {
-        <div class="search-engine__result d-flex flex-column">
-            @for(item of items; track item.id) {
-                <a  class="p-2 pointer" (click)="onSelected.emit(item)">{{item.value}}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                      </svg>
-    
-                </a>
-            } @empty {
-                <a  class="p-2 content-low size-md">No se han encontrado resultados</a>
-            }
-            
-        </div>
+    <div class="search-engine__result d-flex flex-column">
+        @for(item of items; track item.id) {
+        <button type="button" class="p-2 pointer" (click)="selectedEvent.emit(item)"
+            (keyup.enter)="selectedEvent.emit(item)">{{item.value}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+
+        </button>
+        } @empty {
+        <a class="p-2 content-low size-md">No se han encontrado resultados</a>
+        }
+
+    </div>
     }
 </div>

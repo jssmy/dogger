@@ -1,19 +1,19 @@
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { HttpStatusCode } from '@angular/common/http';
 import { Component, inject, input, makeStateKey, OnInit, PLATFORM_ID, signal, TransferState, ViewContainerRef } from '@angular/core';
-import { FooterComponent } from "../../commons/components/footer/footer.component";
-import { CommonModule, isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { BlogService } from '../../commons/services/blog.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { CustomParser } from '../../commons/utils/parser.util';
-import Error404Component from "../errors/error-404/error-404.component";
-import Error500Component from "../errors/error-500/error-500.component";
+import { TimeoutError } from 'rxjs';
+import { AvatarWriterComponent } from '../../commons/components/avatar-writer/avatar-writer.component';
+import { FooterComponent } from "../../commons/components/footer/footer.component";
 import { NavbarComponent } from '../../commons/components/navbar/navbar.component';
 import { NAVBAR_HOME_ITEMS } from '../../commons/dummy/navbar-home-items';
-import { NavbarItem } from '../../commons/interfaces/navbar-items';
-import { AvatarWriterComponent } from '../../commons/components/avatar-writer/avatar-writer.component';
-import { splitHTMLHeader } from '../../commons/utils/string.util';
 import { BlogWriter } from '../../commons/interfaces/blog-writer';
-import { TimeoutError } from 'rxjs';
-import { HttpStatusCode } from '@angular/common/http';
+import { NavbarItem } from '../../commons/interfaces/navbar-items';
+import { BlogService } from '../../commons/services/blog.service';
+import { CustomParser } from '../../commons/utils/parser.util';
+import { splitHTMLHeader } from '../../commons/utils/string.util';
+import Error404Component from "../errors/error-404/error-404.component";
+import Error500Component from "../errors/error-500/error-500.component";
 import BlogSkeletonComponent from './commons/components/blog-steketon/blog-skeleton.component';
 const transferHtmlKey = makeStateKey<string>('html')
 const transferStatusErrorKey = makeStateKey<HttpStatusCode>('statusError')
@@ -83,7 +83,7 @@ export default class BlogComponent implements OnInit {
             } else {
               this.statusError.set(HttpStatusCode.InternalServerError);
               this.transferState.set(transferStatusErrorKey, HttpStatusCode.InternalServerError);
-            }          
+            }
           }
         }
       })
