@@ -1,26 +1,28 @@
+import { NavbarComponent } from '@/app/commons/components/navbar/navbar.component';
+import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
-import { InputComponent } from '../../commons/components/input/input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { ButtonComponent } from '../../commons/components/button/button.component';
+import { InputComponent } from '../../commons/components/input/input.component';
+import { ErrorControlDirective } from '../../commons/directives/error-control.directive';
 import { LoaderService } from '../../commons/services/loader.service';
 import { LoginService } from '../../commons/services/login.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginPresenter } from './login.presenter';
-import { ErrorControlDirective } from '../../commons/directives/error-control.directive';
-import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
-import { Router, RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'bgz-login',
-    imports: [
-        InputComponent,
-        ButtonComponent,
-        FormsModule,
-        ReactiveFormsModule,
-        ErrorControlDirective,
-        RouterModule
-    ],
-    templateUrl: './login.component.html',
-    styleUrl: './login.component.scss'
+  selector: 'bgz-login',
+  imports: [
+    InputComponent,
+    ButtonComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    ErrorControlDirective,
+    RouterModule,
+    NavbarComponent,
+  ],
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss'
 })
 export default class LoginComponent {
 
@@ -29,7 +31,7 @@ export default class LoginComponent {
   loginService = inject(LoginService);
   route = inject(Router);
   errorMessage = signal<string | null>(null);
-  
+
 
   login() {
     if (this.presenter.form.valid) {
