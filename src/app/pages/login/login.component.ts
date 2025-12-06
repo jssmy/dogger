@@ -1,4 +1,3 @@
-import { NavbarComponent } from '@/app/commons/components/navbar/navbar.component';
 import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +18,6 @@ import { LoginPresenter } from './login.presenter';
     ReactiveFormsModule,
     ErrorControlDirective,
     RouterModule,
-    NavbarComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
