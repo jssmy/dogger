@@ -51,9 +51,8 @@ export const refreshTokenExpirationGuard: CanActivateFn = () => {
     // El refresh token es válido, permitir el acceso
     return true;
 
-  } catch (error) {
+  } catch {
     // Si hay algún error al decodificar el token, redirigir al login
-    console.error('Error decoding refresh token:', error);
     authService.logout();
     return router.createUrlTree(['/login']);
   }

@@ -2,13 +2,13 @@ import { Directive, ElementRef, input, OnInit, Renderer2 } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 @Directive({
-  selector: '[errorControl]',
+  selector: '[appErrorControl]',
   standalone: true
 })
 export class ErrorControlDirective implements OnInit {
 
 
-  readonly errorControl = input<Record<string, string>>({ alias: 'errorControl' }); // Objeto de mensajes de error
+  readonly errorControl = input.required<Record<string, string>>(); // Objeto de mensajes de error
   private errorSpan!: HTMLSpanElement;
 
 

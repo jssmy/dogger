@@ -48,9 +48,9 @@ export const sessionValidationGuard: CanActivateFn = () => {
     // El refresh token es válido, permitir el acceso
     return true;
 
-  } catch (error) {
-    console.error('Error validating session:', error);
-    return true; // En caso de error, permitir acceso
+  } catch {
+    // En caso de error al validar la sesión, permitir acceso
+    return true;
   }
 };
 

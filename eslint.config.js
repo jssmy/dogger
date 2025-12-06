@@ -41,6 +41,14 @@ module.exports = tseslint.config(
           "varsIgnorePattern": "^_",
           "caughtErrorsIgnorePattern": "^_"
         }
+      ],
+      "no-console": "error",  // Prohibe console.log, console.warn, etc.
+      "no-warning-comments": [
+        "error",
+        {
+          "terms": ["todo", "fixme", "hack", "xxx"],
+          "location": "start"
+        }
       ]
     },
   },

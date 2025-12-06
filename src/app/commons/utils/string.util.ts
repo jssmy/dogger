@@ -8,6 +8,7 @@ export const trim = (str: string, charToTrim: string) => {
     return str.replace(regex, '');
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function toQueryParams(obj: any) {
     if (obj) {
         return new URLSearchParams(obj).toString();

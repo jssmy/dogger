@@ -22,7 +22,7 @@
                 <td colspan="2">
                     <div class="">
                         <app-input [formControl]="permissionPresenter.name"
-                            [errorControl]="permissionPresenter.ERROR_CONTROL.name" type="text" size="input--sm"
+                            [appErrorControl]="permissionPresenter.ERROR_CONTROL.name" type="text" size="input--sm"
                             class="w-100" styled="outlined" placeHolder="Name"></app-input>
                     </div>
                 </td>
@@ -52,7 +52,7 @@
 
                 <td>
                     <div class="">
-                        <app-input [errorControl]="permissionPresenter.ERROR_CONTROL.path"
+                        <app-input [appErrorControl]="permissionPresenter.ERROR_CONTROL.path"
                             [formControl]="permissionPresenter.path" type="text" size="input--sm" class="w-100"
                             styled="outlined" placeHolder="Path">
                         </app-input>

@@ -19,7 +19,6 @@ const renderList = (items: ListItem[], tag: string): string => {
 
 const listParser = (block: { items: ListItem[]; style: string }): string => {
     if (!block?.items || !Array.isArray(block.items)) {
-        console.error('Error: `items` no es un array válido', block?.items);
         return '';
     }
 
