@@ -1,10 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, computed, inject, input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
 import { NavbarItem } from '../../interfaces/navbar-items';
-import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { LoginService } from '../../services/login.service';
-import Swal from 'sweetalert2';
 import { AppSettings } from '../../utils/app-settings';
 
 @Component({
@@ -32,7 +32,7 @@ export class NavbarComponent {
     }
     return route.startsWith(this.currentUrl());
   }
-  
+
 
   logout() {
     this.loginService.out().subscribe({
