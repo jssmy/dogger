@@ -11,6 +11,14 @@
       "source.organizeImports": "explicit",
       "source.fixAll.eslint": "explicit"
     }
+  },
+  "files.exclude": {
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/dist": true
+  },
+  "files.watcherExclude": {
+    "**/dist/**": true
   }
 }
-
