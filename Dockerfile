@@ -63,11 +63,13 @@ RUN mkdir -p /var/log/nginx /var/run /var/cache/nginx && \
     chmod -R 755 /var/log/nginx /var/run /var/cache/nginx && \
     chmod 777 /var/run
 
-# Cambiar al usuario no-root
-USER app-user
+# Nota: No se cambia a usuario no-root porque nginx necesita permisos de root para:
+# 1. Vincular al puerto 443 (puerto privilegiado)
+# 2. Leer certificados SSL desde /etc/letsencrypt
+# Nginx gestiona internamente la seguridad ejecutando procesos worker con usuario nginx
 
-# Exponer puerto 80
-EXPOSE 80
+# Exponer puertos 80 y 443
+EXPOSE 80 443
 
 # Health check optimizado
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
