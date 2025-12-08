@@ -11,8 +11,8 @@ WORKDIR /app
 # Copiar archivos de dependencias primero para mejor cacheo de capas
 COPY package.json package-lock.json ./
 
-# Instalar dependencias con optimizaciones
-RUN npm ci --silent --no-audit --no-fund && \
+# Instalar dependencias
+RUN npm ci && \
     npm cache clean --force
 
 # Copiar el código fuente de la aplicación
@@ -54,7 +54,7 @@ COPY --from=build /app/package-lock.json /app/package-lock.json
 
 # Instalar solo dependencias de producción para el servidor
 WORKDIR /app
-RUN npm ci --only=production --silent --no-audit --no-fund && \
+RUN npm ci --only=production && \
     npm cache clean --force
 
 # Instalar su para cambiar de usuario
