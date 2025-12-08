@@ -62,12 +62,14 @@ RUN apk add --no-cache su-exec
 
 # Crear directorios necesarios y dar permisos
 RUN mkdir -p /var/log/nginx /var/run /var/cache/nginx && \
-    chown -R app-user:app-user /app && \
-    chown -R nginx:nginx /var/log/nginx /var/cache/nginx /var/run /usr/share/nginx/html && \
-    chmod -R 755 /var/log/nginx /var/run /var/cache/nginx
+    chown -R app-user:app-user /var/log/nginx /var/cache/nginx /var/run /usr/share/nginx/html /app && \
+    chmod -R 755 /var/log/nginx /var/run /var/cache/nginx && \
+    chmod 777 /var/run
 
-# Nota: El contenedor debe ejecutarse como root para que nginx pueda escuchar en puertos 80/443
-# Node.js se ejecutará como app-user usando su-exec para mayor seguridad
+# Nota: No se cambia a usuario no-root porque nginx necesita permisos de root para:
+# 1. Vincular al puerto 443 (puerto privilegiado)
+# 2. Leer certificados SSL desde /etc/letsencrypt
+# Nginx gestiona internamente la seguridad ejecutando procesos worker con usuario nginx
 
 # Exponer puertos 80 y 443
 EXPOSE 80 443
