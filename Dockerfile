@@ -57,21 +57,24 @@ WORKDIR /app
 RUN npm ci --only=production --silent --no-audit --no-fund && \
     npm cache clean --force
 
+# Instalar su para cambiar de usuario
+RUN apk add --no-cache su-exec
+
 # Crear directorios necesarios y dar permisos
 RUN mkdir -p /var/log/nginx /var/run /var/cache/nginx && \
-    chown -R app-user:app-user /var/log/nginx /var/cache/nginx /var/run /usr/share/nginx/html /app && \
-    chmod -R 755 /var/log/nginx /var/run /var/cache/nginx && \
-    chmod 777 /var/run
+    chown -R app-user:app-user /app && \
+    chown -R nginx:nginx /var/log/nginx /var/cache/nginx /var/run /usr/share/nginx/html && \
+    chmod -R 755 /var/log/nginx /var/run /var/cache/nginx
 
-# Cambiar al usuario no-root
-USER app-user
+# Nota: El contenedor debe ejecutarse como root para que nginx pueda escuchar en puertos 80/443
+# Node.js se ejecutará como app-user usando su-exec para mayor seguridad
 
-# Exponer puerto 80
-EXPOSE 80
+# Exponer puertos 80 y 443
+EXPOSE 80 443
 
 # Health check optimizado
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD wget --no-verbose --tries=1 --spider http://localhost/health || exit 1
 
-# Comando de inicio optimizado
-CMD ["sh", "-c", "nginx -g 'daemon off;' & NODE_ENV=production node /app/server/server.mjs"]
+# Comando de inicio: nginx como root, Node.js como app-user
+CMD ["sh", "-c", "nginx -g 'daemon off;' & su-exec app-user sh -c 'NODE_ENV=production node /app/server/server.mjs' & wait"]
