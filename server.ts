@@ -9,9 +9,9 @@ import bootstrap from './src/main.server';
 export function app(): express.Express {
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  // En Docker, los archivos estáticos están en /usr/share/nginx/html
+  // En Docker, los archivos estáticos están en /app/browser
   const browserDistFolder = process.env['NODE_ENV'] === 'production' 
-    ? '/usr/share/nginx/html' 
+    ? '/app/browser' 
     : resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
@@ -19,6 +19,11 @@ export function app(): express.Express {
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
+
+  // Health check endpoint
+  server.get('/health', (_req, res) => {
+    res.status(200).send('healthy\n');
+  });
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });

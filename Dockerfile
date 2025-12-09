@@ -1,4 +1,4 @@
-# Dockerfile optimizado para Angular SSR con Nginx
+# Dockerfile optimizado para Angular SSR con Node.js únicamente
 # Etapa 1: Construcción de la aplicación Angular
 FROM node:22-alpine AS build
 
@@ -25,27 +25,24 @@ RUN npm run build:${STAGE_BUILD} && \
     rm -rf node_modules/.cache && \
     find . -name "*.map" -delete
 
-# Etapa 2: Imagen final con Nginx + Node.js
-FROM nginx:alpine
+# Etapa 2: Imagen final solo con Node.js
+FROM node:22-alpine
 
-# Instalar Node.js y dumb-init
-RUN apk add --no-cache nodejs npm dumb-init
+# Instalar wget para health checks
+RUN apk add --no-cache wget
 
 # Crear usuario no-root
 RUN addgroup -g 1001 -S app-user && \
     adduser -S app-user -u 1001 -G app-user
 
-# Copiar configuración optimizada de Nginx
-COPY nginx.conf /etc/nginx/nginx.conf
+# Establecer el directorio de trabajo
+WORKDIR /app
 
 # Copiar archivos estáticos desde la etapa de build
-COPY --from=build /app/dist/bugzilo/browser /usr/share/nginx/html
-
-# Eliminar el index.html por defecto de Nginx
-RUN rm -f /usr/share/nginx/html/index.html
+COPY --from=build /app/dist/bugzilo/browser /app/browser
 
 # Copiar carpeta public para assets
-COPY --from=build /app/public /usr/share/nginx/html/public
+COPY --from=build /app/public /app/browser/public
 
 # Copiar servidor Node.js desde la etapa de build
 COPY --from=build /app/dist/bugzilo/server /app/server
@@ -53,30 +50,25 @@ COPY --from=build /app/package.json /app/package.json
 COPY --from=build /app/package-lock.json /app/package-lock.json
 
 # Instalar solo dependencias de producción para el servidor
-WORKDIR /app
 RUN npm ci --only=production && \
     npm cache clean --force
 
-# Instalar su para cambiar de usuario
-RUN apk add --no-cache su-exec
+# Dar permisos al usuario app-user
+RUN chown -R app-user:app-user /app
 
-# Crear directorios necesarios y dar permisos
-RUN mkdir -p /var/log/nginx /var/run /var/cache/nginx && \
-    chown -R app-user:app-user /var/log/nginx /var/cache/nginx /var/run /usr/share/nginx/html /app && \
-    chmod -R 755 /var/log/nginx /var/run /var/cache/nginx && \
-    chmod 777 /var/run
+# Cambiar a usuario no-root
+USER app-user
 
-# Nota: No se cambia a usuario no-root porque nginx necesita permisos de root para:
-# 1. Vincular al puerto 443 (puerto privilegiado)
-# 2. Leer certificados SSL desde /etc/letsencrypt
-# Nginx gestiona internamente la seguridad ejecutando procesos worker con usuario nginx
+# Variable de entorno
+ENV NODE_ENV=production
+ENV PORT=3000
 
-# Exponer puertos 80 y 443
-EXPOSE 80 443
+# Exponer puerto 3000
+EXPOSE 3000
 
-# Health check optimizado
+# Health check - usar wget o node con fetch
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-    CMD wget --no-verbose --tries=1 --spider http://localhost/health || exit 1
+    CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1
 
-# Comando de inicio: nginx como root, Node.js como app-user
-CMD ["sh", "-c", "nginx -g 'daemon off;' & su-exec app-user sh -c 'NODE_ENV=production node /app/server/server.mjs' & wait"]
+# Comando de inicio: solo Node.js SSR
+CMD ["node", "/app/server/server.mjs"]
