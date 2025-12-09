@@ -14,7 +14,7 @@ export const environment: Environment = {
     confirmAccount: 'https://user.api.bugzilo.com/confirm-account',
     refreshToken: 'https://user.api.bugzilo.com/token/refresh',
     blog: 'https://blog.api.bugzilo.com/api/blog',
-    blogWriter: 'https://user.api.bugzilo.com/user',
+    blogWriter: 'https://user.api.bugzilo.com/writer',
     requestResetPassword: 'https://user.api.bugzilo.com/password/request',
     validateTokenResetPassword: 'https://user.api.bugzilo.com/password/token',
     resetPassword: 'https://user.api.bugzilo.com/password/change',
