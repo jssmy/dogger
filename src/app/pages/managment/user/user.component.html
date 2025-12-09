@@ -1,8 +1,8 @@
 <div class="d-flex flex-column">
-  <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Control users</h5>
+  <h5 class="font-hight-retro color-dark me-3 d-flex align-items-center">Gestión de usuarios</h5>
   <div class="d-flex flex-row">
     <a routerLink="/managment/users/create" class="color-gray text-decoration-none"><i
-        class="fa-solid fa-plus me-2"></i>Add new user</a>
+      class="fa-solid fa-plus me-2"></i>Agregar usuario</a>
   </div>
 </div>
 
@@ -12,7 +12,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">NOMBRES</th>
-      <th scope="col">EMAIL</th>
+      <th scope="col">CORREO</th>
       <th scope="col">ESTADO</th>
       <th scope="col">ROL</th>
       <th scope="col">OPCIONES</th>
@@ -53,12 +53,12 @@
         @if (!item.protected) {
 
         <button (click)="onDelete(item.id)" class="btn p-0 button--round  button--xs bg-color-red-dark color-white ms-1"
-          data-title="Delete route"><i class="fa-solid fa-trash"></i>
+          data-title="Eliminar usuario"><i class="fa-solid fa-trash"></i>
         </button>
         }
 
         <button class="btn p-0 button--round  button--xs bg-color-red-dark color-white ms-1"
-          data-title="Reset password"><i class="fa-solid fa-key"></i>
+          data-title="Restablecer contraseña"><i class="fa-solid fa-key"></i>
         </button>
       </td>
     </tr>
@@ -71,4 +71,4 @@
     }
     }
   </tbody>
-</table>y
+</table>
