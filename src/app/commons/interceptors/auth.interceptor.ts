@@ -20,7 +20,6 @@ const IGNORED_URLS: IgnoredUrl[] = [
   { url: environment.resetPassword, restrict: false },
   { url: environment.confirmAccount, restrict: false },
   { url: `${environment.blog}/public`, restrict: false },
-  { url: `${environment.blog}/create`, restrict: false },
   { url: `${environment.blog}`, restrict: true },
   { url: environment.blogWriter, restrict: false }
 ];
