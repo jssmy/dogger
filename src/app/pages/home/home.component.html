@@ -3,29 +3,145 @@
     aria-label="Cerrar búsqueda"></div>
 }
 
-<section class="container d-flex flex-column align-items-center hero">
-    <div class="d-flex w-100 flex-column align-items-center">
-        <bgz-navbar [items]="navbarItems" class="w-md-100 w-auto"></bgz-navbar>
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero-retro">
+    <div class="scanlines"></div>
+    <div class="container hero-retro__inner">
+
+        <div class="d-flex w-100 flex-column align-items-center">
+            <bgz-navbar [items]="navbarItems" class="w-md-100 w-auto"></bgz-navbar>
+        </div>
+
+        <div class="ascii-banner d-none d-md-block text-center mt-3">
+            <pre class="ascii-line">╔══════════════════════════════════════╗</pre>
+            <pre class="ascii-line">║  &lt;/ APRENDE · CODEA · CONSTRUYE · REPITE /&gt; ║</pre>
+            <pre class="ascii-line">╚══════════════════════════════════════╝</pre>
+        </div>
+
+        <div class="hero-retro__headline text-center mt-3 mb-4">
+            <h1 class="hero-retro__title content-high color-yellow">
+                BUGZILO<span class="blink-cursor">_</span>
+            </h1>
+            <p class="content-mid color-white size-md hero-retro__subtitle">
+                // cursos · blogs · programación · tecnología
+            </p>
+        </div>
+
+        <div [attr.aria-labelledby]="'search-label'"
+            class="w-100 hero-retro__search d-flex flex-column justify-content-center align-items-center"
+            [ngClass]="{'hero-retro__search--active': isFocusModal}">
+            <label id="search-label" for="search" class="content-mid size-sm color-white mb-2"
+                [ngClass]="{'index-3': isFocusModal}">
+                <span class="color-yellow">$</span>&nbsp;busca lo que quieres aprender...
+            </label>
+            <div class="col-md-8 col-sm-12 col-lg-6 terminal-search-wrap" [ngClass]="{'index-3': isFocusModal}">
+                <bgz-search id="search" aria-label="escribe lo que estás buscando" #SearchComponent
+                    placeHolder="Búscame..." (searchEvent)="onSearch($event)" (focusEvent)="onFocus()"
+                    (selectedEvent)="onSelected($event)" [items]="articlesTracked"></bgz-search>
+            </div>
+        </div>
+
     </div>
-    <div [attr.aria-labelledby]="'search-label'"
-        class="w-100 hero__search d-flex flex-column justify-content-center align-items-center"
-        [ngClass]="{'hero__search-active': isFocusModal}">
-        <label id="search-label" for="search" class="text-center content-mid size-xlg p-3 color-yellow"
-            [ngClass]="{'index-3': isFocusModal}">¿Qué estás
-            buscando?</label>
-        <div class="col-md-8 col-sm-12 col-lg-6" [ngClass]="{'index-3': isFocusModal}">
-            <bgz-search id="search" aria-label="escribe lo que estás buscando" #SearchComponent placeHolder="Búscame..."
-                (searchEvent)="onSearch($event)" (focusEvent)="onFocus()" (selectedEvent)="onSelected($event)"
-                [items]="articlesTracked"></bgz-search>
+</section>
+
+<!-- ═══════════════ TICKER ═══════════════ -->
+<div class="retro-ticker bg-color-yellow">
+    <span class="content-low color-dark size-xs">
+        █ █ █&nbsp;&nbsp;HTML · CSS · JS · Python · Go · Rust · SQL · DevOps · Cloud · Git · Linux · Docker&nbsp;&nbsp;█
+        █ █
+    </span>
+</div>
+
+<!-- ═══════════════ FEATURES ═══════════════ -->
+<section class="features-section container-fluid">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="content-high color-yellow size-lg section-title">
+                [ ¿QUÉ ENCONTRARÁS AQUÍ? ]
+            </h2>
+            <p class="content-mid color-white size-sm">// plataforma de conocimiento tech hecha por devs, para devs</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="retro-card retro-card--yellow h-100">
+                    <div class="retro-card__header">
+                        <span class="content-high color-dark size-md">01</span>
+                        <span class="retro-card__badge content-low color-dark">CURSOS</span>
+                    </div>
+                    <div class="retro-card__icon">🖥️</div>
+                    <h3 class="content-high color-dark size-md mb-2">Cursos de Tecnología</h3>
+                    <p class="content-low color-dark size-sm">
+                        Aprende programación, sistemas, redes y más con contenido práctico y actualizado.
+                    </p>
+                    <div class="retro-card__cta content-low color-dark size-xs">[ VER CURSOS → ]</div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="retro-card retro-card--teal h-100">
+                    <div class="retro-card__header">
+                        <span class="content-high color-white size-md">02</span>
+                        <span class="retro-card__badge content-low color-white">BLOGS</span>
+                    </div>
+                    <div class="retro-card__icon">📟</div>
+                    <h3 class="content-high color-white size-md mb-2">Blogs de Programación</h3>
+                    <p class="content-low color-white size-sm">
+                        Artículos técnicos, tutoriales y experiencias escritos por la comunidad dev.
+                    </p>
+                    <div class="retro-card__cta content-low color-white size-xs">[ LEER BLOGS → ]</div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="retro-card retro-card--dark h-100">
+                    <div class="retro-card__header">
+                        <span class="content-high color-yellow size-md">03</span>
+                        <span class="retro-card__badge content-low color-yellow">COMUNIDAD</span>
+                    </div>
+                    <div class="retro-card__icon">⌨️</div>
+                    <h3 class="content-high color-yellow size-md mb-2">Comunidad Tech</h3>
+                    <p class="content-low color-white size-sm">
+                        Conecta con otros devs, comparte tus proyectos y crece en la comunidad.
+                    </p>
+                    <div class="retro-card__cta content-low color-yellow size-xs">[ ÚNETE → ]</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-<section class="container">
-    <h2
-        class="font-hight-retro text-center d-flex flex-column align-items-center mb-3 mt-3 size-lg content-high color-white">
-        Agregados recientemente
-        <span class="underline bg-color-white"></span>
-    </h2>
+
+<!-- ═══════════════ STATS ═══════════════ -->
+<div class="stats-bar container-fluid">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-4">
+                <span class="content-high color-yellow size-lg d-block">+50</span>
+                <span class="content-low color-white size-xs">CURSOS</span>
+            </div>
+            <div class="col-4 stats-bar__mid">
+                <span class="content-high color-yellow size-lg d-block">+200</span>
+                <span class="content-low color-white size-xs">ARTÍCULOS</span>
+            </div>
+            <div class="col-4">
+                <span class="content-high color-yellow size-lg d-block">24/7</span>
+                <span class="content-low color-white size-xs">ONLINE</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ RECENT ARTICLES ═══════════════ -->
+<section class="container recently-section">
+    <div class="text-center mb-4">
+        <h2 class="content-high color-yellow size-lg section-title">
+            [ AGREGADOS RECIENTEMENTE ]
+        </h2>
+        <p class="content-mid color-white size-sm">// los últimos artículos del blog</p>
+        <div class="terminal-line mt-3"></div>
+    </div>
+
     <div class="row w-100 d-flex m-0">
         @defer (when articlesTop();) {
         @for(article of articlesTop(); track article.id) {
@@ -58,8 +174,32 @@
         </div>
         }
         }
-
-
     </div>
 </section>
+
+<!-- ═══════════════ CTA TERMINAL ═══════════════ -->
+<section class="cta-section container-fluid">
+    <div class="container text-center">
+
+        <div class="cta-terminal mx-auto mb-4">
+            <div class="cta-terminal__bar">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+                <span class="content-low color-gray size-xs ms-2">dogger — bash — 80x24</span>
+            </div>
+            <div class="cta-terminal__body">
+                <p class="content-low size-sm mb-1"><span class="color-yellow">$</span> whoami</p>
+                <p class="content-low color-white size-sm mb-3">→ próximo dev del futuro</p>
+                <p class="content-low size-sm mb-1"><span class="color-yellow">$</span> echo "¿listo para aprender?"</p>
+                <p class="content-low color-white size-sm mb-3">→ ¡Sí, empecemos ya!</p>
+                <p class="content-low color-gray size-sm">$ <span class="blink-cursor color-yellow">_</span></p>
+            </div>
+        </div>
+
+        <h2 class="content-high color-white size-lg">¿LISTO PARA EL SIGUIENTE NIVEL?</h2>
+        <p class="content-mid color-yellow size-md">Empieza a aprender hoy. Sin excusas.</p>
+    </div>
+</section>
+
 <bgz-footer></bgz-footer>

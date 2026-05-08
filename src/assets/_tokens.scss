@@ -1,0 +1,151 @@
+// ════════════════════════════════════════════════════════════
+// DESIGN TOKEN SYSTEM — Dogger
+// Uso:  var(--color-bg-base), var(--color-accent), etc.
+// No consumas --palette-* directamente en componentes.
+// ════════════════════════════════════════════════════════════
+
+
+// ─────────────────────────────────────────────────────────────
+// PALETTE — valores brutos, solo para referenciar desde tokens
+// ─────────────────────────────────────────────────────────────
+:root {
+  // Negros / oscuros
+  --palette-black:    #010101;
+  --palette-dark-1:   #0a0a0a;
+  --palette-dark-2:   #0d0d0d;
+  --palette-dark-3:   #1a1a1a;
+  --palette-dark-4:   #2a2a2a;
+
+  // Amarillos / naranjas
+  --palette-yellow:   #f4cd25;
+  --palette-orange:   #d6b830;
+
+  // Teal / cyan
+  --palette-teal:     #4aa1ad;
+  --palette-teal-dk:  #578187;
+
+  // Grises
+  --palette-gray-1:   #f4f4f4;
+  --palette-gray-2:   hsl(0deg 7.67% 77.71%);
+  --palette-gray-3:   #acacac;
+  --palette-gray-4:   #747e86;
+
+  // Blancos
+  --palette-white:    #ffffff;
+
+  // Status
+  --palette-red:      #ba5428;
+  --palette-pink:     #f89da7;
+  --palette-green:    #28c840;
+}
+
+
+// ─────────────────────────────────────────────────────────────
+// SEMANTIC TOKENS — valores por defecto (dark-first)
+// ─────────────────────────────────────────────────────────────
+:root {
+  // · Fondos ·
+  --color-bg-base:      var(--palette-black);       // página / body
+  --color-bg-surface:   var(--palette-dark-2);      // tarjetas, paneles
+  --color-bg-elevated:  var(--palette-dark-3);      // modales, dropdowns
+  --color-bg-input:     var(--palette-dark-1);      // inputs
+  --color-bg-overlay:   rgba(0, 0, 0, 0.75);        // overlays modales
+
+  // · Texto ·
+  --color-text-primary:    var(--palette-gray-1);   // texto principal
+  --color-text-secondary:  var(--palette-gray-3);   // texto secundario
+  --color-text-muted:      var(--palette-gray-4);   // texto desvanecido
+  --color-text-on-accent:  var(--palette-black);    // texto sobre fondo acento
+
+  // · Acento — amarillo brand ·
+  --color-accent:          var(--palette-yellow);
+  --color-accent-hover:    var(--palette-orange);
+  --color-accent-subtle:   rgba(244, 205, 37, 0.12);
+  --color-accent-glow:     rgba(244, 205, 37, 0.4);
+
+  // · Interactivo — teal ·
+  --color-interactive:       var(--palette-teal);
+  --color-interactive-hover: var(--palette-teal-dk);
+
+  // · Bordes ·
+  --color-border:        rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.04);
+  --color-border-strong: var(--palette-yellow);
+
+  // · Status ·
+  --color-success: var(--palette-green);
+  --color-error:   var(--palette-red);
+  --color-warning: var(--palette-orange);
+  --color-info:    var(--palette-teal);
+
+  // · Sombras ·
+  --shadow-sm:     0 1px 4px rgba(0, 0, 0, 0.45);
+  --shadow-md:     0 4px 14px rgba(0, 0, 0, 0.55);
+  --shadow-lg:     0 8px 28px rgba(0, 0, 0, 0.65);
+  --shadow-accent: 0 0 18px var(--color-accent-glow);
+
+  // · Radios ·
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  // · Spacing base ·
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  // · Transiciones ·
+  --transition-fast:   0.15s ease;
+  --transition-base:   0.25s ease;
+  --transition-slow:   0.4s ease;
+}
+
+
+// ─────────────────────────────────────────────────────────────
+// UTILITY CLASSES — basadas en tokens (theme-aware)
+// ─────────────────────────────────────────────────────────────
+
+// Fondos
+.t-bg-base     { background-color: var(--color-bg-base);     }
+.t-bg-surface  { background-color: var(--color-bg-surface);  }
+.t-bg-elevated { background-color: var(--color-bg-elevated); }
+.t-bg-input    { background-color: var(--color-bg-input);    }
+.t-bg-accent   { background-color: var(--color-accent);      }
+
+// Texto
+.t-text-primary   { color: var(--color-text-primary);   }
+.t-text-secondary { color: var(--color-text-secondary); }
+.t-text-muted     { color: var(--color-text-muted);     }
+.t-text-accent    { color: var(--color-accent);         }
+.t-text-on-accent { color: var(--color-text-on-accent); }
+.t-text-interactive { color: var(--color-interactive);  }
+
+// Bordes
+.t-border        { border: 1px solid var(--color-border);        }
+.t-border-subtle { border: 1px solid var(--color-border-subtle); }
+.t-border-strong { border: 2px solid var(--color-border-strong); }
+.t-border-accent { border-color: var(--color-accent);            }
+
+// Sombras
+.t-shadow-sm     { box-shadow: var(--shadow-sm);     }
+.t-shadow-md     { box-shadow: var(--shadow-md);     }
+.t-shadow-lg     { box-shadow: var(--shadow-lg);     }
+.t-shadow-accent { box-shadow: var(--shadow-accent); }
+
+// Status
+.t-text-success { color: var(--color-success); }
+.t-text-error   { color: var(--color-error);   }
+.t-text-warning { color: var(--color-warning); }
+.t-text-info    { color: var(--color-info);    }
+
+.t-bg-success   { background-color: var(--color-success); }
+.t-bg-error     { background-color: var(--color-error);   }
+.t-bg-warning   { background-color: var(--color-warning); }
+.t-bg-info      { background-color: var(--color-info);    }

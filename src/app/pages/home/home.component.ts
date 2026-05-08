@@ -30,7 +30,6 @@ export default class HomeComponent implements AfterViewInit {
   private readonly articleSearchService = inject(ArticleSearchService);
   private readonly router = inject(Router);
   private readonly platformId = inject(PLATFORM_ID);
-
   readonly searchComponent = viewChild<SearchComponent>('SearchComponent');
 
   articlesTracked: Item[] = [];

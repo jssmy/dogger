@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { LoaderComponent } from './commons/components/loader/loader.component';
 import { CommonModule } from '@angular/common';
 import { LoaderService } from './commons/services/loader.service';
+import { ThemeService } from './commons/services/theme.service';
 import { AppSettings } from './commons/utils/app-settings';
 
 @Component({
@@ -18,9 +19,10 @@ import { AppSettings } from './commons/utils/app-settings';
 export class AppComponent {
   title = AppSettings.APP_NAME_FORMATTED;
 
-  
-
   constructor(
-    readonly loader: LoaderService
-  ) {}
+    readonly loader: LoaderService,
+    readonly themeService: ThemeService
+  ) {
+    themeService.init();
+  }
 }

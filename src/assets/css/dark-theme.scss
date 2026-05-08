@@ -1,11 +1,91 @@
 @use "../_variables" as *;
 @use "../fonts/fonts" as *;
 
-
+// ════════════════════════════════════════════════════════════
+// DARK THEME — clase aplicada en el elemento raíz (body / app-root)
+// ════════════════════════════════════════════════════════════
 .dark-theme {
-    background-color: $color_dark;
+  color-scheme: dark;
+
+  // · Fondos ·
+  --color-bg-base:      #010101;
+  --color-bg-surface:   #0d0d0d;
+  --color-bg-elevated:  #1a1a1a;
+  --color-bg-input:     #0a0a0a;
+  --color-bg-overlay:   rgba(0, 0, 0, 0.75);
+
+  // · Texto ·
+  --color-text-primary:    #f4f4f4;
+  --color-text-secondary:  #acacac;
+  --color-text-muted:      #747e86;
+  --color-text-on-accent:  #010101;
+
+  // · Acento — amarillo ·
+  --color-accent:          #f4cd25;
+  --color-accent-hover:    #d6b830;
+  --color-accent-subtle:   rgba(244, 205, 37, 0.12);
+  --color-accent-glow:     rgba(244, 205, 37, 0.4);
+
+  // · Interactivo — teal ·
+  --color-interactive:       #4aa1ad;
+  --color-interactive-hover: #578187;
+
+  // · Bordes ·
+  --color-border:        rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.04);
+  --color-border-strong: #f4cd25;
+
+  // · Status ·
+  --color-success: #28c840;
+  --color-error:   #ba5428;
+  --color-warning: #d6b830;
+  --color-info:    #4aa1ad;
+
+  // · Sombras ·
+  --shadow-sm:     0 1px 4px rgba(0, 0, 0, 0.45);
+  --shadow-md:     0 4px 14px rgba(0, 0, 0, 0.55);
+  --shadow-lg:     0 8px 28px rgba(0, 0, 0, 0.65);
+  --shadow-accent: 0 0 18px rgba(244, 205, 37, 0.4);
+
+  // · Estilos base del tema ·
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-low);
+
+  // · Componentes nativos ·
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-text-on-accent);
+  }
+
+  scrollbar-color: #2a2a2a #0a0a0a;
+  scrollbar-width: thin;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb {
+    background-color: #2a2a2a;
+    border-radius: 3px;
+
+    &:hover { background-color: #3a3a3a; }
+  }
+
+  // · Anchors ·
+  a {
+    color: var(--color-accent);
+    &:hover { color: var(--color-accent-hover); }
+  }
+
+  // · Inputs nativos ·
+  input, textarea, select {
+    background-color: var(--color-bg-input);
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+
+    &::placeholder { color: var(--color-text-muted); }
+    &:focus { border-color: var(--color-border-strong); outline: none; }
+  }
 }
-
-
-
-

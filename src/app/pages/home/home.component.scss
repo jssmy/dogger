@@ -1,30 +1,313 @@
-.hero {
-
-    background-color: #040404;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: radial-gradient(circle, #0000008f 5%, #0000008c), url(./../../../assets/images/hero.webp);
-
-    height: 70vh;
-    &__search {
-        height: 100%;
-        &-active {
-            justify-content: unset !important;
-            margin-top: 5rem;
-        }
-    }
-}
-
+// ══════════════════════════════════════════
+// SEARCH MODAL
+// ══════════════════════════════════════════
 .search-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    background-color: rgba(0, 0, 0, 0.75);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2; /* Asegúrate de que esté por encima de otros elementos */
+    z-index: 2;
+}
+
+.index-3 {
+    z-index: 3;
+    position: relative;
+}
+
+// ══════════════════════════════════════════
+// HERO RETRO
+// ══════════════════════════════════════════
+.hero-retro {
+    background-color: #010101;
+    background-image:
+        radial-gradient(circle, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%),
+        url(./../../../assets/images/hero.webp);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    &__inner {
+        position: relative;
+        z-index: 2;
+        padding-top: 1rem;
+        padding-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    &__headline {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        letter-spacing: 0.08em;
+        line-height: 1;
+        font-size: clamp(3.5rem, 9vw, 7rem) !important;
+        text-shadow:
+            0 0 16px rgba(244, 205, 37, 0.6),
+            0 0 40px rgba(244, 205, 37, 0.2);
+    }
+
+    &__subtitle {
+        opacity: 0.8;
+        letter-spacing: 0.04em;
+    }
+
+    &__search {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &--active {
+            justify-content: flex-start !important;
+            margin-top: 5rem;
+        }
+    }
+}
+
+// CRT Scanlines
+.scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 3px,
+            rgba(0, 0, 0, 0.06) 3px,
+            rgba(0, 0, 0, 0.06) 6px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+// ASCII banner
+.ascii-banner {
+    .ascii-line {
+        font-family: var(--font-family-low);
+        font-size: 0.72rem;
+        line-height: 1.5;
+        color: rgba(244, 205, 37, 0.55);
+        margin: 0;
+        padding: 0;
+        white-space: pre;
+    }
+}
+
+// Terminal search wrapper
+.terminal-search-wrap {
+    border-radius: 4px;
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+// Blinking cursor
+.blink-cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+// ══════════════════════════════════════════
+// RETRO TICKER
+// ══════════════════════════════════════════
+.retro-ticker {
+    padding: 0.45rem 1rem;
+    text-align: center;
+    overflow: hidden;
+    border-top: 2px solid #010101;
+    border-bottom: 2px solid #010101;
+
+    span {
+        letter-spacing: 0.12em;
+    }
+}
+
+// ══════════════════════════════════════════
+// FEATURES SECTION
+// ══════════════════════════════════════════
+.features-section {
+    background-color: #010101;
+    padding: 4.5rem 0;
+}
+
+.section-title {
+    letter-spacing: 0.05em;
+}
+
+// Retro Cards
+.retro-card {
+    padding: 1.75rem;
+    position: relative;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.25rem;
+    }
+
+    &__badge {
+        font-size: 0.6rem;
+        letter-spacing: 0.22em;
+        padding: 2px 8px;
+        border: 1px solid currentColor;
+    }
+
+    &__icon {
+        font-size: 2.8rem;
+        display: block;
+        margin-bottom: 1rem;
+        line-height: 1;
+    }
+
+    &__cta {
+        margin-top: 1.5rem;
+        letter-spacing: 0.1em;
+        display: block;
+    }
+
+    // Yellow variant
+    &--yellow {
+        background-color: #f4cd25;
+        border: 3px solid #010101;
+        outline: 3px solid #f4cd25;
+        outline-offset: 4px;
+    }
+
+    // Teal variant
+    &--teal {
+        background-color: #4aa1ad;
+        border: 3px solid #010101;
+        outline: 3px solid #4aa1ad;
+        outline-offset: 4px;
+    }
+
+    // Dark variant
+    &--dark {
+        background-color: #0d0d0d;
+        border: 3px solid #f4cd25;
+        outline: 3px solid #0d0d0d;
+        outline-offset: 4px;
+    }
+}
+
+// ══════════════════════════════════════════
+// STATS BAR
+// ══════════════════════════════════════════
+.stats-bar {
+    background-color: #0a0a0a;
+    border-top: 2px solid #f4cd25;
+    border-bottom: 2px solid #f4cd25;
+    padding: 2.5rem 0;
+
+    &__mid {
+        border-left: 1px solid rgba(244, 205, 37, 0.3);
+        border-right: 1px solid rgba(244, 205, 37, 0.3);
+    }
+}
+
+// ══════════════════════════════════════════
+// RECENTLY SECTION
+// ══════════════════════════════════════════
+.recently-section {
+    padding-top: 4.5rem;
+    padding-bottom: 2rem;
+}
+
+.terminal-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f4cd25, transparent);
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+// ══════════════════════════════════════════
+// CTA TERMINAL SECTION
+// ══════════════════════════════════════════
+.cta-section {
+    background: linear-gradient(180deg, #010101 0%, #0d0d0d 50%, #010101 100%);
+    padding: 4.5rem 0;
+}
+
+.cta-terminal {
+    background-color: #0a0a0a;
+    border: 2px solid #f4cd25;
+    border-radius: 6px;
+    max-width: 580px;
+    overflow: hidden;
+
+    &__bar {
+        background-color: #1a1a1a;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #333;
+    }
+
+    &__body {
+        padding: 1.5rem 1.75rem;
+        text-align: left;
+    }
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+
+    &--red {
+        background-color: #ff5f57;
+    }
+
+    &--yellow {
+        background-color: #febc2e;
+    }
+
+    &--green {
+        background-color: #28c840;
+    }
+}
+
+// ══════════════════════════════════════════
+// RESPONSIVE
+// ══════════════════════════════════════════
+@media (max-width: 768px) {
+    .hero-retro__title {
+        font-size: 3rem !important;
+    }
+
+    .retro-card {
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-terminal {
+        max-width: 100%;
+    }
 }

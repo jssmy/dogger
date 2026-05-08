@@ -1,75 +1,197 @@
 @use "../../../../assets/_variables" as *;
 
-.navbar {
-    background-color: $color_gray_2;
-    color: $color_dark;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-style: solid;
-    box-shadow: 0px 0px 20px 0px;
-    min-height: 4rem;
+.retro-nav {
+    width: 100%;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(244, 205, 37, 0.18);
+    background-color: transparent;
+
+    // ── Contenedor ──────────────────────────────────────
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+
+    // ── Brand ───────────────────────────────────────────
+    &__brand {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        text-decoration: none;
+
+        &:hover { text-decoration: none; }
+    }
 
     &__logo {
-        height: 40px;
-    }
-}
-
-.navbar-nav {
-    gap: 1rem;
-}
-
-.navbar-brand {
-    color: black;
-    font-size: 1rem;
-}
-
-.nav-item {
-    font-size: 0.8rem;
-}
-
-.nav-link {
-    color: black;
-    padding: 0px !important;
-    transition: color 0.3s ease, font-size 0.3s ease, font-weight 0.3s ease;
-}
-
-.nav-link.active {
-    color: $color-yellow;
-}
-
-
-.nav-link:hover {
-    color: $color-yellow;
-    font-size: calc(var(--font-size-lg) + 0.2rem);
-}
-
-.dropdown-menu {
-    background: $color_yellow;
-    border: 2px ridge black;
-    border-radius: 27px;
-    border-bottom: 5px ridge black;
-    padding: 1em;
-    font-size: 0.8rem;
-
-    >li:first-child:hover a {
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        height: 30px;
+        width: auto;
     }
 
-    > :last-child:hover a {
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+    &__brand-name {
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        color: white;
     }
-}
 
-.dropdown-item:hover,
-.dropdown-item:focus {
-    background-color: $color_orange;
-    color: $color_dark;
-}
+    &__bracket {
+        color: $color_yellow;
+        letter-spacing: 0;
+    }
 
+    // ── Mobile toggler ──────────────────────────────────
+    &__toggler {
+        // reset Bootstrap .navbar-toggler
+        border: 2px solid $color_yellow !important;
+        border-radius: 0 !important;
+        padding: 0.2rem 0.6rem !important;
+        background: transparent !important;
+        color: white !important;
+        font-size: 1rem;
+        line-height: 1.4;
+        cursor: pointer;
+        letter-spacing: 0.05em;
+        transition: background-color 0.15s ease;
+        box-shadow: none !important;
 
-.dropdown-toggle::after {
-    margin-left: 0px;
+        &:hover { background-color: rgba(244, 205, 37, 0.1) !important; }
+        &:focus { box-shadow: none !important; }
 
+        // Bootstrap lo muestra/oculta via navbar-expand-lg; no sobreescribir display
+    }
+
+    // ── Lista de nav ────────────────────────────────────
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 0.15rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            padding: 0.5rem 0;
+            gap: 0;
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        @media (max-width: 991px) { width: 100%; }
+    }
+
+    // ── Link ────────────────────────────────────────────
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.3rem 0.6rem;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        transition:
+            color 0.15s ease,
+            border-color 0.15s ease,
+            background-color 0.15s ease;
+
+        &:hover {
+            color: $color_yellow;
+            border-color: rgba(244, 205, 37, 0.3);
+            background-color: rgba(244, 205, 37, 0.06);
+            text-decoration: none;
+        }
+
+        &--active {
+            color: $color_yellow !important;
+            border-color: rgba(244, 205, 37, 0.35) !important;
+            background-color: rgba(244, 205, 37, 0.08) !important;
+
+            .retro-nav__prompt { opacity: 1; }
+        }
+
+        // dropdown toggle override
+        &--drop.dropdown-toggle::after {
+            border-top-color: rgba(244, 205, 37, 0.7);
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 991px) {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+        }
+    }
+
+    // ── Prompt › ────────────────────────────────────────
+    &__prompt {
+        color: $color_yellow;
+        font-size: 0.95rem;
+        line-height: 1;
+        opacity: 0.5;
+        transition: opacity 0.15s ease;
+    }
+
+    &__link:hover &__prompt,
+    &__link--active &__prompt {
+        opacity: 1;
+    }
+
+    // ── Dropdown panel ───────────────────────────────────
+    &__dropdown.dropdown-menu {
+        background-color: #0a0a0a;
+        border: 2px solid $color_yellow;
+        border-radius: 0;
+        padding: 0.2rem 0;
+        min-width: 175px;
+        margin-top: 3px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    // ── Dropdown item ────────────────────────────────────
+    &__dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0.5rem 0.85rem;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(244, 205, 37, 0.06);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.65rem;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background-color 0.12s ease, color 0.12s ease;
+
+        &:last-child { border-bottom: none; }
+
+        &:hover {
+            background-color: rgba(244, 205, 37, 0.08);
+            color: $color_yellow;
+
+            .retro-nav__arrow { opacity: 1; }
+        }
+    }
+
+    // ── Flecha → ────────────────────────────────────────
+    &__arrow {
+        color: $color_yellow;
+        opacity: 0.45;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+        transition: opacity 0.12s ease;
+    }
 }

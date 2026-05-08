@@ -1,34 +1,160 @@
 @use "../../../../assets/_variables" as *;
 
+.retro-search {
+    position: relative;
+    width: 100%;
 
-.search-engine {
-    &-active {
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-    }
-    &__result {
-        color: $color_dark;
-    }
-
-    &__result > a {
-        color: $color_dark;
-        background-color: white;
-        text-decoration: unset;
+    // ── Barra principal ──────────────────────────────────
+    &__bar {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        min-height: 3.5rem;
+        height: 52px;
+        background-color: rgba(0, 0, 0, 0.55);
+        border: 2px solid $color_yellow;
+        transition:
+            border-color 0.15s ease,
+            box-shadow 0.15s ease;
+
+        &--open {
+            border-bottom-color: rgba(244, 205, 37, 0.25);
+        }
+
+        &:focus-within {
+            box-shadow:
+                0 0 0 1px rgba(244, 205, 37, 0.2),
+                0 0 14px rgba(244, 205, 37, 0.15);
+        }
     }
 
-    &__result > a:last-child {
-        border-bottom-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        padding-bottom: 10px !important;
+    // ── Prompt $ ────────────────────────────────────────
+    &__prompt {
+        padding: 0 0.55rem 0 0.85rem;
+        font-size: 1rem;
+        color: $color_yellow;
+        user-select: none;
+        flex-shrink: 0;
+        line-height: 1;
     }
 
-    &__result a:hover {
-        background-color: $color_gray_3;
+    // ── Input ───────────────────────────────────────────
+    &__input {
+        flex: 1;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: $color_gray_3;
+        font-size: 0.9rem;
+        padding: 0;
+        caret-color: $color_yellow;
+
+        &::placeholder {
+            color: rgba(172, 172, 172, 0.45);
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+    }
+
+    // ── Botón buscar ─────────────────────────────────────
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 52px;
+        height: 100%;
+        background-color: $color_yellow;
+        color: $color_dark;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+
+        svg { pointer-events: none; }
+
+        &:hover:not(:disabled) {
+            background-color: $color_orange;
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+    }
+
+    // ── Panel de resultados ──────────────────────────────
+    &__results {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background-color: #0d0d0d;
+        border: 2px solid $color_yellow;
+        border-top: 1px solid rgba(244, 205, 37, 0.2);
+        max-height: 280px;
+        overflow-y: auto;
+
+        scrollbar-width: thin;
+        scrollbar-color: #2a2a2a #0d0d0d;
+
+        &::-webkit-scrollbar       { width: 4px; }
+        &::-webkit-scrollbar-track { background: #0d0d0d; }
+        &::-webkit-scrollbar-thumb { background-color: #2a2a2a; border-radius: 2px; }
+    }
+
+    // ── Ítem de resultado ────────────────────────────────
+    &__result-item {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        width: 100%;
+        padding: 0.6rem 0.85rem;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(244, 205, 37, 0.07);
+        color: $color_gray_3;
+        font-size: 0.8rem;
+        text-align: left;
+        cursor: pointer;
+        transition: background-color 0.12s ease, color 0.12s ease;
+
+        &:last-child { border-bottom: none; }
+
+        &:hover {
+            background-color: rgba(244, 205, 37, 0.07);
+            color: $color_yellow;
+
+            .retro-search__arrow { opacity: 1; }
+        }
+    }
+
+    &__arrow {
+        color: $color_yellow;
+        font-size: 0.75rem;
+        opacity: 0.4;
+        flex-shrink: 0;
+        transition: opacity 0.12s ease;
+    }
+
+    &__result-text {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    // ── Estado vacío ─────────────────────────────────────
+    &__empty {
+        padding: 0.7rem 0.85rem;
+        color: $color_gray;
+        font-size: 0.8rem;
+    }
+
+    &__excl {
+        color: $color_yellow;
+        margin-right: 0.3rem;
     }
 }
-
-
