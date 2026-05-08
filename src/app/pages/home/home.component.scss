@@ -296,6 +296,86 @@
 }
 
 // ══════════════════════════════════════════
+// HORMIGA MASCOTA
+// ══════════════════════════════════════════
+
+.ant-mascot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.65));
+  animation: ant-idle 2.8s ease-in-out infinite;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+
+  .ant-svg {
+    width: 90px;
+    height: 60px;
+    display: block;
+    image-rendering: pixelated;
+  }
+
+  // Estado idle: solo frame A visible
+  .ant-legs--a { opacity: 1; }
+  .ant-legs--b { opacity: 0; }
+
+  .ant-label {
+    letter-spacing: 0.1em;
+    font-size: 0.5rem;
+    opacity: 0.55;
+    &__run  { display: none; }
+    &__idle { display: inline; }
+  }
+}
+
+@keyframes ant-idle {
+  0%, 100% { transform: translateY(0); }
+  45%, 55% { transform: translateY(-5px); }
+}
+
+// ── Estado corriendo ──
+.ant-mascot--running {
+  animation: ant-bounce 0.26s ease-in-out infinite;
+
+  .ant-legs--a { animation: ant-frame-a 0.26s step-end infinite; }
+  .ant-legs--b { animation: ant-frame-b 0.26s step-end infinite; }
+
+  .ant-label {
+    &__run  { display: inline; }
+    &__idle { display: none; }
+  }
+
+  .ant-antenna--1 { animation: ant-antenna-wiggle 0.26s step-end infinite; }
+  .ant-antenna--2 { animation: ant-antenna-wiggle 0.26s step-end infinite 0.13s; }
+}
+
+@keyframes ant-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes ant-frame-a {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes ant-frame-b {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes ant-antenna-wiggle {
+  from { transform-origin: 84px 21px; transform: rotate(-8deg); }
+  to   { transform-origin: 84px 21px; transform: rotate(8deg); }
+}
+
+// ══════════════════════════════════════════
 // RESPONSIVE
 // ══════════════════════════════════════════
 @media (max-width: 768px) {
@@ -309,5 +389,10 @@
 
     .cta-terminal {
         max-width: 100%;
+    }
+
+    .ant-mascot .ant-svg {
+        width: 64px;
+        height: 43px;
     }
 }

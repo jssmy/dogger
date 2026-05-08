@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, HostListener, inject, PLATFORM_ID, viewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, inject, OnDestroy, PLATFORM_ID, viewChild } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
@@ -26,7 +26,7 @@ import { ArticleSearchService } from './services/article-search.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export default class HomeComponent implements AfterViewInit {
+export default class HomeComponent implements AfterViewInit, OnDestroy {
   private readonly articleSearchService = inject(ArticleSearchService);
   private readonly router = inject(Router);
   private readonly platformId = inject(PLATFORM_ID);
@@ -42,6 +42,20 @@ export default class HomeComponent implements AfterViewInit {
   navbarItems: NavbarItem[] = NAVBAR_HOME_ITEMS;
 
   isFocusModal = false;
+  isScrolling = false;
+  private scrollTimer: ReturnType<typeof setTimeout> | null = null;
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    this.isScrolling = true;
+    if (this.scrollTimer) clearTimeout(this.scrollTimer);
+    this.scrollTimer = setTimeout(() => {
+      this.isScrolling = false;
+      this.scrollTimer = null;
+    }, 300);
+  }
+
   onFocus() {
     this.isFocusModal = !this.isFocusModal;
     if (!this.isFocusModal) {
@@ -72,5 +86,7 @@ export default class HomeComponent implements AfterViewInit {
     this.searchComponent()?.removeFocus();
   }
 
-
+  ngOnDestroy(): void {
+    if (this.scrollTimer) clearTimeout(this.scrollTimer);
+  }
 }
